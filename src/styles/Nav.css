@@ -1,0 +1,165 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.adminNav h1 {
+	font: 12px sans-serif;
+	margin: auto;
+}
+
+.adminNav {
+	display: flex;
+	justify-content: space-between;
+	line-height: 40px;
+	background-color: #121212;
+	color: #fff;
+	position: relative;
+	width: 80%;
+	float: right;
+}
+
+.navProfile, .navProfileDrop {
+	display: flex;
+	margin: auto 0;
+}
+
+.navProfileDrop{
+	padding: 0 30px 0 20px;
+}
+
+#navBar, #navMsg {
+	font-size: 22px;
+	color: #fff;
+}
+
+#navBar {
+	margin: auto 40px;
+}
+
+.navProfileDrop .dropdownToggle {
+	cursor: pointer;
+}
+
+.navProfileDrop .dropdownMenuList {
+	position: absolute;
+	margin-top: 28px;
+	background-color: #121212;
+	color: #fff;
+}
+
+.navProfileDrop .dropdownMenuList li {
+	padding: 2px 20px;
+}
+
+.navProfileDrop .dropdownMenuList li:hover {
+	background-color: #43434466;
+}
+
+.navProfileDrop .dropdownMenuList #dropdownFont {
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+/* ----------------------toggling bar animation styling------------------------- */
+/* 
+.mobileNav {
+	display: none;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.secondNav {
+		display: none;
+	}
+
+	.mobileNav {
+		display: block;
+		position: relative;
+	}
+
+	.nav-links {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding-top: 20px;
+		padding-bottom: 150px;
+	}
+
+	.nav-links li {
+		color: white;
+		list-style: none;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+
+	.nav-links li:hover {
+		color: rgb(243, 33, 33);
+		text-decoration: underline;
+	}
+
+	.mobileNavBody {
+		background: rgb(5, 64, 146);
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+	}
+
+	.mobileNavBody h1 {
+		font-size: 24px;
+		color: white;
+		padding: 6px 10px 0px;
+	}
+
+	.mobileNavBody h1 span {
+		font-size: 28px;
+		color: rgb(219, 0, 0);
+	}
+
+	.line {
+		width: 22px;
+		height: 2px;
+		background: white;
+		margin: 5px;
+	}
+
+	.hamburger {
+		position: absolute;
+		cursor: pointer;
+		right: 2%;
+		top: 50%;
+		transform: translate(-2%, -50%);
+	}
+
+	.nav-links {
+		position: fixed;
+		z-index: 1;
+		background: rgb(5, 64, 146);
+		height: 100vh;
+		width: 100%;
+		flex-direction: column;
+		clip-path: circle(100px at 90% -20%);
+		-webkit-clip-path: circle(100px at 90% -20%);
+		transition: all 1s ease-out;
+		pointer-events: none;
+	}
+
+	.nav-links.open {
+		clip-path: circle(1000px at 90% -20%);
+		-webkit-clip-path: circle(1000px at 90% -20%);
+		pointer-events: all;
+	}
+} */

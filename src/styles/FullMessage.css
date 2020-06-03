@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* -----------------------------gifLoad styling starts here----------------------------- */
+
+.gifLoad {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	width: 80%;
+	float: right;
+}
+
+.gifLoad img {
+	width: 100px;
+}
+
+.gifLoad h1 {
+	font-size: 22px;
+	color: rgba(17, 44, 66, 0.87);
+}
+
+/* -----------------------------gifLoad styling ends here----------------------------- */
+
+.fullMessage {
+	width: 80%;
+	float: right;
+	color: rgba(17, 44, 66, 0.87);
+	margin-bottom: 40px;
+}
+
+.fullMessage h1 {
+    margin: 20px 0 0 27px;
+    font: normal 1.2rem sans-serif;
+}

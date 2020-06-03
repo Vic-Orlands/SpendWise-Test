@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+section,
+input,
+li {
+	display: block;
+}
+
+.login {
+	background-color: rgba(14, 35, 51, 0.972);
+	color: white;
+	font-family: sans-serif;
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+}
+
+.imgContainer {
+	width: 65%;
+	margin: 150px;
+}
+
+.imgContainer img {
+	width: 300px;
+	margin-left: -60px;
+}
+
+.imgContainer h1 {
+	font-size: 40px;
+	letter-spacing: 2px;
+	font-family: arial;
+	margin-bottom: 20px;
+}
+
+.imgContainer h1 span {
+	color: rgb(11, 236, 11);
+	font-weight: bold;
+}
+
+.imgContainer p {
+	font: 14px arial;
+	letter-spacing: .5px;
+}
+
+.loginContainer {
+	width: 35%;
+	background-color: #fff;
+	color: rgba(14, 35, 51, 0.972);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.loginContainer h2 {
+	text-transform: uppercase;
+	font-size: 22px;
+	margin-bottom: 40px;
+}
+
+.loginContainer form {
+	width: 80%;
+}
+
+.loginContainer label,
+.loginContainer input {
+	width: 100%;
+	height: 35px;
+}
+
+.loginContainer form div {
+	margin-bottom: 20px;
+}
+
+.loginContainer label::before {
+	content: 'Username';
+	position: absolute;
+	font-size: 12px;
+	margin-top: -10px;
+	margin-left: 10px;
+	padding: 0 5px;
+	background-color: #fff;
+	color: rgba(14, 35, 51, 0.68);
+}
+
+.loginContainer label.password::before {
+	content: 'Password';
+	position: absolute;
+	font-size: 12px;
+	margin-top: -10px;
+	margin-left: 10px;
+	padding: 0 5px;
+	background-color: #fff;
+	color: rgba(14, 35, 51, 0.68);
+}
+
+.loginContainer #inputFont {
+	position: absolute;
+	margin-top: 12px;
+	margin-left: -20px;
+	color: rgba(14, 35, 51, 0.728);
+}
+
+.loginContainer #submit {
+	width: 100%;
+	border: none;
+	font-size: 12px;
+	background: rgba(14, 35, 51, 0.972);
+	color: #fff;
+	padding: 9px;
+	letter-spacing: 1px;
+	border-radius: 4px;
+}
+
+.loginContainer #submit:hover {
+	background-color: #43434466;
+}
+
+.loginContainer form .link {
+	text-decoration: none;
+}

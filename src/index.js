@@ -1,9 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
-import Portfolio from "./newPort/components/Portfolio";
 
-ReactDOM.render(<Portfolio />, document.getElementById('root'));
+import Router from './components/Router';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-serviceWorker.register();
+const rootElement = document.getElementById('root');
+ReactDOM.render(<Router />, rootElement);

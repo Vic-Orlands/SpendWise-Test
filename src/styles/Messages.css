@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.messageBody {
+	width: 80%;
+	float: right;
+	color: rgba(17, 44, 66, 0.87);
+	margin-bottom: 40px;
+}
+
+.messageBody h1 {
+    margin: 20px 0 0 27px;
+    font: normal 1.2rem sans-serif;
+}
+
+.messageBody .removeFont {
+	font-size: 20px;
+	float: right;
+	margin: 10px 50px -20px 0px;
+}
+
+.displayShelf {
+    clear: left;
+    overflow: auto;
+    width: 95%;
+    margin: 20px auto;
+	display: flex;
+    justify-content: space-evenly;
+	background-color: rgba(17, 44, 66, 0.87);
+    color: #fff;
+	box-shadow: 0 2px 3px rgba(193, 194, 196, 0.87);
+}
+
+.displayShelf div {
+	margin: 20px 0;
+	border-right: 2px solid #fff;
+	padding-right: 100px;
+	padding-left: 0px;
+}
+
+.displayShelf div:last-child {
+	border-right: none;
+	padding-right: 0px;
+}
+
+.displayShelf h4 {
+	text-align: center;
+	font: bold 30px sans-serif;
+	margin: auto;
+}
+
+.displayShelf h5 {
+	margin: auto;
+}
+
+.displayShelf div p {
+    font-size: 10px;
+}
+
+.displayShelf div .mFont {
+	margin-right: 3px;
+}
+
+.messageBody .tableContainer {
+	width: 95%;
+	margin: auto;
+	clear: both;
+}
+
+.messageBody .tableContainer tr {
+	text-align: center;
+}
+
+.messageBody .tableContainer td {
+	padding: 15px;
+}
+
+.messageBody .tableContainer .table {
+	margin: 20px auto;
+	border: 1px solid rgb(209, 199, 199);
+}
+
+.messageBody .tableContainer input {
+	display: inline-block;
+	margin: auto 25px auto -25px;
+}
+
+.messageBody .tableContainer #msgLink {
+	color: #000;
+	text-decoration: none;
+}
+
+.messageBody .tableContainer #msgLink:hover {
+	color: rgba(19, 112, 184, 0.986);
+}

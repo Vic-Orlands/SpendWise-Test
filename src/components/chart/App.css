@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.chartBody {
+	background-color: #ddd;
+	color: #102231;
+	padding: 30px 30px;
+}
+
+.chartBody h2 {
+	text-align: center;
+    font-size: 24px;
+    font-family: sans-serif;
+}
