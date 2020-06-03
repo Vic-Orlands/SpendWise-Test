@@ -8,9 +8,15 @@ import FullMessage from './pages/FullMessage';
 import DumpSite from './pages/DumpSites';
 import Users from './pages/Users';
 
+import Pickers from './pages/users.pages/Pickers';
+import Vendors from './pages/users.pages/Vendors';
+import Generators from './pages/users.pages/Generators';
+import Recyclers from './pages/users.pages/Recyclers';
+import Witness from './pages/users.pages/Witness';
+import Agencies from './pages/users.pages/Agencies';
+
 // import PrivateRoute from './Routes/PrivateRoute';
 // import PublicRoute from './Routes/PublicRoute';
- 
 
 const Router = () => {
 	return (
@@ -24,6 +30,15 @@ const Router = () => {
 					<Route path="/readmsg" component={FullMessage} />
 					<Route path="/dump" component={DumpSite} />
 					<Route path="/user" component={Users} />
+
+					{/* waste users page */}
+					<Route path="/pickers" component={Pickers} />
+					<Route path="/vendors" component={Vendors} />
+					<Route path="/generators" component={Generators} />
+					<Route path="/recyclers" component={Recyclers} />
+					<Route path="/witness" component={Witness} />
+					<Route path="/agencies" component={Agencies} />
+					{/* waste users page */}
 				</Switch>
 			</div>
 		</BrowserRouter>

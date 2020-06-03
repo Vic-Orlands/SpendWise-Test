@@ -26,68 +26,13 @@ const DumpSite = () => {
 					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
-				<section className="homeBody">
+				<section className="dumpBody">
 					<div>
-						<h1>Home</h1>
-					</div>
-
-					<div className="topShelf">
-						<div>
-							<h5>
-								<IoIosPerson className="hFont" />Total Users
-							</h5>
-							<h4>2500</h4>
-							<p>
-								4%<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<IoIosDownload className="hFont" />Total Downloads
-							</h5>
-							<h4>2500</h4>
-							<p>
-								7%<MdArrowDownward />
-								<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<IoIosDownload className="hFont" />Total Vendors
-							</h5>
-							<h4>60</h4>
-							<p>
-								7%<MdArrowDownward />
-								<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<MdMessage className="hFont" />Total Messages
-							</h5>
-							<h4>600</h4>
-							<p>
-								10%<MdArrowUpward />
-								<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<MdError className="hFont" />Errors Issues
-							</h5>
-							<h4>30</h4>
-							<p>
-								2%<MdArrowUpward />
-								<span>From last week</span>
-							</p>
-						</div>
+						<h1>Dump Sites</h1>
 					</div>
 
 					<div className="map">
+						<h1>Locate waste dump sites</h1>
 						<div className="gmap">
 							<iframe
 								id="gmap_canvas"

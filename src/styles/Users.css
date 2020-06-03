@@ -8,9 +8,70 @@
 }
 
 .users {
-    width: 78%;
+	width: 78%;
 	float: right;
-	background-color: #ddd;
-    color: #102231;
-	height: 100%;
+	background-color: #091520f3;
+	color: #ddd;
+	height: 90.3vh;
+}
+
+
+.users h1 {
+    margin: 20px 0 10px 10px;
+    font: normal 1.2rem sans-serif;
+}
+
+.users .userDiv {
+	height: 85vh;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.users .userDiv div {
+	border: 1px solid #ddd;
+	margin: 0 50px;
+	border-radius: 10px;
+}
+
+.users .userDiv div:nth-child(3) {
+	order: 3;
+}
+
+.users .userDiv div hr {
+	border: 1px solid #ddd;
+}
+
+.users div h3 {
+	font-size: 18px;
+	padding: 20px;
+}
+
+.users div h5 {
+	font-size: 55px;
+	font-weight: bold;
+	font-family: 'Times New Roman', Times, serif;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.users div p {
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.usersBody Footer {
+	background-color: #091520f3;
+	color: #f1f1f1;
+}
+
+.usersBody .users .userDiv #userLink {
+	color: #fff;
+	text-decoration: none;
+}
+
+.usersBody .users .userDiv p:hover {
+	color: tomato;
 }

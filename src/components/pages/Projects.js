@@ -4,18 +4,15 @@ import { IoIosPerson, IoIosDownload } from 'react-icons/io';
 import Navigation from '../section/Navigation';
 import Sidemenu from '../section/Sidemenu';
 import Footer from '../section/Footer';
-import '../../styles/Analytics.css';
+import '../../styles/Projects.css';
 
-import App from '../chart/App';
-import Satisfied from '../chart/Users.Satisfied';
-
-const Analytics = () => {
+const Projects = () => {
 	const [ loading, setLoading ] = useState(true);
 
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 8000);
+		}, 4000);
 	}, []);
 
 	return (
@@ -29,15 +26,15 @@ const Analytics = () => {
 					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
-				<section className="homeBody">
+				<section className="projectBody">
 					<div>
-						<h1>Home</h1>
+						<h1>Projects</h1>
 					</div>
 
-					<div className="topShelf">
+					<div className="shelf">
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" /> Waste Recyclers
+								<IoIosPerson className="hFont" />Total Users
 							</h5>
 							<h4>2500</h4>
 							<p>
@@ -47,74 +44,34 @@ const Analytics = () => {
 
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" /> Waste Pickers
+								<IoIosDownload className="hFont" />Total Downloads
 							</h5>
-							<h4>300</h4>
+							<h4>2500</h4>
 							<p>
-								4%<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<IoIosDownload className="hFont" /> Waste Generators
-							</h5>
-							<h4>3000</h4>
-							<p>
-								24%<MdArrowDownward />
+								7%<MdArrowDownward />
 								<span>From last week</span>
 							</p>
 						</div>
 
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" />Dump Sites
+								<IoIosDownload className="hFont" />Total Vendors
 							</h5>
-							<h4>40</h4>
+							<h4>60</h4>
 							<p>
-								1%<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<IoIosDownload className="hFont" /> Waste Vendors
-							</h5>
-							<h4>100</h4>
-							<p>
-								12%<MdArrowDownward />
+								7%<MdArrowDownward />
 								<span>From last week</span>
 							</p>
 						</div>
 
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" />Waste Management <br /> <span style={{marginLeft: 20}}>Agencies</span>
-							</h5>
-							<h4>10</h4>
-							<p>
-								1%<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<MdMessage className="hFont" /> Messages
+								<MdMessage className="hFont" />Total Messages
 							</h5>
 							<h4>600</h4>
 							<p>
 								10%<MdArrowUpward />
 								<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<IoIosPerson className="hFont" />Eye witnesses
-							</h5>
-							<h4>3</h4>
-							<p>
-								From last week
 							</p>
 						</div>
 
@@ -129,10 +86,6 @@ const Analytics = () => {
 							</p>
 						</div>
 					</div>
-
-					<App />
-
-					<Satisfied />
 				</section>
 			)}
 
@@ -141,4 +94,4 @@ const Analytics = () => {
 	);
 };
 
-export default Analytics;
+export default Projects;

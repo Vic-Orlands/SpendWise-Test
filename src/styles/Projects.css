@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 
-.homeBody {
+.projectBody {
 	width: 78%;
 	float: right;
 	background-color: #102231;
@@ -15,12 +15,12 @@
 	/* overflow: auto; */
 }
 
-.homeBody h1 {
+.projectBody h1 {
 	margin: 20px 0 10px 10px;
 	font: normal 1.2rem sans-serif;
 }
 
-.topShelf {
+.shelf {
 	clear: left;
 	overflow: auto;
 	width: 100%;
@@ -30,31 +30,31 @@
 	margin-bottom: 20px;
 }
 
-.topShelf div {
+.shelf div {
 	margin: 20px 10px;
 	border: 1px solid gray;
 	padding: 20px 30px;
 	box-shadow: 0 2px 3px rgba(193, 194, 196, 0.87);
 }
 
-.topShelf div:last-child {
+.shelf div:last-child {
 	color: red;
 }
 
-.topShelf h4 {
+.shelf h4 {
 	text-align: center;
 	font: bold 30px sans-serif;
 	margin: auto;
 }
 
-.topShelf h5 {
+.shelf h5 {
 	margin: auto;
 }
 
-.topShelf div span {
+.shelf div span {
 	margin-left: 10px;
 }
 
-.topShelf div .hFont {
+.shelf div .hFont {
 	margin-right: 3px;
 }

@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaDashcube, FaHome, FaEdit, FaBell } from 'react-icons/fa';
-import { MdMessage, MdArrowDropDown, MdSettings, MdPerson, MdDashboard } from 'react-icons/md';
+import { FaDashcube, FaEdit, FaBell } from 'react-icons/fa';
+import {
+	MdMessage,
+	MdArrowDropDown,
+	MdSettings,
+	MdPerson,
+	MdDashboard,
+	MdLocalPostOffice,
+	MdChat,
+	MdPersonPinCircle
+} from 'react-icons/md';
 import { IoMdLogOut, IoMdStats, IoMdBrowsers } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
@@ -48,15 +57,18 @@ export default class Sidemenu extends Component {
 								{this.state.open && (
 									<ul id="dropList">
 										<NavLink to="/home">
-										<li>Analytics</li>
+											<li>Analytics</li>
 										</NavLink>
 										<li>Project</li>
 									</ul>
 								)}
 
-								<li>
-									<IoMdStats className="dashmenuFont" /> Metrics
-								</li>
+								<NavLink to="user">
+									<li>
+										<MdPersonPinCircle className="dashmenuFont" />
+										Users
+									</li>
+								</NavLink>
 								<NavLink to="/message">
 									<li>
 										<MdMessage className="dashmenuFont" />
@@ -66,6 +78,9 @@ export default class Sidemenu extends Component {
 										</span>
 									</li>
 								</NavLink>
+								<li>
+									<IoMdStats className="dashmenuFont" />Downloads
+								</li>
 								<li>
 									<FaBell className="dashmenuFont" /> Notifications
 								</li>
@@ -80,12 +95,6 @@ export default class Sidemenu extends Component {
 										DumpSites
 									</li>
 								</NavLink>
-								<NavLink to="user">
-									<li>
-										<MdPerson className="dashmenuFont" />
-										Users
-									</li>
-								</NavLink>
 
 								<li>
 									<MdPerson className="dashmenuFont" />
@@ -93,18 +102,13 @@ export default class Sidemenu extends Component {
 								</li>
 
 								<li>
-									<MdPerson className="dashmenuFont" />
-									Profile
+									<MdLocalPostOffice className="dashmenuFont" />
+									Posts
 								</li>
 
 								<li>
-									<MdPerson className="dashmenuFont" />
-									Profile
-								</li>
-
-								<li>
-									<MdPerson className="dashmenuFont" />
-									Profile
+									<MdChat className="dashmenuFont" />
+									Chat
 								</li>
 							</ul>
 						</div>

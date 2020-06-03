@@ -6,12 +6,34 @@
 	box-sizing: border-box;
 }
 
+.dumpBody {
+	width: 78%;
+	float: right;
+	background-color: #102231;
+	color: #ffffff;
+	height: 100vh;
+	overflow: auto;
+}
+
+.dumpBody h1 {
+	margin: 20px 0 10px 10px;
+	font: normal 1.2rem sans-serif;
+}
+
+.map .gmap {
+    text-align: center;
+}
+
+.map h1 {
+    text-align: center;
+}
+
 .map .gmap iframe {
-    height: 400px;
-    width: 600px; 
+	height: 400px;
+	width: 600px;
     margin: 20px auto;
 }
 
 .map .gmap {
-    margin: auto;
+	margin: auto;
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import CanvasJSReact from './canvasjs.react';
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class App extends Component {
 	render() {
@@ -28,10 +28,10 @@ class App extends Component {
 
 		return (
 			<div className="chartBody">
-        <h2>Analytical Column Chart</h2>
+				<h2>Analytical Column Chart</h2>
 				<CanvasJSChart
-          options={options}
-          id="mainChart"
+					options={options}
+					id="mainChart"
 					/* onRef = {ref => this.chart = ref} */
 				/>
 			</div>
