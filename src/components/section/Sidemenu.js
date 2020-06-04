@@ -34,7 +34,7 @@ export default class Sidemenu extends Component {
 				<div>
 					{/* menu profile quick info */}
 					<div className="sideBody-Intro">
-						<FaDashcube style={{ marginRight: 5, marginTop: -3.5 }} />
+						<FaDashcube style={{ marginRight: 5, marginTop: -3.5 }} id="font" />
 						<span>WM-HAS ADMIN PANEL</span>
 
 						<h2>Innocent Chimezie</h2>
@@ -52,7 +52,7 @@ export default class Sidemenu extends Component {
 							<ul>
 								<li onClick={this.toggle}>
 									<MdDashboard className="dashmenuFont" />
-									Dashboards<MdArrowDropDown style={{ fontSize: 20, marginTop: -2 }} />
+									Dashboards<MdArrowDropDown />
 								</li>
 								{this.state.open && (
 									<ul id="dropList">

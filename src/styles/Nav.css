@@ -70,101 +70,41 @@
 	margin-right: 10px;
 }
 
-/* ----------------------toggling bar animation styling------------------------- */
-/* 
-.mobileNav {
-	display: none;
-}
-
-@keyframes rotate {
-	0% {
-		transform: rotate(0);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
+/* -------------------------mobile responsiveness styling begins here----------------------------------- */
 
 @media screen and (max-width: 768px) {
+	.adminNav h1 {
+	font: 12px sans-serif;
+	margin: auto;
+}
 
-	.secondNav {
-		display: none;
-	}
+.adminNav {
+	line-height: 30px;
+}
 
-	.mobileNav {
-		display: block;
-		position: relative;
-	}
+.navProfileDrop{
+	/* padding: 0 30px 0 20px; */
+}
 
-	.nav-links {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-		padding-top: 20px;
-		padding-bottom: 150px;
-	}
+#navBar, #navMsg {
+	font-size: 14px;
+}
 
-	.nav-links li {
-		color: white;
-		list-style: none;
-		font-size: 14px;
-		text-transform: uppercase;
-	}
+#navBar {
+	margin: auto 20px;
+}
 
-	.nav-links li:hover {
-		color: rgb(243, 33, 33);
-		text-decoration: underline;
-	}
+.navProfileDrop .dropdownMenuList {
+	margin-top: 24px;
+}
 
-	.mobileNavBody {
-		background: rgb(5, 64, 146);
-		position: absolute;
-		width: 100%;
-		z-index: 2;
-	}
+.navProfileDrop .dropdownMenuList li {
+	padding: 2px 20px;
+	font-size: 10px;
+}
 
-	.mobileNavBody h1 {
-		font-size: 24px;
-		color: white;
-		padding: 6px 10px 0px;
-	}
-
-	.mobileNavBody h1 span {
-		font-size: 28px;
-		color: rgb(219, 0, 0);
-	}
-
-	.line {
-		width: 22px;
-		height: 2px;
-		background: white;
-		margin: 5px;
-	}
-
-	.hamburger {
-		position: absolute;
-		cursor: pointer;
-		right: 2%;
-		top: 50%;
-		transform: translate(-2%, -50%);
-	}
-
-	.nav-links {
-		position: fixed;
-		z-index: 1;
-		background: rgb(5, 64, 146);
-		height: 100vh;
-		width: 100%;
-		flex-direction: column;
-		clip-path: circle(100px at 90% -20%);
-		-webkit-clip-path: circle(100px at 90% -20%);
-		transition: all 1s ease-out;
-		pointer-events: none;
-	}
-
-	.nav-links.open {
-		clip-path: circle(1000px at 90% -20%);
-		-webkit-clip-path: circle(1000px at 90% -20%);
-		pointer-events: all;
-	}
-} */
+.navProfileDrop .dropdownMenuList #dropdownFont {
+	font-size: 12px;
+	margin-right: 5px;
+}
+}

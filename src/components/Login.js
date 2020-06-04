@@ -10,18 +10,23 @@ const Login = () => {
 				<img src={require('../assets/logo.PNG')} alt="wm-has logo" />
 
 				<div>
-					<h1>Welcome to <span>WM-HAS</span> Admin</h1>
+					<h1>
+						Welcome to <span>WM-HAS</span> Admin
+					</h1>
 
 					<p>
 						This is for admins only. If you're not, kindly redirect to the official site here <br />
 						<span>
-							<a href="https://www.wm-has.cresponet.net" target="_blank">wm-has.cresponet.net</a>
+							<a href="https://www.wm-has.cresponet.net" target="_blank">
+								wm-has.cresponet.net
+							</a>
 						</span>
 					</p>
 				</div>
 			</div>
 
 			<div className="loginContainer">
+				<img src={require('../assets/logo.PNG')} alt="wm-has logo" />
 				<h2>Login to your account </h2>
 				<form>
 					<div>
