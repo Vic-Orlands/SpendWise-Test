@@ -56,6 +56,11 @@
 	padding: 2px 20px;
 }
 
+.navProfileDrop .dropdownMenuList li #link {
+	color: #fff;
+	text-decoration: none;
+}
+
 .navProfileDrop .dropdownMenuList li:hover {
 	background-color: #43434466;
 }

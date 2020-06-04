@@ -7,12 +7,12 @@
 	font-family: sans-serif;
 }
 
-.pickersBody Footer {
+.recycleBody Footer {
 	background-color: #091520f3;
 	color: #ddd;
 }
 
-.pickers {
+.recyclers {
 	width: 78%;
 	float: right;
 	background-color: #091520f3;
@@ -20,17 +20,17 @@
 	min-height: 90vh;
 }
 
-.pickers h1 {
+.recyclers h1 {
 	margin: 10px 0 10px 27px;
 	font: normal 1.2rem sans-serif;
 }
 
-.pickers h2 {
+.recyclers h2 {
 	margin: 50px 0 10px 50px;
 	font: normal 1.2rem sans-serif;
 }
 
-.pickers .pickerList img {
+.recyclers .recycleList img {
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
@@ -38,34 +38,34 @@
 	margin-right: 10px;
 }
 
-.pickers .pickerList {
+.recyclers .recycleList {
 	display: flex;
 	margin: 20px 50px;
 	padding: 0px;
 }
 
-.pickers .pickerList:hover {
+.recyclers .recycleList:hover {
 	background-color: #43434466;
     padding: 0 15px 0 0;
 	border-radius: 30px;
 }
 
-.pickers .pickerList h3 {
+.recyclers .recycleList h3 {
 	font: normal 1.2rem sans-serif;
 	margin: auto 0;
 }
 
-.pickers .pickerInfo ol {
+.recyclers .recycleInfo ol {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
 
-.pickers .pickerList #link {
+.recyclers .recycleList #link {
 	color: #ddd;
 	text-decoration: none;
 }
 
-.pickers .pickerList #link:hover {
+.recyclers .recycleList #link:hover {
 	color: tomato;
 }

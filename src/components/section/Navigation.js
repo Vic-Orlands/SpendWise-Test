@@ -4,6 +4,7 @@ import '../../styles/Nav.css';
 import { FaBars } from 'react-icons/fa';
 import { IoIosMailUnread, IoMdLogOut } from 'react-icons/io';
 import { MdArrowDropDown, MdMessage, MdPerson } from 'react-icons/md';
+import { NavLink } from 'react-router-dom';
 
 export default class Navigation extends Component {
 	state = {
@@ -37,7 +38,9 @@ export default class Navigation extends Component {
 									<MdPerson id="dropdownFont" />My Profile
 								</li>
 								<li>
+									<NavLink to="/" id="link">
 									<MdMessage id="dropdownFont" /> Inbox
+									</NavLink>
 								</li>
 								<li>
 									<IoMdLogOut id="dropdownFont" /> Logout

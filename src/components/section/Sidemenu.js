@@ -59,7 +59,9 @@ export default class Sidemenu extends Component {
 										<NavLink to="/home">
 											<li>Analytics</li>
 										</NavLink>
-										<li>Project</li>
+										<NavLink to="/project">
+											<li>Project</li>
+										</NavLink>
 									</ul>
 								)}
 

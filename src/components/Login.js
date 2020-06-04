@@ -13,9 +13,9 @@ const Login = () => {
 					<h1>Welcome to <span>WM-HAS</span> Admin</h1>
 
 					<p>
-						This is for admins only. If you're not kindly redirect to the official site here <br />
+						This is for admins only. If you're not, kindly redirect to the official site here <br />
 						<span>
-							<a href="www.wm-has.cresponet.net">wm-has.cresponet.net</a>
+							<a href="https://www.wm-has.cresponet.net" target="_blank">wm-has.cresponet.net</a>
 						</span>
 					</p>
 				</div>

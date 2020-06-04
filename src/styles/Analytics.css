@@ -33,7 +33,7 @@
 .topShelf div {
 	margin: 20px 10px;
 	border: 1px solid gray;
-	padding: 20px 30px;
+	padding: 20px 30px 10px;
 	box-shadow: 0 2px 3px rgba(193, 194, 196, 0.87);
 }
 
@@ -44,7 +44,7 @@
 .topShelf h4 {
 	text-align: center;
 	font: bold 30px sans-serif;
-	margin: auto;
+	margin: 10px auto;
 }
 
 .topShelf h5 {

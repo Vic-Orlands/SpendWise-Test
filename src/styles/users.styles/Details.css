@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.details {
+	width: 78%;
+	float: right;
+	background-color: #091520f3;
+    color: #ddd;
+}
+
+.details h1 {
+	margin: 10px 0 30px 27px;
+	font: normal 1.2rem sans-serif;
+}
+
+.details .infos {
+	width: 100%;
+	background-color: #ddd;
+	color: #091520f3;
+}
+
+.details .infos div:nth-child(1) {
+	background-color: #091520f3;
+	color: #ddd;
+    padding: 10px 30px;
+    margin-bottom: 120px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .infos div #msgFont {
+    font-size: 34px;
+    margin: auto 10px 0px;
+}
+
+.details .infos div img {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	background-color: #fff;
+    margin-bottom: -110px;
+}
+
+.details .infos div:nth-child(2) {
+    min-height: 42vh;
+    padding: 20px 80px;
+}
+
+.details .infos div:nth-child(2) h2 {
+    font: bold 24px sans-serif;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.details .infos div:nth-child(2) label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.details .infos div:nth-child(2) label h3 {
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+}

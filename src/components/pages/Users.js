@@ -28,11 +28,11 @@ const Users = () => {
 			) : (
 				<section className="users">
 					<h1>Users</h1>
-					
+
 					<div className="userDiv">
 						<div>
 							<h3>Waste Pickers</h3>
-							<h5>25</h5>
+							<h5>13</h5>
 							<hr />
 							<NavLink to="/pickers" id="userLink">
 								<p>See more</p>
@@ -41,37 +41,47 @@ const Users = () => {
 
 						<div>
 							<h3>Waste Vendors</h3>
-							<h5>30</h5>
+							<h5>3</h5>
 							<hr />
-							<p>See more</p>
+							<NavLink to="/vendors" id="userLink">
+								<p>See more</p>
+							</NavLink>{' '}
 						</div>
 
 						<div>
 							<h3>Waste Generators</h3>
-							<h5>50</h5>
+							<h5>8</h5>
 							<hr />
-							<p>See more</p>
+							<NavLink to="/generators" id="userLink">
+								<p>See more</p>
+							</NavLink>{' '}
 						</div>
 
 						<div>
 							<h3>Waste Recyclers</h3>
-							<h5>7</h5>
+							<h5>9</h5>
 							<hr />
-							<p>See more</p>
+							<NavLink to="/recyclers" id="userLink">
+								<p>See more</p>
+							</NavLink>{' '}
 						</div>
 
 						<div>
 							<h3>Eye Witnesses</h3>
 							<h5>4</h5>
 							<hr />
-							<p>See more</p>
+							<NavLink to="/witness" id="userLink">
+								<p>See more</p>
+							</NavLink>{' '}
 						</div>
 
 						<div>
 							<h3>Waste Agencies</h3>
-							<h5>11</h5>
+							<h5>2</h5>
 							<hr />
-							<p>See more</p>
+							<NavLink to="/agencies" id="userLink">
+								<p>See more</p>
+							</NavLink>{' '}
 						</div>
 					</div>
 				</section>

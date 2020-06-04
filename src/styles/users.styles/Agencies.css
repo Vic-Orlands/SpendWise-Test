@@ -7,12 +7,12 @@
 	font-family: sans-serif;
 }
 
-.pickersBody Footer {
+.agencyBody Footer {
 	background-color: #091520f3;
 	color: #ddd;
 }
 
-.pickers {
+.agency {
 	width: 78%;
 	float: right;
 	background-color: #091520f3;
@@ -20,17 +20,17 @@
 	min-height: 90vh;
 }
 
-.pickers h1 {
+.agency h1 {
 	margin: 10px 0 10px 27px;
 	font: normal 1.2rem sans-serif;
 }
 
-.pickers h2 {
+.agency h2 {
 	margin: 50px 0 10px 50px;
 	font: normal 1.2rem sans-serif;
 }
 
-.pickers .pickerList img {
+.agency .agencyList img {
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
@@ -38,34 +38,34 @@
 	margin-right: 10px;
 }
 
-.pickers .pickerList {
+.agency .agencyList {
 	display: flex;
 	margin: 20px 50px;
 	padding: 0px;
 }
 
-.pickers .pickerList:hover {
+.agency .agencyList:hover {
 	background-color: #43434466;
     padding: 0 15px 0 0;
 	border-radius: 30px;
 }
 
-.pickers .pickerList h3 {
+.agency .agencyList h3 {
 	font: normal 1.2rem sans-serif;
 	margin: auto 0;
 }
 
-.pickers .pickerInfo ol {
+.agency .witnessInfo ol {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
 
-.pickers .pickerList #link {
+.agency .agencyList #link {
 	color: #ddd;
 	text-decoration: none;
 }
 
-.pickers .pickerList #link:hover {
+.agency .agencyList #link:hover {
 	color: tomato;
 }
