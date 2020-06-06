@@ -214,16 +214,6 @@
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */
 
 @media screen and (max-width: 768px) {
-	.dotBody {
-		width: 90%;
-		height: 80vh;
-	}
-
-	.dotArea {
-		width: 90%;
-		height: 80vh;
-	}
-
 	.load {
 		width: 150px;
 		height: 150px;
@@ -240,61 +230,18 @@
 
 	.load .loadText h4 {
 		font-size: 6px;
+		margin-top: 15px;
+		margin-left: 22px;
 	}
 
 	/* ----------------------dot animation starts here--------------------------------- */
 
 	.dotBody {
+		width: 90%;
 		height: 100vh;
 	}
 
-	.dotArea li:nth-child(1) {
-		left: 0%;
-	}
-
-	.dotArea li:nth-child(2) {
-		left: 40%;
-	}
-
-	.dotArea li:nth-child(3) {
-		left: 0px;
-	}
-
-	.dotArea li:nth-child(4) {
-		top: 370px;
-	}
-
-	.dotArea li:nth-child(6) {
-		top: 120px;
-	}
-
-	.dotArea li:nth-child(7) {
-		left: 19%;
-		top: 100px;
-	}
-
-	.dotArea li:nth-child(9) {
-		left: 12px;
-		top: 370px;
-	}
-
-	.dotArea li:nth-child(11) {
-		right: 5%;
-	}
-
-	.dotArea li:nth-child(12) {
-		right: 10%;
-	}
-
-	.dotArea li:nth-child(13) {
-		right: 25%;
-		width: 1.5px;
-		height: 1.5px;
-		top: 370px;
-	}
-
-	.dotArea li:nth-child(14) {
-		right: 20%;
-		top: 230px;
+	.dotArea {
+		display: none;
 	}
 }

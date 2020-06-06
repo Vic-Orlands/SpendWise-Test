@@ -55,12 +55,6 @@
 	margin: auto 0;
 }
 
-.witness .witnessInfo ol {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-}
-
 .witness .witnessList #link {
 	color: #ddd;
 	text-decoration: none;
@@ -68,4 +62,57 @@
 
 .witness .witnessList #link:hover {
 	color: tomato;
+}
+
+/* -------------------------mobile responsiveness styling begins here----------------------------------- */
+
+@media screen and (max-width: 768px) {
+	.gifLoad {
+		width: 100%;
+	}
+
+	.gifLoad img {
+		width: 50px !important;
+	}
+
+	.gifLoad h1 {
+		font-size: 12px !important;
+	}
+
+	.witness {
+		width: 100%;
+		/* min-height: 100vh; */
+		clear: both;
+	}
+
+	.witness h1 {
+		margin: 40px 10px;
+		font: normal 1rem sans-serif;
+	}
+
+	.witness h2 {
+		margin: 0px 0 10px 30px;
+		font: normal 1.2rem sans-serif;
+	}
+
+	.witness .witnessList img {
+		height: 25px;
+		width: 25px;
+		margin-right: 10px;
+	}
+
+	.witness .witnessList {
+		margin: 20px 40px;
+	}
+
+	.witness .witnessList h3 {
+		font: normal 1rem sans-serif;
+		margin: auto 0;
+	}
+
+	.recycleBody Footer {
+		background-color: #091520f3;
+		color: #ddd;
+		padding: 10px;
+	}
 }

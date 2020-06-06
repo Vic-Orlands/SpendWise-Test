@@ -12,7 +12,7 @@ const Vendors = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 0);
+		}, 4000);
 	}, []);
 
 	return (

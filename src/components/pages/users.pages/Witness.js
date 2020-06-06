@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../../styles/users.styles/Recyclers.css';
+import '../../../styles/users.styles/Witness.css';
 
 import Navigation from '../../section/Navigation';
 import Sidemenu from '../../section/Sidemenu';

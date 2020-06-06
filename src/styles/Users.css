@@ -12,17 +12,15 @@
 	float: right;
 	background-color: #091520f3;
 	color: #ddd;
-	height: 90.3vh;
+	height: 100vh;
 }
 
-
 .users h1 {
-    margin: 20px 0 10px 10px;
-    font: normal 1.2rem sans-serif;
+	margin: 20px 0 10px 10px;
+	font: normal 1.2rem sans-serif;
 }
 
 .users .userDiv {
-	height: 85vh;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -31,7 +29,7 @@
 
 .users .userDiv div {
 	border: 1px solid #ddd;
-	margin: 0 50px;
+	margin: 20px;
 	border-radius: 10px;
 }
 
@@ -65,6 +63,8 @@
 .usersBody Footer {
 	background-color: #091520f3;
 	color: #f1f1f1;
+	padding-top: 0px;
+	padding-bottom: 10px;
 }
 
 .usersBody .users .userDiv #userLink {
@@ -74,4 +74,40 @@
 
 .usersBody .users .userDiv p:hover {
 	color: tomato;
+}
+
+/* -------------------------mobile responsiveness styling begins here----------------------------------- */
+
+@media screen and (max-width: 768px) {
+	.gifLoad {
+		width: 100%;
+	}
+
+	.gifLoad img {
+		width: 50px !important;
+	}
+
+	.gifLoad h1 {
+		font-size: 12px !important;
+	}
+
+	.users {
+		width: 100%;
+		clear: both;
+		height: auto;
+	}
+
+	.users div h3 {
+		font-size: 14px;
+		padding: 10px;
+	}
+
+	.users div h5 {
+		font-size: 40px;
+		padding: 0px;
+	}
+
+	.users div p {
+		font-size: 10px;
+	}
 }

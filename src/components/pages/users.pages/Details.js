@@ -13,7 +13,7 @@ const Details = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 0);
+		}, 4000);
 	}, []);
 
 	return (
@@ -33,7 +33,7 @@ const Details = () => {
 						<div>
 							<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
 							<NavLink to="/message">
-							<MdMessage id="msgFont"/>
+								<MdMessage id="msgFont" />
 							</NavLink>
 						</div>
 

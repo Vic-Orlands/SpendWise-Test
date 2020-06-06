@@ -12,7 +12,7 @@ const Pickers = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 0);
+		}, 4000);
 	}, []);
 
 	return (

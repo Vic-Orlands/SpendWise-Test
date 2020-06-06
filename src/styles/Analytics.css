@@ -62,46 +62,62 @@
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */
 
 @media screen and (max-width: 768px) {
+	.gifLoad {
+		width: 100%;
+	}
 
-.homeBody h1 {
-	margin: 10px;
-	font: normal 1rem sans-serif;
-}
+	.gifLoad img {
+		width: 50px !important;
+	}
 
-.topShelf {
-	clear: left;
-	overflow: auto;
-	width: 100%;
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	margin-bottom: 20px;
-}
+	.gifLoad h1 {
+		font-size: 12px !important;
+	}
 
-.topShelf div {
-	margin: 20px 10px;
-	border: 1px solid gray;
-	padding: 15px 25px 10px;
-	box-shadow: 0 2px 3px rgba(193, 194, 196, 0.87);
-}
+	.homeBody {
+		width: 100%;
+		clear: left;
+	}
 
-.topShelf h4 {
-	text-align: center;
-	font: bold 20px sans-serif;
-	margin: 10px auto;
-}
+	.homeBody h1 {
+		margin: 10px;
+		font: normal 1rem sans-serif;
+	}
 
-.topShelf h5 {
-	margin: auto;
-	font-size: 10px;
-}
+	.topShelf {
+		clear: left;
+		overflow: auto;
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		margin-bottom: 20px;
+	}
 
-.topShelf div span {
-	margin-left: 10px;
-	font-size: 8px;
-}
+	.topShelf div {
+		margin: 20px 10px;
+		border: 1px solid gray;
+		padding: 15px 25px 10px;
+		box-shadow: 0 2px 3px rgba(193, 194, 196, 0.87);
+	}
 
-.topShelf div .hFont {
-	margin-right: 3px;
-}
+	.topShelf h4 {
+		text-align: center;
+		font: bold 20px sans-serif;
+		margin: 10px auto;
+	}
+
+	.topShelf h5 {
+		margin: auto;
+		font-size: 10px;
+	}
+
+	.topShelf div span {
+		margin-left: 10px;
+		font-size: 8px;
+	}
+
+	.topShelf div .hFont {
+		margin-right: 3px;
+	}
 }

@@ -46,19 +46,13 @@
 
 .pickers .pickerList:hover {
 	background-color: #43434466;
-    padding: 0 15px 0 0;
+	padding: 0 15px 0 0;
 	border-radius: 30px;
 }
 
 .pickers .pickerList h3 {
 	font: normal 1.2rem sans-serif;
 	margin: auto 0;
-}
-
-.pickers .pickerInfo ol {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
 }
 
 .pickers .pickerList #link {
@@ -68,4 +62,50 @@
 
 .pickers .pickerList #link:hover {
 	color: tomato;
+}
+
+/* -------------------------mobile responsiveness styling begins here----------------------------------- */
+
+@media screen and (max-width: 768px) {
+	.gifLoad {
+		width: 100%;
+	}
+
+	.gifLoad img {
+		width: 50px !important;
+	}
+
+	.gifLoad h1 {
+		font-size: 12px !important;
+	}
+
+	.pickers {
+		width: 100%;
+		clear: both;
+	}
+
+	.pickers h1 {
+		margin: 40px 10px;
+		font: normal 1rem sans-serif;
+	}
+
+	.pickers h2 {
+		margin: 0px 0 10px 30px;
+		font: normal 1.2rem sans-serif;
+	}
+
+	.pickers .pickerList img {
+		height: 25px;
+		width: 25px;
+		margin-right: 10px;
+	}
+
+	.pickers .pickerList {
+		margin: 20px 40px;
+	}
+
+	.pickers .pickerList h3 {
+		font: normal 1rem sans-serif;
+		margin: auto 0;
+	}
 }

@@ -46,19 +46,13 @@
 
 .vendors .vendorList:hover {
 	background-color: #43434466;
-    padding: 0 15px 0 0;
+	padding: 0 15px 0 0;
 	border-radius: 30px;
 }
 
 .vendors .vendorList h3 {
 	font: normal 1.2rem sans-serif;
 	margin: auto 0;
-}
-
-.vendors .vendorInfo ol {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
 }
 
 .vendors .vendorList #link {
@@ -68,4 +62,57 @@
 
 .vendors .vendorList #link:hover {
 	color: tomato;
+}
+
+/* -------------------------mobile responsiveness styling begins here----------------------------------- */
+
+@media screen and (max-width: 768px) {
+	.gifLoad {
+		width: 100%;
+	}
+
+	.gifLoad img {
+		width: 50px !important;
+	}
+
+	.gifLoad h1 {
+		font-size: 12px !important;
+	}
+
+	.vendors {
+		width: 100%;
+		min-height: 70vh;
+		clear: both;
+	}
+
+	.vendors h1 {
+		margin: 40px 10px;
+		font: normal 1rem sans-serif;
+	}
+
+	.vendors h2 {
+		margin: 0px 0 10px 30px;
+		font: normal 1.2rem sans-serif;
+	}
+
+	.vendors .vendorList img {
+		height: 25px;
+		width: 25px;
+		margin-right: 10px;
+	}
+
+	.vendors .vendorList {
+		margin: 20px 40px;
+	}
+
+	.vendors .vendorList h3 {
+		font: normal 1rem sans-serif;
+		margin: auto 0;
+	}
+
+	.vendorsBody Footer {
+		background-color: #091520f3;
+		color: #ddd;
+		padding: 10px;
+	}
 }

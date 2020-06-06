@@ -52,7 +52,9 @@ export default class Sidemenu extends Component {
 							<ul>
 								<li onClick={this.toggle}>
 									<MdDashboard className="dashmenuFont" />
-									Dashboards<MdArrowDropDown />
+									<span>
+										Dashboards<MdArrowDropDown />
+									</span>
 								</li>
 								{this.state.open && (
 									<ul id="dropList">
@@ -68,49 +70,53 @@ export default class Sidemenu extends Component {
 								<NavLink to="user">
 									<li>
 										<MdPersonPinCircle className="dashmenuFont" />
-										Users
+										<span>Users</span>
 									</li>
 								</NavLink>
 								<NavLink to="/message">
 									<li>
 										<MdMessage className="dashmenuFont" />
-										Messages
 										<span>
-											<MdArrowDropDown />
+											Messages
+											<span>
+												<MdArrowDropDown />
+											</span>
 										</span>
 									</li>
 								</NavLink>
 								<li>
-									<IoMdStats className="dashmenuFont" />Downloads
+									<IoMdStats className="dashmenuFont" />
+									<span>Downloads</span>
 								</li>
 								<li>
-									<FaBell className="dashmenuFont" /> Notifications
+									<FaBell className="dashmenuFont" />
+									<span>Notifications</span>
 								</li>
 
 								<li>
 									<FaEdit className="dashmenuFont" />
-									Transactions
+									<span>Transactions</span>
 								</li>
 								<NavLink to="/dump">
 									<li>
 										<RiDeleteBin6Line className="dashmenuFont" />
-										DumpSites
+										<span>DumpSites</span>
 									</li>
 								</NavLink>
 
 								<li>
 									<MdPerson className="dashmenuFont" />
-									Profile
+									<span>Profile</span>
 								</li>
 
 								<li>
 									<MdLocalPostOffice className="dashmenuFont" />
-									Posts
+									<span>Posts</span>
 								</li>
 
 								<li>
 									<MdChat className="dashmenuFont" />
-									Chat
+									<span>Chat</span>
 								</li>
 							</ul>
 						</div>
