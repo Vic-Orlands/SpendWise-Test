@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment';
 import Message from './Messages';
 import '../../styles/FullMessage.css';
 
@@ -71,8 +70,6 @@ class Pickers extends Component {
 								{messages.map((msg) => (
 									<h4>
 										{msg}
-										<span />
-										<Moment fromNow>1976-04-19T12:59-0500</Moment>
 									</h4>
 								))}
 							</div>
