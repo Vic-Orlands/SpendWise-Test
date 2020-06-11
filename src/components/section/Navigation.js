@@ -166,20 +166,20 @@ export default class Navigation extends Component {
 					<IoIosMailUnread id="navMsg" />
 
 					<div className="navProfileDrop">
-						<h1>Welcome, Admin</h1>
-						<MdArrowDropDown className="dropdownTogggle" onClick={this.toggle} />
+						<h1 onClick={this.toggle}>Welcome, Admin</h1>
+						<MdArrowDropDown className="dropdownToggle" onClick={this.toggle} />
 						{this.state.open && (
 							<ul className="dropdownMenuList">
 								<li>
-									<MdPerson id="dropdownFont" />My Profile
+									<MdPerson id="dropdownFont" />Edit Profile
+								</li>
+								<li>
+									<MdSettings id="dropdownFont" /> Settings
 								</li>
 								<li>
 									<NavLink to="/" id="link">
-										<MdMessage id="dropdownFont" /> Inbox
+										<IoMdLogOut id="dropdownFont" /> Logout
 									</NavLink>
-								</li>
-								<li>
-									<IoMdLogOut id="dropdownFont" /> Logout
 								</li>
 							</ul>
 						)}

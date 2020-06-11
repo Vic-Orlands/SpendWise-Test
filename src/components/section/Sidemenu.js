@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaDashcube, FaEdit, FaBell } from 'react-icons/fa';
+import { FaEdit, FaBell } from 'react-icons/fa';
 import {
-	MdMessage,
 	MdArrowDropDown,
 	MdSettings,
 	MdPerson,
@@ -11,8 +10,10 @@ import {
 	MdChat,
 	MdPersonPinCircle
 } from 'react-icons/md';
-import { IoMdLogOut, IoMdStats, IoMdBrowsers } from 'react-icons/io';
+import { IoMdLogOut, IoMdStats, IoMdBrowsers, IoIosLeaf } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { AiOutlineMinus } from 'react-icons/ai';
+import { BsEnvelope } from 'react-icons/bs';
 
 import '../../styles/Sidemenu.css';
 
@@ -34,13 +35,11 @@ export default class Sidemenu extends Component {
 				<div>
 					{/* menu profile quick info */}
 					<div className="sideBody-Intro">
-						<FaDashcube style={{ marginRight: 5, marginTop: -3.5 }} id="font" />
+						<IoIosLeaf id="font" />
 						<span>WM-HAS ADMIN PANEL</span>
 
-						<h2>Innocent Chimezie</h2>
-						<h4>admin</h4>
-
 						<img src={require('../../assets/logo.PNG')} alt="admin img" />
+						<h4>admin</h4>
 					</div>
 					{/* menu profile quick info */}
 
@@ -48,26 +47,31 @@ export default class Sidemenu extends Component {
 					{/* sidebar menu */}
 					<div>
 						<div className="dashSection">
-							<h3>APPLICATIONS</h3>
+							<h3>NAVIGATION</h3>
 							<ul>
 								<li onClick={this.toggle}>
 									<MdDashboard className="dashmenuFont" />
-									<span>
-										Dashboards<MdArrowDropDown />
-									</span>
+									<span>Dashboards</span>
+									<MdArrowDropDown id="dropFont" />
 								</li>
 								{this.state.open && (
 									<ul id="dropList">
 										<NavLink to="/home">
-											<li>Analytics</li>
+											<li>
+												<AiOutlineMinus id="lineFont" />
+												Home
+											</li>
 										</NavLink>
-										<NavLink to="/project">
-											<li>Project</li>
+										<NavLink to="/analytics">
+											<li>
+												<AiOutlineMinus id="lineFont" />
+												Analytics
+											</li>
 										</NavLink>
 									</ul>
 								)}
 
-								<NavLink to="user">
+								<NavLink to="/users">
 									<li>
 										<MdPersonPinCircle className="dashmenuFont" />
 										<span>Users</span>
@@ -75,12 +79,9 @@ export default class Sidemenu extends Component {
 								</NavLink>
 								<NavLink to="/message">
 									<li>
-										<MdMessage className="dashmenuFont" />
+										<BsEnvelope className="dashmenuFont" />
 										<span>
 											Messages
-											<span>
-												<MdArrowDropDown />
-											</span>
 										</span>
 									</li>
 								</NavLink>

@@ -7,65 +7,24 @@
 	font-family: sans-serif;
 }
 
-.generateBody Footer {
-	background-color: #091520f3;
-	color: #ddd;
+.generateBody .gifLoad {
+	width: 62%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.generateBody .gifLoad img {
+	align-self: center;
+	margin-left: 240px;
 }
 
 .generators {
-	width: 78%;
+	width: 62%;
+	min-height: 100vh;
 	float: right;
-	background-color: #091520f3;
-	color: #ddd;
-	min-height: 90vh;
-}
-
-.generators h1 {
-	margin: 10px 0 10px 27px;
-	font: normal 1.2rem sans-serif;
-}
-
-.generators h2 {
-	margin: 50px 0 10px 50px;
-	font: normal 1.2rem sans-serif;
-}
-
-.generators .generatorList img {
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-	background-color: #fff;
-	margin-right: 10px;
-}
-
-.generators .generatorList {
-	display: flex;
-	margin: 20px 50px;
-	padding: 0px;
-}
-
-.generators .vendorList:hover {
-	background-color: #43434466;
-    padding: 0 15px 0 0;
-	border-radius: 30px;
-}
-
-.generators .generatorList h3 {
-	font: normal 1.2rem sans-serif;
-	margin: auto 0;
-}
-
-.generators .generatorInfo ol {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-}
-
-.generators .generatorList #link {
-	color: #ddd;
-	text-decoration: none;
-}
-
-.generators .generatorList #link:hover {
-	color: tomato;
+	background-color: #e9ecef;
+	color: #000000;
+	margin-top: 60px;
 }

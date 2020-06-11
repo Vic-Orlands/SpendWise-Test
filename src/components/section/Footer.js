@@ -8,6 +8,7 @@ const Footer = () => {
 			{/* footer content */}
 			<footer>
 				<h3>
+					Copyright &copy; 2020  | 
 					Created with <IoIosHeart className="footerFont" /> by wm-has developers
 				</h3>
 			</footer>

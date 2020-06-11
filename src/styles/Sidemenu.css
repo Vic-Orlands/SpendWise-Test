@@ -7,14 +7,15 @@
 }
 
 .sideBody {
-	background-color: #121212;
+	background-color: #1d2939;
 	color: #fff;
 	position: fixed;
 	height: 100%;
-	width: 22%;
+	width: 18%;
 	overflow: auto;
 	/* overflow-y: scroll; */
 	scroll-behavior: smooth;
+	z-index: 99;
 }
 
 .sideBody::-webkit-scrollbar {
@@ -23,33 +24,42 @@
 
 .sideBody-Intro {
 	text-align: center;
-	padding-top: 10px;
+	padding-top: 30px;
 	padding-bottom: 30px;
 	letter-spacing: 1px;
-	background-color: #192835;
+	background-color: #1d2939;
 }
 
-.sideBody-Intro img {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	margin-bottom: -80px;
-	background-color: #121212;
+.sideBody-Intro #font {
+	font-size: 18px;
+	margin-right: 2px;
+	color: green;
 }
 
 .sideBody-Intro h2 {
 	font-size: 14px;
-	margin: 80px 0 10px;
+}
+
+.sideBody-Intro img {
+	display: block;
+	margin: 35px auto 10px;
+	width: 100px;
+	border: 1px solid green;
+	border-radius: 50%;
+	padding: 18px 0px;
+	background: #000;
 }
 
 .sideBody-Intro h4 {
-	font-size: 12px;
-	color: #456d7b;
+	font-size: 14px;
+	opacity: .6;
 }
 
 .dashSection h3 {
-	font-size: 14px;
-	margin: 40px 30px 10px;
+	font-size: 12px;
+	margin: 0px 30px 10px;
+	letter-spacing: 1px;
+	opacity: .5;
 }
 
 .dashSection ul li {
@@ -59,10 +69,12 @@
 	list-style: none;
 	color: #fff;
 	cursor: pointer;
+	opacity: .5;
 }
 
 .dashSection ul li:hover {
-	background-color: #43434466;
+	background-color: #03c7a9;
+	opacity: 1;
 	margin-left: 0px;
 	margin-right: 10px;
 	padding-left: 30px;
@@ -70,42 +82,58 @@
 	border-bottom-right-radius: 25px;
 }
 
-.dashSection #dropList {
-	margin-left: 40px;
+.dashSection ul #dropList {
+	background-color: #27384ec1;
 }
 
 .dashSection ul a:hover {
-	color: tomato;
 	cursor: pointer;
 	text-decoration: none;
 }
 
 .dashSection ul li:active,
 .dashSection ul a:active {
-	color: tomato;
 	outline: none;
 }
 
 .dashSection .dashmenuFont {
 	margin-right: 20px;
-	font-size: 18px;
+	font-size: 20px;
+}
+
+.dashSection #dropFont {
+	font-size: 20px;
+	margin-left: 100px;
+}
+
+.dashSection #dropFont2 {
+	font-size: 20px;
+	margin-left: 110px;
+}
+
+.dashSection #lineFont {
+	font-size: 12px;
+	margin: auto 20px auto 5px;
 }
 
 .sidemenu-footer {
 	margin-left: 12%;
-	padding-bottom: 15px;
+	margin-top: 35px;
+	padding-bottom: 20px;
 }
 
 .sidemenu-footer a {
-	font-size: 12px;
+	font-size: 14px;
 	margin: 0 20px;
-	background-color: #192835;
+	background-color: #415c80f1;
 	border-radius: 50%;
-	padding: 5px 7px;
+	padding: 4px 8px;
+	display: inline-block;
+	cursor: pointer;
 }
 
 .sidemenu-footer a:hover {
-	background-color: rgba(16, 66, 107, 0.87);
+	background-color: #25456ef1;
 }
 
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */

@@ -8,22 +8,22 @@
 
 footer {
    position: relative;
-	width: 78%;
+	width: 82%;
     float: right;
     padding-top: 20px;
     margin-bottom: 0%;
-    background-color: #ddd;
+	background-color: rgba(233, 233, 233, 0.952);
 	color: #102231;
 }
 
 footer h3 {
     text-align: center;
-    font: 12px sans-serif;
+    font: 14px sans-serif;
 }
 
 footer .footerFont {
     color: red;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */

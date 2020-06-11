@@ -1,178 +1,160 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdMail, MdRefresh, MdDelete } from 'react-icons/md';
-import { IoIosSend } from 'react-icons/io';
-import { BsThreeDotsVertical } from 'react-icons/bs';
 
 import Navigation from '../section/Navigation';
 import Sidemenu from '../section/Sidemenu';
 import Footer from '../section/Footer';
 import '../../styles/Messages.css';
 
-const Messages = () => {
-	const [state, setState ] = useState({
-		name: '',
-		message: ''
-	})
-	const [ loading, setLoading ] = useState(true);
+class Messages extends Component {
+	render() {
+		return (
+			<div>
+				<Navigation />
+				<Sidemenu />
 
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 8000);
-	}, []);
-
-	const handleChange = (input) => (e) => {
-		setState({
-			[input]: e.target.value
-		})
-	}
-	
-	return (
-		<div>
-			<Navigation />
-			<Sidemenu />
-
-			{loading ? (
-				<div className="gifLoad">
-					<img src={require('../../assets/load.gif')} alt="Loading..." />
-					<h1> Loading, please be patient </h1>
-				</div>
-			) : (
-				<section className="messageBody">
+				<section className="message">
 					<div>
-						<h1>Messages</h1>
-					</div>
-
-					<div className="displayShelf">
-						<div>
-							<h5>
-								<MdMail className="mFont" />Overall Messages
-							</h5>
-							<h4>2500</h4>
-							<p>This month</p>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
 						</div>
 
-						<div>
-							<h5>
-								<IoIosSend className="mFont" />Sent Messages
-							</h5>
-							<h4>2500</h4>
-							<p>This month</p>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
 						</div>
 
-						<div>
-							<h5>
-								<MdRefresh className="mFont" />Received Messages
-							</h5>
-							<h4>2500</h4>
-							<p>This month</p>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
 						</div>
-					</div>
 
-					<MdDelete className="removeFont" />
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
+						</div>
 
-					<div className="tableContainer table-responsive">
-						<table className="table">
-							<tbody>
-								<tr>
-									<NavLink to="/readmsg" id="msgLink">
-										<td handleChange={handleChange} values={state.name}>
-											<input type="checkbox" />Innocent Chimezie
-										</td>
-										<td handleChange={handleChange} values={state.message}>
-											Hello, I'm a businessman based in Owerri. I came across this site and loved
-											it
-										</td>
-										<td>
-											<BsThreeDotsVertical />
-										</td>
-									</NavLink>
-								</tr>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
+						</div>
 
-								<tr>
-									<NavLink to="/readmsg" id="msgLink">
-										<td>
-											<input type="checkbox" />Innocent Chimezie
-										</td>
-										<td>
-											Hello, I'm a businessman based in Owerri. I came across this site and loved
-											it
-										</td>
-										<td>
-											<BsThreeDotsVertical />
-										</td>
-									</NavLink>
-								</tr>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
+						</div>
 
-								<tr>
-									<NavLink to="/readmsg" id="msgLink">
-										<td>
-											<input type="checkbox" />Innocent Chimezie
-										</td>
-										<td>
-											Hello, I'm a businessman based in Owerri. I came across this site and loved
-											it
-										</td>
-										<td>
-											<BsThreeDotsVertical />
-										</td>
-									</NavLink>
-								</tr>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
+						</div>
 
-								<tr>
-									<NavLink to="/readmsg" id="msgLink">
-										<td>
-											<input type="checkbox" />Innocent Chimezie
-										</td>
-										<td>
-											Hello, I'm a businessman based in Owerri. I came across this site and loved
-											it
-										</td>
-										<td>
-											<BsThreeDotsVertical />
-										</td>
-									</NavLink>
-								</tr>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
+						</div>
 
-								<tr>
-									<NavLink to="/readmsg" id="msgLink">
-										<td>
-											<input type="checkbox" />Innocent Chimezie
-										</td>
-										<td>
-											Hello, I'm a businessman based in Owerri. I came across this site and loved
-											it
-										</td>
-										<td>
-											<BsThreeDotsVertical />
-										</td>
-									</NavLink>
-								</tr>
-
-								<tr>
-									<NavLink to="/readmsg" id="msgLink">
-										<td>
-											<input type="checkbox" />Innocent Chimezie
-										</td>
-										<td>
-											Hello, I'm a businessman based in Owerri. I came across this site and loved
-											it
-										</td>
-										<td>
-											<BsThreeDotsVertical />
-										</td>
-									</NavLink>
-								</tr>
-							</tbody>
-						</table>
+						<div className="messageDiv">
+							<div>
+								<NavLink to="/message" id="messageLink">
+									<h3>
+										Socrates Itunay<span>(4)</span>
+									</h3>
+								</NavLink>
+								<p>
+									I should be incapable of drawing a single stroke at the present moment; and yet I
+									feel that I never...
+								</p>
+							</div>
+							<p>10hours ago</p>
+						</div>
 					</div>
 				</section>
-			)}
-
-			<Footer />
-		</div>
-	);
-};
+				<Footer />
+			</div>
+		);
+	}
+}
 
 export default Messages;

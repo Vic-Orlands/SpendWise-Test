@@ -37,7 +37,7 @@ class Satisfied extends Component {
 			]
 		};
 		return (
-			<div className="chartBody">
+			<div className="chart">
 				<h2>User's Satisfaction</h2>
 				<CanvasJSChart
 					options={options}

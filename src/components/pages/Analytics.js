@@ -15,11 +15,11 @@ const Analytics = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 8000);
+		}, 4000);
 	}, []);
 
 	return (
-		<div>
+		<div className="analyticsBody">
 			<Navigation />
 			<Sidemenu />
 
@@ -29,12 +29,12 @@ const Analytics = () => {
 					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
-				<section className="homeBody">
+				<section className="analytics">
 					<div>
-						<h1>Home</h1>
+						<h1>Analytics</h1>
 					</div>
 
-					<div className="topShelf">
+					<div className="shelf">
 						<div>
 							<h5>
 								<IoIosPerson className="hFont" /> Waste Recyclers
@@ -89,7 +89,8 @@ const Analytics = () => {
 
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" />Waste Management <br /> <span style={{marginLeft: 20}}>Agencies</span>
+								<IoIosPerson className="hFont" />Waste Management <br />{' '}
+								<span style={{ marginLeft: 20 }}>Agencies</span>
 							</h5>
 							<h4>4</h4>
 							<p>
@@ -113,20 +114,19 @@ const Analytics = () => {
 								<IoIosPerson className="hFont" />Eye witnesses
 							</h5>
 							<h4>15</h4>
-							<p>
-								From last week
-							</p>
+							<p>From last week</p>
 						</div>
-
 					</div>
 
+					<div className="charts">
 					<App />
 
 					<Satisfied />
+					</div>
+					<Footer />
 				</section>
 			)}
 
-			<Footer />
 		</div>
 	);
 };

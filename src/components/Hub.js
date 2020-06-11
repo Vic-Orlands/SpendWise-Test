@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Load from './Loading/Load';
-import Analytics from './pages/Analytics';
+import Home from './pages/Home';
 
 const Hub = () => {
 	const [ loading, setLoading ] = useState(true);
@@ -10,7 +10,7 @@ const Hub = () => {
 			setLoading({
 				loading: false
 			});
-		}, 8000);
+		}, 5000);
 	});
 
 	return (
@@ -19,7 +19,7 @@ const Hub = () => {
 				<Load />
 			) : (
 				<main className="body">
-					<Analytics />
+					<Home />
 				</main>
 			)}
 		</body>

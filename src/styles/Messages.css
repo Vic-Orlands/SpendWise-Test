@@ -4,97 +4,59 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: sans-serif;
 }
 
-.messageBody {
-	width: 80%;
-	float: right;
-	color: rgba(17, 44, 66, 0.87);
-	margin-bottom: 40px;
+.message {
+	background-color: #ffffff;
+	color: #424141c2;
+	position: fixed;
+	top: 60px;
+	left: 18%;
+	width: 20%;
+	height: 100vh;
+	overflow: auto;
+	padding-top: 15px;
+	z-index: 20;
+	border-top: .4px solid rgba(199, 199, 199, 0.429);
+	box-shadow: 1px 4px 10px rgba(0, 0, 0, .2);
 }
 
-.messageBody h1 {
-    margin: 20px 0 0 27px;
-    font: normal 1.2rem sans-serif;
+.message::-webkit-scrollbar {
+	width: 0px;
 }
 
-.messageBody .removeFont {
-	font-size: 20px;
-	float: right;
-	margin: 10px 50px -20px 0px;
-}
-
-.displayShelf {
-    clear: left;
-    overflow: auto;
-    width: 95%;
-    margin: 20px auto;
+.message .messageDiv {
 	display: flex;
-    justify-content: space-evenly;
-	background-color: rgba(17, 44, 66, 0.87);
-    color: #fff;
-	box-shadow: 0 2px 3px rgba(193, 194, 196, 0.87);
+	justify-content: space-between;
+	margin-bottom: 20px;
+	padding: 0 10px;
+	border-bottom: 1px solid #a3a2a2c2;
 }
 
-.displayShelf div {
-	margin: 20px 0;
-	border-right: 2px solid #fff;
-	padding-right: 100px;
-	padding-left: 0px;
+.message .messageDiv:nth-last-child(1) {
+	border-bottom: none;
 }
 
-.displayShelf div:last-child {
-	border-right: none;
-	padding-right: 0px;
+.message .messageDiv div {
+	margin: 10px;
 }
 
-.displayShelf h4 {
-	text-align: center;
-	font: bold 30px sans-serif;
-	margin: auto;
+.message .messageDiv div p {
+	color: #424141c2;
+	letter-spacing: 0px;
 }
 
-.displayShelf h5 {
-	margin: auto;
+.message .messageDiv div h3 {
+	font-size: 14px;
 }
 
-.displayShelf div p {
-    font-size: 10px;
+.message .messageDiv div h3:hover {
+	letter-spacing: .4px;
+	transition: letter-spacing ease-in-out 270ms;
 }
 
-.displayShelf div .mFont {
-	margin-right: 3px;
-}
-
-.messageBody .tableContainer {
-	width: 95%;
-	margin: auto;
-	clear: both;
-}
-
-.messageBody .tableContainer tr {
-	text-align: center;
-}
-
-.messageBody .tableContainer td {
-	padding: 15px;
-}
-
-.messageBody .tableContainer .table {
-	margin: 20px auto;
-	border: 1px solid rgb(209, 199, 199);
-}
-
-.messageBody .tableContainer input {
-	display: inline-block;
-	margin: auto 25px auto -25px;
-}
-
-.messageBody .tableContainer #msgLink {
-	color: #000;
+.message .messageDiv #messageLink {
 	text-decoration: none;
-}
-
-.messageBody .tableContainer #msgLink:hover {
-	color: rgba(19, 112, 184, 0.986);
+	margin: auto 0;
 }

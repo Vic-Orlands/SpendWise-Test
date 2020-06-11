@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../../../styles/users.styles/Pickers.css';
-
-import Navigation from '../../section/Navigation';
-import Sidemenu from '../../section/Sidemenu';
-import Footer from '../../section/Footer';
 import { NavLink } from 'react-router-dom';
+import Users from '../Users';
+import '../../../styles/users.styles/Pickers.css';
 
 const Pickers = () => {
 	const [ loading, setLoading ] = useState(true);
@@ -17,142 +14,109 @@ const Pickers = () => {
 
 	return (
 		<div className="pickersBody">
-			<Navigation />
-			<Sidemenu />
+			<Users />
 
 			{loading ? (
 				<div className="gifLoad">
 					<img src={require('../../../assets/load.gif')} alt="Loading..." />
-					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
 				<section className="pickers">
 					<h1>Users</h1>
-					<h2>List of Waste Pickers</h2>
 
 					<section className="pickerInfo">
-						<ol>
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Odinaka Uche
-									</NavLink>
-								</h3>
-							</li>
+						<div className="pickerUsers">
+							<div>
+								<header>
+									<h2>All Pickers</h2>
+								</header>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Innocent Chimezie
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
 									<NavLink to="/details" id="link">
-										Favour Chris
+										<h2>View</h2>
 									</NavLink>
-								</h3>
-							</li>
+								</div>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Bene Paul
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Amaizu</h3>
+										<h4>maconzy12@gmail.com</h4>
+									</hgroup>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Onyeulo Melody
-									</NavLink>
-								</h3>
-							</li>
+									<h2>View</h2>
+								</div>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Shegs Daniel
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Paul Ibekwe
-									</NavLink>
-								</h3>
-							</li>
+									<h2>View</h2>
+								</div>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Odinaka Uche
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>melody</h3>
+										<h4>mels@gmail.com</h4>
+									</hgroup>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Shegs Daniel
-									</NavLink>
-								</h3>
-							</li>
+									<h2>View</h2>
+								</div>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Shegs Daniel
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Shegs Daniel
-									</NavLink>
-								</h3>
-							</li>
+									<h2>View</h2>
+								</div>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Shegs Daniel
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Zlatan</h3>
+										<h4>burna@gmail.com</h4>
+									</hgroup>
 
-							<li className="pickerList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Shegs Daniel
-									</NavLink>
-								</h3>
-							</li>
-						</ol>
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+							</div>
+						</div>
 					</section>
 				</section>
 			)}
-			<Footer />
 		</div>
 	);
 };

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../../styles/users.styles/Generators.css';
-
-import Navigation from '../../section/Navigation';
-import Sidemenu from '../../section/Sidemenu';
+import Users from '../Users';
 import Footer from '../../section/Footer';
 import { NavLink } from 'react-router-dom';
 
@@ -12,98 +10,115 @@ const Generators = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 0);
+		}, 4000);
 	}, []);
 
 	return (
 		<div className="generateBody">
-			<Navigation />
-			<Sidemenu />
+			<Users />
 
 			{loading ? (
 				<div className="gifLoad">
 					<img src={require('../../../assets/load.gif')} alt="Loading..." />
-					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
-				<section className="generators">
+				<section className="pickers">
 					<h1>Users</h1>
-					<h2>List of Waste Pickers</h2>
 
-					<section className="generatorInfo">
-						<ol>
-							<li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Odinaka Uche
-									</NavLink>
-								</h3>
-							</li>
+					<section className="pickerInfo">
+						<div className="pickerUsers">
+							<div>
+								<header>
+									<h2>All Waste Generators</h2>
+								</header>
 
-							<li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Innocent Chimezie
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
 
-							<li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Favour Chris
+									<NavLink to="/details">
+										<h2>View</h2>
 									</NavLink>
-								</h3>
-							</li>
+								</div>
 
-                            <li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Innocent Chimezie
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Amaizu</h3>
+										<h4>maconzy12@gmail.com</h4>
+									</hgroup>
 
-                            <li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Innocent Chimezie
-									</NavLink>
-								</h3>
-							</li>
+									<h2>View</h2>
+								</div>
 
-                            <li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Innocent Chimezie
-									</NavLink>
-								</h3>
-							</li>
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
 
-                            <li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Innocent Chimezie
-									</NavLink>
-								</h3>
-							</li>
+									<h2>View</h2>
+								</div>
 
-                            <li className="generatorList">
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h3>
-									<NavLink to="/details" id="link">
-										Innocent Chimezie
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Amaizu</h3>
+										<h4>maconzy12@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+
+									<NavLink to="/details">
+										<h2>View</h2>
 									</NavLink>
-								</h3>
-							</li>
-						</ol>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Amaizu</h3>
+										<h4>maconzy12@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+
+									<NavLink to="/details">
+										<h2>View</h2>
+									</NavLink>
+								</div>
+							</div>
+						</div>
 					</section>
 				</section>
 			)}

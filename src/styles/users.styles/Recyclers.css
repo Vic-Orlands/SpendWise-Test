@@ -7,112 +7,24 @@
 	font-family: sans-serif;
 }
 
-.recycleBody Footer {
-	background-color: #091520f3;
-	color: #ddd;
+.recycleBody .gifLoad {
+	width: 62%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.recycleBody .gifLoad img {
+	align-self: center;
+	margin-left: 240px;
 }
 
 .recyclers {
-	width: 78%;
+	width: 62%;
+	min-height: 100vh;
 	float: right;
-	background-color: #091520f3;
-	color: #ddd;
-	min-height: 90vh;
-}
-
-.recyclers h1 {
-	margin: 10px 0 10px 27px;
-	font: normal 1.2rem sans-serif;
-}
-
-.recyclers h2 {
-	margin: 50px 0 10px 50px;
-	font: normal 1.2rem sans-serif;
-}
-
-.recyclers .recycleList img {
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-	background-color: #fff;
-	margin-right: 10px;
-}
-
-.recyclers .recycleList {
-	display: flex;
-	margin: 20px 50px;
-	padding: 0px;
-}
-
-.recyclers .recycleList:hover {
-	background-color: #43434466;
-    padding: 0 15px 0 0;
-	border-radius: 30px;
-}
-
-.recyclers .recycleList h3 {
-	font: normal 1.2rem sans-serif;
-	margin: auto 0;
-}
-
-.recyclers .recycleList #link {
-	color: #ddd;
-	text-decoration: none;
-}
-
-.recyclers .recycleList #link:hover {
-	color: tomato;
-}
-
-/* -------------------------mobile responsiveness styling begins here----------------------------------- */
-
-@media screen and (max-width: 768px) {
-	.gifLoad {
-		width: 100%;
-	}
-
-	.gifLoad img {
-		width: 50px !important;
-	}
-
-	.gifLoad h1 {
-		font-size: 12px !important;
-	}
-
-	.recyclers {
-		width: 100%;
-		min-height: 100vh;
-		clear: both;
-	}
-
-	.recyclers h1 {
-		margin: 40px 10px;
-		font: normal 1rem sans-serif;
-	}
-
-	.recyclers h2 {
-		margin: 0px 0 10px 30px;
-		font: normal 1.2rem sans-serif;
-	}
-
-	.recyclers .recycleList img {
-		height: 25px;
-		width: 25px;
-		margin-right: 10px;
-	}
-
-	.recyclers .recycleList {
-		margin: 20px 40px;
-	}
-
-	.recyclers .recycleList h3 {
-		font: normal 1rem sans-serif;
-		margin: auto 0;
-	}
-
-	.recycleBody Footer {
-		background-color: #091520f3;
-		color: #ddd;
-		padding: 10px;
-	}
+	background-color: #e9ecef;
+	color: #000000;
+	margin-top: 60px;
 }
