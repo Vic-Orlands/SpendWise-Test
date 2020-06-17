@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import Users from '../Users';
+import Vendors from './Vendors';
 import '../../../styles/users.styles/Pickers.css';
 
 const Pickers = () => {
@@ -14,7 +14,7 @@ const Pickers = () => {
 
 	return (
 		<div className="pickersBody">
-			<Users />
+			<Vendors />
 
 			{loading ? (
 				<div className="gifLoad">
@@ -49,8 +49,9 @@ const Pickers = () => {
 										<h3>Amaizu</h3>
 										<h4>maconzy12@gmail.com</h4>
 									</hgroup>
-
-									<h2>View</h2>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
 								</div>
 
 								<div className="allUsers">
@@ -59,8 +60,9 @@ const Pickers = () => {
 										<h3>okon</h3>
 										<h4>okon@gmail.com</h4>
 									</hgroup>
-
-									<h2>View</h2>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
 								</div>
 
 								<div className="allUsers">
@@ -69,8 +71,9 @@ const Pickers = () => {
 										<h3>melody</h3>
 										<h4>mels@gmail.com</h4>
 									</hgroup>
-
-									<h2>View</h2>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
 								</div>
 
 								<div className="allUsers">
@@ -79,8 +82,9 @@ const Pickers = () => {
 										<h3>Innocent</h3>
 										<h4>innocent39@gmail.com</h4>
 									</hgroup>
-
-									<h2>View</h2>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
 								</div>
 
 								<div className="allUsers">
@@ -89,8 +93,9 @@ const Pickers = () => {
 										<h3>Zlatan</h3>
 										<h4>burna@gmail.com</h4>
 									</hgroup>
-
-									<h2>View</h2>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
 								</div>
 
 								<div className="allUsers">
@@ -99,8 +104,9 @@ const Pickers = () => {
 										<h3>okon</h3>
 										<h4>okon@gmail.com</h4>
 									</hgroup>
-
-									<h2>View</h2>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
 								</div>
 
 								<div className="allUsers">
@@ -109,8 +115,9 @@ const Pickers = () => {
 										<h3>Innocent</h3>
 										<h4>innocent39@gmail.com</h4>
 									</hgroup>
-
-									<h2>View</h2>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
 								</div>
 							</div>
 						</div>

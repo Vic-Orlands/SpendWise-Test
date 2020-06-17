@@ -8,9 +8,10 @@ import {
 	MdDashboard,
 	MdLocalPostOffice,
 	MdChat,
-	MdPersonPinCircle
+	MdPersonPinCircle,
+	MdPhoneAndroid
 } from 'react-icons/md';
-import { IoMdLogOut, IoMdStats, IoMdBrowsers, IoIosLeaf } from 'react-icons/io';
+import { IoMdLogOut, IoMdStats, IoMdBrowsers, IoIosLeaf, IoIosPhoneLandscape } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { BsEnvelope } from 'react-icons/bs';
@@ -19,13 +20,21 @@ import '../../styles/Sidemenu.css';
 
 export default class Sidemenu extends Component {
 	state = {
-		open: false
+		open: false,
+		drop: false
 	};
 
-	toggle = (e) => {
+	toggleDashboard = (e) => {
 		e.preventDefault();
 		this.setState({
 			open: !this.state.open
+		});
+	};
+
+	dropdownUsers = (e) => {
+		e.preventDefault();
+		this.setState({
+			drop: !this.state.drop
 		});
 	};
 
@@ -49,7 +58,7 @@ export default class Sidemenu extends Component {
 						<div className="dashSection">
 							<h3>NAVIGATION</h3>
 							<ul>
-								<li onClick={this.toggle}>
+								<li onClick={this.toggleDashboard}>
 									<MdDashboard className="dashmenuFont" />
 									<span>Dashboards</span>
 									<MdArrowDropDown id="dropFont" />
@@ -71,18 +80,32 @@ export default class Sidemenu extends Component {
 									</ul>
 								)}
 
-								<NavLink to="/users">
-									<li>
-										<MdPersonPinCircle className="dashmenuFont" />
-										<span>Users</span>
-									</li>
-								</NavLink>
+								<li onClick={this.dropdownUsers} className="mobileUsers">
+									<MdPhoneAndroid id="lineFont" />
+									<span>Mobile Users</span>
+									<MdArrowDropDown id="dropFont" />
+								</li>
+								{this.state.drop && (
+									<ul id="dropList">
+										<NavLink to="/users">
+											<li>
+												<MdPerson id="lineFont" className="userFont" />
+												Users
+											</li>
+										</NavLink>
+										<NavLink to="/vendors">
+											<li>
+												<MdPersonPinCircle className="dashmenuFont" />
+												Vendors
+											</li>
+										</NavLink>
+									</ul>
+								)}
+
 								<NavLink to="/message">
 									<li>
 										<BsEnvelope className="dashmenuFont" />
-										<span>
-											Messages
-										</span>
+										<span>Messages</span>
 									</li>
 								</NavLink>
 								<li>

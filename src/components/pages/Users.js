@@ -1,100 +1,124 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../styles/Users.css';
 
-import Navigation from '../section/Navigation';
-import Sidemenu from '../section/Sidemenu';
+import Navigation from '../core.sections/Navigation';
+import Sidemenu from '../core.sections/Sidemenu';
 import { NavLink } from 'react-router-dom';
 
 const Users = () => {
+	const [ loading, setLoading ] = useState(true);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setLoading(false);
+		}, 4000);
+	}, []);
+
 	return (
-		<div className="usersBody">
+		<div>
 			<Navigation />
 			<Sidemenu />
 
-			<section className="users">
-				<div>
-					<div className="userDiv">
-						<div>
-							<h3>
-								Waste Pickers<span>(13)</span>
-							</h3>
-							<p>People who pick wastes</p>
-						</div>
-						<NavLink to="/users" id="userLink">
-							<p>See more</p>
-						</NavLink>
+			<section className="users-container">
+				{loading ? (
+					<div className="gifLoad">
+						<img src={require('../../assets/load.gif')} alt="Loading..." />
 					</div>
+				) : (
+					<section className="users-body">
+						<h1>Users</h1>
 
-					<div className="userDiv">
-						<div>
-							<h3>
-								Waste Vendors<span>(3)</span>
-							</h3>
-							<p>
-								Those that sell and buy<br /> wastes from pickers
-							</p>
-						</div>
-						<NavLink to="/vendors" id="userLink">
-							<p>See more</p>
-						</NavLink>{' '}
-					</div>
+						<section className="list-table">
+							<div className="list-of-users">
+								<header>
+									<h2>All Users</h2>
+								</header>
 
-					<div className="userDiv">
-						<div>
-							<h3>
-								Waste Generators<span>(8)</span>
-							</h3>
-							<p>
-								Consumers that want to <br />dispose or sell off their wastes
-							</p>
-						</div>
-						<NavLink to="/generators" id="userLink">
-							<p>See more</p>
-						</NavLink>{' '}
-					</div>
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
 
-					<div className="userDiv">
-						<div>
-							<h3>
-								Waste Recyclers<span>(9)</span>
-							</h3>
-							<p>
-								Vendors that buy wastes<br /> and recycle them for use
-							</p>
-						</div>
-						<NavLink to="/recyclers" id="userLink">
-							<p>See more</p>
-						</NavLink>{' '}
-					</div>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>
+								</div>
 
-					<div className="userDiv">
-						<div>
-							<h3>
-								Eye Witnesses<span>(4)</span>
-							</h3>
-							<p>
-								Passerbys that report to <br />the platform the nature <br />of our dumpsites
-							</p>
-						</div>
-						<NavLink to="/witness" id="userLink">
-							<p>See more</p>
-						</NavLink>{' '}
-					</div>
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Amaizu</h3>
+										<h4>maconzy12@gmail.com</h4>
+									</hgroup>
 
-					<div className="userDiv">
-						<div>
-							<h3>
-								Waste Agencies<span>(2)</span>
-							</h3>
-							<p>
-								Recycling agaencies that <br />buys wastes for recycling
-							</p>
-						</div>
-						<NavLink to="/agencies" id="userLink">
-							<p>See more</p>
-						</NavLink>{' '}
-					</div>
-				</div>
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>melody</h3>
+										<h4>mels@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Zlatan</h3>
+										<h4>burna@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+
+									<h2>View</h2>
+								</div>
+							</div>
+						</section>
+					</section>
+				)}
 			</section>
 		</div>
 	);

@@ -6,12 +6,10 @@ import Home from './pages/Home';
 import DumpSite from './pages/DumpSites';
 import Analytics from './pages/Analytics';
 
-import Users from './pages/users.pages/Pickers';
-import Vendors from './pages/users.pages/Vendors';
-import Generators from './pages/users.pages/Generators';
-import Recyclers from './pages/users.pages/Recyclers';
-import Witness from './pages/users.pages/Witness';
+import Users from './pages/Users';
+import Pickers from './pages/users.pages/Pickers';
 import Agencies from './pages/users.pages/Agencies';
+import Collecctors from './pages/users.pages/Collectors';
 
 
 import FullMessage from './pages/FullMessage';
@@ -31,11 +29,11 @@ const Router = () => {
 
 					{/* waste users page */}
 					<Route path="/users" component={Users} />
-					<Route path="/vendors" component={Vendors} />
-					<Route path="/generators" component={Generators} />
-					<Route path="/recyclers" component={Recyclers} />
-					<Route path="/witness" component={Witness} />
+
+					{/* vendor-pages */}
+					<Route path="/vendors" component={Pickers} />
 					<Route path="/agencies" component={Agencies} />
+					<Route path="/collectors" component={Collecctors} />
 					{/* waste users page */}
 
 					<Route path="/details" component={userDetails} />

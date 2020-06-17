@@ -9,8 +9,8 @@ import { FiDownload } from 'react-icons/fi';
 import { GiChart } from 'react-icons/gi';
 import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 
-import Navigation from '../section/Navigation';
-import Sidemenu from '../section/Sidemenu';
+import Navigation from '../core.sections/Navigation';
+import Sidemenu from '../core.sections/Sidemenu';
 import '../../styles/Home.css';
 import '../../styles/slider/slider-animation.css';
 import '../../styles/slider/slide.css';
@@ -61,9 +61,9 @@ const Home = () => {
 			{loading ? (
 				<div className="gifLoad">
 					<img src={require('../../assets/load.gif')} alt="Loading..." />
-					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
+				// ------------------------------home jsx starts here----------------------------------------
 				<section className="homeBody">
 					<h1>Home</h1>
 
@@ -104,6 +104,10 @@ const Home = () => {
 							</div>
 						</div>
 					</div>
+					{/* // ------------------------------home jsx starts here---------------------------------------- */}
+
+					{/* ---------------------------------------second grid divs starts here--------------------------------- */}
+					{/* ---------------------------------------second grid divs starts here--------------------------------- */}
 
 					<section className="new-main">
 						<section>
@@ -128,8 +132,8 @@ const Home = () => {
 								</div>
 
 								<div>
-									<h3> Generators</h3>
-									<h5>72 New Members</h5>
+									<h3> Messages</h3>
+									<h5>10 New Messages</h5>
 								</div>
 							</div>
 						</section>
@@ -175,11 +179,11 @@ const Home = () => {
 							<header>
 								<h2>Newly Registered Users</h2>
 
-									<h2>
-								<NavLink to="/users" id="link">
+								<h2>
+									<NavLink to="/users" id="link">
 										See more
-								</NavLink>
-										</h2>
+									</NavLink>
+								</h2>
 							</header>
 
 							<div>

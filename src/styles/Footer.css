@@ -18,12 +18,12 @@ footer {
 
 footer h3 {
     text-align: center;
-    font: 14px sans-serif;
+    font: 10px sans-serif;
 }
 
 footer .footerFont {
     color: red;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { MdMessage, MdArrowUpward, MdArrowDownward, MdError } from 'react-icons/md';
 import { IoIosPerson, IoIosDownload } from 'react-icons/io';
-import Navigation from '../section/Navigation';
-import Sidemenu from '../section/Sidemenu';
-import Footer from '../section/Footer';
+import Navigation from '../core.sections/Navigation';
+import Sidemenu from '../core.sections/Sidemenu';
+import Footer from '../core.sections/Footer';
 import '../../styles/Analytics.css';
 
 import App from '../chart/App';

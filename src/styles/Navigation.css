@@ -1,3 +1,4 @@
+/* -------------------------------stylings starts here----------------------- */
 *,
 *::after,
 *::before {
@@ -5,11 +6,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
-}
-
-.adminNav h1 {
-	font: 12px sans-serif;
-	margin: auto;
 }
 
 .adminNav {
@@ -23,6 +19,7 @@
 	z-index: 20;
 }
 
+/* -------------------------------nav-profile styling starts here----------------------- */
 .navProfile,
 .navProfileDrop {
 	display: flex;
@@ -34,21 +31,22 @@
 }
 
 .navProfileDrop h1 {
+	font-size: 10px;
 	cursor: pointer;
 }
 
 #navBar,
 #navMsg {
-	font-size: 22px;
+	font-size: 18px;
 	color: #858383;
 }
 
 #navBar {
-	display: none
+	display: none;
 }
 
 #navMsg {
-	margin: 5px 0;
+	margin-top: 2px;
 }
 
 .navProfileDrop .dropdownToggle {
@@ -60,8 +58,8 @@
 .navProfileDrop .dropdownMenuList {
 	position: absolute;
 	margin-top: 40px;
-	margin-left: -30px;
-	padding: 10px 10px;
+	margin-left: -20px;
+	padding: 10px 0px;
 	background-color: #ffffff;
 	color: #555555;
 	box-shadow: 1px 4px 10px rgba(0, 0, 0, .2);
@@ -89,6 +87,7 @@
 	margin-left: 0px;
 	color: #009781;
 }
+/* -------------------------------nav-profile styling ends here----------------------- */
 
 .adminNav .sideBody {
 	display: none;
@@ -98,63 +97,61 @@
 
 @media screen and (max-width: 768px) {
 	.adminNav {
-		width: 100%;
-		position: fixed;
-		z-index: 99;
-	}
-
-	.adminNav h1 {
-		font: 12px sans-serif;
-		margin: auto;
-	}
-
-	.adminNav {
-		height: 30px;
+		height: 40px !important;
 	}
 
 	#navBar,
 	#navMsg {
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	#navBar {
 		display: block;
-		margin: 8px 10px;
+		margin: 25% 15px;
 		cursor: pointer;
 	}
 
+	/* ----------------responsive navProfile styling begins here--------------------------- */
 	.navProfileDrop {
-	padding: 0 10px 0 20px;
-}
+		padding: 0 10px 0 20px;
+	}
 
-.navProfileDrop h1{
-	font-size: 10px;
-	margin-left: -10px;
-}
+	.navProfileDrop h1 {
+		font-size: 8px;
+		margin: auto;
+		margin-left: -10px;
+	}
+
+	.navProfileDrop .dropdownToggle {
+		font-size: 12px;
+	}
 
 	.navProfileDrop .dropdownMenuList {
-		margin-top: 24px;
-		margin-left: -10px;
+		margin-top: 30px;
+		margin-left: -20px;
 	}
 
 	.navProfileDrop .dropdownMenuList li {
 		padding: 8px 15px;
-		font-size: 10px;
+		font-size: 8px;
 	}
 
 	.navProfileDrop .dropdownMenuList #dropdownFont {
-		font-size: 12px;
+		font-size: 10px;
 		margin-right: 5px;
 	}
+	/* ----------------responsive navProfile styling ends here--------------------------- */
 
 	/*--------------------------------- sidemenu styling begins here --------------------------*/
 
 	.adminNav .sideBody {
 		display: block !important;
-		width: 34% !important;
+		width: 40% !important;
+		margin-top: 3px;
 		z-index: 2;
 	}
 
+	/* ----------sidemenu intro stylings begins here---------- */
 	.adminNav .sideBody-Intro {
 		padding-top: 5px;
 		padding-bottom: 30px;
@@ -163,13 +160,9 @@
 	}
 
 	.adminNav .sideBody-Intro img {
-		width: 50px;
-		height: 50px;
-		margin-bottom: -90px;
-	}
-
-	.adminNav .sideBody-Intro h2 {
-		display: none;
+		width: 40px;
+		height: 40px;
+		margin-bottom: -100px;
 	}
 
 	.adminNav .sideBody-Intro h4 {
@@ -177,7 +170,7 @@
 	}
 
 	.adminNav .sideBody-Intro #font {
-		font-size: 8px;
+		font-size: 9px;
 		margin-right: 2px !important;
 		margin-top: 0px !important;
 	}
@@ -186,10 +179,13 @@
 		font-size: 9px;
 		letter-spacing: 0px;
 	}
+	/* ----------sidemenu intro stylings ends here---------- */
 
+	/* ----------sidemenu navigation-list stylings begins here---------- */
 	.adminNav .dashSection h3 {
 		font-size: 9px;
-		margin: 20px 10px 10px 20px;
+		margin-top: 80px;
+		margin-left: 20px;
 	}
 
 	.adminNav .dashSection ul {
@@ -198,16 +194,34 @@
 
 	.adminNav .dashSection ul li {
 		margin: 10px 0px 0px 0px;
-		padding: 10px;
-		font-size: 8px;
+		padding: 5px 0px 5px 10px;
+		font-size: 6px;
 	}
 
 	.adminNav .dashSection ul li:hover {
 		padding-left: 10px;
 	}
 
-	.adminNav .dashSection #dropList {
-		margin-left: 40px;
+	.adminNav .dashSection #dropFont {
+		font-size: 12px;
+		margin-left: 30px;
+	}
+
+	.adminNav .dashSection .mobileUsers {
+		margin-left: 4px;
+	}
+
+	.adminNav .dashSection .mobileUsers:hover {
+		padding-left: 19px;
+	}
+
+	.adminNav .dashSection .mobileUsers span {
+		margin-left: -12px;
+		margin-right: 0px;
+	}
+
+	.adminNav .dashSection .mobileUsers #dropFont {
+		margin-left: 26px;
 	}
 
 	.adminNav .dashSection .dashmenuFont {
@@ -215,19 +229,49 @@
 		margin-left: 10px;
 		font-size: 10px;
 	}
+	/* ----dropdown list styling starts  here---- */
+	.adminNav .dashSection #dropList {
+		padding: 0px;
+	}
 
+	.adminNav .dashSection #dropList li {
+		margin: 0px;
+		padding: 10px 0px 10px 30px;
+	}
+
+	.adminNav .dashSection #dropList #lineFont {
+		margin-right: 10px;
+	}
+
+		.adminNav .dashSection #dropList .userFont {
+		margin-left: 5px;
+	}
+
+		.adminNav .dashSection #dropList .dashmenuFont {
+		margin-left: 6px;
+	}
+
+	/* -----dropdown list styling starts  here---- */
+
+	/* ----------sidemenu navigation-list stylings ends here---------- */
+
+	/* ----------sidemenu footer styling starts here---------- */
 	.adminNav .sidemenu-footer {
 		width: 100%;
 		display: flex;
 		justify-content: space-evenly;
-		margin: 0;
 		margin-bottom: 20px;
-		padding-bottom: 20px;
+		padding-bottom: 40px;
 	}
 
 	.adminNav .sidemenu-footer a {
-		font-size: 10px;
-		margin: 0px;
-		padding: 0px 10px;
+		font-size: 8px;
+		background-color: #415c80f1;
+		border-radius: 50%;
+		margin: 0 5px;
+		padding: 3px 6px 5px 6.5px;
+		cursor: pointer;
 	}
+	/* ----------sidemenu footer styling ends here---------- */
 }
+/* -------------------------mobile responsiveness styling ends here----------------------------------- */

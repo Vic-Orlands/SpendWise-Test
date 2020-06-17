@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Load from './Loading/Load';
+import Load from './loaderPage/Load';
 import Home from './pages/Home';
 
 const Hub = () => {

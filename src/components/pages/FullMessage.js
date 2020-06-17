@@ -14,7 +14,7 @@ class Pickers extends Component {
 			this.setState({
 				loading: false
 			});
-		}, 0);
+		},3000);
 	};
 
 	handleChange = (e) => {
@@ -25,15 +25,24 @@ class Pickers extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		this.setState((prevState) => {
-			return {
-				messages: [ ...prevState.messages, this.state.newMessage ],
-				newMessage: (prevState.newMessage = ' ')
-			};
-		});
+		if (e.target.value === null) {
+			this.setState((prevState) => {
+				return {
+					messages: [ ...prevState.messages ],
+				};
+			});
+		} else
+			this.setState((prevState) => {
+				return {
+					messages: [ ...prevState.messages, this.state.newMessage ],
+					newMessage: (prevState.newMessage = ' ')
+				};
+			});
 	};
 
 	render() {
+		let time = new Date().toLocaleString();
+
 		const { loading, newMessage, messages } = this.state;
 		return (
 			<div className="fullMsg">
@@ -46,7 +55,7 @@ class Pickers extends Component {
 				) : (
 					<section className="messages">
 						<div>
-							<img src={require('../../assets/wmhas black.PNG')} alt="user_img" />
+							<img src={require('../../assets/wmhas black.PNG')} alt="img" />
 							<div>
 								<h1>Socrates Itunay</h1>
 								<h3>Oct 20, 2020 8:45am</h3>
@@ -70,11 +79,10 @@ class Pickers extends Component {
 								{messages.map((msg) => (
 									<h4>
 										{msg}
+										<span>{time}</span>
 									</h4>
 								))}
 							</div>
-
-							<input type="file" placeholder="Click to attach a file" />
 
 							<div className="writeMsg">
 								<input

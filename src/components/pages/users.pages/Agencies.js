@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../../styles/users.styles/Agencies.css';
-import Users from '../Users';
-import Footer from '../../section/Footer';
+import Vendors from './Vendors';
+import Footer from '../../core.sections/Footer';
 import { NavLink } from 'react-router-dom';
 
 const Agencies = () => {
@@ -15,7 +15,7 @@ const Agencies = () => {
 
 	return (
 		<div className="agencyBody">
-			<Users />
+			<Vendors />
 
 			{loading ? (
 				<div className="gifLoad">

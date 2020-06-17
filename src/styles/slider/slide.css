@@ -124,17 +124,23 @@
 	padding: 0 15px;
 }
 
-@media (max-height: 500px) {
-	.slider-wrapper,
-	.slide {
-		height: calc(100vh - 75px);
-	}
-}
+/* -----------------------mobile responsiveness styling  starts here---------------------------------- */
 
 @media (max-width: 640px) {
-	.slider-wrapper,
-	.slide {
-		height: calc(80vh - 75px);
+	.slider-wrapper {
+		width: 90vw;
+	}
+
+	.slider-content .inner h2 {
+		font-size: 12px;
+	}
+
+	.slider-content .inner p {
+		font-size: 10px;
+	}
+
+	.what-people-say button {
+		font-size: 10px;
 	}
 }
 

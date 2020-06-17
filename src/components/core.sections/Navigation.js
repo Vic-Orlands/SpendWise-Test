@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../../styles/Nav.css';
+import '../../styles/Navigation.css';
 
-import { FaBars, FaDashcube, FaEdit, FaBell } from 'react-icons/fa';
-import { IoIosMailUnread, IoMdLogOut, IoMdStats, IoMdBrowsers } from 'react-icons/io';
+import { FaBars, FaEdit, FaBell } from 'react-icons/fa';
+import { IoIosMailUnread, IoMdLogOut, IoMdStats, IoIosLeaf, IoMdBrowsers, IoIosPhoneLandscape } from 'react-icons/io';
 import {
-	MdMessage,
 	MdArrowDropDown,
 	MdSettings,
 	MdPerson,
 	MdDashboard,
 	MdLocalPostOffice,
 	MdChat,
-	MdPersonPinCircle
+	MdPersonPinCircle,
+	MdPhoneAndroid
 } from 'react-icons/md';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { AiOutlineMinus } from 'react-icons/ai';
+import { BsEnvelope } from 'react-icons/bs';
 
 export default class Navigation extends Component {
 	state = {
 		open: false,
 		push: false,
-		dropdown: false
-	};
-
-	toggle = (e) => {
-		e.preventDefault();
-		this.setState({
-			open: !this.state.open
-		});
+		drop: false,
+		dropProfile: false
 	};
 
 	pullout = (e) => {
@@ -37,10 +33,24 @@ export default class Navigation extends Component {
 		});
 	};
 
-	drop = (e) => {
+	toggleDashboard = (e) => {
 		e.preventDefault();
 		this.setState({
-			dropdown: !this.state.dropdown
+			open: !this.state.open
+		});
+	};
+
+	dropdownUsers = (e) => {
+		e.preventDefault();
+		this.setState({
+			drop: !this.state.drop
+		});
+	};
+
+	dropProfile = (e) => {
+		e.preventDefault();
+		this.setState({
+			dropProfile: !this.state.dropProfile
 		});
 	};
 
@@ -55,13 +65,11 @@ export default class Navigation extends Component {
 							<div>
 								{/* menu profile quick info */}
 								<div className="sideBody-Intro">
-									<FaDashcube style={{ marginRight: 5, marginTop: -3.5 }} id="font" />
+									<IoIosLeaf id="font" />
 									<span>WM-HAS ADMIN PANEL</span>
 
-									<h2>Innocent Chimezie</h2>
-									<h4>admin</h4>
-
 									<img src={require('../../assets/logo.PNG')} alt="admin img" />
+									<h4>admin</h4>
 								</div>
 								{/* menu profile quick info */}
 
@@ -69,40 +77,56 @@ export default class Navigation extends Component {
 								{/* sidebar menu */}
 								<div>
 									<div className="dashSection">
-										<h3>APPLICATIONS</h3>
+										<h3>NAVIGATION</h3>
 										<ul>
-											<li onClick={this.drop}>
+											<li onClick={this.toggleDashboard}>
 												<MdDashboard className="dashmenuFont" />
-												<span>
-													Dashboards<MdArrowDropDown />
-												</span>
+												<span>Dashboards</span>
+												<MdArrowDropDown id="dropFont" />
 											</li>
-											{this.state.dropdown && (
+											{this.state.open && (
 												<ul id="dropList">
 													<NavLink to="/home">
-														<li>Analytics</li>
+														<li>
+															<AiOutlineMinus id="lineFont" />
+															Home
+														</li>
 													</NavLink>
-													<NavLink to="/project">
-														<li>Project</li>
+													<NavLink to="/analytics">
+														<li>
+															<AiOutlineMinus id="lineFont" />
+															Analytics
+														</li>
 													</NavLink>
 												</ul>
 											)}
 
-											<NavLink to="user">
-												<li>
-													<MdPersonPinCircle className="dashmenuFont" />
-													<span>Users</span>
-												</li>
-											</NavLink>
+											<li onClick={this.dropdownUsers} className="mobileUsers">
+												<MdPhoneAndroid id="lineFont" />
+												<span>Mobile Users</span>
+												<MdArrowDropDown id="dropFont" />
+											</li>
+											{this.state.drop && (
+												<ul id="dropList">
+													<NavLink to="/users">
+														<li>
+															<MdPerson id="lineFont" className="userFont" />
+															Users
+														</li>
+													</NavLink>
+													<NavLink to="/vendors">
+														<li>
+															<MdPersonPinCircle className="dashmenuFont" />
+															Vendors
+														</li>
+													</NavLink>
+												</ul>
+											)}
+
 											<NavLink to="/message">
 												<li>
-													<MdMessage className="dashmenuFont" />
-													<span>
-														Messages
-														<span>
-															<MdArrowDropDown />
-														</span>
-													</span>
+													<BsEnvelope className="dashmenuFont" />
+													<span>Messages</span>
 												</li>
 											</NavLink>
 											<li>
@@ -166,9 +190,9 @@ export default class Navigation extends Component {
 					<IoIosMailUnread id="navMsg" />
 
 					<div className="navProfileDrop">
-						<h1 onClick={this.toggle}>Welcome, Admin</h1>
-						<MdArrowDropDown className="dropdownToggle" onClick={this.toggle} />
-						{this.state.open && (
+						<h1 onClick={this.dropProfile}>Welcome, Admin</h1>
+						<MdArrowDropDown className="dropdownToggle" onClick={this.dropProfile} />
+						{this.state.dropProfile && (
 							<ul className="dropdownMenuList">
 								<li>
 									<MdPerson id="dropdownFont" />Edit Profile

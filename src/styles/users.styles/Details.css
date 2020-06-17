@@ -12,6 +12,7 @@
 	float: right;
 	background-color: rgba(233, 233, 233, 0.952);
 	color: #424141c2;
+	margin-top: 60px;
 }
 
 /* -------------------gif loader------------------------------- */
@@ -29,19 +30,12 @@
 .detailsBody .gifLoad img {
 	align-self: center;
 	width: 70px !important;
-	/* margin-right: -300px; */
-}
-
-.detailsBody .gifLoad h1 {
-	font-size: 18px !important;
-	/* margin-right: -300px; */
 }
 /* -------------------gif loader------------------------------- */
 
-
 .details h1 {
-	margin: 20px 0 30px 27px;
-	font: normal 1.2rem sans-serif;
+	margin: 20px 0 0 40px;
+	font: normal 1rem sans-serif;
 }
 
 .details .flexDivs {
@@ -62,8 +56,8 @@
 }
 
 .details .username div img {
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	border: 1px solid #424141c2;
 	border-radius: 50%;
 	display: inline-block;
@@ -73,10 +67,10 @@
 	display: inline-block;
 	color: #000;
 	padding-left: 10px;
-	font: bold 20px sans-serif;
+	font: bold 18px sans-serif;
 }
 
-.details .username  .firstDiv {
+.details .username .firstDiv {
 	display: flex;
 	justify-content: space-between;
 }
@@ -85,18 +79,18 @@
 	display: flex;
 }
 
-.details .username .firstDiv  div #font {
-	font-size: 40px;
+.details .username .firstDiv div #font {
+	font-size: 38px;
 	margin-right: 10px;
 }
 
 .details .username .firstDiv h3 {
-	font-size: 13px;
+	font-size: 10px;
 	margin-top: 5px;
 }
 
 .details .username .firstDiv h4 {
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #000000;
 	margin-top: -5px;
@@ -105,12 +99,12 @@
 .details .username .secondDiv label {
 	display: flex;
 	justify-content: space-between;
-	font: bold 12px sans-serif;
+	font: bold 10px sans-serif;
 	color: #000;
 }
 
 .details .username .secondDiv label h3 {
-	font: 12px sans-serif;
+	font: 10px sans-serif;
 	color: #000;
 	opacity: .8;
 }
@@ -125,7 +119,7 @@
 	padding: 10px 0;
 	border: none;
 	border-radius: 6px;
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: bold;
 	letter-spacing: 1px;
 	transition: transform 80ms ease-in;
@@ -139,37 +133,120 @@
 	outline: none;
 }
 
-.details .username .thirdDiv  #btn1 {
+.details .username .thirdDiv #btn1 {
 	grid-column: 1/3;
 	background-color: rgba(181, 245, 204, 0.639);
 	color: rgb(16, 114, 52);
 }
 
-.details .username .thirdDiv  #btn1:hover {
+.details .username .thirdDiv #btn1 #msgLink {
+	outline: none;
+	color: rgb(16, 114, 52);
+	text-decoration: none;
+}
+
+.details .username .thirdDiv #btn1:hover,
+.details .username .thirdDiv #btn1:hover #msgLink {
 	grid-column: 1/3;
 	background-color: rgb(18, 155, 68);
 	color: #fff;
 }
 
-.details .username .thirdDiv  #btn2 {
+.details .username .thirdDiv #btn2 {
 	background-color: rgba(243, 221, 180, 0.707);
 	color: orange;
 }
 
-.details .username .thirdDiv  #btn2:hover {
+.details .username .thirdDiv #btn2:hover {
 	background-color: orange;
 	color: #000000;
 }
 
-.details .username .thirdDiv  #btn3 {
+.details .username .thirdDiv #btn3 {
 	background-color: rgba(241, 191, 234, 0.585);
 	color: rgb(246, 2, 214);
 }
 
-.details .username .thirdDiv  #btn3:hover {
+.details .username .thirdDiv #btn3:hover {
 	background-color: rgb(246, 2, 214);
 	color: #fff;
 }
+
+/* -------------modal styling----------------- */
+.confirmModal > div {
+	display: flex;
+	justify-content: space-between;
+}
+
+.confirmModal div h2 {
+	font-size: 12px;
+	color: #fff;
+}
+
+.confirmModal .close-modal {
+	font-size: 16px;
+	color: #fff;
+}
+
+.confirmModal .close-modal:hover {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	background-color: #fff;
+	color: #000000;
+	cursor: pointer;
+}
+
+.confirmModal h4 {
+	font-size: 12px;
+	color: #fff;
+}
+
+.confirmModal h6 {
+	font-size: 9px;
+	color: #fff;
+	margin-bottom: 15px;
+}
+
+.confirmModal h6 span {
+	font-weight: bold;
+}
+
+.confirmModal .btnParent {
+	float: right;
+	margin-right: 0px;
+	clear: both;
+}
+
+.confirmModal .btnParent button {
+	font-size: 8px;
+	letter-spacing: .5px;
+	margin: 5px;
+	margin-bottom: 0px;
+}
+
+.confirmModal .btnParent button:nth-child(2) {
+	margin-right: 0px;
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+	overflow: hidden;
+	opacity: 1;
+}
+
+.ReactModal__Overlay {
+	opacity: 0;
+	transition: opacity 700ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+	opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+	opacity: 0;
+}
+/* -------------modal styling----------------- */
 
 /* -----------------userTransactionDetails----------------- */
 .details .flexDivs .userTransactionDetails {
@@ -186,16 +263,16 @@
 }
 
 .details .flexDivs .userTransactionDetails section h2 {
-	font: bold 16px sans-serif;
+	font: bold 12px sans-serif;
 	color: #292525;
 }
 
 .details .flexDivs .userTransactionDetails section h3 {
-	font: 12px sans-serif;
+	font: 10px sans-serif;
 }
 
 .details .flexDivs .userTransactionDetails section h4 {
-	font: bold 22px sans-serif;
+	font: bold 14px sans-serif;
 }
 
 .details .flexDivs .userTransactionDetails section .first {
@@ -207,7 +284,7 @@
 	color: purple;
 }
 
-.details .flexDivs .userTransactionDetails section .first > div{
+.details .flexDivs .userTransactionDetails section .first > div {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 25px;
@@ -222,7 +299,7 @@
 	color: orange;
 }
 
-.details .flexDivs .userTransactionDetails section .second > div{
+.details .flexDivs .userTransactionDetails section .second > div {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 25px;
@@ -236,7 +313,7 @@
 	color: rgb(18, 155, 68);
 }
 
-.details .flexDivs .userTransactionDetails section .third > div{
+.details .flexDivs .userTransactionDetails section .third > div {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 25px;
@@ -244,20 +321,19 @@
 
 /* -----------------userTransactionDetails----------------- */
 
-
 /* -----------------finance-------------------- */
 .details .flexDivs .financeBody {
 	background-color: #fff;
 }
 
 .details .flexDivs .financeBody h2 {
-	font: bold 16px sans-serif;
+	font: bold 12px sans-serif;
 	color: #292525;
 	padding: 25px 30px;
 	border-bottom: 1px solid rgba(61, 57, 57, 0.3);
 }
 
-.details .flexDivs .financeBody > div{
+.details .flexDivs .financeBody > div {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 200px;
@@ -269,12 +345,12 @@
 
 .details .flexDivs .financeBody h3 {
 	color: rgb(83, 74, 74);
-	font-size: 14px;
+	font-size: 12px;
 }
 
 .details .flexDivs .financeBody h4 {
 	color: rgb(87, 70, 70);
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
 }
 /* -----------------finance-------------------- */
@@ -304,6 +380,12 @@
 		margin: 40px 0 30px 10px;
 		font: normal 1rem sans-serif;
 	}
+}
 
+
+
+/* ---------------mobile responsivenesss styling begins here-------------------------- */
+@media screen and (max-width: 768px) {
 
 }
+/* ---------------mobile responsivenesss styling ends here-------------------------- */

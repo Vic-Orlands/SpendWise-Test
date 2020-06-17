@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Navigation from '../section/Navigation';
-import Sidemenu from '../section/Sidemenu';
-import Footer from '../section/Footer';
+import Navigation from '../core.sections/Navigation';
+import Sidemenu from '../core.sections/Sidemenu';
+import Footer from '../core.sections/Footer';
 import '../../styles/Messages.css';
 
 class Messages extends Component {

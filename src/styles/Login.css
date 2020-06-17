@@ -80,6 +80,17 @@ li {
 	height: 35px;
 }
 
+.loginContainer input {
+	padding: 4px 10px;
+	color: rgb(85, 83, 83);
+}
+
+.loginContainer input:focus,
+.loginContainer input:active {
+	color: rgb(85, 83, 83);
+	outline-color: rgb(9, 155, 9);
+}
+
 .loginContainer form div {
 	margin-bottom: 20px;
 }
@@ -124,6 +135,7 @@ li {
 	border-radius: 4px;
 }
 
+	background-color: #fff;
 .loginContainer #submit:hover {
 	background: rgba(3, 14, 22, 0.972);
 }

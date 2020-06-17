@@ -1,20 +1,51 @@
 import React, { useState, useEffect } from 'react';
+import Modal from 'react-modal';
 import '../../../styles/users.styles/Details.css';
 
-import Navigation from '../../section/Navigation';
-import Sidemenu from '../../section/Sidemenu';
-import Footer from '../../section/Footer';
-import { NavLink } from 'react-router-dom';
+import Navigation from '../../core.sections/Navigation';
+import Sidemenu from '../../core.sections/Sidemenu';
+import Footer from '../../core.sections/Footer';
 import { FaPiggyBank } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+import { IoIosClose } from 'react-icons/io';
+
+// -------modal custom default styling----------
+const customStyles = {
+	content: {
+		top: '50%',
+		left: '50%',
+		right: 'auto',
+		bottom: 'auto',
+		marginRight: '25%',
+		transform: 'translate(-25%, -50%)',
+		background: '#1d2939'
+	}
+};
 
 const Details = () => {
+	let subtitle;
 	const [ loading, setLoading ] = useState(true);
+	const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => {
 			setLoading(false);
-		}, 4000);
+		},4000);
 	}, []);
+
+	// ----------------modal funct---------------
+	const openModal = () => {
+		setModalIsOpen(true);
+	};
+
+	const afterOpenModal = () => {
+		subtitle.style.color = '#fff';
+	};
+
+	const closeModal = () => {
+		setModalIsOpen(false);
+	};
+	// ----------------modal funct---------------
 
 	return (
 		<div className="detailsBody">
@@ -24,7 +55,6 @@ const Details = () => {
 			{loading ? (
 				<div className="gifLoad">
 					<img src={require('../../../assets/load.gif')} alt="Loading..." />
-					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
 				<section className="details">
@@ -78,10 +108,44 @@ const Details = () => {
 							</div>
 
 							<div className="thirdDiv">
-								<button id="btn1">Send Mail</button>
-								<button id="btn2">Warn</button>
-								<button id="btn3">Ban</button>
+								<button id="btn1">
+									<NavLink to="/message" id="msgLink">
+										Send Mail
+									</NavLink>
+								</button>
+								<button id="btn2" onClick={openModal}>
+									Warn
+								</button>
+								<button id="btn3" onClick={openModal}>
+									Ban
+								</button>
 							</div>
+
+							{/* -------modal div------------ */}
+
+							<Modal isOpen={modalIsOpen} onAfterOpen={afterOpenModal} style={customStyles}>
+								<div className="confirmModal">
+									<div>
+										<h2 ref={(_subtitle) => (subtitle = _subtitle)}>Confirmation</h2>
+
+										<IoIosClose onClick={closeModal} className="close-modal" />
+									</div>
+
+									<hr />
+
+									<h4>Are you sure you want to remove this user?</h4>
+									<h6>
+										<span className="text-danger">Warning:</span>This action is not reversible
+									</h6>
+
+									<div className="btnParent">
+									<button className="btn btn-success">Proceed</button>
+									<button onClick={closeModal} className="btn btn-danger">Cancel</button>
+									</div>
+								</div>
+							</Modal>
+
+							{/* -------modal div------------ */}
 						</section>
 
 						<section className="userTransactionDetails">

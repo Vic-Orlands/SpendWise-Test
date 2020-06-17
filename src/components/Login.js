@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/Login.css';
 import { NavLink } from 'react-router-dom';
 import { IoMdPerson, IoIosLock } from 'react-icons/io';
+import '../styles/Login.css';
 
 const Login = () => {
 	return (
