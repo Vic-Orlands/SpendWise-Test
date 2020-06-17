@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import '../../styles/Navigation.css';
 
 import { FaBars, FaEdit, FaBell } from 'react-icons/fa';
-import { IoIosMailUnread, IoMdLogOut, IoMdStats, IoIosLeaf, IoMdBrowsers, IoIosPhoneLandscape } from 'react-icons/io';
+import { IoIosMailUnread, IoMdLogOut, IoMdStats, IoIosLeaf, IoMdBrowsers } from 'react-icons/io';
 import {
 	MdArrowDropDown,
 	MdSettings,
@@ -170,15 +170,15 @@ export default class Navigation extends Component {
 
 								{/* /menu footer buttons */}
 								<div className="sidemenu-footer">
-									<a>
+									<li>
 										<IoMdBrowsers />
-									</a>
-									<a>
+									</li>
+									<li>
 										<MdSettings />
-									</a>
-									<a>
+									</li>
+									<li>
 										<IoMdLogOut />
-									</a>
+									</li>
 								</div>
 								{/* /menu footer buttons */}
 							</div>

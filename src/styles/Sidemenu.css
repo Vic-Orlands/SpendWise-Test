@@ -145,7 +145,7 @@
 	padding: 20px 0;
 }
 
-.sidemenu-footer a {
+.sidemenu-footer li {
 	font-size: 10px;
 	background-color: #415c80f1;
 	border-radius: 50%;
@@ -154,7 +154,7 @@
 	cursor: pointer;
 }
 
-.sidemenu-footer a:hover {
+.sidemenu-footer li:hover {
 	background-color: #25456ef1;
 }
 

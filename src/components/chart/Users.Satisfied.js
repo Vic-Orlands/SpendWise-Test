@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CanvasJSReact from './canvasjs.react';
 import './App.css';
 
-let CanvasJS = CanvasJSReact.CanvasJS;
 let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 class Satisfied extends Component {

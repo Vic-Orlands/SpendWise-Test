@@ -11,7 +11,7 @@ import {
 	MdPersonPinCircle,
 	MdPhoneAndroid
 } from 'react-icons/md';
-import { IoMdLogOut, IoMdStats, IoMdBrowsers, IoIosLeaf, IoIosPhoneLandscape } from 'react-icons/io';
+import { IoMdLogOut, IoMdStats, IoMdBrowsers, IoIosLeaf } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { BsEnvelope } from 'react-icons/bs';
@@ -149,15 +149,15 @@ export default class Sidemenu extends Component {
 
 					{/* /menu footer buttons */}
 					<div className="sidemenu-footer">
-						<a>
+						<li>
 							<IoMdBrowsers />
-						</a>
-						<a>
+						</li>
+						<li>
 							<MdSettings />
-						</a>
-						<a>
+						</li>
+						<li>
 							<IoMdLogOut />
-						</a>
+						</li>
 					</div>
 					{/* /menu footer buttons */}
 				</div>

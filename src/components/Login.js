@@ -17,7 +17,7 @@ const Login = () => {
 					<p>
 						This is for admins only. If you're not, kindly redirect to the official site here <br />
 						<span>
-							<a href="https://www.wm-has.cresponet.net" target="_blank">
+							<a href="https://www.wm-has.cresponet.net" target="_blank" rel="noopener noreferrer">
 								wm-has.cresponet.net
 							</a>
 						</span>

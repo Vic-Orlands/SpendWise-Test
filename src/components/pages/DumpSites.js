@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { MdMessage, MdArrowUpward, MdArrowDownward, MdError } from 'react-icons/md';
-import { IoIosPerson, IoIosDownload } from 'react-icons/io';
 import Navigation from '../core.sections/Navigation';
 import Sidemenu from '../core.sections/Sidemenu';
 import Footer from '../core.sections/Footer';
@@ -35,6 +33,7 @@ const DumpSite = () => {
 						<h1>Locate waste dump sites</h1>
 						<div className="gmap">
 							<iframe
+							title="dump_map"
 								id="gmap_canvas"
 								src="https://maps.google.com/maps?q=owerri&t=&z=13&ie=UTF8&iwloc=&output=embed"
 							/>

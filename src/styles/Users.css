@@ -116,7 +116,7 @@
 		margin-top: 0px;
 	}
 
-	/* -------------------gif loader------------------------------- */
+	/* -------------------responsive gif loader starts here------------------------------- */
 	.users-container .gifLoad {
 		width: 100% !important;
 		height: 88vh !important;
@@ -125,7 +125,7 @@
 	.users-container .gifLoad img {
 		margin: 0 auto;
 	}
-	/* -------------------gif loader------------------------------- */
+	/* -------------------responsive gif loader ends here------------------------------- */
 
 	/* -------------------main responsive styling begins here---------------- */
 	.users-body {
