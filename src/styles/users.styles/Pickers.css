@@ -36,26 +36,27 @@
 /* -------pickers-shelf-------------- */
 .pickers .pickerInfo {
 	margin: 0 40px;
+	margin-bottom: 40px;
 }
 
-.pickers .pickerUsers {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-gap: 2em;
-}
-
-.pickers .pickerUsers div {
+.pickers .pickerUsers div,
+.pickers .pickerCollectors div,
+.pickers .pickerAgencies div {
 	background: #ffffff;
 	padding: 30px 30px 10px 30px;
 	border-radius: 6px;
 	grid-column: 1/3;
 }
 
-.pickers .pickerUsers div header {
+.pickers .pickerUsers div header,
+.pickers .pickerCollectors div header,
+.pickers .pickerAgencies div header {
 	border-bottom: 1px solid rgba(189, 186, 186, 0.646);
 }
 
-.pickers .pickerInfo .pickerUsers div h2 {
+.pickers .pickerInfo .pickerUsers div h2,
+.pickers .pickerInfo .pickerAgencies div h2,
+.pickers .pickerInfo .pickerCollectors div h2 {
 	font-size: 10px;
 	font-family: arial;
 	font-weight: bold;
@@ -67,7 +68,9 @@
 	background: rgba(231, 229, 229, 0.646);
 }
 
-.pickers .pickerInfo .pickerUsers .allUsers h2 {
+.pickers .pickerInfo .pickerUsers .allUsers h2,
+.pickers .pickerInfo .pickerCollectors .allUsers h2,
+.pickers .pickerInfo .pickerAgencies .allUsers h2 {
 	font-size: 8px;
 	border: 2px solid #17a2b8;
 	color: #17a2b8;
@@ -84,7 +87,9 @@
 	cursor: pointer;
 }
 
-.pickers .pickerInfo .pickerUsers .allUsers #link {
+.pickers .pickerInfo .pickerUsers .allUsers #link,
+.pickers .pickerInfo .pickerCollectors .allUsers #link,
+.pickers .pickerInfo .pickerAgencies .allUsers #link {
 	text-decoration: none;
 	margin: auto 0;
 }
@@ -94,62 +99,118 @@
 	outline: none;
 }
 
-.pickers .pickerUsers div > div {
+.pickers .pickerUsers div > div,
+.pickers .pickerCollectors div > div,
+.pickers .pickerAgencies div > div {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 1px solid rgba(189, 186, 186, 0.646);
 	padding: 10px;
 }
 
-.pickers .pickerUsers div > div hgroup {
+.pickers .pickerUsers div > div hgroup,
+.pickers .pickerCollectors div > div hgroup,
+.pickers .pickerAgencies div > div hgroup {
 	flex-grow: 2;
 	margin-left: 30px;
 }
 
-.pickers .pickerUsers div hgroup h3 {
+.pickers .pickerUsers div hgroup h3,
+.pickers .pickerCollectors div hgroup h3,
+.pickers .pickerAgencies div hgroup h3 {
 	font: bold 12px arial;
 }
 
-.pickers .pickerUsers div > div hgroup h4 {
+.pickers .pickerUsers div > div hgroup h4,
+.pickers .pickerCollectors div > div hgroup h4,
+.pickers .pickerAgencies div > div hgroup h4 {
 	font: bold 10px arial;
 	color: rgb(116, 114, 114);
 }
 
-.pickers .pickerUsers div div img {
+.pickers .pickerUsers div div img,
+.pickers .pickerCollectors div div img,
+.pickers .pickerAgencies div div img {
 	width: 40px;
 	height: 40px;
 	border: 1px solid rgb(116, 114, 114);
 	border-radius: 50%;
 }
-/* -------pickers-shelf-------------- */
+
+.pickers .pickerCollectors,
+.pickers .pickerAgencies {
+	display: none;
+}
+/* -------pickers-shelf styling ends here-------------- */
 
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */
 
 @media screen and (max-width: 768px) {
-	.gifLoad {
-		width: 100%;
+	/* -------------------responsive gif loader starts here------------------------------- */
+	.pickersBody .gifLoad {
+		width: 100% !important;
+		height: 100vh !important;
 	}
 
-	.gifLoad img {
-		width: 50px !important;
+	.pickersBody .gifLoad img {
+		margin: 0 auto;
 	}
-
-	.gifLoad h1 {
-		font-size: 12px !important;
-	}
+	/* -------------------responsive gif loader ends here------------------------------- */
 
 	.pickers {
 		width: 100%;
 		clear: both;
+		margin-top: 0px;
+		padding-top: 30px;
 	}
 
 	.pickers h1 {
-		margin: 40px 10px;
-		font: normal 1rem sans-serif;
+		margin: 25px 0 10px 20px;
 	}
 
-	.pickers h2 {
-		margin: 0px 0 10px 30px;
-		font: normal 1.2rem sans-serif;
+	/* -------responsive pickers-shelf-------------- */
+	.pickers .pickerInfo {
+		margin: 0 19px;
 	}
+
+	.pickers .pickerUsers div {
+		padding: 20px 20px 10px;
+	}
+
+	.pickers .pickerInfo .pickerUsers div h2 {
+		font-size: 8px;
+		padding-bottom: 10px;
+	}
+
+	.pickers .pickerInfo .pickerUsers .allUsers h2 {
+		font-size: 6px;
+		padding: 5px 12px;
+	}
+
+	.pickers .pickerUsers div > div hgroup {
+		margin-left: 20px;
+	}
+
+	.pickers .pickerUsers div hgroup h3 {
+		font: bold 10px arial;
+		margin-bottom: 0px;
+		padding-top: 2px;
+	}
+
+	.pickers .pickerUsers div > div hgroup h4 {
+		font: bold 8px arial;
+	}
+
+	.pickers .pickerUsers div div img {
+		width: 30px;
+		height: 30px;
+		margin: auto 0;
+	}
+
+	.pickers .pickerCollectors,
+	.pickers .pickerAgencies {
+		margin-top: 20px;
+		display: block;
+	}
+	/* -------responsive pickers-shelf styling ends here-------------- */
 }

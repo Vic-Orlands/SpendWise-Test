@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { MdMessage, MdArrowUpward, MdArrowDownward } from 'react-icons/md';
+import { MdMessage } from 'react-icons/md';
 import { IoIosPerson, IoIosDownload } from 'react-icons/io';
 import Navigation from '../core.sections/Navigation';
 import Sidemenu from '../core.sections/Sidemenu';
@@ -26,7 +26,6 @@ const Analytics = () => {
 			{loading ? (
 				<div className="gifLoad">
 					<img src={require('../../assets/load.gif')} alt="Loading..." />
-					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
 				<section className="analytics">
@@ -37,96 +36,61 @@ const Analytics = () => {
 					<div className="shelf">
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" /> Waste Recyclers
+								<IoIosPerson className="hFont" /> Total Users
 							</h5>
-							<h4>25</h4>
-							<p>
-								4%<span>From last week</span>
-							</p>
+							<h4>8</h4>
+							<p>1 hour ago</p>
 						</div>
 
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" /> Waste Pickers
+								<IoIosPerson className="hFont" /> Total Vendors
 							</h5>
 							<h4>15</h4>
-							<p>
-								4%<span>From last week</span>
-							</p>
+							<p>1 hour ago</p>
 						</div>
 
 						<div>
 							<h5>
-								<IoIosDownload className="hFont" /> Waste Generators
+								<IoIosDownload className="hFont" /> Waste Pickers
 							</h5>
-							<h4>40</h4>
-							<p>
-								24%<MdArrowDownward />
-								<span>From last week</span>
-							</p>
+							<h4>8</h4>
+							<p>1 hour ago</p>
 						</div>
 
 						<div>
 							<h5>
-								<IoIosPerson className="hFont" />Dump Sites
+								<IoIosPerson className="hFont" />Waste Collectors
 							</h5>
-							<h4>40</h4>
-							<p>
-								1%<span>From last week</span>
-							</p>
+							<h4>3</h4>
+							<p>1 hour ago</p>
 						</div>
 
 						<div>
 							<h5>
-								<IoIosDownload className="hFont" /> Waste Vendors
+								<IoIosDownload className="hFont" /> Recycling Agencies
 							</h5>
-							<h4>30</h4>
-							<p>
-								12%<MdArrowDownward />
-								<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<IoIosPerson className="hFont" />Waste Management <br />{' '}
-								<span style={{ marginLeft: 20 }}>Agencies</span>
-							</h5>
-							<h4>4</h4>
-							<p>
-								1%<span>From last week</span>
-							</p>
+							<h4>8</h4>
+							<p>1 hour ago</p>
 						</div>
 
 						<div>
 							<h5>
 								<MdMessage className="hFont" /> Messages
 							</h5>
-							<h4>4</h4>
-							<p>
-								10%<MdArrowUpward />
-								<span>From last week</span>
-							</p>
-						</div>
-
-						<div>
-							<h5>
-								<IoIosPerson className="hFont" />Eye witnesses
-							</h5>
-							<h4>15</h4>
-							<p>From last week</p>
+							<h4>13</h4>
+							<p>1 hour ago</p>
 						</div>
 					</div>
 
 					<div className="charts">
-					<App />
+						<App />
 
-					<Satisfied />
+						<Satisfied />
 					</div>
 					<Footer />
 				</section>
 			)}
-
 		</div>
 	);
 };

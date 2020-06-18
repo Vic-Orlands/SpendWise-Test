@@ -121,6 +121,147 @@ const Pickers = () => {
 								</div>
 							</div>
 						</div>
+
+
+						<div className="pickerCollectors">
+							<div>
+								<header>
+									<h2>All Collectors</h2>
+								</header>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Amaizu</h3>
+										<h4>maconzy12@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+							</div>
+						</div>
+
+
+						<div className="pickerAgencies">
+							<div>
+								<header>
+									<h2>Recycling Agencies</h2>
+								</header>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Amaizu</h3>
+										<h4>maconzy12@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>melody</h3>
+										<h4>mels@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Zlatan</h3>
+										<h4>burna@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>okon</h3>
+										<h4>okon@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+
+								<div className="allUsers">
+									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>Innocent</h3>
+										<h4>innocent39@gmail.com</h4>
+									</hgroup>
+									<NavLink to="/details" id="link">
+										<h2>View</h2>
+									</NavLink>{' '}
+								</div>
+							</div>
+						</div>
 					</section>
 				</section>
 			)}

@@ -9,7 +9,7 @@ import '../../styles/Messages.css';
 class Messages extends Component {
 	render() {
 		return (
-			<div>
+			<div className="msgParent">
 				<Navigation />
 				<Sidemenu />
 

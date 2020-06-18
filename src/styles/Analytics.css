@@ -34,12 +34,6 @@
 .analyticsBody .gifLoad img {
 	align-self: center;
 	width: 70px !important;
-	/* margin-right: -300px; */
-}
-
-.analyticsBody .gifLoad h1 {
-	font-size: 18px !important;
-	/* margin-right: -300px; */
 }
 /* -------------------gif loader------------------------------- */
 
@@ -65,10 +59,13 @@
 	padding: 20px 30px;
 	box-shadow: 0 2px 3px rgba(193, 194, 196, 0.87);
 	text-align: center;
+	background-color: #1d2939;
+	color: #fff;
 }
 
-.shelf div:last-child {
-	color: red;
+.shelf div:nth-child(1),
+.shelf div:nth-child(2) {
+	color: rgb(74, 252, 4);
 }
 
 .shelf h4 {
@@ -87,4 +84,49 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-gap: 20px;
+}
+
+/* -------------------------mobile responsiveness styling begins here----------------------------------- */
+@media screen and (max-width: 768px) {
+	.analytics {
+		width: 100%;
+		padding: 20px;
+		padding-top: 50px;
+		margin: 0px;
+	}
+
+	.analytics h1 {
+		margin-bottom: 10px;
+		font: normal 1rem sans-serif;
+	}
+
+	.shelf {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 10px;
+	}
+
+	.shelf div {
+		padding: 10px 10px;
+	}
+
+	.shelf h4 {
+		font: bold 20px sans-serif;
+	}
+
+	.shelf h4 {
+		font: bold 20px sans-serif;
+	}
+
+	.shelf h5 {
+		font-size: 10px;
+	}
+
+	.shelf div p {
+		font-size: 8px;
+	}
+
+	.analyticsBody .charts {
+		grid-template-columns: 1fr;
+		grid-gap: 10px;
+	}
 }

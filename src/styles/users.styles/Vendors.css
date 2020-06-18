@@ -29,7 +29,6 @@
 	margin-top: 60px;
 }
 
-
 /* ---------------------------------------------------- */
 
 .users {
@@ -107,37 +106,8 @@
 }
 
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */
-
-/* @media screen and (max-width: 768px) {
-	.gifLoad {
-		width: 100%;
+@media screen and (max-width: 768px) {
+	.usersBody .users {
+		display: none;
 	}
-
-	.gifLoad img {
-		width: 50px !important;
-	}
-
-	.gifLoad h1 {
-		font-size: 12px !important;
-	}
-
-	.users {
-		width: 100%;
-		clear: both;
-		height: auto;
-	}
-
-	.users div h3 {
-		font-size: 14px;
-		padding: 10px;
-	}
-
-	.users div h5 {
-		font-size: 40px;
-		padding: 0px;
-	}
-
-	.users div p {
-		font-size: 10px;
-	}
-} */
+}
