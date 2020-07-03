@@ -64,6 +64,7 @@
 	color: #555555;
 	box-shadow: 1px 4px 10px rgba(0, 0, 0, .2);
 	cursor: pointer;
+	animation: dropdownPC 400ms ease-in;
 }
 
 .navProfileDrop .dropdownMenuList li {
@@ -86,6 +87,33 @@
 	margin-right: 5px;
 	margin-left: 0px;
 	color: #009781;
+}
+
+@keyframes dropdownPC {
+	0% {
+		margin-top: 65px;
+		opacity: 0;
+	}
+	20% {
+		margin-top: 60px;
+		opacity: 0.2;
+	}
+	40% {
+		margin-top: 55px;
+		opacity: 0.3;
+	}
+	60% {
+		margin-top: 50px;
+		opacity: 0.5;
+	}
+	80% {
+		margin-top: 45px;
+		opacity: 0.7;
+	}
+	100% {
+		margin-top: 40px;
+		opacity: 1;
+	}
 }
 /* -------------------------------nav-profile styling ends here----------------------- */
 
@@ -129,6 +157,7 @@
 	.navProfileDrop .dropdownMenuList {
 		margin-top: 30px;
 		margin-left: -20px;
+		animation: dropdownMobile 400ms ease-in;
 	}
 
 	.navProfileDrop .dropdownMenuList li {
@@ -140,6 +169,33 @@
 		font-size: 10px;
 		margin-right: 5px;
 	}
+
+	@keyframes dropdownMobile {
+		0% {
+			margin-top: 55px;
+			opacity: 0;
+		}
+		20% {
+			margin-top: 50px;
+			opacity: 0.2;
+		}
+		40% {
+			margin-top: 45px;
+			opacity: 0.3;
+		}
+		60% {
+			margin-top: 40px;
+			opacity: 0.5;
+		}
+		80% {
+			margin-top: 35px;
+			opacity: 0.7;
+		}
+		100% {
+			margin-top: 30px;
+			opacity: 1;
+		}
+	}
 	/* ----------------responsive navProfile styling ends here--------------------------- */
 
 	/*--------------------------------- sidemenu styling begins here --------------------------*/
@@ -147,8 +203,33 @@
 	.adminNav .sideBody {
 		display: block !important;
 		width: 40% !important;
-		margin-top: 3px;
+		margin-top: 0px;
 		z-index: 2;
+		animation: navAnimate 400ms ease-in-out;
+	}
+
+	@keyframes navAnimate {
+		0% {
+			margin-left: -12%;
+		}
+		20% {
+			margin-left: -10%;
+		}
+		40% {
+			margin-left: -8%;
+		}
+		60% {
+			margin-left: -6%;
+		}
+		80% {
+			margin-left: -4%;
+		}
+		90% {
+			margin-left: -2%;
+		}
+		100% {
+			margin-left: 0%;
+		}
 	}
 
 	/* ----------sidemenu intro stylings begins here---------- */
@@ -243,11 +324,11 @@
 		margin-right: 10px;
 	}
 
-		.adminNav .dashSection #dropList .userFont {
+	.adminNav .dashSection #dropList .userFont {
 		margin-left: 5px;
 	}
 
-		.adminNav .dashSection #dropList .dashmenuFont {
+	.adminNav .dashSection #dropList .dashmenuFont {
 		margin-left: 6px;
 	}
 

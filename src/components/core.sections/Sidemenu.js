@@ -108,14 +108,6 @@ export default class Sidemenu extends Component {
 										<span>Messages</span>
 									</li>
 								</NavLink>
-								<li>
-									<IoMdStats className="dashmenuFont" />
-									<span>Downloads</span>
-								</li>
-								<li>
-									<FaBell className="dashmenuFont" />
-									<span>Notifications</span>
-								</li>
 
 								<li>
 									<FaEdit className="dashmenuFont" />
@@ -129,18 +121,13 @@ export default class Sidemenu extends Component {
 								</NavLink>
 
 								<li>
+									<MdChat className="dashmenuFont" />
+									<span>Tasks</span>
+								</li>
+
+								<li>
 									<MdPerson className="dashmenuFont" />
 									<span>Profile</span>
-								</li>
-
-								<li>
-									<MdLocalPostOffice className="dashmenuFont" />
-									<span>Posts</span>
-								</li>
-
-								<li>
-									<MdChat className="dashmenuFont" />
-									<span>Chat</span>
 								</li>
 							</ul>
 						</div>

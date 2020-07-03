@@ -14,7 +14,7 @@ const Hub = () => {
 	});
 
 	return (
-		<body>
+		<div>
 			{loading === true ? (
 				<Load />
 			) : (
@@ -22,7 +22,7 @@ const Hub = () => {
 					<Home />
 				</main>
 			)}
-		</body>
+		</div>
 	);
 };
 

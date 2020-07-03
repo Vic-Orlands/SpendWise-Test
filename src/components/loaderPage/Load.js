@@ -4,7 +4,7 @@ import './Load.css';
 class Load extends Component {
 	render() {
 		return (
-			<body className="dotContainer">
+			<section className="dotContainer">
 				<div className="dotBody">
 					<ul className="dotArea">
 						<li />
@@ -35,7 +35,7 @@ class Load extends Component {
 					</div>
 					<span id="loadSpan" />
 				</div>
-			</body>
+			</section>
 		);
 	}
 }

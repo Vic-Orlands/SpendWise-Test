@@ -74,6 +74,7 @@ export default class Navigation extends Component {
 								{/* menu profile quick info */}
 
 								<br />
+
 								{/* sidebar menu */}
 								<div>
 									<div className="dashSection">

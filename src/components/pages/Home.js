@@ -104,10 +104,9 @@ const Home = () => {
 							</div>
 						</div>
 					</div>
-					{/* // ------------------------------home jsx starts here---------------------------------------- */}
+					{/* // ------------------------------home jsx ends here---------------------------------------- */}
 
-					{/* ---------------------------------------second grid divs starts here--------------------------------- */}
-					{/* ---------------------------------------second grid divs starts here--------------------------------- */}
+					{/* -------------------------------second grid divs starts here--------------------------------- */}
 
 					<section className="new-main">
 						<section>
@@ -173,6 +172,7 @@ const Home = () => {
 							</Slider>
 						</div>
 					</section>
+					{/* -------------------------------second grid divs ends here--------------------------------- */}
 
 					<section className="usersShelf">
 						<div className="newUsers">

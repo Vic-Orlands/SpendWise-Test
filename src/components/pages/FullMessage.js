@@ -10,7 +10,7 @@ class Pickers extends Component {
 	state = {
 		loading: true,
 		messages: [],
-		newMessage: ' ',
+		newMessage: '',
 		drag: false
 	};
 
@@ -30,14 +30,15 @@ class Pickers extends Component {
 	};
 
 	handleChange = (e) => {
+		const { name, value } = e.target
 		this.setState({
-			newMessage: e.target.value
+			[ name ]: value
 		});
 	};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		if (e.target.value === null) {
+		if (this.state.newMessage === null ) {
 			this.setState((prevState) => {
 				return {
 					messages: [ ...prevState.messages ]
@@ -53,7 +54,7 @@ class Pickers extends Component {
 	};
 
 	render() {
-		let time = new Date().toLocaleString();
+		let timestamp = new Date().toLocaleString();
 
 		const { loading, newMessage, messages } = this.state;
 		return (
@@ -180,7 +181,7 @@ class Pickers extends Component {
 													moment; and yet I feel that I never...
 												</p>
 											</div>
-											<p>10hours ago</p>
+											<p>10hours ago</p>prevState
 										</div>
 
 										<div className="messageDiv">
@@ -216,10 +217,10 @@ class Pickers extends Component {
 									<span>10:00pm</span>
 								</h4>
 
-								{messages.map((msg) => (
-									<h4>
+								{messages.map((msg,  index="id") => (
+									<h4 key={index}>
 										{msg}
-										<span>{time}</span>
+										<span>{timestamp}</span>
 									</h4>
 								))}
 							</div>
@@ -227,6 +228,7 @@ class Pickers extends Component {
 							<div className="writeMsg">
 								<input
 									type="text"
+									name="newMessage"
 									placeholder="Write Message"
 									value={newMessage}
 									onChange={this.handleChange}
