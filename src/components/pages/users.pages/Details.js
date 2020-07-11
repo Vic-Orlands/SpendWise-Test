@@ -22,26 +22,47 @@ const customStyles = {
 	}
 };
 
-const Details = () => {
+const Details = (props) => {
 	let subtitle;
-	const [ loading, setLoading ] = useState(true);
+	const [ user, setUser ] = useState([]);
+	const [ isLoading, setIsLoading ] = useState(true);
 	const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		},4000);
-	}, []);
+	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+	const uri = 'http://admin.wm-has.org.ng/api/user/adminApiUser';
 
+	const fetchedData = () => {
+		fetch(proxyurl + uri)
+			.then((res) => res.json())
+			.then((res) => {
+				setUser(res.data);
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	useEffect(() => {
+		fetchedData();
+	}, []);
+	
+	const one = user.find( (oneUser )=>  oneUser === 7
+		// if( oneUser.id === 7) {
+			// return oneUser
+			// return `http://admin.wm-has.org.ng/api/user/adminApiUser/${oneUser.id}`
+		// }
+	)
+	
 	// ----------------modal funct---------------
 	const openModal = () => {
 		setModalIsOpen(true);
 	};
-
+	
 	const afterOpenModal = () => {
 		subtitle.style.color = '#fff';
 	};
-
+	
 	const closeModal = () => {
 		setModalIsOpen(false);
 	};
@@ -52,7 +73,7 @@ const Details = () => {
 			<Navigation />
 			<Sidemenu />
 
-			{loading ? (
+			{isLoading ? (
 				<div className="gifLoad">
 					<img src={require('../../../assets/load.gif')} alt="Loading..." />
 				</div>
@@ -60,11 +81,11 @@ const Details = () => {
 				<section className="details">
 					<h1>User Details</h1>
 
-					<section className="flexDivs">
+						<section className="flexDivs">
 						<section className="username">
 							<div>
 								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h2>melody amaizu</h2>
+								<h2>{one.name} {one.other_name}</h2>
 							</div>
 
 							<div className="firstDiv">
@@ -88,7 +109,7 @@ const Details = () => {
 							<div className="secondDiv">
 								<label>
 									Email:
-									<h3>odinakauchu@gmail.com</h3>
+									<h3>{one.email}</h3>
 								</label>
 
 								<label>
@@ -97,13 +118,13 @@ const Details = () => {
 								</label>
 
 								<label>
-									Active:
-									<h3>Yes</h3>
+									gender:
+									<h3>{one.gender}</h3>
 								</label>
 
 								<label>
 									Phone:
-									<h3>08054356723</h3>
+									<h3>{one.number}</h3>
 								</label>
 							</div>
 

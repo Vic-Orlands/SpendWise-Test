@@ -2,22 +2,42 @@ import React, { useState, useEffect } from 'react';
 import '../../../styles/users.styles/Agencies.css';
 import Vendors from './Vendors';
 import Footer from '../../core.sections/Footer';
-import { NavLink } from 'react-router-dom';
 
 const Agencies = () => {
-	const [ loading, setLoading ] = useState(true);
+	const [ users, setUsers ] = useState([]);
+	const [ isLoading, setIsLoading ] = useState(true);
+
+	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+	const uri = 'http://admin.wm-has.org.ng/api/user/adminApi';
+
+	const fetchedPickers = () => {
+		fetch(proxyurl + uri)
+			.then((res) => res.json())
+			.then((res) => {
+				setUsers(res.data);
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
 	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		},4000);
+		fetchedPickers();
 	}, []);
+
+	const agencies = users.filter((user) => {
+		if (user.type === 3) {
+			return user;
+		}
+		return null
+	});
 
 	return (
 		<div className="agencyBody">
 			<Vendors />
 
-			{loading ? (
+			{isLoading ? (
 				<div className="gifLoad">
 					<img src={require('../../../assets/load.gif')} alt="Loading..." />
 				</div>
@@ -32,25 +52,23 @@ const Agencies = () => {
 									<h2>All Agencies</h2>
 								</header>
 
-								<div className="allUsers">
-									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
-									<hgroup>
-										<h3> Waste management Co-operation</h3>
-									</hgroup>
+								{agencies.map((oneUser, index) => {
+									if (oneUser.type) {
+										return (
+											<div className="allUsers" key={index}>
+												<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+												<hgroup>
+													<h3>{oneUser.name}</h3>
+													<h4>{oneUser.email} </h4>
+												</hgroup>
 
-									<NavLink to="/details">
-										<h2>View</h2>
-									</NavLink>
-								</div>
-
-								<div className="allUsers">
-									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
-									<hgroup>
-										<h3>Lawma</h3>
-									</hgroup>
-
-									<h2>View</h2>
-								</div>
+												<h2 id="link">View</h2>
+											</div>
+										);
+									} else {
+										return null
+									}
+								})}
 							</div>
 						</div>
 					</section>

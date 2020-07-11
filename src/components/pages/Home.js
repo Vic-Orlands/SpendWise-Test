@@ -45,6 +45,7 @@ const content = [
 // ----------------slider components-----------------
 
 const Home = () => {
+	// const [ newUser]
 	const [ loading, setLoading ] = useState(true);
 
 	useEffect(() => {

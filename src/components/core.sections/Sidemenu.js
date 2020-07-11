@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaEdit, FaBell } from 'react-icons/fa';
+import { FaEdit } from 'react-icons/fa';
 import {
 	MdArrowDropDown,
 	MdSettings,
 	MdPerson,
 	MdDashboard,
-	MdLocalPostOffice,
 	MdChat,
 	MdPersonPinCircle,
 	MdPhoneAndroid
 } from 'react-icons/md';
-import { IoMdLogOut, IoMdStats, IoMdBrowsers, IoIosLeaf } from 'react-icons/io';
+import { IoMdLogOut, IoMdBrowsers, IoIosLeaf } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { BsEnvelope } from 'react-icons/bs';

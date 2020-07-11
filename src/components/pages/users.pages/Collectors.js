@@ -1,22 +1,37 @@
 import React, { useState, useEffect } from 'react';
-// import { NavLink } from 'react-router-dom';
 import Vendors from './Vendors';
 import '../../../styles/users.styles/Pickers.css';
 
 const Collectors = () => {
-	const [ loading, setLoading ] = useState(true);
+	const [ users, setUsers ] = useState([]);
+	const [ isLoading, setIsLoading ] = useState(true);
+
+	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+	const uri = 'http://admin.wm-has.org.ng/api/user/adminApi';
+
+	const fetchedPickers = () => {
+		fetch(proxyurl + uri)
+			.then((res) => res.json())
+			.then((res) => {
+				setUsers(res.data);
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
 	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 4000);
+		fetchedPickers();
 	}, []);
+
+	const collectors = users.filter((user) => user.type == 2);
 
 	return (
 		<div className="pickersBody">
 			<Vendors />
 
-			{loading ? (
+			{isLoading ? (
 				<div className="gifLoad">
 					<img src={require('../../../assets/load.gif')} alt="Loading..." />
 				</div>
@@ -31,35 +46,17 @@ const Collectors = () => {
 									<h2>All Collectors</h2>
 								</header>
 
-								<div className="allUsers">
-									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
-									<hgroup>
-										<h3>okon</h3>
-										<h4>okon@gmail.com</h4>
-									</hgroup>
+								{collectors.map((oneUser, index) => (
+									<div className="allUsers" key={index}>
+										<img src={require('../../../assets/logo.PNG')} alt="user-img" />
+										<hgroup>
+											<h3>{oneUser.name}</h3>
+											<h4>{oneUser.email} </h4>
+										</hgroup>
 
-									<h2>View</h2>
-								</div>
-
-								<div className="allUsers">
-									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
-									<hgroup>
-										<h3>melody</h3>
-										<h4>mels@gmail.com</h4>
-									</hgroup>
-
-									<h2>View</h2>
-								</div>
-
-								<div className="allUsers">
-									<img src={require('../../../assets/logo.PNG')} alt="user-img" />
-									<hgroup>
-										<h3>Zlatan</h3>
-										<h4>burna@gmail.com</h4>
-									</hgroup>
-
-									<h2>View</h2>
-								</div>
+										<h2 id="link">View</h2>
+									</div>
+								))}
 							</div>
 						</div>
 					</section>

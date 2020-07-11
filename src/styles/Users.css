@@ -67,7 +67,7 @@
 .users-container .users-body .list-table .allUsers h2:hover {
 	border: 2px solid #1a8191;
 	background: #1a8191;
-	color: #ffffff;
+	color: white;
 	border-radius: 20px;
 	cursor: pointer;
 }
