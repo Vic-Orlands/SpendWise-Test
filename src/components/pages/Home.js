@@ -44,15 +44,68 @@ const content = [
 ];
 // ----------------slider components-----------------
 
-const Home = () => {
-	// const [ newUser]
+const Home = ({ history }) => {
+	const [ users, setUsers ] = useState([]);
+	const [ vendors, setVendors ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
 
+	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+	const uri = 'http://admin.wm-has.org.ng/api/user/adminApi';
+	const url = 'http://admin.wm-has.org.ng/api/user/adminApiUser';
+
+	const fetchedPickers = () => {
+		fetch(proxyurl + uri)
+			.then((res) => res.json())
+			.then((res) => {
+				setUsers(res.data);
+				setLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
+	const fetchedUrls2 = () => {
+		fetch(proxyurl + url)
+			.then((res) => res.json())
+			.then((res) => {
+				setVendors(res.data);
+				setLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
 	useEffect(() => {
-		setTimeout(() => {
-			setLoading(false);
-		}, 5000);
+		fetchedPickers();
+		fetchedUrls2();
+		Promise.all([ fetchedPickers, fetchedUrls2 ]);
 	}, []);
+
+	const totalUsers = users.reduce((sum, current) => current.name ? sum +=1 : current, 0)
+	const totalVendors = vendors.reduce((sum, current) => current.name ? sum +=1 : current, 0)
+	const totalActiveUser = totalUsers + totalVendors
+
+	//-------here i sliced the fetched users into five to display only five users on the homepage----------
+	const newUsers = users.slice(0, 6);
+
+	//-------here i  fetched pickers using its response type and then sliced it to display only two pickers on the homepage----------
+	const picker = users.filter((user) => user.type === '1');
+	const pickers = picker.slice(0, 2);
+
+	//-------just like the pickers, I  fetched collectors using its response type and then sliced it to display only two collectors on the homepage----------
+	const collector = users.filter((user) => user.type === '2');
+	const collectors = collector.slice(0, 2);
+
+	//-------just like above, I  fetched the available agencies using its response type and then sliced it to display only two----------
+	const agency = users.filter((user) => {
+		if (user.type === '3') {
+			return user;
+		}
+		return null;
+	});
+	const agencies = agency.slice(0, 1);
 
 	return (
 		<div>
@@ -91,7 +144,7 @@ const Home = () => {
 							<GiChart id="shelfFont" />
 							<div>
 								<h2>Total Active Users</h2>
-								<h3>214</h3>
+								<h3>{totalActiveUser}</h3>
 								<p>From one day ago</p>
 							</div>
 						</div>
@@ -187,55 +240,17 @@ const Home = () => {
 								</h2>
 							</header>
 
-							<div>
-								<img src={require('../../assets/logo.PNG')} alt="user-img" />
-								<hgroup>
-									<h3>Innocent</h3>
-									<h4>innocent39@gmail.com</h4>
-								</hgroup>
+							{newUsers.map((user) => (
+								<div key={user.id}>
+									<img src={require('../../assets/logo.PNG')} alt="user-img" />
+									<hgroup>
+										<h3>{user.name}</h3>
+										<h4>{user.email}</h4>
+									</hgroup>
 
-								<h5>View</h5>
-							</div>
-
-							<div>
-								<img src={require('../../assets/logo.PNG')} alt="user-img" />
-								<hgroup>
-									<h3>Amaizu</h3>
-									<h4>maconzy12@gmail.com</h4>
-								</hgroup>
-
-								<h5>View</h5>
-							</div>
-
-							<div>
-								<img src={require('../../assets/logo.PNG')} alt="user-img" />
-								<hgroup>
-									<h3>melody</h3>
-									<h4>mels@gmail.com</h4>
-								</hgroup>
-
-								<h5>View</h5>
-							</div>
-
-							<div>
-								<img src={require('../../assets/logo.PNG')} alt="user-img" />
-								<hgroup>
-									<h3>Zlatan</h3>
-									<h4>burna@gmail.com</h4>
-								</hgroup>
-
-								<h5>View</h5>
-							</div>
-
-							<div>
-								<img src={require('../../assets/logo.PNG')} alt="user-img" />
-								<hgroup>
-									<h3>okon</h3>
-									<h4>okon@gmail.com</h4>
-								</hgroup>
-
-								<h5>View</h5>
-							</div>
+									<h5>View</h5>
+								</div>
+							))}
 						</div>
 
 						<div className="task">
@@ -304,105 +319,72 @@ const Home = () => {
 								</hgroup>
 							</header>
 
-							<section>
-								<div>
-									<h2>Orlands Enterprise</h2>
-									<h3>Waste Disposal Vendor</h3>
-									<h4>Location: Owerri</h4>
-								</div>
-
-								<div>
+							{pickers.map((onePicker, index) => (
+								<section>
 									<div>
-										<h2>19,200</h2>
-										<h4>sales</h4>
+										<h2>{onePicker.name}</h2>
+										<h3>Waste Disposal Picker</h3>
+										<h4>{onePicker.email}</h4>
 									</div>
 
 									<div>
-										<h2>1046</h2>
-										<h4>sales</h4>
-									</div>
-								</div>
-							</section>
+										<div>
+											<h2>19,200</h2>
+											<h4>sales</h4>
+										</div>
 
-							<section>
-								<div>
-									<h2>Phillip Org</h2>
-									<h3>Waste Disposal Vendor</h3>
-									<h4>Location: Umuahia</h4>
-								</div>
-
-								<div>
-									<div>
-										<h2>19,200</h2>
-										<h4>sales</h4>
-									</div>
-
-									<div>
-										<h2>1046</h2>
-										<h4>sales</h4>
-									</div>
-								</div>
-							</section>
-
-							<section>
-								<div>
-									<h2>Kings ltd</h2>
-									<h3>Waste Disposal Vendor</h3>
-									<h4>Location: Anambra</h4>
-								</div>
-
-								<div>
-									<div>
-										<h2>19,200</h2>
-										<h4>sales</h4>
-									</div>
-
-									<div>
-										<h2>1046</h2>
-										<h4>sales</h4>
-									</div>
-								</div>
-							</section>
-
-							<section>
-								<div>
-									<h2>Orlands Enterprise</h2>
-									<h3>Waste Disposal Vendor</h3>
-									<h4>Location: Owerri</h4>
-								</div>
-
-								<div>
-									<div>
-										<h2>19,200</h2>
-										<h4>sales</h4>
-									</div>
-
-									<div>
-										<h2>1046</h2>
-										<h4>sales</h4>
-									</div>
-								</div>
-							</section>
-						</div>
-						{/* 
-						<div className="what-people-say">
-							<Slider className="slider-wrapper">
-								{content.map((item, index) => (
-									<div
-										key={index}
-										className="slider-content"
-										style={{ background: `${item.background}` }}
-									>
-										<div className="inner" style={{ background: `${item.background}` }}>
-											<h2>{item.name}</h2>
-											<span>{item.title}</span>
-											<p>{item.description}</p>
-											<button>{item.button}</button>
+										<div>
+											<h2>1046</h2>
+											<h4>sales</h4>
 										</div>
 									</div>
-								))}
-							</Slider>
-						</div> */}
+								</section>
+							))}
+
+							{collectors.map((oneCollector, index) => (
+								<section>
+									<div>
+										<h2>{oneCollector.name}</h2>
+										<h3>Waste Disposal Picker</h3>
+										<h4>{oneCollector.email}</h4>
+									</div>
+
+									<div>
+										<div>
+											<h2>19,200</h2>
+											<h4>sales</h4>
+										</div>
+
+										<div>
+											<h2>1046</h2>
+											<h4>sales</h4>
+										</div>
+									</div>
+								</section>
+							))}
+
+							{agencies.map((oneAgency, index) => (
+								<section>
+									<div>
+										<h2>{oneAgency.name}</h2>
+										<h3>Waste Disposal Picker</h3>
+										<h4>{oneAgency.email}</h4>
+									</div>
+
+									<div>
+										<div>
+											<h2>19,200</h2>
+											<h4>sales</h4>
+										</div>
+
+										<div>
+											<h2>1046</h2>
+											<h4>sales</h4>
+										</div>
+									</div>
+								</section>
+							))}
+						</div>
 					</section>
 				</section>
 			)}

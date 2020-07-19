@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../../../styles/users.styles/Agencies.css';
+import { NavLink } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa';
 import Vendors from './Vendors';
 import Footer from '../../core.sections/Footer';
 
 const Agencies = () => {
 	const [ users, setUsers ] = useState([]);
 	const [ isLoading, setIsLoading ] = useState(true);
+	const [ open, setOpen ] = useState(false);
 
 	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
 	const uri = 'http://admin.wm-has.org.ng/api/user/adminApi';
@@ -27,11 +30,16 @@ const Agencies = () => {
 	}, []);
 
 	const agencies = users.filter((user) => {
-		if (user.type === 3) {
+		if (user.type === '5' ) {
 			return user;
 		}
-		return null
+		return null;
 	});
+
+	const openDrawer = (e) => {
+		e.preventDefault();
+		setOpen(true);
+	};
 
 	return (
 		<div className="agencyBody">
@@ -43,7 +51,58 @@ const Agencies = () => {
 				</div>
 			) : (
 				<section className="pickers">
-					<h1>Users</h1>
+					<div className="mobileDrawer">
+						<div className="flex">
+							<h1>Users</h1>
+
+							<FaBars id="msg-shift-drop" onClick={openDrawer} />
+						</div>
+						{open && (
+							<section className="users">
+								<div>
+									<div className="userDiv">
+										<div>
+											<h3>
+												Pickers<span>(13)</span>
+											</h3>
+											<p>People who pick wastes</p>
+										</div>
+										<NavLink to="/vendors" id="userLink">
+											<p>See more</p>
+										</NavLink>
+									</div>
+
+									<div className="userDiv">
+										<div>
+											<h3>
+												Collectors<span>(3)</span>
+											</h3>
+											<p>
+												Those that collect wastes<br />from pickers or users
+											</p>
+										</div>
+										<NavLink to="/collectors" id="userLink">
+											<p>See more</p>
+										</NavLink>{' '}
+									</div>
+
+									<div className="userDiv">
+										<div>
+											<h3>
+												Recycling Agencies<span>(9)</span>
+											</h3>
+											<p>
+												Agencies that buy wastes<br /> and recycle them for use
+											</p>
+										</div>
+										<NavLink to="/agencies" id="userLink">
+											<p id="pre">See more</p>
+										</NavLink>{' '}
+									</div>
+								</div>
+							</section>
+						)}
+					</div>
 
 					<section className="pickerInfo">
 						<div className="pickerUsers">
@@ -66,7 +125,7 @@ const Agencies = () => {
 											</div>
 										);
 									} else {
-										return null
+										return null;
 									}
 								})}
 							</div>

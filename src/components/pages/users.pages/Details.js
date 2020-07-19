@@ -47,12 +47,7 @@ const Details = (props) => {
 		fetchedData();
 	}, []);
 	
-	const one = user.find( (oneUser )=>  oneUser === 7
-		// if( oneUser.id === 7) {
-			// return oneUser
-			// return `http://admin.wm-has.org.ng/api/user/adminApiUser/${oneUser.id}`
-		// }
-	)
+	const one = user.find( (oneUser ) => oneUser.id === '1' )
 	
 	// ----------------modal funct---------------
 	const openModal = () => {

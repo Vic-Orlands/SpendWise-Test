@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import { IoMdPerson, IoIosLock } from 'react-icons/io';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import '../styles/Login.css';
 
 class Login extends Component {
 	state = {
 		errormessage: false,
-		loading: false
+		loading: false,
+		hidden: true
+	};
+
+	togglePassword = (e) => {
+		e.preventDefault();
+		this.setState({
+			hidden: !this.state.hidden
+		});
 	};
 
 	handleInputChange = (e) => {
@@ -71,9 +80,13 @@ class Login extends Component {
 						<div>
 							{this.state.errormessage && <h6 className="text-danger">{this.state.errormessage}</h6>}
 							<label className="password">
-								<input type="password" id="input" required />
+								<input type={this.state.hidden ? 'password' : 'text'} id="input" required />
 							</label>
-							<IoIosLock id="inputFont" />
+							{this.state.hidden ? (
+								<AiFillEye id="inputFont" onClick={this.togglePassword} />
+							) : (
+								<AiFillEyeInvisible id="inputFont" onClick={this.togglePassword} style={{ color: 'green'}} />
+							)}
 						</div>
 						<input
 							type="submit"

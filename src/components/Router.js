@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Login from './Login';
 import Hub from './Hub';
 import Home from './pages/Home';
@@ -14,36 +14,31 @@ import Collecctors from './pages/users.pages/Collectors';
 import FullMessage from './pages/FullMessage';
 import userDetails from './pages/users.pages/Details';
 
-// import decode from 'jwt-decode';
+import axios from 'axios';
 
-// const checkAuth = () => {
-// 	const token = localStorage.getItem('token');
-// 	const refreshToken = localStorage.getItem('refreshToken');
-// 	if (!token || !refreshToken) {
-// 		return false;
-// 	}
-
-// 	try {
-// 		const { exp } = decode(refreshToken);
-
-// 		if (exp < new Date().getTime() / 1000) {
-// 			return false;
-// 		}
-// 	} catch (error) {
-// 		return false;
-// 	}
-
-// 	return true;
-// };
-
-// const Route = ({ component: Component, ...rest }) => (
-// 	<Route
-// 		{...rest}
-// 		render={(props) => (checkAuth() ? <Component {...props} /> : <Redirect to={{ pathname: '/' }} />)}
-// 	/>
-// );
+const PrivateRoute = ({ component: Component, ...rest }) => (
+	<Route
+		{...rest}
+		render={(props) =>
+			localStorage.getItem('user') ? (
+				<Component {...props} />
+			) : (
+				<Redirect to={{ pathname: '/', state: { from: props.location } }} />
+			)}
+	/>
+);
 
 const Router = () => {
+	const checkLoginStatus = () => {
+		axios.get('http://localhost:3000', { withCredentials: true }).then((res) => {
+			console.log(res);
+		});
+	};
+
+	useEffect(() => {
+		checkLoginStatus();
+	});
+
 	return (
 		<BrowserRouter>
 			<div>

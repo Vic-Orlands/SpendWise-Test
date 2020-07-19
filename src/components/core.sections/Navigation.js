@@ -54,6 +54,10 @@ export default class Navigation extends Component {
 		});
 	};
 
+	handleLogout = () => {
+		localStorage.removeItem('loggedIn');
+	}
+
 	render() {
 		return (
 			<div className="adminNav">
@@ -177,7 +181,7 @@ export default class Navigation extends Component {
 									<li>
 										<MdSettings />
 									</li>
-									<li>
+									<li onClick={this.handleLogout}>
 										<IoMdLogOut />
 									</li>
 								</div>
@@ -201,10 +205,10 @@ export default class Navigation extends Component {
 								<li>
 									<MdSettings id="dropdownFont" /> Settings
 								</li>
-								<li>
-									<NavLink to="/" id="link">
+								<li onClick={this.handleLogout}>
+									{/* <NavLink to="/" id="link"> */}
 										<IoMdLogOut id="dropdownFont" /> Logout
-									</NavLink>
+									{/* </NavLink> */}
 								</li>
 							</ul>
 						)}
