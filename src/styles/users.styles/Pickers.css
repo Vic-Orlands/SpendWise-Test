@@ -87,18 +87,6 @@
 	cursor: pointer;
 }
 
-.pickers .pickerInfo .pickerUsers .allUsers #link,
-.pickers .pickerInfo .pickerCollectors .allUsers #link,
-.pickers .pickerInfo .pickerAgencies .allUsers #link {
-	text-decoration: none;
-	margin: auto 0;
-}
-
-.pickers .pickerInfo .pickerUsers .allUsers #link:focus,
-.pickers .pickerInfo .pickerUsers .allUsers #link:active {
-	outline: none;
-}
-
 .pickers .pickerUsers div > div,
 .pickers .pickerCollectors div > div,
 .pickers .pickerAgencies div > div {

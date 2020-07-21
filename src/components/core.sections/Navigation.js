@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import '../../styles/Navigation.css';
 
-import { FaBars, FaEdit, FaBell } from 'react-icons/fa';
-import { IoIosMailUnread, IoMdLogOut, IoMdStats, IoIosLeaf, IoMdBrowsers } from 'react-icons/io';
+import { FaBars } from 'react-icons/fa';
+import { IoIosMailUnread, IoMdLogOut, IoIosLeaf, IoMdBrowsers } from 'react-icons/io';
 import {
 	MdArrowDropDown,
 	MdSettings,
 	MdPerson,
 	MdDashboard,
-	MdLocalPostOffice,
 	MdChat,
 	MdPersonPinCircle,
 	MdPhoneAndroid
@@ -18,7 +17,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { BsEnvelope } from 'react-icons/bs';
 
-export default class Navigation extends Component {
+class Navigation extends Component {
 	state = {
 		open: false,
 		push: false,
@@ -55,8 +54,10 @@ export default class Navigation extends Component {
 	};
 
 	handleLogout = () => {
+		const { history } = this.props;
 		localStorage.removeItem('loggedIn');
-	}
+		if (history) history.push('/');
+	};
 
 	render() {
 		return (
@@ -78,7 +79,6 @@ export default class Navigation extends Component {
 								{/* menu profile quick info */}
 
 								<br />
-
 								{/* sidebar menu */}
 								<div>
 									<div className="dashSection">
@@ -90,7 +90,7 @@ export default class Navigation extends Component {
 												<MdArrowDropDown id="dropFont" />
 											</li>
 											{this.state.open && (
-												<ul id="dropList">
+												<ul id="dropList" className="dropAnime">
 													<NavLink to="/home">
 														<li>
 															<AiOutlineMinus id="lineFont" />
@@ -112,7 +112,7 @@ export default class Navigation extends Component {
 												<MdArrowDropDown id="dropFont" />
 											</li>
 											{this.state.drop && (
-												<ul id="dropList">
+												<ul id="dropList" className="dropAnime">
 													<NavLink to="/users">
 														<li>
 															<MdPerson id="lineFont" className="userFont" />
@@ -134,19 +134,7 @@ export default class Navigation extends Component {
 													<span>Messages</span>
 												</li>
 											</NavLink>
-											<li>
-												<IoMdStats className="dashmenuFont" />
-												<span>Downloads</span>
-											</li>
-											<li>
-												<FaBell className="dashmenuFont" />
-												<span>Notifications</span>
-											</li>
 
-											<li>
-												<FaEdit className="dashmenuFont" />
-												<span>Transactions</span>
-											</li>
 											<NavLink to="/dump">
 												<li>
 													<RiDeleteBin6Line className="dashmenuFont" />
@@ -155,18 +143,13 @@ export default class Navigation extends Component {
 											</NavLink>
 
 											<li>
-												<MdPerson className="dashmenuFont" />
-												<span>Profile</span>
-											</li>
-
-											<li>
-												<MdLocalPostOffice className="dashmenuFont" />
-												<span>Posts</span>
-											</li>
-
-											<li>
 												<MdChat className="dashmenuFont" />
-												<span>Chat</span>
+												<span>Tasks</span>
+											</li>
+
+											<li>
+												<MdSettings className="dashmenuFont" />
+												<span>Settings'</span>
 											</li>
 										</ul>
 									</div>
@@ -176,7 +159,14 @@ export default class Navigation extends Component {
 								{/* /menu footer buttons */}
 								<div className="sidemenu-footer">
 									<li>
-										<IoMdBrowsers />
+										<a
+											href="https://www.wm-has.cresponet.net"
+											target="_blank"
+											rel="noopener noreferrer"
+											style={{ color: 'white' }}
+										>
+											<IoMdBrowsers />
+										</a>
 									</li>
 									<li>
 										<MdSettings />
@@ -200,14 +190,11 @@ export default class Navigation extends Component {
 						{this.state.dropProfile && (
 							<ul className="dropdownMenuList">
 								<li>
-									<MdPerson id="dropdownFont" />Edit Profile
-								</li>
-								<li>
 									<MdSettings id="dropdownFont" /> Settings
 								</li>
 								<li onClick={this.handleLogout}>
 									{/* <NavLink to="/" id="link"> */}
-										<IoMdLogOut id="dropdownFont" /> Logout
+									<IoMdLogOut id="dropdownFont" /> Logout
 									{/* </NavLink> */}
 								</li>
 							</ul>
@@ -219,3 +206,4 @@ export default class Navigation extends Component {
 		);
 	}
 }
+export default withRouter(Navigation);

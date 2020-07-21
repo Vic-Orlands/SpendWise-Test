@@ -22,56 +22,43 @@ const customStyles = {
 	}
 };
 
-const Details = (props) => {
+const VendorDetails = (props) => {
 	let subtitle;
-	const [ user, setUser ] = useState([]);
+	const [ vendor, setVendor ] = useState([]);
 	const [ isLoading, setIsLoading ] = useState(true);
 	const [ modalIsOpen, setModalIsOpen ] = useState(false);
 
 	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-	const userUrl = 'http://admin.wm-has.org.ng/api/user/adminApiUser';
+	const vendorUrl = `http://admin.wm-has.org.ng/api/user/adminApi/${props.location.id}`;
 
-	const fetchedData = () => {
-		fetch(proxyurl + userUrl)
+	const fetchedVendorData = () => {
+		fetch(proxyurl + vendorUrl)
 			.then((res) => res.json())
 			.then((res) => {
-				setUser(res.data);
+				setVendor(res.data);
 				setIsLoading(false);
 			})
 			.catch((error) => {
 				console.log(error)
 			});
 	};
+	console.log(vendor);
+	console.log(vendorUrl);
+	
+	
 
-	useEffect(() => {
-		fetchedData();
-	}, []);
+	useEffect( () => {
+		fetchedVendorData();
+    }, [ ]);
+    
+	const oneVendor = vendor
 
-	const one = user.find((oneUser) => oneUser.id === props.location.id);
-
-	// const deleteUser = () => {
-	// 	for(let i = 0; i < user.length; i++) {
-	// 		if(user[i].id === props.location.id ) {
-	// 			const newList = user.splice(i, 1);
-	// 			setUser({ ...user, newList })
-	// 			console.log(user)
-	// 			props.history.push({
-	// 				pathname: '/users'
-	// 			})
-	// 		}
-	// 	}
-	// 	} 
-
-		const deleteUser = () => {
-			const newList = user.filter(person => person.id !== props.location.id )
-			setUser({ ...user, newList})
-			console.log('====================================');
-			console.log({ user, newList });
-			console.log('====================================');
-			props.history.push({
-				pathname: '/users'
-			})
-		}
+	const deleteVendor = () => {
+		let deleted = vendor.splice(0, 1)
+		console.log(deleted);
+		console.log(vendor);
+		
+	} 
 
 	// ----------------modal funct---------------
 	const openModal = () => {
@@ -98,7 +85,7 @@ const Details = (props) => {
 				</div>
 			) : (
 				<section className="details">
-					<h1>User Details</h1>
+					<h1>Vendor Details</h1>
 
 					<section className="flexDivs">
 						<section className="username">
@@ -106,7 +93,7 @@ const Details = (props) => {
 								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
 								<h2>
 									{' '}
-									{one.name} {' '}
+									{oneVendor.name} {' '}
 								</h2>
 							</div>
 
@@ -115,7 +102,7 @@ const Details = (props) => {
 									<FaPiggyBank id="font" />
 									<div>
 										<h3>Earnings</h3>
-										<h4>${one.balance}</h4>
+										<h4>{oneVendor.wallet}</h4>
 									</div>
 								</div>
 
@@ -123,7 +110,7 @@ const Details = (props) => {
 									<FaPiggyBank id="font" />
 									<div>
 										<h3>NetBalance</h3>
-										<h4>${one.balance}</h4>
+										<h4>${oneVendor.wallet}</h4>
 									</div>
 								</div>
 							</div>
@@ -131,22 +118,27 @@ const Details = (props) => {
 							<div className="secondDiv">
 								<label>
 									Email:
-									<h3>{one.email}</h3>
+									<h3>{oneVendor.email}</h3>
 								</label>
 
 								<label>
-									Type:
-									<h3>{one.type}</h3>
+									Gender:
+									<h3>{oneVendor.gender}</h3>
+								</label>
+
+									<label>
+									Rating:
+									<h3>{oneVendor.rating}</h3>
 								</label>
 
 								<label>
-									gender:
-									<h3>{one.gender}</h3>
+									Status:
+									<h3>{oneVendor.status}</h3>
 								</label>
 
 								<label>
 									Phone:
-									<h3>{one.number}</h3>
+									<h3>{oneVendor.number}</h3>
 								</label>
 							</div>
 
@@ -176,13 +168,13 @@ const Details = (props) => {
 
 									<hr />
 
-									<h4>Are you sure you want to remove this user?</h4>
+									<h4>Are you sure you want to delete this Vendor?</h4>
 									<h6>
 										<span className="text-danger">Warning:</span>This action is not reversible
 									</h6>
 
 									<div className="btnParent">
-										<button className="btn btn-success" onClick={deleteUser}>Proceed</button>
+										<button className="btn btn-success" onClick={deleteVendor}>Proceed</button>
 										<button onClick={closeModal} className="btn btn-danger">
 											Cancel
 										</button>
@@ -290,22 +282,22 @@ const Details = (props) => {
 							<div>
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
+									<h4>${oneVendor.wallet}</h4>
+								</div>
+
+								<div>
+									<h3>Total Balance</h3>
+									<h4>${oneVendor.wallet}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
+									<h4>${oneVendor.wallet}</h4>
 								</div>
 
 								<div>
-									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
-								</div>
-
-								<div>
-									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
+									<h3>Total Balance</h3>
+									<h4>${oneVendor.wallet}</h4>
 								</div>
 							</div>
 						</section>
@@ -317,4 +309,4 @@ const Details = (props) => {
 	);
 };
 
-export default Details;
+export default VendorDetails;

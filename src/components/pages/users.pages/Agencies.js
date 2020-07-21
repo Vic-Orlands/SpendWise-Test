@@ -5,7 +5,7 @@ import { FaBars } from 'react-icons/fa';
 import Vendors from './Vendors';
 import Footer from '../../core.sections/Footer';
 
-const Agencies = () => {
+const Agencies = (props) => {
 	const [ users, setUsers ] = useState([]);
 	const [ isLoading, setIsLoading ] = useState(true);
 	const [ open, setOpen ] = useState(false);
@@ -30,11 +30,18 @@ const Agencies = () => {
 	}, []);
 
 	const agencies = users.filter((user) => {
-		if (user.type === '5' ) {
+		if (user.type === '5') {
 			return user;
 		}
 		return null;
 	});
+
+	const handleViewDetails = (oneUser) => {
+		props.history.push({
+			id: oneUser,
+			pathname: '/ventails'
+		});
+	};
 
 	const openDrawer = (e) => {
 		e.preventDefault();
@@ -121,7 +128,7 @@ const Agencies = () => {
 													<h4>{oneUser.email} </h4>
 												</hgroup>
 
-												<h2 id="link">View</h2>
+												<h2 onClick={() => handleViewDetails(oneUser.id)}>View</h2>
 											</div>
 										);
 									} else {

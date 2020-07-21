@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { IoMdPerson, IoIosLock } from 'react-icons/io';
+import { IoMdPerson } from 'react-icons/io';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import '../styles/Login.css';
 

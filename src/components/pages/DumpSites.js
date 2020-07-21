@@ -21,7 +21,6 @@ const DumpSite = () => {
 			{loading ? (
 				<div className="gifLoad">
 					<img src={require('../../assets/load.gif')} alt="Loading..." />
-					<h1> Loading, please be patient </h1>
 				</div>
 			) : (
 				<section className="dumpBody">

@@ -108,6 +108,29 @@
 	padding: 10px 0;
 }
 
+.dashSection ul .dropAnime {
+	animation:  dropList 300ms ease-in;
+}
+
+@keyframes dropList {
+	0% {
+		margin-top: -20px;
+		opacity: 0;
+	}
+	50% {
+		margin-top: -10px;
+		opacity: 0;
+	}
+	80% {
+		margin-top: -2px;
+		opacity: 0;
+	}
+	to {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
 .dashSection ul a:hover {
 	cursor: pointer;
 	text-decoration: none;

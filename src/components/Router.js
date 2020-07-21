@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Login from './Login';
 import Hub from './Hub';
@@ -13,14 +13,13 @@ import Collecctors from './pages/users.pages/Collectors';
 
 import FullMessage from './pages/FullMessage';
 import userDetails from './pages/users.pages/Details';
-
-import axios from 'axios';
+import vendorDetails from './pages/users.pages/VendorDetails';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route
 		{...rest}
 		render={(props) =>
-			localStorage.getItem('user') ? (
+			localStorage.getItem('loggedIn') ? (
 				<Component {...props} />
 			) : (
 				<Redirect to={{ pathname: '/', state: { from: props.location } }} />
@@ -29,37 +28,29 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 );
 
 const Router = () => {
-	const checkLoginStatus = () => {
-		axios.get('http://localhost:3000', { withCredentials: true }).then((res) => {
-			console.log(res);
-		});
-	};
-
-	useEffect(() => {
-		checkLoginStatus();
-	});
-
 	return (
 		<BrowserRouter>
 			<div>
 				<Switch>
 					<Route path="/" component={Login} exact={true} />
-					<Route path="/hub" component={Hub} />
-					<Route path="/home" component={Home} />
-					<Route path="/message" component={FullMessage} />
-					<Route path="/dump" component={DumpSite} />
-					<Route path="/analytics" component={Analytics} />
+
+					<PrivateRoute path="/hub" component={Hub} />
+					<PrivateRoute path="/home" component={Home} />
+					<PrivateRoute path="/message" component={FullMessage} />
+					<PrivateRoute path="/dump" component={DumpSite} />
+					<PrivateRoute path="/analytics" component={Analytics} />
 
 					{/* waste users page */}
-					<Route path="/users" component={Users} />
+					<PrivateRoute path="/users" component={Users} />
 
 					{/* vendor-pages */}
-					<Route path="/vendors" component={Pickers} />
-					<Route path="/agencies" component={Agencies} />
-					<Route path="/collectors" component={Collecctors} />
+					<PrivateRoute path="/vendors" component={Pickers} />
+					<PrivateRoute path="/agencies" component={Agencies} />
+					<PrivateRoute path="/collectors" component={Collecctors} />
 					{/* waste users page */}
 
-					<Route path="/details" component={userDetails} />
+					<PrivateRoute path="/details" component={userDetails} />
+					<PrivateRoute path="/ventails" component={vendorDetails} />
 				</Switch>
 			</div>
 		</BrowserRouter>

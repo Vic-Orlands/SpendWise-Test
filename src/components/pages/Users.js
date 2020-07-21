@@ -27,9 +27,9 @@ const Users = (props) => {
 		fetchedData();
 	}, []);
 
-	const handleViewDetails = (e) => {
-		e.preventDefault();
+	const handleViewDetails = (user) => {
 		props.history.push({
+			id: user,
 			pathname: '/details'
 		});
 	};
@@ -63,7 +63,9 @@ const Users = (props) => {
 											<h4>{user.email}</h4>
 										</hgroup>
 
-										<h2 onClick={handleViewDetails}>View</h2>
+										<h2 onClick={() => handleViewDetails(user.id) }>
+											View
+											</h2>
 									</div>
 								))}
 							</div>

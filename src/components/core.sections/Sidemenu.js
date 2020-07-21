@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaEdit } from 'react-icons/fa';
+import { NavLink, withRouter } from 'react-router-dom';
 import {
 	MdArrowDropDown,
 	MdSettings,
@@ -17,7 +16,7 @@ import { BsEnvelope } from 'react-icons/bs';
 
 import '../../styles/Sidemenu.css';
 
-export default class Sidemenu extends Component {
+class Sidemenu extends Component {
 	state = {
 		open: false,
 		drop: false
@@ -35,6 +34,12 @@ export default class Sidemenu extends Component {
 		this.setState({
 			drop: !this.state.drop
 		});
+	};
+
+	handleLogout = () => {
+		const { history } = this.props;
+		localStorage.removeItem('loggedIn');
+		if (history) history.push('/');
 	};
 
 	render() {
@@ -63,7 +68,7 @@ export default class Sidemenu extends Component {
 									<MdArrowDropDown id="dropFont" />
 								</li>
 								{this.state.open && (
-									<ul id="dropList">
+									<ul id="dropList" className="dropAnime">
 										<NavLink to="/home">
 											<li>
 												<AiOutlineMinus id="lineFont" />
@@ -85,7 +90,7 @@ export default class Sidemenu extends Component {
 									<MdArrowDropDown id="dropFont" />
 								</li>
 								{this.state.drop && (
-									<ul id="dropList">
+									<ul id="dropList" className="dropAnime">
 										<NavLink to="/users">
 											<li>
 												<MdPerson id="lineFont" className="userFont" />
@@ -108,10 +113,6 @@ export default class Sidemenu extends Component {
 									</li>
 								</NavLink>
 
-								<li>
-									<FaEdit className="dashmenuFont" />
-									<span>Transactions</span>
-								</li>
 								<NavLink to="/dump">
 									<li>
 										<RiDeleteBin6Line className="dashmenuFont" />
@@ -125,8 +126,8 @@ export default class Sidemenu extends Component {
 								</li>
 
 								<li>
-									<MdPerson className="dashmenuFont" />
-									<span>Profile</span>
+									<MdSettings className="dashmenuFont" />
+									<span>Settings</span>
 								</li>
 							</ul>
 						</div>
@@ -136,12 +137,19 @@ export default class Sidemenu extends Component {
 					{/* /menu footer buttons */}
 					<div className="sidemenu-footer">
 						<li>
-							<IoMdBrowsers />
+							<a
+								href="https://www.wm-has.cresponet.net"
+								target="_blank"
+								rel="noopener noreferrer"
+								style={{ color: 'white' }}
+							>
+								<IoMdBrowsers />
+							</a>
 						</li>
 						<li>
 							<MdSettings />
 						</li>
-						<li>
+						<li onClick={this.handleLogout}>
 							<IoMdLogOut />
 						</li>
 					</div>
@@ -151,3 +159,4 @@ export default class Sidemenu extends Component {
 		);
 	}
 }
+export default withRouter(Sidemenu);

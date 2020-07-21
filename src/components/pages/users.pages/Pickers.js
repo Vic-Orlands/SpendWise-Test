@@ -4,7 +4,7 @@ import { FaBars } from 'react-icons/fa';
 import Vendors from './Vendors';
 import '../../../styles/users.styles/Pickers.css';
 
-const Pickers = () => {
+const Pickers = (props) => {
 	const [ users, setUsers ] = useState([]);
 	const [ isLoading, setIsLoading ] = useState(true);
 	const [ open, setOpen ] = useState(false);
@@ -29,6 +29,13 @@ const Pickers = () => {
 	}, []);
 
 	const pickers = users.filter((user) => user.type === '1' );
+
+		const handleViewDetails = (oneUser) => {
+		props.history.push({
+			id: oneUser,
+			pathname: '/ventails'
+		});
+	};
 
 	const openDrawer = (e) => {
 		e.preventDefault();
@@ -113,9 +120,7 @@ const Pickers = () => {
 											<h4>{oneUser.email} </h4>
 										</hgroup>
 
-										<NavLink to="/details" id="link">
-											<h2>View</h2>
-										</NavLink>
+											<h2 onClick={() => handleViewDetails(oneUser.id) }>View</h2>
 									</div>
 								))}
 							</div>
