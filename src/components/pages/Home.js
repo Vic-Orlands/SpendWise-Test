@@ -44,7 +44,7 @@ const content = [
 ];
 // ----------------slider components-----------------
 
-const Home = ({ history }) => {
+const Home = () => {
 	const [ users, setUsers ] = useState([]);
 	const [ vendors, setVendors ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
@@ -83,9 +83,9 @@ const Home = ({ history }) => {
 		Promise.all([ fetchedPickers, fetchedUrls2 ]);
 	}, []);
 
-	const totalUsers = users.reduce((sum, current) => current.name ? sum +=1 : current, 0)
-	const totalVendors = vendors.reduce((sum, current) => current.name ? sum +=1 : current, 0)
-	const totalActiveUser = totalUsers + totalVendors
+	const totalUsers = users.reduce((sum, current) => (current.name ? (sum += 1) : current), 0);
+	const totalVendors = vendors.reduce((sum, current) => (current.name ? (sum += 1) : current), 0);
+	const totalActiveUser = totalUsers + totalVendors;
 
 	//-------here i sliced the fetched users into five to display only five users on the homepage----------
 	const newUsers = users.slice(0, 6);
@@ -93,14 +93,16 @@ const Home = ({ history }) => {
 	//-------here i  fetched pickers using its response type and then sliced it to display only two pickers on the homepage----------
 	const picker = users.filter((user) => user.type === '1');
 	const pickers = picker.slice(0, 2);
+	console.log(picker);
+	
 
 	//-------just like the pickers, I  fetched collectors using its response type and then sliced it to display only two collectors on the homepage----------
 	const collector = users.filter((user) => user.type === '2');
 	const collectors = collector.slice(0, 2);
 
-	//-------just like above, I  fetched the available agencies using its response type and then sliced it to display only two----------
+	//-------just like above, I  fetched the available agencies using its response type and then sliced it to display only one----------
 	const agency = users.filter((user) => {
-		if (user.type === '3') {
+		if (user.type === '5') {
 			return user;
 		}
 		return null;
@@ -171,12 +173,12 @@ const Home = ({ history }) => {
 							<div className="overlap">
 								<div>
 									<h3>Users</h3>
-									<h5>72 New Members</h5>
+									<h5> {totalUsers} Total Users</h5>
 								</div>
 
 								<div>
 									<h3> Vendors</h3>
-									<h5>72 New Members</h5>
+									<h5>{totalVendors} Total Vendors</h5>
 								</div>
 
 								<div>
@@ -229,7 +231,7 @@ const Home = ({ history }) => {
 					{/* -------------------------------second grid divs ends here--------------------------------- */}
 
 					<section className="usersShelf">
-						<div className="newUsers">
+						<div>
 							<header>
 								<h2>Newly Registered Users</h2>
 
@@ -248,7 +250,9 @@ const Home = ({ history }) => {
 										<h4>{user.email}</h4>
 									</hgroup>
 
-									<h5>View</h5>
+									<h5>
+										<NavLink to="/users" style={{ color: "#17a2b8"}}>View</NavLink>
+									</h5>
 								</div>
 							))}
 						</div>
@@ -320,7 +324,7 @@ const Home = ({ history }) => {
 							</header>
 
 							{pickers.map((onePicker, index) => (
-								<section>
+								<section key={index}>
 									<div>
 										<h2>{onePicker.name}</h2>
 										<h3>Waste Disposal Picker</h3>
@@ -329,12 +333,12 @@ const Home = ({ history }) => {
 
 									<div>
 										<div>
-											<h2>19,200</h2>
+											<h2>{onePicker.wallet}</h2>
 											<h4>sales</h4>
 										</div>
 
 										<div>
-											<h2>1046</h2>
+											<h2>{onePicker.wallet}</h2>
 											<h4>sales</h4>
 										</div>
 									</div>
@@ -342,21 +346,21 @@ const Home = ({ history }) => {
 							))}
 
 							{collectors.map((oneCollector, index) => (
-								<section>
+								<section key={index}>
 									<div>
 										<h2>{oneCollector.name}</h2>
-										<h3>Waste Disposal Picker</h3>
+										<h3>Waste Disposal Collector</h3>
 										<h4>{oneCollector.email}</h4>
 									</div>
 
 									<div>
 										<div>
-											<h2>19,200</h2>
+											<h2>{oneCollector.wallet}</h2>
 											<h4>sales</h4>
 										</div>
 
 										<div>
-											<h2>1046</h2>
+											<h2>{oneCollector.wallet}</h2>
 											<h4>sales</h4>
 										</div>
 									</div>
@@ -364,21 +368,21 @@ const Home = ({ history }) => {
 							))}
 
 							{agencies.map((oneAgency, index) => (
-								<section>
+								<section key={index}>
 									<div>
 										<h2>{oneAgency.name}</h2>
-										<h3>Waste Disposal Picker</h3>
+										<h3>Waste Disposal Agency</h3>
 										<h4>{oneAgency.email}</h4>
 									</div>
 
 									<div>
 										<div>
-											<h2>19,200</h2>
+											<h2>{oneAgency.wallet}</h2>
 											<h4>sales</h4>
 										</div>
 
 										<div>
-											<h2>1046</h2>
+											<h2>{oneAgency.wallet}</h2>
 											<h4>sales</h4>
 										</div>
 									</div>

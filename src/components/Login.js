@@ -28,8 +28,9 @@ class Login extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.setState({ loading: true });
-		const defaultPassword = document.getElementById('input');
-		if (defaultPassword.value !== null && defaultPassword.value === '@admin2020') {
+		const defaultUsername = document.getElementById('userTextInput');
+		const defaultPassword = document.getElementById('userPasswordInput');
+		if (defaultUsername.value === 'admin' && defaultPassword.value === '@admin2020') {
 			this.setState({ loading: false });
 			localStorage.setItem('loggedIn', true);
 			this.props.history.push({
@@ -39,7 +40,7 @@ class Login extends Component {
 			setTimeout(() => {
 				this.setState({
 					loading: false,
-					errormessage: 'Incorrect password!'
+					errormessage: 'Incorrect username and password!'
 				});
 			}, 2000);
 		}
@@ -73,14 +74,14 @@ class Login extends Component {
 					<form onSubmit={this.handleSubmit}>
 						<div>
 							<label>
-								<input type="text" autoFocus />
+								<input type="text" id="userTextInput" autoFocus />
 							</label>
 							<IoMdPerson id="inputFont" />
 						</div>
 						<div>
 							{this.state.errormessage && <h6 className="text-danger">{this.state.errormessage}</h6>}
 							<label className="password">
-								<input type={this.state.hidden ? 'password' : 'text'} id="input" required />
+								<input type={this.state.hidden ? 'password' : 'text'} id="userPasswordInput" required />
 							</label>
 							{this.state.hidden ? (
 								<AiFillEye id="inputFont" onClick={this.togglePassword} />

@@ -23,6 +23,10 @@
 	margin-top: 60px;
 }
 
+.users-body {
+	min-height: 90vh;
+}
+
 .users-body h1 {
 	margin: 20px 0 20px 0px;
 	font: normal 1rem sans-serif;

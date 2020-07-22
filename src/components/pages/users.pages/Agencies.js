@@ -36,6 +36,27 @@ const Agencies = (props) => {
 		return null;
 	});
 
+	// ----------------------------getting total vendors number starts here------------------------------------
+	//-------here i  fetched pickers using its response type and then sliced it to display only two pickers on the homepage----------
+	const totalPickers = users.reduce((counter, obj) => {
+		if (obj.type === '1') counter += 1;
+		return counter;
+		// ----------------------------getting total vendors number starts here------------------------------------
+	}, 0);
+
+	//-------just like the pickers, I  fetched collectors using its response type and then sliced it to display only two collectors on the homepage----------
+	const totalCollectors = users.reduce((counter, obj) => {
+		if (obj.type === '2') counter += 1;
+		return counter;
+	}, 0);
+
+	//-------just like above, I  fetched the available agencies using its response type and then sliced it to display only two----------
+	const totalAgencies = users.reduce((counter, obj) => {
+		if (obj.type === '5') counter += 1;
+		return counter;
+	}, 0);
+	// ----------------------------getting total vendors number ends here------------------------------------
+
 	const handleViewDetails = (oneUser) => {
 		props.history.push({
 			id: oneUser,
@@ -60,7 +81,7 @@ const Agencies = (props) => {
 				<section className="pickers">
 					<div className="mobileDrawer">
 						<div className="flex">
-							<h1>Users</h1>
+							<h1>Vendor Details</h1>
 
 							<FaBars id="msg-shift-drop" onClick={openDrawer} />
 						</div>
@@ -70,7 +91,7 @@ const Agencies = (props) => {
 									<div className="userDiv">
 										<div>
 											<h3>
-												Pickers<span>(13)</span>
+												Pickers<span>({totalPickers})</span>
 											</h3>
 											<p>People who pick wastes</p>
 										</div>
@@ -82,7 +103,7 @@ const Agencies = (props) => {
 									<div className="userDiv">
 										<div>
 											<h3>
-												Collectors<span>(3)</span>
+												Collectors<span>({totalCollectors})</span>
 											</h3>
 											<p>
 												Those that collect wastes<br />from pickers or users
@@ -96,7 +117,7 @@ const Agencies = (props) => {
 									<div className="userDiv">
 										<div>
 											<h3>
-												Recycling Agencies<span>(9)</span>
+												Recycling Agencies<span>({totalAgencies})</span>
 											</h3>
 											<p>
 												Agencies that buy wastes<br /> and recycle them for use

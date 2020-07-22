@@ -36,6 +36,18 @@
 /* -------------------------mobile responsiveness styling begins here----------------------------------- */
 
 @media screen and (max-width: 768px) {
+		/* -------------------responsive gif loader starts here------------------------------- */
+	.agencyBody .gifLoad {
+		width: 100% !important;
+		height: 100vh !important;
+	}
+
+	.agencyBody .gifLoad img {
+		margin: 0 auto;
+	}
+	/* -------------------responsive gif loader ends here------------------------------- */
+
+
 	.agencyBody .users {
 		width: 50% !important;
 		overflow-y: scroll;

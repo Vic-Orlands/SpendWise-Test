@@ -69,17 +69,21 @@ class Sidemenu extends Component {
 								</li>
 								{this.state.open && (
 									<ul id="dropList" className="dropAnime">
-										<NavLink to="/home">
-											<li>
-												<AiOutlineMinus id="lineFont" />
-												Home
-											</li>
+										<NavLink
+											activeClassName="navbar__link--active"
+											className="navbar__link"
+											to="/home"
+										>
+											<AiOutlineMinus id="lineFont" />
+											Home
 										</NavLink>
-										<NavLink to="/analytics">
-											<li>
-												<AiOutlineMinus id="lineFont" />
-												Analytics
-											</li>
+										<NavLink
+											activeClassName="navbar__link--active"
+											className="navbar__link"
+											to="/analytics"
+										>
+											<AiOutlineMinus id="lineFont" />
+											Analytics
 										</NavLink>
 									</ul>
 								)}
@@ -91,33 +95,33 @@ class Sidemenu extends Component {
 								</li>
 								{this.state.drop && (
 									<ul id="dropList" className="dropAnime">
-										<NavLink to="/users">
-											<li>
-												<MdPerson id="lineFont" className="userFont" />
-												Users
-											</li>
+										<NavLink
+											activeClassName="navbar__link--active"
+											className="navbar__link"
+											to="/users"
+										>
+											<MdPerson id="lineFont" className="userFont" />
+											Users
 										</NavLink>
-										<NavLink to="/vendors">
-											<li>
-												<MdPersonPinCircle className="dashmenuFont" />
-												Vendors
-											</li>
+										<NavLink
+											activeClassName="navbar__link--active"
+											className="navbar__link"
+											to="/vendors"
+										>
+											<MdPersonPinCircle className="dashmenuFont" />
+											Vendors
 										</NavLink>
 									</ul>
 								)}
 
-								<NavLink to="/message">
-									<li>
-										<BsEnvelope className="dashmenuFont" />
-										<span>Messages</span>
-									</li>
+								<NavLink activeClassName="navbar__link--active" className="navbar__link" to="/message">
+									<BsEnvelope className="dashmenuFont" />
+									Messages
 								</NavLink>
 
-								<NavLink to="/dump">
-									<li>
-										<RiDeleteBin6Line className="dashmenuFont" />
-										<span>DumpSites</span>
-									</li>
+								<NavLink to="/dump" activeClassName="navbar__link--active" className="navbar__link nav_link" 	>
+									<RiDeleteBin6Line className="dashmenuFont" />
+									DumpSites
 								</NavLink>
 
 								<li>

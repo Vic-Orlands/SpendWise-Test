@@ -149,7 +149,7 @@ class Navigation extends Component {
 
 											<li>
 												<MdSettings className="dashmenuFont" />
-												<span>Settings'</span>
+												<span>Settings</span>
 											</li>
 										</ul>
 									</div>
@@ -182,7 +182,9 @@ class Navigation extends Component {
 				</div>
 
 				<div className="navProfile">
+					<NavLink to="/message">
 					<IoIosMailUnread id="navMsg" />
+					</NavLink>
 
 					<div className="navProfileDrop">
 						<h1 onClick={this.dropProfile}>Welcome, Admin</h1>
@@ -193,9 +195,7 @@ class Navigation extends Component {
 									<MdSettings id="dropdownFont" /> Settings
 								</li>
 								<li onClick={this.handleLogout}>
-									{/* <NavLink to="/" id="link"> */}
 									<IoMdLogOut id="dropdownFont" /> Logout
-									{/* </NavLink> */}
 								</li>
 							</ul>
 						)}

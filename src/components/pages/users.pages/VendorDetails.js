@@ -31,34 +31,35 @@ const VendorDetails = (props) => {
 	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
 	const vendorUrl = `http://admin.wm-has.org.ng/api/user/adminApi/${props.location.id}`;
 
-	const fetchedVendorData = () => {
-		fetch(proxyurl + vendorUrl)
-			.then((res) => res.json())
-			.then((res) => {
-				setVendor(res.data);
-				setIsLoading(false);
-			})
-			.catch((error) => {
-				console.log(error)
-			});
+	useEffect(
+		() => {
+			fetch(proxyurl + vendorUrl)
+				.then((res) => res.json())
+				.then((res) => {
+					setVendor(res.data);
+					setIsLoading(false);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
+		},
+		[ vendorUrl ]
+	);
+
+	const oneVendor = vendor;
+
+	const deleteVendor = async (id) => {
+		await fetch(proxyurl + 'http://admin.wm-has.org.ng/api/user/adminApi/' + id, {
+			method: 'delete',
+			header: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			}
+		});
+		props.history.push({
+			pathname: '/vendors'
+		});
 	};
-	console.log(vendor);
-	console.log(vendorUrl);
-	
-	
-
-	useEffect( () => {
-		fetchedVendorData();
-    }, [ ]);
-    
-	const oneVendor = vendor
-
-	const deleteVendor = () => {
-		let deleted = vendor.splice(0, 1)
-		console.log(deleted);
-		console.log(vendor);
-		
-	} 
 
 	// ----------------modal funct---------------
 	const openModal = () => {
@@ -91,10 +92,7 @@ const VendorDetails = (props) => {
 						<section className="username">
 							<div>
 								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h2>
-									{' '}
-									{oneVendor.name} {' '}
-								</h2>
+								<h2> {oneVendor.name} </h2>
 							</div>
 
 							<div className="firstDiv">
@@ -102,7 +100,7 @@ const VendorDetails = (props) => {
 									<FaPiggyBank id="font" />
 									<div>
 										<h3>Earnings</h3>
-										<h4>{oneVendor.wallet}</h4>
+										<h4>${oneVendor.wallet}</h4>
 									</div>
 								</div>
 
@@ -126,7 +124,7 @@ const VendorDetails = (props) => {
 									<h3>{oneVendor.gender}</h3>
 								</label>
 
-									<label>
+								<label>
 									Rating:
 									<h3>{oneVendor.rating}</h3>
 								</label>
@@ -143,11 +141,9 @@ const VendorDetails = (props) => {
 							</div>
 
 							<div className="thirdDiv">
-									<NavLink to="/message" id="btn1" className="sendMsgBtn">
-								<button id="btn1">
-										Send Message
-								</button>
-									</NavLink>
+								<NavLink to="/message" id="btn1" className="sendMsgBtn">
+									<button id="btn1">Send Message</button>
+								</NavLink>
 								<button id="btn2" onClick={openModal}>
 									Warn
 								</button>
@@ -174,7 +170,9 @@ const VendorDetails = (props) => {
 									</h6>
 
 									<div className="btnParent">
-										<button className="btn btn-success" onClick={deleteVendor}>Proceed</button>
+										<button className="btn btn-success" onClick={() => deleteVendor(oneVendor.id)}>
+											Proceed
+										</button>
 										<button onClick={closeModal} className="btn btn-danger">
 											Cancel
 										</button>

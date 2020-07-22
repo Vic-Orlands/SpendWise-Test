@@ -39,7 +39,7 @@ const Details = (props) => {
 				setIsLoading(false);
 			})
 			.catch((error) => {
-				console.log(error)
+				console.log(error);
 			});
 	};
 
@@ -49,29 +49,18 @@ const Details = (props) => {
 
 	const one = user.find((oneUser) => oneUser.id === props.location.id);
 
-	// const deleteUser = () => {
-	// 	for(let i = 0; i < user.length; i++) {
-	// 		if(user[i].id === props.location.id ) {
-	// 			const newList = user.splice(i, 1);
-	// 			setUser({ ...user, newList })
-	// 			console.log(user)
-	// 			props.history.push({
-	// 				pathname: '/users'
-	// 			})
-	// 		}
-	// 	}
-	// 	} 
-
-		const deleteUser = () => {
-			const newList = user.filter(person => person.id !== props.location.id )
-			setUser({ ...user, newList})
-			console.log('====================================');
-			console.log({ user, newList });
-			console.log('====================================');
-			props.history.push({
-				pathname: '/users'
-			})
-		}
+	const deleteUser = async (id) => {
+		await fetch(proxyurl + 'http://admin.wm-has.org.ng/api/user/adminApiUser/' + id, {
+			method: 'delete',
+			header: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json'
+			}
+		})
+		props.history.push({
+			pathname: '/users'
+		});
+	};
 
 	// ----------------modal funct---------------
 	const openModal = () => {
@@ -104,10 +93,7 @@ const Details = (props) => {
 						<section className="username">
 							<div>
 								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
-								<h2>
-									{' '}
-									{one.name} {' '}
-								</h2>
+								<h2> {one.name} </h2>
 							</div>
 
 							<div className="firstDiv">
@@ -151,11 +137,9 @@ const Details = (props) => {
 							</div>
 
 							<div className="thirdDiv">
-									<NavLink to="/message" id="btn1" className="sendMsgBtn">
-								<button id="btn1">
-										Send Message
-								</button>
-									</NavLink>
+								<NavLink to="/message" id="btn1" className="sendMsgBtn">
+									<button id="btn1">Send Message</button>
+								</NavLink>
 								<button id="btn2" onClick={openModal}>
 									Warn
 								</button>
@@ -182,7 +166,9 @@ const Details = (props) => {
 									</h6>
 
 									<div className="btnParent">
-										<button className="btn btn-success" onClick={deleteUser}>Proceed</button>
+										<button className="btn btn-success" onClick={() => deleteUser(one.id)}>
+											Proceed
+										</button>
 										<button onClick={closeModal} className="btn btn-danger">
 											Cancel
 										</button>
@@ -290,22 +276,22 @@ const Details = (props) => {
 							<div>
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
+									<h4>${one.balance}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
+									<h4>${one.balance}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
+									<h4>${one.balance}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>$500,000</h4>
+									<h4>${one.balance}</h4>
 								</div>
 							</div>
 						</section>

@@ -103,7 +103,6 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-gap: 2em;
-	/* grid-auto-rows: minmax(100px, auto); */
 }
 
 .homeBody .usersShelf div {
@@ -167,8 +166,7 @@
 
 .homeBody .usersShelf div > div h5 {
 	font: bold 12px arial;
-	color: #17a2b8;
-	margin: auto 20px;
+	margin: auto 15px;
 	cursor: pointer;
 }
 

@@ -89,6 +89,7 @@
 .dashSection ul #dropList li {
 	font-size: 10px;
 	font-weight: lighter;
+  letter-spacing: .1em;
 }
 
 .dashSection ul li:hover,
@@ -131,14 +132,39 @@
 	}
 }
 
-.dashSection ul a:hover {
+.navbar__link {
+	display: block;
+	margin: 5px 0 5px 20px;
+	padding: 10px;
+	list-style: none;
+	color: #fff;
 	cursor: pointer;
+	font-size: 10px;
+	font-weight: lighter;
+  letter-spacing: .1em;
+}
+
+a:hover.navbar__link {
+	background-color: #03c7a9;
+	color: white;
+	font-weight: bolder;
+	margin-left: 0px;
+	margin-right: 10px;
+	padding-left: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
 	text-decoration: none;
 }
 
-.dashSection ul li:active,
-.dashSection ul a:active {
-	outline: none;
+.navbar__link--active {
+background-color: #03c7a9;
+	font-weight: bolder;
+	margin-left: 0px;
+	margin-right: 10px;
+	padding-left: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+  transition: background-color .5s ease-in-out;
 }
 
 .dashSection .dashmenuFont {
@@ -187,7 +213,7 @@
 	content: 'official site';
 	position: absolute;
 	bottom: 0;
-	left: 35px;
+	left: 55px;
 	white-space: nowrap;
 	background-color: #25456ef1;
 	padding: 5px 7px;
@@ -206,7 +232,7 @@
 	content: 'settings';
 	position: absolute;
 	bottom: 0;
-	right: 97px;
+	right: 120px;
 	white-space: nowrap;
 	background-color: #25456ef1;
 	padding: 5px 7px;
@@ -225,7 +251,7 @@
 	content: 'logout';
 	position: absolute;
 	bottom: 0;
-	right: 42px;
+	right: 61px;
 	white-space: nowrap;
 	background-color: #25456ef1;
 	padding: 5px 7px;

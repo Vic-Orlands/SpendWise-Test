@@ -472,7 +472,8 @@
 
 /* -------------responsive modal styling----------------- */
 .ReactModal__Content {
-	width: 60%;
+	width: 65%;
+	margin-left: -60px;
 }
 
 .confirmModal div h2 {

@@ -23,7 +23,6 @@ const Analytics = () => {
 			.then((res) => res.json())
 			.then((res) => {
 				setUsers(res.data);
-				console.log(res.data)
 				setLoading(false);
 			})
 			.catch((error) => {
@@ -37,7 +36,6 @@ const Analytics = () => {
 			.then((res) => {
 				setVendors(res.data);
 				setLoading(false);
-				console.log(res.data)
 			})
 			.catch((error) => {
 				console.log(error);
