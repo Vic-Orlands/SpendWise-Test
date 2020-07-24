@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import Message from './Messages';
+// import Message from './Messages';
 import { IoIosSend } from 'react-icons/io';
-import { FaBars } from 'react-icons/fa';
+// import { FaBars } from 'react-icons/fa';
 import '../../styles/FullMessage.css';
 import Navigation from '../core.sections/Navigation';
+import Sidemenu from '../core.sections/Sidemenu';
 
 class Pickers extends Component {
 	state = {
@@ -21,46 +21,71 @@ class Pickers extends Component {
 		});
 	};
 
-	componentDidMount = () => {
-		setTimeout(() => {
-			this.setState({
-				loading: false
-			});
-		}, 3000);
+	componentDidMount = () => {		
+		const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+		const uri = `http://admin.wm-has.org.ng/api/user/message?vendor_id=${this.props.location.id}`;
+
+			fetch(proxyurl + uri)
+				.then((res) => res.json())
+				.then((res) => {
+					this.setState({
+						messages: res.message,
+						loading: !this.state.loading
+					});
+					console.log(res.message);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 	};
 
 	handleChange = (e) => {
-		const { name, value } = e.target
+		const { name, value } = e.target;
 		this.setState({
-			[ name ]: value
+			[name]: value
 		});
 	};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		if (this.state.newMessage === null ) {
-			this.setState((prevState) => {
-				return {
-					messages: [ ...prevState.messages ]
-				};
-			});
-		} else
-			this.setState((prevState) => {
-				return {
-					messages: [ ...prevState.messages, this.state.newMessage ],
-					newMessage: (prevState.newMessage = ' ')
-				};
-			});
+		// if (this.state.newMessage === null) {
+		// 	this.setState((prevState) => {
+		// 		return {
+		// 			messages: [ ...prevState.messages ]
+		// 		};
+		// 	});
+		// } else
+		// 	this.setState((prevState) => {
+		// 		return {
+		// 			messages: [ ...prevState.messages, this.state.newMessage ],
+		// 			newMessage: (prevState.newMessage = ' ')
+		// 		};
+		// 	});
+			const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+		const uri = `http://admin.wm-has.org.ng/api/user/message?vendor_id=${this.props.location.id}`;
+
+			fetch(proxyurl + uri)
+				.then((res) => res.json())
+				.then((res) => {
+					this.setState({
+						messages: res.message,
+						loading: !this.state.loading
+					});
+					console.log(res.message);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 	};
 
 	render() {
-		let timestamp = new Date().toLocaleString();
-
 		const { loading, newMessage, messages } = this.state;
+
 		return (
 			<div className="fullMsg">
 				<Navigation />
-				<Message />
+				<Sidemenu />
+				{/* <Message /> */}
 
 				{loading ? (
 					<div className="gifLoad">
@@ -74,7 +99,7 @@ class Pickers extends Component {
 								<h1>Socrates Itunay</h1>
 								<h3>Oct 20, 2020 8:45am</h3>
 							</div>
-
+{/* 
 							<FaBars id="msg-shift-drop" onClick={this.handleDrag} />
 							{this.state.drag && (
 								<section className="message">
@@ -200,7 +225,7 @@ class Pickers extends Component {
 										</div>
 									</div>
 								</section>
-							)}
+							)} */}
 						</div>
 
 						<section className="replyMsg">
@@ -217,11 +242,16 @@ class Pickers extends Component {
 									<span>10:00pm</span>
 								</h4>
 
-								{messages.map((msg,  index="id") => (
-									<h4 key={index}>
-										{msg}
-										<span>{timestamp}</span>
-									</h4>
+								{messages.map((msg, index) => (
+									<h3 key={index}>
+									<span>
+									{msg.title}
+									</span>
+									{""}
+									{""}
+										{msg.message}
+										<span>{msg.created_at.split(" ")[1].concat( " " ).concat( msg.created_at.split(" ")[0])}</span>
+									</h3>
 								))}
 							</div>
 

@@ -6,7 +6,6 @@ import Navigation from '../../core.sections/Navigation';
 import Sidemenu from '../../core.sections/Sidemenu';
 import Footer from '../../core.sections/Footer';
 import { FaPiggyBank } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
 import { IoIosClose } from 'react-icons/io';
 
 // -------modal custom default styling----------
@@ -31,21 +30,26 @@ const Details = (props) => {
 	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
 	const userUrl = 'http://admin.wm-has.org.ng/api/user/adminApiUser';
 
-	const fetchedData = () => {
-		fetch(proxyurl + userUrl)
-			.then((res) => res.json())
-			.then((res) => {
-				setUser(res.data);
-				setIsLoading(false);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	};
-
-	useEffect(() => {
-		fetchedData();
-	}, []);
+	useEffect(
+		() => {
+			if (props.location.id !== undefined) {
+				fetch(proxyurl + userUrl)
+					.then((res) => res.json())
+					.then((res) => {
+						setUser(res.data);
+						setIsLoading(false);
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			} else {
+				props.history.push({
+					pathname: '/users'
+				});
+			}
+		},
+		[ userUrl, props ]
+	);
 
 	const one = user.find((oneUser) => oneUser.id === props.location.id);
 
@@ -56,9 +60,18 @@ const Details = (props) => {
 				Accept: 'application/json',
 				'Content-Type': 'application/json'
 			}
-		})
+		});
 		props.history.push({
 			pathname: '/users'
+		});
+	};
+
+	const handleSendMsg = (one) => {
+		console.log(one);
+
+		props.history.push({
+			id: one,
+			pathname: '/message'
 		});
 	};
 
@@ -74,6 +87,7 @@ const Details = (props) => {
 	const closeModal = () => {
 		setModalIsOpen(false);
 	};
+
 	// ----------------modal funct---------------
 
 	return (
@@ -137,9 +151,9 @@ const Details = (props) => {
 							</div>
 
 							<div className="thirdDiv">
-								<NavLink to="/message" id="btn1" className="sendMsgBtn">
-									<button id="btn1">Send Message</button>
-								</NavLink>
+								<button id="btn1" onClick={() => handleSendMsg(one.id)}>
+									Send Message
+								</button>
 								<button id="btn2" onClick={openModal}>
 									Warn
 								</button>

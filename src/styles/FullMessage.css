@@ -8,9 +8,8 @@
 }
 
 .fullMsg .gifLoad {
-	width: 62%;
+	width: 82%;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -21,7 +20,8 @@
 }
 
 .messages {
-	width: 62%;
+	width: 82%;
+	margin-top: 60px;
 	height: 93.5vh;
 	float: right;
 	background-color: #e9ecef;

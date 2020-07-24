@@ -6,7 +6,6 @@ import Navigation from '../../core.sections/Navigation';
 import Sidemenu from '../../core.sections/Sidemenu';
 import Footer from '../../core.sections/Footer';
 import { FaPiggyBank } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
 import { IoIosClose } from 'react-icons/io';
 
 // -------modal custom default styling----------
@@ -33,17 +32,23 @@ const VendorDetails = (props) => {
 
 	useEffect(
 		() => {
-			fetch(proxyurl + vendorUrl)
-				.then((res) => res.json())
-				.then((res) => {
-					setVendor(res.data);
-					setIsLoading(false);
-				})
-				.catch((error) => {
-					console.log(error);
+			if (props.location.id !== undefined) {
+				fetch(proxyurl + vendorUrl)
+					.then((res) => res.json())
+					.then((res) => {
+						setVendor(res.data);
+						setIsLoading(false);
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			} else {
+				props.history.push({
+					pathname: '/vendors'
 				});
+			}
 		},
-		[ vendorUrl ]
+		[ vendorUrl, props ]
 	);
 
 	const oneVendor = vendor;
@@ -58,6 +63,13 @@ const VendorDetails = (props) => {
 		});
 		props.history.push({
 			pathname: '/vendors'
+		});
+	};
+
+	const handleSendMsg = (oneVendor) => {
+		props.history.push({
+			id: oneVendor,
+			pathname: '/message'
 		});
 	};
 
@@ -138,12 +150,17 @@ const VendorDetails = (props) => {
 									Phone:
 									<h3>{oneVendor.number}</h3>
 								</label>
+
+								<label>
+									Address:
+									<h3>{oneVendor.vendor_address}</h3>
+								</label>
 							</div>
 
 							<div className="thirdDiv">
-								<NavLink to="/message" id="btn1" className="sendMsgBtn">
-									<button id="btn1">Send Message</button>
-								</NavLink>
+								<button id="btn1" onClick={() => handleSendMsg(oneVendor.id)}>
+									Send Message
+								</button>
 								<button id="btn2" onClick={openModal}>
 									Warn
 								</button>

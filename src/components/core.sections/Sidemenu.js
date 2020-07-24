@@ -5,14 +5,13 @@ import {
 	MdSettings,
 	MdPerson,
 	MdDashboard,
-	MdChat,
 	MdPersonPinCircle,
 	MdPhoneAndroid
 } from 'react-icons/md';
 import { IoMdLogOut, IoMdBrowsers, IoIosLeaf } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';
-import { BsEnvelope } from 'react-icons/bs';
+// import { BsEnvelope } from 'react-icons/bs';
 
 import '../../styles/Sidemenu.css';
 
@@ -113,26 +112,29 @@ class Sidemenu extends Component {
 										</NavLink>
 									</ul>
 								)}
-
-								<NavLink activeClassName="navbar__link--active" className="navbar__link" to="/message">
+								{/* 
+								<NavLink to="/message" activeClassName="navbar__link--active" className="navbar__link">
 									<BsEnvelope className="dashmenuFont" />
 									Messages
-								</NavLink>
+								</NavLink> */}
 
-								<NavLink to="/dump" activeClassName="navbar__link--active" className="navbar__link nav_link" 	>
+								<NavLink
+									to="/dump"
+									activeClassName="navbar__link--active"
+									className="navbar__link nav_link"
+								>
 									<RiDeleteBin6Line className="dashmenuFont" />
 									DumpSites
 								</NavLink>
 
-								<li>
-									<MdChat className="dashmenuFont" />
-									<span>Tasks</span>
-								</li>
-
-								<li>
+								<NavLink
+									to="/settings"
+									activeClassName="navbar__link--active"
+									className="navbar__link nav_link"
+								>
 									<MdSettings className="dashmenuFont" />
-									<span>Settings</span>
-								</li>
+									Settings
+								</NavLink>
 							</ul>
 						</div>
 					</div>

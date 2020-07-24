@@ -9,13 +9,12 @@ import {
 	MdSettings,
 	MdPerson,
 	MdDashboard,
-	MdChat,
 	MdPersonPinCircle,
 	MdPhoneAndroid
 } from 'react-icons/md';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';
-import { BsEnvelope } from 'react-icons/bs';
+// import { BsEnvelope } from 'react-icons/bs';
 
 class Navigation extends Component {
 	state = {
@@ -128,12 +127,12 @@ class Navigation extends Component {
 												</ul>
 											)}
 
-											<NavLink to="/message">
+											{/* <NavLink to="/message">
 												<li>
 													<BsEnvelope className="dashmenuFont" />
 													<span>Messages</span>
 												</li>
-											</NavLink>
+											</NavLink> */}
 
 											<NavLink to="/dump">
 												<li>
@@ -141,11 +140,6 @@ class Navigation extends Component {
 													<span>DumpSites</span>
 												</li>
 											</NavLink>
-
-											<li>
-												<MdChat className="dashmenuFont" />
-												<span>Tasks</span>
-											</li>
 
 											<li>
 												<MdSettings className="dashmenuFont" />
@@ -183,7 +177,7 @@ class Navigation extends Component {
 
 				<div className="navProfile">
 					<NavLink to="/message">
-					<IoIosMailUnread id="navMsg" />
+						<IoIosMailUnread id="navMsg" />
 					</NavLink>
 
 					<div className="navProfileDrop">

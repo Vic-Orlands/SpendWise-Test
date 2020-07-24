@@ -5,6 +5,7 @@ import Hub from './Hub';
 import Home from './pages/Home';
 import DumpSite from './pages/DumpSites';
 import Analytics from './pages/Analytics';
+import Settings from './pages/Settings';
 
 import Users from './pages/Users';
 import Pickers from './pages/users.pages/Pickers';
@@ -39,6 +40,7 @@ const Router = () => {
 					<PrivateRoute path="/message" component={FullMessage} />
 					<PrivateRoute path="/dump" component={DumpSite} />
 					<PrivateRoute path="/analytics" component={Analytics} />
+					<PrivateRoute path="/settings" component={Settings} />
 
 					{/* waste users page */}
 					<PrivateRoute path="/users" component={Users} />

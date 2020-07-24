@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
-import { BsThreeDotsVertical } from 'react-icons/bs';
+import { GrOverview } from 'react-icons/gr';
 import { FcPieChart } from 'react-icons/fc';
 import { FiDownload } from 'react-icons/fi';
 import { GiChart } from 'react-icons/gi';
@@ -93,8 +93,7 @@ const Home = () => {
 	//-------here i  fetched pickers using its response type and then sliced it to display only two pickers on the homepage----------
 	const picker = users.filter((user) => user.type === '1');
 	const pickers = picker.slice(0, 2);
-	console.log(picker);
-	
+	const fivePickers = picker.slice(0.6);
 
 	//-------just like the pickers, I  fetched collectors using its response type and then sliced it to display only two collectors on the homepage----------
 	const collector = users.filter((user) => user.type === '2');
@@ -251,7 +250,9 @@ const Home = () => {
 									</hgroup>
 
 									<h5>
-										<NavLink to="/users" style={{ color: "#17a2b8"}}>View</NavLink>
+										<NavLink to="/users" style={{ color: '#17a2b8' }}>
+											View
+										</NavLink>
 									</h5>
 								</div>
 							))}
@@ -259,63 +260,50 @@ const Home = () => {
 
 						<div className="task">
 							<header>
-								<h2>Task</h2>
+								<h2>Popular Vendors</h2>
 							</header>
 
-							<div>
-								<input type="checkbox" />
+							{pickers.map((onePicker, index) => (
 								<div>
-									<h3>Assemble all Vendors</h3>
-									<h4>By Bob</h4>
+									<div key={index}>
+										<h3>{onePicker.name}</h3>
+										<h4>{onePicker.email}</h4>
+									</div>
+
+									<NavLink to="/vendors">
+										<GrOverview id="font" />
+									</NavLink>
 								</div>
+							))}
 
-								<BsThreeDotsVertical id="font" />
-							</div>
-
-							<div>
-								<input type="checkbox" />
+							{collectors.map((oneCollector, index) => (
 								<div>
-									<h3>Server Maintainance</h3>
-									<h4>By Melody</h4>
+									<div key={index}>
+										<h3>{oneCollector.name}</h3>
+										<h4>{oneCollector.email}</h4>
+									</div>
+									<NavLink to="/vendors">
+										<GrOverview id="font" />
+									</NavLink>{' '}
 								</div>
+							))}
 
-								<BsThreeDotsVertical id="font" />
-							</div>
-
-							<div>
-								<input type="checkbox" />
+							{agencies.map((oneAgency, index) => (
 								<div>
-									<h3>Update customers' testimony</h3>
-									<h4>By Chimezie</h4>
+									<div key={index}>
+										<h3>{oneAgency.name}</h3>
+										<h4>{oneAgency.email}</h4>
+									</div>
+									<NavLink to="/vendors">
+										<GrOverview id="font" />
+									</NavLink>{' '}
 								</div>
-
-								<BsThreeDotsVertical id="font" />
-							</div>
-
-							<div>
-								<input type="checkbox" />
-								<div>
-									<h3>Mobile Application Upgrade</h3>
-									<h4>By Shegun</h4>
-								</div>
-
-								<BsThreeDotsVertical id="font" />
-							</div>
-
-							<div>
-								<input type="checkbox" />
-								<div>
-									<h3>Replace digital brands and logos</h3>
-									<h4>By Jasper</h4>
-								</div>
-
-								<BsThreeDotsVertical id="font" />
-							</div>
+							))}
 						</div>
 
 						<div className="popularVendors">
 							<header>
-								<h2>Popular Vendors</h2>
+								<h2>Popular Pickers</h2>
 								<hgroup>
 									<h3>Latest</h3>
 									<h3>Month</h3>
@@ -323,7 +311,7 @@ const Home = () => {
 								</hgroup>
 							</header>
 
-							{pickers.map((onePicker, index) => (
+							{fivePickers.map((onePicker, index) => (
 								<section key={index}>
 									<div>
 										<h2>{onePicker.name}</h2>
@@ -339,50 +327,6 @@ const Home = () => {
 
 										<div>
 											<h2>{onePicker.wallet}</h2>
-											<h4>sales</h4>
-										</div>
-									</div>
-								</section>
-							))}
-
-							{collectors.map((oneCollector, index) => (
-								<section key={index}>
-									<div>
-										<h2>{oneCollector.name}</h2>
-										<h3>Waste Disposal Collector</h3>
-										<h4>{oneCollector.email}</h4>
-									</div>
-
-									<div>
-										<div>
-											<h2>{oneCollector.wallet}</h2>
-											<h4>sales</h4>
-										</div>
-
-										<div>
-											<h2>{oneCollector.wallet}</h2>
-											<h4>sales</h4>
-										</div>
-									</div>
-								</section>
-							))}
-
-							{agencies.map((oneAgency, index) => (
-								<section key={index}>
-									<div>
-										<h2>{oneAgency.name}</h2>
-										<h3>Waste Disposal Agency</h3>
-										<h4>{oneAgency.email}</h4>
-									</div>
-
-									<div>
-										<div>
-											<h2>{oneAgency.wallet}</h2>
-											<h4>sales</h4>
-										</div>
-
-										<div>
-											<h2>{oneAgency.wallet}</h2>
 											<h4>sales</h4>
 										</div>
 									</div>
