@@ -89,7 +89,6 @@
 .dashSection ul #dropList li {
 	font-size: 10px;
 	font-weight: lighter;
-  letter-spacing: .1em;
 }
 
 .dashSection ul li:hover,
@@ -110,7 +109,7 @@
 }
 
 .dashSection ul .dropAnime {
-	animation:  dropList 300ms ease-in;
+	animation: dropList 300ms ease-in;
 }
 
 @keyframes dropList {
@@ -141,7 +140,6 @@
 	cursor: pointer;
 	font-size: 10px;
 	font-weight: lighter;
-  letter-spacing: .1em;
 }
 
 a:hover.navbar__link {
@@ -157,14 +155,14 @@ a:hover.navbar__link {
 }
 
 .navbar__link--active {
-background-color: #03c7a9;
+	background-color: #03c7a9;
 	font-weight: bolder;
 	margin-left: 0px;
 	margin-right: 10px;
 	padding-left: 30px;
 	border-top-right-radius: 30px;
 	border-bottom-right-radius: 30px;
-  transition: background-color .5s ease-in-out;
+	transition: background-color .5s ease-in-out;
 }
 
 .dashSection .dashmenuFont {
@@ -260,7 +258,6 @@ background-color: #03c7a9;
 	transform: scale(0);
 	transition: transform ease-out 300ms, bottom ease-out 300ms;
 }
-
 
 .sidemenu-footer li:nth-child(3):hover::before {
 	transform: scale(1);

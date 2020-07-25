@@ -130,8 +130,8 @@ const Analytics = () => {
 							<h5>
 								<MdMessage className="hFont" /> Messages
 							</h5>
-							<h4>13</h4>
-							<p>1 hour ago</p>
+							<h4>0</h4>
+							<p>1 min ago</p>
 						</div>
 					</div>
 

@@ -87,8 +87,25 @@ const Home = () => {
 	const totalVendors = vendors.reduce((sum, current) => (current.name ? (sum += 1) : current), 0);
 	const totalActiveUser = totalUsers + totalVendors;
 
-	//-------here i sliced the fetched users into five to display only five users on the homepage----------
-	const newUsers = users.slice(0, 6);
+	//-------below is a function to calculate the total balance of all vendor transaction ----------
+	let balSum = 0;
+	let item = null;
+	let bal;
+	for (let i = 0; i < vendors.length; i++) {
+		item = vendors[i];
+		if (item.balance) {
+			balSum = item.balance + balSum;
+			bal = parseFloat(balSum).toFixed();
+		}
+	}
+
+	//-------here i sliced the fetched users into five to display only five new users on the homepage----------
+	let lastFiveUsers = (array, n) => {
+		if (array == null) return void 0;
+		if (n == null) return array[array.length - 1];
+		return array.slice(Math.max(array.length - n, 0));
+	};
+	const newUsers = lastFiveUsers(users, 6);
 
 	//-------here i  fetched pickers using its response type and then sliced it to display only two pickers on the homepage----------
 	const picker = users.filter((user) => user.type === '1');
@@ -127,8 +144,8 @@ const Home = () => {
 							<RiMoneyDollarCircleLine id="shelfFont" />
 							<div>
 								<h2>Total Revenue</h2>
-								<h3>$758</h3>
-								<p>From last week</p>
+								<h3>&#8358;{bal}</h3>
+								<p>From this week</p>
 							</div>
 						</div>
 
@@ -136,7 +153,7 @@ const Home = () => {
 							<FcPieChart id="shelfFont" />
 							<div>
 								<h2>Orders Received</h2>
-								<h3>1024</h3>
+								<h3>0</h3>
 								<p>From this week</p>
 							</div>
 						</div>
@@ -154,7 +171,7 @@ const Home = () => {
 							<FiDownload id="shelfFont" />
 							<div>
 								<h2>Total Downloads</h2>
-								<h3>200</h3>
+								<h3>0</h3>
 								<p>From one day ago</p>
 							</div>
 						</div>
@@ -187,7 +204,7 @@ const Home = () => {
 
 								<div>
 									<h3> Messages</h3>
-									<h5>10 New Messages</h5>
+									<h5>0 New Messages</h5>
 								</div>
 							</div>
 						</section>
@@ -264,8 +281,8 @@ const Home = () => {
 							</header>
 
 							{pickers.map((onePicker, index) => (
-								<div>
-									<div key={index}>
+								<div key={index}>
+									<div>
 										<h3>{onePicker.name}</h3>
 										<h4>{onePicker.email}</h4>
 									</div>
@@ -277,8 +294,8 @@ const Home = () => {
 							))}
 
 							{collectors.map((oneCollector, index) => (
-								<div>
-									<div key={index}>
+								<div key={index}>
+									<div>
 										<h3>{oneCollector.name}</h3>
 										<h4>{oneCollector.email}</h4>
 									</div>
@@ -289,8 +306,8 @@ const Home = () => {
 							))}
 
 							{agencies.map((oneAgency, index) => (
-								<div>
-									<div key={index}>
+								<div key={index}>
+									<div>
 										<h3>{oneAgency.name}</h3>
 										<h4>{oneAgency.email}</h4>
 									</div>
@@ -306,8 +323,6 @@ const Home = () => {
 								<h2>Popular Pickers</h2>
 								<hgroup>
 									<h3>Latest</h3>
-									<h3>Month</h3>
-									<h3>All time</h3>
 								</hgroup>
 							</header>
 
@@ -315,20 +330,8 @@ const Home = () => {
 								<section key={index}>
 									<div>
 										<h2>{onePicker.name}</h2>
-										<h3>Waste Disposal Picker</h3>
-										<h4>{onePicker.email}</h4>
-									</div>
-
-									<div>
-										<div>
-											<h2>{onePicker.wallet}</h2>
-											<h4>sales</h4>
-										</div>
-
-										<div>
-											<h2>{onePicker.wallet}</h2>
-											<h4>sales</h4>
-										</div>
+										<h3>{onePicker.email}</h3>
+										<h4>{onePicker.number}</h4>
 									</div>
 								</section>
 							))}

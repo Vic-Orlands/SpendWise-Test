@@ -17,9 +17,7 @@ const Collectors = (props) => {
 			.then((res) => res.json())
 			.then((res) => {
 				setUsers(res.data);
-				setIsLoading(false);
-				console.log(res.data);
-				
+				setIsLoading(false);				
 			})
 			.catch((error) => {
 				console.log(error);

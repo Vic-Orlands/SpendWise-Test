@@ -66,9 +66,10 @@ const VendorDetails = (props) => {
 		});
 	};
 
-	const handleSendMsg = (oneVendor) => {
+	const handleSendMsg = ({ id, name }) => {
 		props.history.push({
-			id: oneVendor,
+			id: id,
+			name: name,
 			pathname: '/message'
 		});
 	};
@@ -112,7 +113,7 @@ const VendorDetails = (props) => {
 									<FaPiggyBank id="font" />
 									<div>
 										<h3>Earnings</h3>
-										<h4>${oneVendor.wallet}</h4>
+										<h4>&#8358;{oneVendor.wallet}</h4>
 									</div>
 								</div>
 
@@ -120,7 +121,7 @@ const VendorDetails = (props) => {
 									<FaPiggyBank id="font" />
 									<div>
 										<h3>NetBalance</h3>
-										<h4>${oneVendor.wallet}</h4>
+										<h4>&#8358;{oneVendor.wallet}</h4>
 									</div>
 								</div>
 							</div>
@@ -147,18 +148,23 @@ const VendorDetails = (props) => {
 								</label>
 
 								<label>
-									Phone:
+									Phone Number:
 									<h3>{oneVendor.number}</h3>
 								</label>
 
 								<label>
 									Address:
-									<h3>{oneVendor.vendor_address}</h3>
+									<h3>{oneVendor.address ? oneVendor.address : 'null'}</h3>
+								</label>
+
+								<label>
+									City:
+									<h3>{oneVendor.city ? oneVendor.city : 'null'}</h3>
 								</label>
 							</div>
 
 							<div className="thirdDiv">
-								<button id="btn1" onClick={() => handleSendMsg(oneVendor.id)}>
+								<button id="btn1" onClick={() => handleSendMsg(oneVendor)}>
 									Send Message
 								</button>
 								<button id="btn2" onClick={openModal}>
@@ -297,22 +303,22 @@ const VendorDetails = (props) => {
 							<div>
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>${oneVendor.wallet}</h4>
+									<h4>&#8358;{oneVendor.wallet}</h4>
 								</div>
 
 								<div>
 									<h3>Total Balance</h3>
-									<h4>${oneVendor.wallet}</h4>
+									<h4>&#8358;{oneVendor.wallet}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>${oneVendor.wallet}</h4>
+									<h4>&#8358;{oneVendor.wallet}</h4>
 								</div>
 
 								<div>
 									<h3>Total Balance</h3>
-									<h4>${oneVendor.wallet}</h4>
+									<h4>&#8358;{oneVendor.wallet}</h4>
 								</div>
 							</div>
 						</section>

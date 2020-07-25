@@ -13,48 +13,50 @@ const Pickers = (props) => {
 	const uri = 'http://admin.wm-has.org.ng/api/user/adminApi';
 
 	const fetchedPickers = () => {
+		let isMounted = true;
 		fetch(proxyurl + uri)
 			.then((res) => res.json())
 			.then((res) => {
-				setUsers(res.data);
+				if (isMounted) setUsers(res.data);
 				setIsLoading(false);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
+		return () => {
+			isMounted = false;
+		};
 	};
 
 	useEffect(() => {
 		fetchedPickers();
 	}, []);
 
-	const pickers = users.filter((user) => user.type === '1' );
-
+	const pickers = users.filter((user) => user.type === '1');
 
 	// ----------------------------getting total vendors number starts here------------------------------------
 	//-------here i  fetched pickers using its response type and then sliced it to display only two pickers on the homepage----------
 	const totalPickers = users.reduce((counter, obj) => {
-		if (obj.type === '1') counter += 1
-		return counter
-	// ----------------------------getting total vendors number starts here------------------------------------
-	}, 0)
+		if (obj.type === '1') counter += 1;
+		return counter;
+		// ----------------------------getting total vendors number starts here------------------------------------
+	}, 0);
 
 	//-------just like the pickers, I  fetched collectors using its response type and then sliced it to display only two collectors on the homepage----------
 	const totalCollectors = users.reduce((counter, obj) => {
-		if (obj.type === '2') counter += 1
-		return counter
-	}, 0)
-	
+		if (obj.type === '2') counter += 1;
+		return counter;
+	}, 0);
+
 	//-------just like above, I  fetched the available agencies using its response type and then sliced it to display only two----------
 	const totalAgencies = users.reduce((counter, obj) => {
-		if (obj.type === '5') counter += 1
-		return counter
-	}, 0)
+		if (obj.type === '5') counter += 1;
+		return counter;
+	}, 0);
 	// ----------------------------getting total vendors number ends here------------------------------------
 
-
 	//--------function to get one picker by it's id and push it to the vendor details page------------
-		const handleViewDetails = (oneUser) => {
+	const handleViewDetails = (oneUser) => {
 		props.history.push({
 			id: oneUser,
 			pathname: '/ventails'
@@ -144,7 +146,7 @@ const Pickers = (props) => {
 											<h4>{oneUser.email} </h4>
 										</hgroup>
 
-											<h2 onClick={() => handleViewDetails(oneUser.id) }>View</h2>
+										<h2 onClick={() => handleViewDetails(oneUser.id)}>View</h2>
 									</div>
 								))}
 							</div>

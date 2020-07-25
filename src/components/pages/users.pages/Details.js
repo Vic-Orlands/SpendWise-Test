@@ -66,11 +66,10 @@ const Details = (props) => {
 		});
 	};
 
-	const handleSendMsg = (one) => {
-		console.log(one);
-
+	const handleSendMsg = ({id, name}) => {
 		props.history.push({
-			id: one,
+			id: id,
+			name: name,
 			pathname: '/message'
 		});
 	};
@@ -115,7 +114,7 @@ const Details = (props) => {
 									<FaPiggyBank id="font" />
 									<div>
 										<h3>Earnings</h3>
-										<h4>${one.balance}</h4>
+										<h4>&#8358;{one.balance}</h4>
 									</div>
 								</div>
 
@@ -123,7 +122,7 @@ const Details = (props) => {
 									<FaPiggyBank id="font" />
 									<div>
 										<h3>NetBalance</h3>
-										<h4>${one.balance}</h4>
+										<h4>&#8358;{one.balance}</h4>
 									</div>
 								</div>
 							</div>
@@ -145,13 +144,13 @@ const Details = (props) => {
 								</label>
 
 								<label>
-									Phone:
+									Phone Number:
 									<h3>{one.number}</h3>
 								</label>
 							</div>
 
 							<div className="thirdDiv">
-								<button id="btn1" onClick={() => handleSendMsg(one.id)}>
+								<button id="btn1" onClick={() => handleSendMsg(one)}>
 									Send Message
 								</button>
 								<button id="btn2" onClick={openModal}>
@@ -290,22 +289,22 @@ const Details = (props) => {
 							<div>
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>${one.balance}</h4>
+									<h4>&#8358;{one.balance}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>${one.balance}</h4>
+									<h4>&#8358;{one.balance}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>${one.balance}</h4>
+									<h4>&#8358;{one.balance}</h4>
 								</div>
 
 								<div>
 									<h3>Total Transactions</h3>
-									<h4>${one.balance}</h4>
+									<h4>&#8358;{one.balance}</h4>
 								</div>
 							</div>
 						</section>
