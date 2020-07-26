@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
-import {
-	MdArrowDropDown,
-	MdSettings,
-	MdPerson,
-	MdDashboard,
-	MdPersonPinCircle,
-	MdPhoneAndroid
-} from 'react-icons/md';
+import { MdArrowDropDown, MdSettings, MdPerson, MdDashboard, MdPersonPinCircle, MdPhoneAndroid } from 'react-icons/md';
 import { IoMdLogOut, IoMdBrowsers, IoIosLeaf } from 'react-icons/io';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';

@@ -270,4 +270,16 @@ a:hover.navbar__link {
 	.sideBody {
 		display: none;
 	}
+
+	.sidemenu-footer li:nth-child(1)::after {
+		display: none;
+	}
+
+	.sidemenu-footer li:nth-child(2)::after {
+		display: none;
+	}
+
+	.sidemenu-footer li:nth-child(3)::before {
+		display: none;
+	}
 }

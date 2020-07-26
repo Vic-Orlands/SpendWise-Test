@@ -199,7 +199,7 @@ const Home = () => {
 
 								<div>
 									<h3>Dump Site</h3>
-									<h5>14 total</h5>
+									<h5>0 total</h5>
 								</div>
 
 								<div>
