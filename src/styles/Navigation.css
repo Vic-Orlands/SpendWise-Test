@@ -157,7 +157,7 @@
 
 	.navProfileDrop .dropdownMenuList {
 		margin-top: 30px;
-		margin-left: -5px;
+		margin-left: -15px;
 		animation: dropdownMobile 400ms ease-in;
 	}
 

@@ -11,6 +11,7 @@ import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 
 import Navigation from '../core.sections/Navigation';
 import Sidemenu from '../core.sections/Sidemenu';
+import Load from '../loaderPage/Load';
 import '../../styles/Home.css';
 import '../../styles/slider/slider-animation.css';
 import '../../styles/slider/slide.css';
@@ -48,6 +49,7 @@ const Home = () => {
 	const [ users, setUsers ] = useState([]);
 	const [ vendors, setVendors ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
+	const [ isLoading, setIsLoading ] = useState(true);
 
 	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
 	const uri = 'http://admin.wm-has.org.ng/api/user/adminApi';
@@ -78,6 +80,9 @@ const Home = () => {
 	};
 
 	useEffect(() => {
+		setTimeout(() => {
+			setIsLoading(false)
+		}, 6500);
 		fetchedPickers();
 		fetchedUrls2();
 		Promise.all([ fetchedPickers, fetchedUrls2 ]);
@@ -126,6 +131,11 @@ const Home = () => {
 	const agencies = agency.slice(0, 1);
 
 	return (
+		<div>
+			{isLoading ? (
+				<Load />
+			) : (
+
 		<div>
 			<Navigation />
 			<Sidemenu />
@@ -340,6 +350,8 @@ const Home = () => {
 				</section>
 			)}
 		</div>
+							)}
+						</div>
 	);
 };
 
