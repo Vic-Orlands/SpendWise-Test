@@ -11,7 +11,6 @@ import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 
 import Navigation from '../core.sections/Navigation';
 import Sidemenu from '../core.sections/Sidemenu';
-import Load from '../loaderPage/Load';
 import '../../styles/Home.css';
 import '../../styles/slider/slider-animation.css';
 import '../../styles/slider/slide.css';
@@ -49,7 +48,6 @@ const Home = () => {
 	const [ users, setUsers ] = useState([]);
 	const [ vendors, setVendors ] = useState([]);
 	const [ loading, setLoading ] = useState(true);
-	const [ isLoading, setIsLoading ] = useState(true);
 
 	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
 	const uri = 'http://admin.wm-has.org.ng/api/user/adminApi';
@@ -80,9 +78,6 @@ const Home = () => {
 	};
 
 	useEffect(() => {
-		setTimeout(() => {
-			setIsLoading(false)
-		}, 6500);
 		fetchedPickers();
 		fetchedUrls2();
 		Promise.all([ fetchedPickers, fetchedUrls2 ]);
@@ -132,226 +127,221 @@ const Home = () => {
 
 	return (
 		<div>
-			{isLoading ? (
-				<Load />
-			) : (
+			<div>
+				<Navigation />
+				<Sidemenu />
 
-		<div>
-			<Navigation />
-			<Sidemenu />
-
-			{loading ? (
-				<div className="gifLoad">
-					<img src={require('../../assets/load.gif')} alt="Loading..." />
-				</div>
-			) : (
-				// ------------------------------home jsx starts here----------------------------------------
-				<section className="homeBody">
-					<h1>Home</h1>
-
-					<div className="topShelf">
-						<div>
-							<RiMoneyDollarCircleLine id="shelfFont" />
-							<div>
-								<h2>Total Revenue</h2>
-								<h3>&#8358;{bal}</h3>
-								<p>From this week</p>
-							</div>
-						</div>
-
-						<div>
-							<FcPieChart id="shelfFont" />
-							<div>
-								<h2>Orders Received</h2>
-								<h3>0</h3>
-								<p>From this week</p>
-							</div>
-						</div>
-
-						<div>
-							<GiChart id="shelfFont" />
-							<div>
-								<h2>Total Active Users</h2>
-								<h3>{totalActiveUser}</h3>
-								<p>From one day ago</p>
-							</div>
-						</div>
-
-						<div>
-							<FiDownload id="shelfFont" />
-							<div>
-								<h2>Total Downloads</h2>
-								<h3>0</h3>
-								<p>From one day ago</p>
-							</div>
-						</div>
+				{loading ? (
+					<div className="gifLoad">
+						<img src={require('../../assets/load.gif')} alt="Loading..." />
 					</div>
-					{/* // ------------------------------home jsx ends here---------------------------------------- */}
+				) : (
+					// ------------------------------home jsx starts here----------------------------------------
+					<section className="homeBody">
+						<h1>Home</h1>
 
-					{/* -------------------------------second grid divs starts here--------------------------------- */}
-
-					<section className="new-main">
-						<section>
+						<div className="topShelf">
 							<div>
-								<h2>Activity</h2>
+								<RiMoneyDollarCircleLine id="shelfFont" />
+								<div>
+									<h2>Total Revenue</h2>
+									<h3>&#8358;{bal}</h3>
+									<p>From this week</p>
+								</div>
 							</div>
 
-							<div className="overlap">
+							<div>
+								<FcPieChart id="shelfFont" />
 								<div>
-									<h3>Users</h3>
-									<h5> {totalUsers} Total Users</h5>
+									<h2>Orders Received</h2>
+									<h3>0</h3>
+									<p>From this week</p>
+								</div>
+							</div>
+
+							<div>
+								<GiChart id="shelfFont" />
+								<div>
+									<h2>Total Active Users</h2>
+									<h3>{totalActiveUser}</h3>
+									<p>From one day ago</p>
+								</div>
+							</div>
+
+							<div>
+								<FiDownload id="shelfFont" />
+								<div>
+									<h2>Total Downloads</h2>
+									<h3>0</h3>
+									<p>From one day ago</p>
+								</div>
+							</div>
+						</div>
+						{/* // ------------------------------home jsx ends here---------------------------------------- */}
+
+						{/* -------------------------------second grid divs starts here--------------------------------- */}
+
+						<section className="new-main">
+							<section>
+								<div>
+									<h2>Activity</h2>
 								</div>
 
-								<div>
-									<h3> Vendors</h3>
-									<h5>{totalVendors} Total Vendors</h5>
-								</div>
+								<div className="overlap">
+									<div>
+										<h3>Users</h3>
+										<h5> {totalUsers} Total Users</h5>
+									</div>
 
-								<div>
-									<h3>Dump Site</h3>
-									<h5>0 total</h5>
-								</div>
+									<div>
+										<h3> Vendors</h3>
+										<h5>{totalVendors} Total Vendors</h5>
+									</div>
 
-								<div>
-									<h3> Messages</h3>
-									<h5>0 New Messages</h5>
+									<div>
+										<h3>Dump Site</h3>
+										<h5>0 total</h5>
+									</div>
+
+									<div>
+										<h3> Messages</h3>
+										<h5>0 New Messages</h5>
+									</div>
 								</div>
+							</section>
+
+							<aside>
+								<section>
+									<h2>Disposal Analysis</h2>
+
+									<h1 style={{ color: 'purple' }}>670+</h1>
+									<h5>Successful transactions</h5>
+								</section>
+
+								<section>
+									<h2>App Transactions</h2>
+
+									<h1 style={{ color: '#e8428e' }}>1340+</h1>
+									<h5>Completed orders</h5>
+								</section>
+							</aside>
+
+							<div className="what-people-say">
+								<Slider className="slider-wrapper" autoplay="900ms" infinite="true">
+									{content.map((item, index) => (
+										<div
+											key={index}
+											className="slider-content"
+											style={{ background: `${item.background}` }}
+										>
+											<div className="inner" style={{ background: `${item.background}` }}>
+												<h2>{item.name}</h2>
+												<span>{item.title}</span>
+												<p>{item.description}</p>
+												<button>{item.button}</button>
+											</div>
+										</div>
+									))}
+								</Slider>
 							</div>
 						</section>
+						{/* -------------------------------second grid divs ends here--------------------------------- */}
 
-						<aside>
-							<section>
-								<h2>Disposal Analysis</h2>
+						<section className="usersShelf">
+							<div>
+								<header>
+									<h2>Newly Registered Users</h2>
 
-								<h1 style={{ color: 'purple' }}>670+</h1>
-								<h5>Successful transactions</h5>
-							</section>
+									<h2>
+										<NavLink to="/users" id="link">
+											See more
+										</NavLink>
+									</h2>
+								</header>
 
-							<section>
-								<h2>App Transactions</h2>
+								{newUsers.map((user) => (
+									<div key={user.id}>
+										<img src={require('../../assets/logo.PNG')} alt="user-img" />
+										<hgroup>
+											<h3>{user.name}</h3>
+											<h4>{user.email}</h4>
+										</hgroup>
 
-								<h1 style={{ color: '#e8428e' }}>1340+</h1>
-								<h5>Completed orders</h5>
-							</section>
-						</aside>
-
-						<div className="what-people-say">
-							<Slider className="slider-wrapper" autoplay="900ms" infinite="true">
-								{content.map((item, index) => (
-									<div
-										key={index}
-										className="slider-content"
-										style={{ background: `${item.background}` }}
-									>
-										<div className="inner" style={{ background: `${item.background}` }}>
-											<h2>{item.name}</h2>
-											<span>{item.title}</span>
-											<p>{item.description}</p>
-											<button>{item.button}</button>
-										</div>
+										<h5>
+											<NavLink to="/users" style={{ color: '#17a2b8' }}>
+												View
+											</NavLink>
+										</h5>
 									</div>
 								))}
-							</Slider>
-						</div>
-					</section>
-					{/* -------------------------------second grid divs ends here--------------------------------- */}
+							</div>
 
-					<section className="usersShelf">
-						<div>
-							<header>
-								<h2>Newly Registered Users</h2>
+							<div className="task">
+								<header>
+									<h2>Popular Vendors</h2>
+								</header>
 
-								<h2>
-									<NavLink to="/users" id="link">
-										See more
-									</NavLink>
-								</h2>
-							</header>
+								{pickers.map((onePicker, index) => (
+									<div key={index}>
+										<div>
+											<h3>{onePicker.name}</h3>
+											<h4>{onePicker.email}</h4>
+										</div>
 
-							{newUsers.map((user) => (
-								<div key={user.id}>
-									<img src={require('../../assets/logo.PNG')} alt="user-img" />
-									<hgroup>
-										<h3>{user.name}</h3>
-										<h4>{user.email}</h4>
-									</hgroup>
-
-									<h5>
-										<NavLink to="/users" style={{ color: '#17a2b8' }}>
-											View
+										<NavLink to="/vendors">
+											<GrOverview id="font" />
 										</NavLink>
-									</h5>
-								</div>
-							))}
-						</div>
-
-						<div className="task">
-							<header>
-								<h2>Popular Vendors</h2>
-							</header>
-
-							{pickers.map((onePicker, index) => (
-								<div key={index}>
-									<div>
-										<h3>{onePicker.name}</h3>
-										<h4>{onePicker.email}</h4>
 									</div>
+								))}
 
-									<NavLink to="/vendors">
-										<GrOverview id="font" />
-									</NavLink>
-								</div>
-							))}
-
-							{collectors.map((oneCollector, index) => (
-								<div key={index}>
-									<div>
-										<h3>{oneCollector.name}</h3>
-										<h4>{oneCollector.email}</h4>
+								{collectors.map((oneCollector, index) => (
+									<div key={index}>
+										<div>
+											<h3>{oneCollector.name}</h3>
+											<h4>{oneCollector.email}</h4>
+										</div>
+										<NavLink to="/vendors">
+											<GrOverview id="font" />
+										</NavLink>{' '}
 									</div>
-									<NavLink to="/vendors">
-										<GrOverview id="font" />
-									</NavLink>{' '}
-								</div>
-							))}
+								))}
 
-							{agencies.map((oneAgency, index) => (
-								<div key={index}>
-									<div>
-										<h3>{oneAgency.name}</h3>
-										<h4>{oneAgency.email}</h4>
+								{agencies.map((oneAgency, index) => (
+									<div key={index}>
+										<div>
+											<h3>{oneAgency.name}</h3>
+											<h4>{oneAgency.email}</h4>
+										</div>
+										<NavLink to="/vendors">
+											<GrOverview id="font" />
+										</NavLink>{' '}  
 									</div>
-									<NavLink to="/vendors">
-										<GrOverview id="font" />
-									</NavLink>{' '}
-								</div>
-							))}
-						</div>
+								))}
+							</div>
 
-						<div className="popularVendors">
-							<header>
-								<h2>Popular Pickers</h2>
-								<hgroup>
-									<h3>Latest</h3>
-								</hgroup>
-							</header>
+							<div className="popularVendors">
+								<header>
+									<h2>Popular Pickers</h2>
+									<hgroup>
+										<h3>Latest</h3>
+									</hgroup>
+								</header>
 
-							{fivePickers.map((onePicker, index) => (
-								<section key={index}>
-									<div>
-										<h2>{onePicker.name}</h2>
-										<h3>{onePicker.email}</h3>
-										<h4>{onePicker.number}</h4>
-									</div>
-								</section>
-							))}
-						</div>
+								{fivePickers.map((onePicker, index) => (
+									<section key={index}>
+										<div>
+											<h2>{onePicker.name}</h2>
+											<h3>{onePicker.email}</h3>
+											<h4>{onePicker.number}</h4>
+										</div>
+									</section>
+								))}
+							</div>
+						</section>
 					</section>
-				</section>
-			)}
+				)}
+			</div>
 		</div>
-							)}
-						</div>
 	);
 };
 
