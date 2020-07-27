@@ -130,12 +130,12 @@
 
 	#navBar,
 	#navMsg {
-		font-size: 16px;
+		font-size: 20px;
 	}
 
 	#navBar {
 		display: block;
-		margin: 25% 15px;
+		margin: 24% 10px;
 		cursor: pointer;
 	}
 
@@ -145,29 +145,30 @@
 	}
 
 	.navProfileDrop h1 {
-		font-size: 8px;
+		font-size: 10px;
 		margin: auto;
 		margin-left: -10px;
 	}
 
 	.navProfileDrop .dropdownToggle {
-		font-size: 12px;
+		font-size: 14px;
+		margin-right: -5px;
 	}
 
 	.navProfileDrop .dropdownMenuList {
 		margin-top: 30px;
-		margin-left: -20px;
+		margin-left: -5px;
 		animation: dropdownMobile 400ms ease-in;
 	}
 
 	.navProfileDrop .dropdownMenuList li {
 		padding: 8px 15px;
-		font-size: 8px;
+		font-size: 10px;
 	}
 
 	.navProfileDrop .dropdownMenuList #dropdownFont {
-		font-size: 10px;
-		margin-right: 5px;
+		font-size: 12px;
+		margin-right: 4px;
 	}
 
 	@keyframes dropdownMobile {
@@ -202,7 +203,7 @@
 
 	.adminNav .sideBody {
 		display: block !important;
-		width: 40% !important;
+		width: 50% !important;
 		margin-top: 0px;
 		z-index: 2;
 		animation: navAnimate 400ms ease-in-out;
@@ -257,14 +258,14 @@
 	}
 
 	.adminNav .sideBody-Intro span {
-		font-size: 9px;
-		letter-spacing: 0px;
+		font-size: 10px;
+		letter-spacing: .5px;
 	}
 	/* ----------sidemenu intro stylings ends here---------- */
 
 	/* ----------sidemenu navigation-list stylings begins here---------- */
 	.adminNav .dashSection h3 {
-		font-size: 9px;
+		font-size: 10px;
 		margin-top: 80px;
 		margin-left: 20px;
 	}
@@ -276,7 +277,7 @@
 	.adminNav .dashSection ul li {
 		margin: 10px 0px 0px 0px;
 		padding: 5px 0px 5px 10px;
-		font-size: 6px;
+		/* font-size: 10px; */
 	}
 
 	.adminNav .dashSection ul li:hover {
@@ -284,7 +285,7 @@
 	}
 
 	.adminNav .dashSection #dropFont {
-		font-size: 12px;
+		font-size: 16px;
 		margin-left: 30px;
 	}
 
@@ -346,11 +347,11 @@
 	}
 
 	.adminNav .sidemenu-footer li {
-		font-size: 8px;
+		font-size: 12px;
 		background-color: #415c80f1;
 		border-radius: 50%;
 		margin: 0 5px;
-		padding: 3px 6px 5px 6.5px;
+		padding: 4px 8px 5px 8px;
 		cursor: pointer;
 	}
 	/* ----------sidemenu footer styling ends here---------- */

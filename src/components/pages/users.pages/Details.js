@@ -201,7 +201,7 @@ const Details = (props) => {
 											<h3>Average Weekly Orders</h3>
 										</div>
 
-										<h4>+17%</h4>
+										<h4>0%</h4>
 									</div>
 
 									<div>
@@ -210,7 +210,7 @@ const Details = (props) => {
 											<h3>Average Transactions Increase</h3>
 										</div>
 
-										<h4>+80%</h4>
+										<h4>0%</h4>
 									</div>
 
 									<div>
@@ -219,7 +219,7 @@ const Details = (props) => {
 											<h3>Average Revenue Increase</h3>
 										</div>
 
-										<h4>+6%</h4>
+										<h4>0%</h4>
 									</div>
 								</div>
 
@@ -230,7 +230,7 @@ const Details = (props) => {
 											<h3>Average Monthly Orders</h3>
 										</div>
 
-										<h4>+30%</h4>
+										<h4>0%</h4>
 									</div>
 
 									<div>
@@ -239,7 +239,7 @@ const Details = (props) => {
 											<h3>Average Transactions Increase</h3>
 										</div>
 
-										<h4>+30%</h4>
+										<h4>0%</h4>
 									</div>
 
 									<div>
@@ -248,7 +248,7 @@ const Details = (props) => {
 											<h3>Average Revenue Increase</h3>
 										</div>
 
-										<h4>+10%</h4>
+										<h4>0%</h4>
 									</div>
 								</div>
 
@@ -259,7 +259,7 @@ const Details = (props) => {
 											<h3>Average Yearly Orders</h3>
 										</div>
 
-										<h4>+40%</h4>
+										<h4>0%</h4>
 									</div>
 
 									<div>
@@ -268,7 +268,7 @@ const Details = (props) => {
 											<h3>Average Transactions Increase</h3>
 										</div>
 
-										<h4>+80%</h4>
+										<h4>0%</h4>
 									</div>
 
 									<div>
@@ -277,7 +277,7 @@ const Details = (props) => {
 											<h3>Average Revenue Increase</h3>
 										</div>
 
-										<h4>+8%</h4>
+										<h4>0%</h4>
 									</div>
 								</div>
 							</section>

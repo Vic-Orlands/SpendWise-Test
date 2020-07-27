@@ -7,8 +7,7 @@
 }
 
 .dumpBody {
-	width: 78%;
-	float: right;
+	width: 100%;
 	background-color: #102231;
 	color: #ffffff;
 	height: 100vh;
@@ -16,8 +15,8 @@
 }
 
 .dumpBody h1 {
-	margin: 20px 0 10px 10px;
-	font: normal 1.2rem sans-serif;
+	margin: 20px 0 0px 10px;
+	font: normal 1rem sans-serif;
 }
 
 .map .gmap {
@@ -30,7 +29,7 @@
 
 .map .gmap iframe {
 	height: 400px;
-	width: 600px;
+	width: 400px;
     margin: 20px auto;
 }
 

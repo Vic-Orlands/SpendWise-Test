@@ -81,7 +81,7 @@ const Agencies = (props) => {
 				<section className="pickers">
 					<div className="mobileDrawer">
 						<div className="flex">
-							<h1>Vendor Details</h1>
+							<h1>Vendors</h1>
 
 							<FaBars id="msg-shift-drop" onClick={openDrawer} />
 						</div>

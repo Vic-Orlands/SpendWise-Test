@@ -170,27 +170,30 @@
 	}
 
 	.pickers .pickerInfo .pickerUsers div h2 {
-		font-size: 8px;
+		font-size: 9px;
 		padding-bottom: 10px;
 	}
 
 	.pickers .pickerInfo .pickerUsers .allUsers h2 {
-		font-size: 6px;
+		font-size: 8px;
 		padding: 5px 12px;
 	}
 
 	.pickers .pickerUsers div > div hgroup {
 		margin-left: 20px;
+		padding: 8px 0px;
 	}
 
 	.pickers .pickerUsers div hgroup h3 {
-		font: bold 10px arial;
+		font: bold 12px arial;
 		margin-bottom: 0px;
+		margin-left: -4px;
 		padding-top: 2px;
 	}
-
+	
 	.pickers .pickerUsers div > div hgroup h4 {
-		font: bold 8px arial;
+		font: bold 9px arial;
+		margin-left: -4px;
 	}
 
 	.pickers .pickerUsers div div img {
@@ -226,7 +229,8 @@
 
 	.pickersBody .pickers .flex #msg-shift-drop {
 		display: block;
-		margin-top: 25px;
+		font-size: 14px;
+		margin-top: 23px;
 		margin-right: 20px;
 		color: gray;
 	}
