@@ -141,10 +141,10 @@ class Navigation extends Component {
 												</li>
 											</NavLink>
 
-											<li>
+											{/* <li>
 												<MdSettings className="dashmenuFont" />
 												<span>Settings</span>
-											</li>
+											</li> */}
 										</ul>
 									</div>
 								</div>

@@ -144,9 +144,9 @@ const Home = () => {
 							<div>
 								<RiMoneyDollarCircleLine id="shelfFont" />
 								<div>
-									<h2>Total Revenue</h2>
+									<h2>User Revenue</h2>
 									<h3>&#8358;{bal}</h3>
-									<p>From this week</p>
+									<p>From today</p>
 								</div>
 							</div>
 
@@ -164,14 +164,14 @@ const Home = () => {
 								<div>
 									<h2>Total Active Users</h2>
 									<h3>{totalActiveUser}</h3>
-									<p>From one day ago</p>
+									<p>From minutes ago</p>
 								</div>
 							</div>
 
 							<div>
 								<FiDownload id="shelfFont" />
 								<div>
-									<h2>Total Downloads</h2>
+									<h2>Total Messages</h2>
 									<h3>0</h3>
 									<p>From one day ago</p>
 								</div>

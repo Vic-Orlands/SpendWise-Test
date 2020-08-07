@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Modal from 'react-modal';
 import '../../../styles/users.styles/Details.css';
 
@@ -24,8 +24,13 @@ const customStyles = {
 const VendorDetails = (props) => {
 	let subtitle;
 	const [ vendor, setVendor ] = useState([]);
+	const [ btnText, setBtnText ] = useState('');
+	const [ modalText, setModalText ] = useState('');
 	const [ isLoading, setIsLoading ] = useState(true);
 	const [ modalIsOpen, setModalIsOpen ] = useState(false);
+	const [ approveModalIsOpen, setApproveModalIsOpen ] = useState(false);
+
+	const approveEl = useRef(null);
 
 	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
 	const vendorUrl = `http://admin.wm-has.org.ng/api/user/adminApi/${props.location.id}`;
@@ -33,20 +38,44 @@ const VendorDetails = (props) => {
 	useEffect(
 		() => {
 			if (props.location.id !== undefined) {
+				let saveId = JSON.stringify(props.location.id);
+				localStorage.setItem('vendorId', saveId);
 				fetch(proxyurl + vendorUrl)
 					.then((res) => res.json())
 					.then((res) => {
 						setVendor(res.data);
 						setIsLoading(false);
+						if (res.data.status === 'approved') {
+							setBtnText('Ban');
+						} else if (res.data.status === 'banned') {
+							setBtnText('Onboard');
+						} else if (res.data.status === 'onboarding') {
+							setBtnText('Approve');
+						}
 					})
 					.catch((error) => {
 						console.log(error);
 					});
 			} else {
-				props.history.push({
-					pathname: '/vendors'
-				});
+				let currentVendorId = JSON.parse(localStorage.getItem('vendorId'));
+				fetch(proxyurl + `http://admin.wm-has.org.ng/api/user/adminApi/${currentVendorId}`)
+					.then((res) => res.json())
+					.then((res) => {
+						setVendor(res.data);
+						setIsLoading(false);
+						if (res.data.status === 'approved') {
+							setBtnText('Ban');
+						} else if (res.data.status === 'banned') {
+							setBtnText('Onboard');
+						} else if (res.data.status === 'onboarding') {
+							setBtnText('Approve');
+						}
+					})
+					.catch((error) => {
+						console.log(error);
+					});
 			}
+			Modal.setAppElement('body');
 		},
 		[ vendorUrl, props ]
 	);
@@ -74,6 +103,28 @@ const VendorDetails = (props) => {
 		});
 	};
 
+	// -------------------------approve vendor function----------------------------
+	const ApproveVendor = async (id) => {
+		let userApproval = btnText === 'Approve' ? 'approved' : btnText === 'Ban' ? 'banned' : 'approved';
+		console.log(userApproval);
+		await fetch(
+			proxyurl + 'http://admin.wm-has.org.ng/api/user/adminupdate/?vendor_id=' + id + `&status=${userApproval}`,
+			{
+				method: 'PATCH',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(id)
+			}
+		)
+			.then((res) => res.json())
+			.then(console.log)
+			.catch(console.error);
+		// window.location.reload(false)
+	};
+	// -------------------------approve vendor function ends here----------------------------
+
 	// ----------------modal funct---------------
 	const openModal = () => {
 		setModalIsOpen(true);
@@ -87,6 +138,21 @@ const VendorDetails = (props) => {
 		setModalIsOpen(false);
 	};
 	// ----------------modal funct---------------
+
+	// ----------------approve modal funct---------------
+	const approveModal = () => {
+		setApproveModalIsOpen(true);
+		setModalText(approveEl.current.innerText);
+	};
+
+	const afterApproveOpenModal = () => {
+		subtitle.style.color = '#fff';
+	};
+
+	const closeApproveModal = () => {
+		setApproveModalIsOpen(false);
+	};
+	// ----------------approve modal funct---------------
 
 	return (
 		<div className="detailsBody">
@@ -104,7 +170,7 @@ const VendorDetails = (props) => {
 					<section className="flexDivs">
 						<section className="username">
 							<div>
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
+								<img src={oneVendor.document_image} alt="img" />
 								<h2> {oneVendor.name} </h2>
 							</div>
 
@@ -167,15 +233,15 @@ const VendorDetails = (props) => {
 								<button id="btn1" onClick={() => handleSendMsg(oneVendor)}>
 									Send Message
 								</button>
-								<button id="btn2" onClick={openModal}>
-									Warn
+								<button id="btn2" onClick={approveModal} ref={approveEl}>
+									{btnText}
 								</button>
 								<button id="btn3" onClick={openModal}>
 									Delete
 								</button>
 							</div>
 
-							{/* -------modal div------------ */}
+							{/* -------delete modal div------------ */}
 
 							<Modal isOpen={modalIsOpen} onAfterOpen={afterOpenModal} style={customStyles}>
 								<div className="confirmModal">
@@ -203,7 +269,34 @@ const VendorDetails = (props) => {
 								</div>
 							</Modal>
 
-							{/* -------modal div------------ */}
+							{/* -------delete modal div ends here------------ */}
+
+							{/* -------approve modal div------------ */}
+
+							<Modal isOpen={approveModalIsOpen} onAfterOpen={afterApproveOpenModal} style={customStyles}>
+								<div className="confirmModal">
+									<div>
+										<h2 ref={(_subtitle) => (subtitle = _subtitle)}>Confirmation</h2>
+
+										<IoIosClose onClick={closeApproveModal} className="close-modal" />
+									</div>
+
+									<hr />
+
+									<h4> Are you sure you want to {modalText} this Vendor? </h4>
+
+									<div className="btnParent">
+										<button className="btn btn-success" onClick={() => ApproveVendor(oneVendor.id)}>
+											{modalText}
+										</button>
+										<button onClick={closeApproveModal} className="btn btn-danger">
+											Decline
+										</button>
+									</div>
+								</div>
+							</Modal>
+
+							{/* -------approve modal div ends here------------ */}
 						</section>
 
 						<section className="userTransactionDetails">

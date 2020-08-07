@@ -120,14 +120,14 @@ class Sidemenu extends Component {
 									DumpSites
 								</NavLink>
 
-								<NavLink
+								{/* <NavLink
 									to="/settings"
 									activeClassName="navbar__link--active"
 									className="navbar__link nav_link"
 								>
 									<MdSettings className="dashmenuFont" />
 									Settings
-								</NavLink>
+								</NavLink> */}
 							</ul>
 						</div>
 					</div>

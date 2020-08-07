@@ -22,6 +22,7 @@ const customStyles = {
 };
 
 const Details = (props) => {
+	const propsId = props.location.id;
 	let subtitle;
 	const [ user, setUser ] = useState([]);
 	const [ isLoading, setIsLoading ] = useState(true);
@@ -32,7 +33,20 @@ const Details = (props) => {
 
 	useEffect(
 		() => {
-			if (props.location.id !== undefined) {
+			if (propsId !== undefined) {
+				let saveId = JSON.stringify(propsId);
+				localStorage.setItem('userId', saveId);
+				fetch(proxyurl + userUrl)
+					.then((res) => res.json())
+					.then((res) => {
+						setUser(res.data);
+						console.log(res.data);
+						setIsLoading(false);
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			} else {
 				fetch(proxyurl + userUrl)
 					.then((res) => res.json())
 					.then((res) => {
@@ -42,16 +56,14 @@ const Details = (props) => {
 					.catch((error) => {
 						console.log(error);
 					});
-			} else {
-				props.history.push({
-					pathname: '/users'
-				});
 			}
 		},
-		[ userUrl, props ]
+		[ userUrl, propsId ]
 	);
 
-	const one = user.find((oneUser) => oneUser.id === props.location.id);
+	const one = propsId
+		? user.find((oneUser) => oneUser.id === propsId)
+		: user.find((oneUser) => oneUser.id === JSON.parse(localStorage.getItem('userId')));
 
 	const deleteUser = async (id) => {
 		await fetch(proxyurl + 'http://admin.wm-has.org.ng/api/user/adminApiUser/' + id, {
@@ -66,7 +78,7 @@ const Details = (props) => {
 		});
 	};
 
-	const handleSendMsg = ({id, name}) => {
+	const handleSendMsg = ({ id, name }) => {
 		props.history.push({
 			id: id,
 			name: name,
@@ -105,7 +117,7 @@ const Details = (props) => {
 					<section className="flexDivs">
 						<section className="username">
 							<div>
-								<img src={require('../../../assets/wmhas black.PNG')} alt="user_img" />
+								<img src={require('../../../assets/wmhas black.PNG')} alt="img" />
 								<h2> {one.name} </h2>
 							</div>
 
@@ -153,9 +165,7 @@ const Details = (props) => {
 								<button id="btn1" onClick={() => handleSendMsg(one)}>
 									Send Message
 								</button>
-								<button id="btn2" onClick={openModal}>
-									Warn
-								</button>
+								<button id="btn2">Warn</button>
 								<button id="btn3" onClick={openModal}>
 									Delete
 								</button>
