@@ -40,7 +40,6 @@ const Details = (props) => {
 					.then((res) => res.json())
 					.then((res) => {
 						setUser(res.data);
-						console.log(res.data);
 						setIsLoading(false);
 					})
 					.catch((error) => {
@@ -57,6 +56,9 @@ const Details = (props) => {
 						console.log(error);
 					});
 			}
+			return () => {
+				localStorage.removeItem('userId');
+			};
 		},
 		[ userUrl, propsId ]
 	);
@@ -165,7 +167,7 @@ const Details = (props) => {
 								<button id="btn1" onClick={() => handleSendMsg(one)}>
 									Send Message
 								</button>
-								<button id="btn2">Warn</button>
+								<button id="btn2">Block</button>
 								<button id="btn3" onClick={openModal}>
 									Delete
 								</button>

@@ -76,6 +76,9 @@ const VendorDetails = (props) => {
 					});
 			}
 			Modal.setAppElement('body');
+			return () => {
+				localStorage.removeItem('vendorId');
+			};
 		},
 		[ vendorUrl, props ]
 	);
@@ -112,10 +115,9 @@ const VendorDetails = (props) => {
 			{
 				method: 'PATCH',
 				headers: {
-					Accept: 'application/json',
+					// Accept: 'application/json',
 					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify(id)
+				}
 			}
 		)
 			.then((res) => res.json())
