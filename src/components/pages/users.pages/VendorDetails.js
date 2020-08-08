@@ -86,7 +86,7 @@ const VendorDetails = (props) => {
 	const oneVendor = vendor;
 
 	const deleteVendor = async (id) => {
-		await fetch(proxyurl + 'http://admin.wm-has.org.ng/api/user/adminApi/' + id, {
+		await fetch(`${proxyurl}http://admin.wm-has.org.ng/api/user/adminApi/${id}`, {
 			method: 'delete',
 			header: {
 				Accept: 'application/json',
