@@ -60,8 +60,8 @@ class Login extends Component {
 						<p>
 							This is for admins only. If you're not, kindly redirect to the official site here <br />
 							<span>
-								<a href="https://www.wm-has.cresponet.net" target="_blank" rel="noopener noreferrer">
-									wm-has.cresponet.net
+								<a href="http://admin.wm-has.org.ng" target="_blank" rel="noopener noreferrer">
+									admin.wm-has.org.ng
 								</a>
 							</span>
 						</p>
@@ -86,7 +86,11 @@ class Login extends Component {
 							{this.state.hidden ? (
 								<AiFillEye id="inputFont" onClick={this.togglePassword} />
 							) : (
-								<AiFillEyeInvisible id="inputFont" onClick={this.togglePassword} style={{ color: 'green'}} />
+								<AiFillEyeInvisible
+									id="inputFont"
+									onClick={this.togglePassword}
+									style={{ color: 'green' }}
+								/>
 							)}
 						</div>
 						<input

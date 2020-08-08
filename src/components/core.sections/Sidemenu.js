@@ -137,7 +137,7 @@ class Sidemenu extends Component {
 					<div className="sidemenu-footer">
 						<li>
 							<a
-								href="https://www.wm-has.cresponet.net"
+								href="http://admin.wm-has.org.ng"
 								target="_blank"
 								rel="noopener noreferrer"
 								style={{ color: 'white' }}

@@ -4,14 +4,7 @@ import '../../styles/Navigation.css';
 
 import { FaBars } from 'react-icons/fa';
 import { IoIosMailUnread, IoMdLogOut, IoIosLeaf, IoMdBrowsers } from 'react-icons/io';
-import {
-	MdArrowDropDown,
-	MdSettings,
-	MdPerson,
-	MdDashboard,
-	MdPersonPinCircle,
-	MdPhoneAndroid
-} from 'react-icons/md';
+import { MdArrowDropDown, MdSettings, MdPerson, MdDashboard, MdPersonPinCircle, MdPhoneAndroid } from 'react-icons/md';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { AiOutlineMinus } from 'react-icons/ai';
 // import { BsEnvelope } from 'react-icons/bs';
@@ -154,7 +147,7 @@ class Navigation extends Component {
 								<div className="sidemenu-footer">
 									<li>
 										<a
-											href="https://www.wm-has.cresponet.net"
+											href="http://admin.wm-has.org.ng"
 											target="_blank"
 											rel="noopener noreferrer"
 											style={{ color: 'white' }}
