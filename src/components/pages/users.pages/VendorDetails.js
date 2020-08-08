@@ -111,11 +111,11 @@ const VendorDetails = (props) => {
 		let userApproval = btnText === 'Approve' ? 'approved' : btnText === 'Ban' ? 'banned' : 'approved';
 		console.log(userApproval);
 		await fetch(
-			proxyurl + 'http://admin.wm-has.org.ng/api/user/adminupdate/?vendor_id=' + id + `&status=${userApproval}`,
+			`${proxyurl}http://admin.wm-has.org.ng/api/user/adminupdate?vendor_id=${id}&status=${userApproval}`,
 			{
 				method: 'PATCH',
 				headers: {
-					// Accept: 'application/json',
+					Accept: 'application/json',
 					'Content-Type': 'application/json'
 				}
 			}
@@ -123,7 +123,7 @@ const VendorDetails = (props) => {
 			.then((res) => res.json())
 			.then(console.log)
 			.catch(console.error);
-		// window.location.reload(false)
+		window.location.reload(false);
 	};
 	// -------------------------approve vendor function ends here----------------------------
 
