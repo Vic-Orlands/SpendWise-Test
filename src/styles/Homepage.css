@@ -1,0 +1,249 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.top-section {
+	position: relative;
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.top-section::before {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #001ac6;
+	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+	transform: scaleX(1.1);
+}
+
+.top-section .intro-wrapper {
+	position: relative;
+	z-index: 1;
+	margin: 0 auto;
+	max-width: 900px;
+	text-align: center;
+	color: white;
+}
+
+.top-section .intro-wrapper img {
+	margin-bottom: 47px;
+	margin-top: 50px;
+}
+
+.top-section .intro-wrapper h1 {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 30px;
+	width: 703px;
+}
+
+.top-section .intro-wrapper h1 span {
+	color: #ffaa01;
+}
+
+.top-section .intro-wrapper h3 {
+	font-size: 16px;
+}
+
+.top-section .intro-wrapper button {
+	background-color: #ffaa01;
+	color: #ffffff;
+	text-transform: uppercase;
+	height: 65px;
+	width: 285px;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0px 10px 20px rgba(188, 41, 8, 0.12);
+	font-size: 22px;
+	margin-top: 63px;
+}
+
+.top-section .intro-wrapper button:hover {
+	background-color: #d38c00;
+}
+
+.bottom-section {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.bottom-section .overlap-img {
+	margin-top: -290px;
+	z-index: 1;
+}
+
+.bottom-section .playstore h3 {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+.bottom-section .playstore .playstore_img {
+	height: 50px;
+}
+
+.bottom-section .playstore .stores {
+	display: flex;
+	justify-content: space-between;
+}
+
+.bottom-section .playstore .stores .android {
+	background-color: black;
+	color: #ffffff;
+	display: flex;
+	height: 50.84359359741211px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.bottom-section .playstore .stores .android h4 {
+	font-size: 8px;
+	margin-bottom: 0px;
+	padding: 10px 5px 0px 0px;
+}
+
+.bottom-section .playstore .stores .android h2 {
+	font-size: 20px;
+	margin-top: 0px;
+	padding: 0px 10px 0px 0px;
+}
+
+.bottom-section .playstore .stores .ios {
+	background-color: black;
+	color: #ffffff;
+	display: flex;
+	height: 50.84359359741211px;
+	border-radius: 8px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.bottom-section .playstore .stores .ios #font {
+	font-size: 45px;
+	color: #ffffff;
+	margin: auto 5px;
+}
+
+.bottom-section .playstore .stores .ios h4 {
+	font-size: 11px;
+	margin-bottom: 0px;
+	padding: 5px 5px 0px 0px;
+	letter-spacing: .5px;
+}
+
+.bottom-section .playstore .stores .ios h2 {
+	font-size: 20px;
+	margin-top: 0px;
+	padding: 0px 10px 0px 0px;
+	letter-spacing: .5px;
+}
+
+/* ---------------mobile responsiveness------------ */
+@media screen and (max-width: 760px) {
+	.top-section {
+		height: 60vh;
+	}
+
+	.top-section::before {
+		border-radius: 0 0 50% 50%;
+		transform: scaleX(2);
+	}
+
+	.top-section .intro-wrapper img {
+		margin-bottom: 38.78px;
+		margin-top: 0px;
+		width: 136px;
+		height: 33.22px;
+	}
+
+	.top-section .intro-wrapper h1 {
+		font-size: 18px;
+		margin-bottom: 20px;
+		font-weight: bold;
+		width: 313px;
+	}
+
+	.top-section .intro-wrapper h3 {
+		font-size: 10px;
+	}
+
+	.top-section .intro-wrapper button {
+		width: 143px;
+		height: 33px;
+		font-size: 14px;
+		margin-top: 42px;
+	}
+
+	.bottom-section .overlap-img {
+		margin-top: 30px;
+		z-index: 1;
+		order: 2;
+		height: 375.86312360255056px;
+	}
+
+	.bottom-section .overlap-img:nth-child(3) {
+		margin-top: 10px;
+		height: 375.86312360255056px;
+	}
+
+	.bottom-section .playstore h3 {
+		font-size: 14px;
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+
+	.bottom-section .playstore .playstore_img {
+		height: 30px;
+		margin: auto;
+	}
+
+	.bottom-section .playstore .stores .android {
+		height: 40px;
+	}
+
+	.bottom-section .playstore .stores .android h4 {
+		font-size: 5px;
+		padding: 10px 5px 0px 5px;
+	}
+
+	.bottom-section .playstore .stores .android h2 {
+		font-size: 15px;
+		padding: 0px 5px 0px 0px;
+	}
+
+	.bottom-section .playstore .stores .ios {
+		height: 40px;
+		margin-left: 15px;
+	}
+
+	.bottom-section .playstore .stores .ios #font {
+		font-size: 30px;
+		margin: auto 5px;
+	}
+
+	.bottom-section .playstore .stores .ios h4 {
+		font-size: 7px;
+		padding: 8px 5px 0px 5px;
+	}
+
+	.bottom-section .playstore .stores .ios h2 {
+		font-size: 15px;
+		padding: 0px 5px 0px 0px;
+	}
+}
