@@ -1,1 +1,1 @@
-#Admin panel
+Landing page for the SpendWise first user's list
