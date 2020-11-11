@@ -43,7 +43,7 @@ class Homepage extends Component {
 				</section>
 
 				<section className={'bottom-section ' + (!this.state.open ? 'modal-overlay-bottom' : '')}>
-					<img className="overlap-img" src={require('../assets/Dashboard.png')} alt="phone_img" />
+					<img className="overlap-img imgOne" src={require('../assets/Dashboard.png')} alt="phone_img" />
 
 					<div className="playstore">
 						<h3>Coming Soon on</h3>
@@ -71,7 +71,7 @@ class Homepage extends Component {
 						</div>
 					</div>
 
-					<img className="overlap-img" src={require('../assets/Expenses.png')} alt="phone_img" />
+					<img className="overlap-img imgTwo" src={require('../assets/Expenses.png')} alt="phone_img" />
 				</section>
 
 				<Modal open={this.state.open} onClose={this.openModal} />
