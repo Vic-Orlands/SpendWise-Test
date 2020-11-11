@@ -129,7 +129,9 @@ class Modal extends Component {
 					<section className="modal-success">
 						<div className="modal-status">
 							<AiOutlineClose id="font" onClick={this.onClose} />
-							<h1>Success: {this.state.message}</h1>
+							<h1>
+								<span>Success:</span> {this.state.message}
+							</h1>
 						</div>
 					</section>
 				) : (

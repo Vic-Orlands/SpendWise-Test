@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *,
 *::before,
 *::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: Poppins;
+	font-family: 'Poppins', sans-serif;
 }
 
 .modal-container {
@@ -169,11 +171,17 @@
 	margin-right: 10px;
 	float: right;
 	clear: both;
+	cursor: pointer;
 }
 
 .modal-status h1 {
 	font-size: 24px;
 	letter-spacing: .5px;
+}
+
+.modal-status h1 span {
+	color: #ffaa00;
+	font-weight: bold;
 }
 /* -------------modal-success----------------- */
 
