@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.sign-up-container .left {
+	width: 50%;
+	height: 100vh;
+	position: fixed;
+	background: #2e41c0;
+	padding: 34.51px 0 0 36px;
+}
+
+.sign-up-container .left .logo {
+	height: 59.78px;
+	width: 236.28px;
+}
+
+/* ----------------custom icon styling starts here---------------------- */
+
+.sign-up-container .left .flex-icons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.sign-up-container .left .wallet-bg {
+	width: 111.63px;
+	height: 111.63px;
+	background: #ffaa00;
+	box-shadow: 0px 17.0538px 51.1615px rgba(0, 0, 0, 0.15);
+	border-radius: 25.58px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 92.7px 0 0 50px;
+	animation-name: bounce;
+	animation-timing-function: ease;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+.sign-up-container .left .wallet {
+	height: 44.00377655029297px;
+	width: 50px;
+	color: #ffffff;
+}
+
+.sign-up-container .left .goal-bg {
+	width: 133.95px;
+	height: 133.95px;
+	background: #00c69e;
+	box-shadow: 0px 17.0538px 51.1615px rgba(0, 0, 0, 0.15);
+	border-radius: 25.58px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 112.7px 27.05px 0 auto;
+	animation-name: bounce;
+	animation-timing-function: ease;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+.sign-up-container .left .goal {
+	height: 57px;
+	width: 57.02px;
+	color: #ffffff;
+}
+
+.sign-up-container .left .coin-bg {
+	width: 134.54px;
+	height: 134.54px;
+	background: #27bbff;
+	box-shadow: 0px 17.0538px 51.1615px rgba(0, 0, 0, 0.15);
+	border-radius: 25.58px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 150px 0 0 31px;
+	animation-name: bounce;
+	animation-timing-function: ease;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+.sign-up-container .left .coin {
+	height: 48px;
+	width: 55px;
+	color: #ffffff;
+}
+
+/* --------------bouncing animations styling starts here-------------- */
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-40px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* --------------bouncing animations styling ends here-------------- */
+
+/* ----------------custom icon styling ends here---------------------- */
+
+.signup-form {
+	width: 50%;
+	float: right;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 150px;
+	position: relative;
+}
+
+.signup-form h1 {
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 57px;
+	letter-spacing: -0.04em;
+	color: #222c6f;
+	margin-bottom: 0;
+}
+
+.signup-form h4 {
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: -0.04em;
+	color: #0a2843;
+	opacity: 70%;
+	margin-bottom: 31.64px;
+}
+
+.signup-form form .label {
+	display: block;
+	font-family: 'Poppins', sans-serif;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 22px;
+	letter-spacing: -1px;
+	color: #0a2843;
+	margin-bottom: 21.68px;
+}
+
+.signup-form form .label:nth-child(2) {
+	margin-bottom: 13.8px;
+}
+
+.signup-form form .label input {
+	display: block;
+	height: 53.22px;
+	width: 352.32px;
+	margin-top: 11.4px;
+	padding: 0 10px;
+}
+
+.signup-form form .label select {
+	font-family: 'Poppins', sans-serif;
+	font-size: 17px;
+	display: block;
+	height: 53.22px;
+	width: 352.32px;
+	margin-top: 11.4px;
+	padding: 0 10px;
+}
+
+.signup-form form .label input:active,
+.signup-form form .label input:focus {
+	border: none;
+	outline: 1.06448px solid #6e7fee;
+	box-shadow: 0px 4.2579px 10.6448px #6e7fee;
+}
+
+.signup-form form button {
+	font-family: 'Poppins', sans-serif;
+	background: #001ac6;
+	backdrop-filter: blur(6.38686px);
+	border-radius: 2.12895px;
+	width: 100%;
+	height: 53.22379684448242px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17.0316px;
+	line-height: 22px;
+	color: #ffffff;
+	margin-top: 41.56px;
+}
+
+.signup-form form button:hover {
+	background-color: #07156e;
+}
+
+.signup-form #par {
+	font-family: 'Poppins', sans-serif;
+	text-align: center;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17.03px;
+	line-height: 32.36px;
+	color: #000000;
+	margin-top: 31.93px;
+}
+
+.signup-form #par span,
+.signup-form #par #link {
+	color: #001ac6;
+	padding-left: 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.sign-up-container .signup-form .foot-design {
+	height: 100px;
+	width: 100px;
+	border: 4px solid #001ac6;
+	border-right: none;
+	border-bottom: none;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.sign-up-container .signup-form .foot-design-sm {
+	height: 55px;
+	width: 55px;
+	border: 4px solid #ffaa00;
+	border-right: none;
+	border-bottom: none;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+/* ---------------mobile responsiveness------------ */
+@media screen and (max-width: 760px) {
+}

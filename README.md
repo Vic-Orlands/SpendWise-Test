@@ -1,1 +1,1 @@
-Landing page for the SpendWise first user's list
+Landing page for the SpendWise official site
