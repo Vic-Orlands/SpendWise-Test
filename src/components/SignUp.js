@@ -19,6 +19,7 @@ class SignUp extends Component {
 						<div className="coin-bg">
 							<img src={require('../assets/coin.png')} alt="img" className="coin" />
 						</div>
+						<img src={require('../assets/man.png')} alt="img_man" className="man" />
 					</div>
 				</section>
 

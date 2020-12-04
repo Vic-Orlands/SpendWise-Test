@@ -9,27 +9,32 @@
 	box-sizing: border-box;
 }
 
-.sign-up-container .left {
-	width: 50%;
-	height: 100vh;
-	position: fixed;
-	background: #2e41c0;
-	padding: 34.51px 0 0 36px;
+.forgot-container {
+	overflow: hidden;
+	display: flex;
 }
 
-.sign-up-container .left .logo {
+.forgot-container .left {
+	width: 50%;
+	height: 100vh;
+	background: #2e41c0;
+	padding: 34.51px 0 0 36px;
+	position: relative;
+}
+
+.forgot-container .left .logo {
 	height: 59.78px;
 	width: 236.28px;
 }
 
 /* ----------------custom icon styling starts here---------------------- */
 
-.sign-up-container .left .flex-icons {
+.forgot-container .left .flex-icons {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.sign-up-container .left .wallet-bg {
+.forgot-container .left .wallet-bg {
 	width: 111.63px;
 	height: 111.63px;
 	background: #ffaa00;
@@ -45,13 +50,13 @@
 	animation-iteration-count: infinite;
 }
 
-.sign-up-container .left .wallet {
+.forgot-container .left .wallet {
 	height: 44.00377655029297px;
 	width: 50px;
 	color: #ffffff;
 }
 
-.sign-up-container .left .goal-bg {
+.forgot-container .left .goal-bg {
 	width: 133.95px;
 	height: 133.95px;
 	background: #00c69e;
@@ -67,13 +72,13 @@
 	animation-iteration-count: infinite;
 }
 
-.sign-up-container .left .goal {
+.forgot-container .left .goal {
 	height: 57px;
 	width: 57.02px;
 	color: #ffffff;
 }
 
-.sign-up-container .left .coin-bg {
+.forgot-container .left .coin-bg {
 	width: 134.54px;
 	height: 134.54px;
 	background: #27bbff;
@@ -89,7 +94,7 @@
 	animation-iteration-count: infinite;
 }
 
-.sign-up-container .left .coin {
+.forgot-container .left .coin {
 	height: 48px;
 	width: 55px;
 	color: #ffffff;
@@ -111,31 +116,27 @@
 
 /* --------------bouncing animations styling ends here-------------- */
 
-.sign-up-container .left .flex-icons .man {
+.forgot-container .left .flex-icons .man {
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
 	margin: auto;
-	height: 584px;
-	width: 584px;
-	left: 68px;
+height: 584px;
+width: 584px;
+left: 68px;
 }
 
 /* ----------------custom icon styling ends here---------------------- */
 
-.signup-form {
+.forgot-form {
 	width: 50%;
-	float: right;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 150px;
-	position: relative;
 }
 
-.signup-form h1 {
+.forgot-form h1 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 32px;
 	font-style: normal;
@@ -146,60 +147,49 @@
 	margin-bottom: 0;
 }
 
-.signup-form h4 {
+.forgot-form h4 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 20px;
 	letter-spacing: -0.04em;
-	color: #0a2843;
-	opacity: 70%;
-	margin-bottom: 31.64px;
+color: #53697B;
+opacity: 70%;
+	margin-bottom: 32px;
 }
 
-.signup-form form .label {
+.forgot-form form .label {
 	display: block;
 	font-family: 'Poppins', sans-serif;
-	font-size: 17px;
+	font-size: 14px;
 	font-style: normal;
-	font-weight: 400;
-	line-height: 22px;
-	letter-spacing: -1px;
-	color: #0a2843;
-	margin-bottom: 21.68px;
+	font-weight: 600;
+	line-height: 19px;
+	letter-spacing: 0.03em;
+	color: #777777;
 }
 
-.signup-form form .label:nth-child(2) {
+.forgot-form form .label:nth-child(2) {
 	margin-bottom: 13.8px;
 }
 
-.signup-form form .label input {
+.forgot-form form .label input {
 	display: block;
 	height: 48px;
 	width: 352.32px;
 	margin-top: 11.4px;
-	padding: 0 10px;
+	padding-left: 10px;
 }
 
-.signup-form form .label select {
-	font-family: 'Poppins', sans-serif;
-	font-size: 17px;
-	display: block;
-	height: 53.22px;
-	width: 352.32px;
-	margin-top: 11.4px;
-	padding: 0 10px;
-}
-
-.signup-form form .label input:active,
-.signup-form form .label input:focus {
+.forgot-form form .label input:active,
+.forgot-form form .label input:focus {
 	border: none;
 	outline: 1.06448px solid #6e7fee;
 	box-shadow: 0px 4.2579px 10.6448px #d2dafc;
 }
 
-.signup-form form button {
+.forgot-form form button {
 	font-family: 'Poppins', sans-serif;
 	background: #001ac6;
 	backdrop-filter: blur(6.38686px);
@@ -211,34 +201,15 @@
 	font-size: 17.0316px;
 	line-height: 22px;
 	color: #ffffff;
-	margin-top: 41.56px;
+	margin-top: 46.5px;
 	cursor: pointer;
 }
 
-.signup-form form button:hover {
+.forgot-form form button:hover {
 	background-color: #07156e;
 }
 
-.signup-form #par {
-	font-family: 'Poppins', sans-serif;
-	text-align: center;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 17.03px;
-	line-height: 32.36px;
-	color: #000000;
-	margin-top: 31.93px;
-}
-
-.signup-form #par span,
-.signup-form #par #link {
-	color: #001ac6;
-	padding-left: 5px;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-.sign-up-container .signup-form .foot-design {
+.forgot-container .foot-design {
 	height: 100px;
 	width: 100px;
 	border: 4px solid #001ac6;
@@ -249,7 +220,7 @@
 	bottom: 0;
 }
 
-.sign-up-container .signup-form .foot-design-sm {
+.forgot-container .foot-design-sm {
 	height: 55px;
 	width: 55px;
 	border: 4px solid #ffaa00;

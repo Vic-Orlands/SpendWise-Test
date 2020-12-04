@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import '../styles/SignIn.css';
+import '../styles/Forgot.css';
 
-class SignIn extends Component {
+class Forgot extends Component {
 	render() {
 		return (
-			<main className="sign-in-container">
+			<main className="forgot-container">
 				<section className="left">
 					<img src={require('../assets/logo.png')} alt="img" className="logo" />
 
@@ -23,38 +22,19 @@ class SignIn extends Component {
 					</div>
 				</section>
 
-				<article className="signin-form">
+				<article className="forgot-form">
 					<div>
-						<h1>Sign in</h1>
-						<h4>Welcome Back</h4>
+						<h1>Forgot Password?</h1>
+						<h4>Enter your email address to get a reset URL via email.</h4>
 
 						<form>
 							<label htmlFor="username" className="label">
-								Username
-								<input type="text" />
-							</label>
-							<label htmlFor="password" className="label">
-								Password
+								Enter Email Address
 								<input type="text" />
 							</label>
 
-							<div className="forgot">
-								<input type="checkbox" />
-								<label htmlFor="checkbox">Remember Me</label>
-
-								<p href="#">Forgot Password?</p>
-							</div>
-
-							<button>Sign In</button>
+							<button>Reset Password</button>
 						</form>
-
-						<p id="par">
-							Don't have an account?<span>
-								<NavLink to="/signup" id="link">
-									Click here
-								</NavLink>
-							</span>
-						</p>
 					</div>
 				</article>
 
@@ -66,4 +46,4 @@ class SignIn extends Component {
 	}
 }
 
-export default SignIn;
+export default Forgot;

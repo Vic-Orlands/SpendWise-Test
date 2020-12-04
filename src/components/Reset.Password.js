@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import '../styles/SignIn.css';
+import '../styles/Reset.css';
 
-class SignIn extends Component {
+class Reset extends Component {
 	render() {
 		return (
-			<main className="sign-in-container">
+			<main className="reset-container">
 				<section className="left">
 					<img src={require('../assets/logo.png')} alt="img" className="logo" />
 
@@ -23,38 +22,22 @@ class SignIn extends Component {
 					</div>
 				</section>
 
-				<article className="signin-form">
+				<article className="reset-form">
 					<div>
-						<h1>Sign in</h1>
-						<h4>Welcome Back</h4>
+						<h1>Reset Password</h1>
 
 						<form>
 							<label htmlFor="username" className="label">
-								Username
+								Enter New Password
 								<input type="text" />
 							</label>
 							<label htmlFor="password" className="label">
-								Password
+								Confirm New Password
 								<input type="text" />
 							</label>
 
-							<div className="forgot">
-								<input type="checkbox" />
-								<label htmlFor="checkbox">Remember Me</label>
-
-								<p href="#">Forgot Password?</p>
-							</div>
-
-							<button>Sign In</button>
+							<button>Save New Password</button>
 						</form>
-
-						<p id="par">
-							Don't have an account?<span>
-								<NavLink to="/signup" id="link">
-									Click here
-								</NavLink>
-							</span>
-						</p>
 					</div>
 				</article>
 
@@ -66,4 +49,4 @@ class SignIn extends Component {
 	}
 }
 
-export default SignIn;
+export default Reset;
