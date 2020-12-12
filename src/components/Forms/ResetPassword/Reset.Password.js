@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import '../styles/Reset.css';
+import './Reset.css';
 
 class Reset extends Component {
 	render() {
 		return (
 			<main className="reset-container">
 				<section className="left">
-					<img src={require('../assets/logo.png')} alt="img" className="logo" />
+					<img src={require('../../../assets/logo.png')} alt="img" className="logo" />
 
 					<div className="flex-icons">
 						<div className="wallet-bg">
-							<img src={require('../assets/wallet.png')} alt="img" className="wallet" />
+							<img src={require('../../../assets/wallet.png')} alt="img" className="wallet" />
 						</div>
 						<div className="goal-bg">
-							<img src={require('../assets/goal.png')} alt="img" className="goal" />
+							<img src={require('../../../assets/goal.png')} alt="img" className="goal" />
 						</div>
 						<div className="coin-bg">
-							<img src={require('../assets/coin.png')} alt="img" className="coin" />
+							<img src={require('../../../assets/coin.png')} alt="img" className="coin" />
 						</div>
-						<img src={require('../assets/man.png')} alt="img_man" className="man" />
+						<img src={require('../../../assets/man.png')} alt="img_man" className="man" />
 					</div>
 				</section>
 

@@ -1,9 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
-import Reset from './components/Reset.Password';
-import Forgot from './components/Forgot.Password';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import SignIn from './components/Forms/SignIn/SignIn';
+import SignUp from './components/Forms/SignUp/SignUp';
+
+import Reset from './components/Forms/ResetPassword/Reset.Password';
+import Forgot from './components/Forms/ForgotPassword/Forgot.Password';
+
+import Dashboard from './components/Dash/Dashboard/index';
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+	<Route
+		{...rest}
+		render={(props) =>
+			localStorage.getItem('loggedIn') ? (
+				<Component {...props} />
+			) : (
+				<Redirect to={{ pathname: '/', state: { from: props.location } }} />
+			)}
+	/>
+);
 
 const App = () => {
 	return (
@@ -12,8 +27,10 @@ const App = () => {
 				<Switch>
 					<Route path="/" component={SignIn} exact={true} />
 					<Route path="/signup" component={SignUp} />
-					<Route path="/reset" component={Reset} />
-					<Route path="/forgot" component={Forgot} />
+
+					<PrivateRoute path="/reset" component={Reset} />
+					<PrivateRoute path="/forgot" component={Forgot} />
+					<PrivateRoute path="/dash" component={Dashboard} />
 				</Switch>
 			</div>
 		</BrowserRouter>

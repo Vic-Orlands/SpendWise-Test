@@ -9,32 +9,27 @@
 	box-sizing: border-box;
 }
 
-.sign-in-container {
-	overflow: hidden;
-	display: flex;
-}
-
-.sign-in-container .left {
+.sign-up-container .left {
 	width: 50%;
 	height: 100vh;
+	position: fixed;
 	background: #2e41c0;
 	padding: 34.51px 0 0 36px;
-	position: relative;
 }
 
-.sign-in-container .left .logo {
+.sign-up-container .left .logo {
 	height: 59.78px;
 	width: 236.28px;
 }
 
 /* ----------------custom icon styling starts here---------------------- */
 
-.sign-in-container .left .flex-icons {
+.sign-up-container .left .flex-icons {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.sign-in-container .left .wallet-bg {
+.sign-up-container .left .wallet-bg {
 	width: 111.63px;
 	height: 111.63px;
 	background: #ffaa00;
@@ -50,13 +45,13 @@
 	animation-iteration-count: infinite;
 }
 
-.sign-in-container .left .wallet {
+.sign-up-container .left .wallet {
 	height: 44.00377655029297px;
 	width: 50px;
 	color: #ffffff;
 }
 
-.sign-in-container .left .goal-bg {
+.sign-up-container .left .goal-bg {
 	width: 133.95px;
 	height: 133.95px;
 	background: #00c69e;
@@ -72,13 +67,13 @@
 	animation-iteration-count: infinite;
 }
 
-.sign-in-container .left .goal {
+.sign-up-container .left .goal {
 	height: 57px;
 	width: 57.02px;
 	color: #ffffff;
 }
 
-.sign-in-container .left .coin-bg {
+.sign-up-container .left .coin-bg {
 	width: 134.54px;
 	height: 134.54px;
 	background: #27bbff;
@@ -94,7 +89,7 @@
 	animation-iteration-count: infinite;
 }
 
-.sign-in-container .left .coin {
+.sign-up-container .left .coin {
 	height: 48px;
 	width: 55px;
 	color: #ffffff;
@@ -116,27 +111,31 @@
 
 /* --------------bouncing animations styling ends here-------------- */
 
-.sign-in-container .left .flex-icons .man {
+.sign-up-container .left .flex-icons .man {
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
 	margin: auto;
-height: 584px;
-width: 584px;
-left: 68px;
+	height: 584px;
+	width: 584px;
+	left: 68px;
 }
 
 /* ----------------custom icon styling ends here---------------------- */
 
-.signin-form {
+.signup-form {
 	width: 50%;
+	float: right;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 150px;
+	position: relative;
 }
 
-.signin-form h1 {
+.signup-form h1 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 32px;
 	font-style: normal;
@@ -147,7 +146,7 @@ left: 68px;
 	margin-bottom: 0;
 }
 
-.signin-form h4 {
+.signup-form h4 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 16px;
 	font-style: normal;
@@ -159,7 +158,7 @@ left: 68px;
 	margin-bottom: 31.64px;
 }
 
-.signin-form form .label {
+.signup-form form .label {
 	display: block;
 	font-family: 'Poppins', sans-serif;
 	font-size: 17px;
@@ -171,61 +170,73 @@ left: 68px;
 	margin-bottom: 21.68px;
 }
 
-.signin-form form .label:nth-child(2) {
+.signup-form form .label:nth-child(2) {
 	margin-bottom: 13.8px;
 }
 
-.signin-form form .label input {
+.signup-form form .label input {
 	display: block;
 	height: 48px;
 	width: 352.32px;
 	margin-top: 11.4px;
-	padding-left: 10px;
+	padding: 0 10px;
 }
 
-.signin-form form .label input:active,
-.signin-form form .label input:focus {
+#errorMsg {
+	font-size: 9px;
+	letter-spacing: .1px;
+	float: right;
+	clear: both;
+	color: tomato;
+}
+
+.signup-form form .label select {
+	font-family: 'Poppins', sans-serif;
+	font-size: 17px;
+	display: block;
+	height: 53.22px;
+	width: 352.32px;
+	margin-top: 11.4px;
+	padding: 0 10px;
+}
+
+.signup-form form .label input:active,
+.signup-form form .label input:focus {
 	border: none;
 	outline: 1.06448px solid #6e7fee;
 	box-shadow: 0px 4.2579px 10.6448px #d2dafc;
 }
 
-.signin-form form .forgot {
+.signup-form form .pass .passInput {
 	display: flex;
-	justify-content: space-between;
+	height: 48px;
+	width: 352.32px;
+	border: 1px solid #777777;
+	border-radius: 2px;
+	margin-top: 11.4px;
+	padding-right: 8px;
 }
 
-.signin-form form .forgot label {
-	font-family: 'Noto Sans', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 12.7737px;
-	line-height: 16px;
-	color: #565656;
-	flex-grow: 1;
-	margin-left: 5px;
+.signup-form form .pass .passInput input {
+	border: none;
+	margin: auto 0;
+	margin-bottom: 13.8px;
+	height: 46px;
 }
 
-.signin-form form .forgot input {
-	width: 17.03px;
-	height: 17.03px;
-	border: 1.06448px solid #0a2843;
-	box-sizing: border-box;
-	border-radius: 2.12895px;
+.signup-form form .pass .passInput input:active,
+.signup-form form .pass .passInput input:focus {
+	outline: white;
+	box-shadow: none;
+}
+
+.signup-form form .pass .passInput p {
+	font-size: 14px;
+	margin: auto 0 auto 6px;
 	cursor: pointer;
 }
 
-.signin-form form .forgot p {
-	font-style: normal;
-	font-weight: normal;
-	font-size: 13.8382px;
-	line-height: 18px;
-	color: #000000;
-	border-radius: 2.12895px;
-	cursor: pointer;
-}
-
-.signin-form form button {
+.signup-form form button {
 	font-family: 'Poppins', sans-serif;
 	background: #001ac6;
 	backdrop-filter: blur(6.38686px);
@@ -241,11 +252,11 @@ left: 68px;
 	cursor: pointer;
 }
 
-.signin-form form button:hover {
+.signup-form form button:hover {
 	background-color: #07156e;
 }
 
-.signin-form #par {
+.signup-form #par {
 	font-family: 'Poppins', sans-serif;
 	text-align: center;
 	font-style: normal;
@@ -256,15 +267,15 @@ left: 68px;
 	margin-top: 31.93px;
 }
 
-.signin-form #par span,
-.signin-form #par #link {
+.signup-form #par span,
+.signup-form #par #link {
 	color: #001ac6;
 	padding-left: 5px;
 	cursor: pointer;
 	text-decoration: none;
 }
 
-.sign-in-container .foot-design {
+.sign-up-container .signup-form .foot-design {
 	height: 100px;
 	width: 100px;
 	border: 4px solid #001ac6;
@@ -275,7 +286,7 @@ left: 68px;
 	bottom: 0;
 }
 
-.sign-in-container .foot-design-sm {
+.sign-up-container .signup-form .foot-design-sm {
 	height: 55px;
 	width: 55px;
 	border: 4px solid #ffaa00;
