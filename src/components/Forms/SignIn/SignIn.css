@@ -343,9 +343,9 @@
 
 	.signin-form {
 		width: 100%;
-		height: 100vh;
+		max-height: 100vh;
 		clear: both;
-		padding: 50px 0 80px 0;
+		padding: 90px 0 80px 0;
 		position: relative;
 		background-image: url("../../../assets/logo-bg-white.png");
 		background-repeat: no-repeat;
