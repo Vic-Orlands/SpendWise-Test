@@ -339,6 +339,7 @@
 @media screen and (max-width: 760px) {
 	.sign-in-container {
 		height: 100vh;
+		position: relative;
 	}
 
 	.sign-in-container .left {
