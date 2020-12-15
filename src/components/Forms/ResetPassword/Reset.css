@@ -220,6 +220,7 @@
 @media screen and (max-width: 760px) {
 	.chngePass-container {
 		position: relative;
+		height: 100vh;
 	}
 
 	.chngePass-container .left {

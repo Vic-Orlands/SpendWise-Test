@@ -337,13 +337,17 @@
 
 /* ---------------mobile responsiveness------------ */
 @media screen and (max-width: 760px) {
+	.sign-in-container {
+		height: 100vh;
+	}
+
 	.sign-in-container .left {
 		display: none;
 	}
 
 	.signin-form {
 		width: 100%;
-		max-height: 100vh;
+		height: 100%;
 		clear: both;
 		padding: 150px 0 0 0;
 		background-image: url("../../../assets/logo-bg-white.png");
