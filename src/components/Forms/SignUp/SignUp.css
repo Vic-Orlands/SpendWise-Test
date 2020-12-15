@@ -291,6 +291,10 @@
 
 /* ---------------mobile responsiveness------------ */
 @media screen and (max-width: 760px) {
+	.sign-up-container {
+		position: relative;
+	}
+
 	.sign-up-container .left {
 		display: none;
 	}
@@ -298,8 +302,7 @@
 	.signup-form {
 		width: 100%;
 		clear: both;
-		position: relative;
-		padding: 90px 0 90px 0;
+		padding: 90px 0 0 0;
 		background-image: url("../../../assets/logo-bg-white.png");
 		background-repeat: no-repeat;
 		background-position: center;
@@ -383,7 +386,6 @@
 		width: 90px;
 	}
 
-	
 	.sign-up-container .signup-form .foot-design-sm {
 		height: 55px;
 		width: 55px;
