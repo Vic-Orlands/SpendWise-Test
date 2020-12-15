@@ -131,8 +131,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 150px;
-	position: relative;
+	padding-top: 50px;
 }
 
 .signup-form h1 {
@@ -140,7 +139,6 @@
 	font-size: 32px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 57px;
 	letter-spacing: -0.04em;
 	color: #222c6f;
 	margin-bottom: 0;
@@ -151,11 +149,10 @@
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 20px;
 	letter-spacing: -0.04em;
 	color: #0a2843;
 	opacity: 70%;
-	margin-bottom: 31.64px;
+	margin-bottom: 26px;
 }
 
 .signup-form form .label {
@@ -167,23 +164,19 @@
 	line-height: 22px;
 	letter-spacing: -1px;
 	color: #0a2843;
-	margin-bottom: 21.68px;
-}
-
-.signup-form form .label:nth-child(2) {
-	margin-bottom: 13.8px;
+	margin-bottom: 14px;
 }
 
 .signup-form form .label input {
 	display: block;
-	height: 48px;
+	height: 42px;
 	width: 352.32px;
-	margin-top: 11.4px;
+	margin-top: 4px;
 	padding: 0 10px;
 }
 
 #errorMsg {
-	font-size: 9px;
+	font-size: 10px;
 	letter-spacing: .1px;
 	float: right;
 	clear: both;
@@ -194,9 +187,9 @@
 	font-family: 'Poppins', sans-serif;
 	font-size: 17px;
 	display: block;
-	height: 53.22px;
+	height: 42px;
 	width: 352.32px;
-	margin-top: 11.4px;
+	margin-top: 4px;
 	padding: 0 10px;
 }
 
@@ -209,19 +202,18 @@
 
 .signup-form form .pass .passInput {
 	display: flex;
-	height: 48px;
+	height: 42px;
 	width: 352.32px;
 	border: 1px solid #777777;
 	border-radius: 2px;
-	margin-top: 11.4px;
+	margin-top: 6px;
 	padding-right: 8px;
 }
 
 .signup-form form .pass .passInput input {
 	border: none;
 	margin: auto 0;
-	margin-bottom: 13.8px;
-	height: 46px;
+	height: 40px;
 }
 
 .signup-form form .pass .passInput input:active,
@@ -242,13 +234,13 @@
 	backdrop-filter: blur(6.38686px);
 	border-radius: 2.12895px;
 	width: 100%;
-	height: 48px;
+	height: 42px;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 17.0316px;
+	font-size: 17px;
 	line-height: 22px;
 	color: #ffffff;
-	margin-top: 41.56px;
+	margin-top: 25px;
 	cursor: pointer;
 }
 
@@ -264,7 +256,7 @@
 	font-size: 17.03px;
 	line-height: 32.36px;
 	color: #000000;
-	margin-top: 31.93px;
+	margin-top: 10px;
 }
 
 .signup-form #par span,
@@ -299,4 +291,95 @@
 
 /* ---------------mobile responsiveness------------ */
 @media screen and (max-width: 760px) {
+	.sign-up-container .left {
+		display: none;
+	}
+
+	.signup-form {
+		width: 100%;
+		clear: both;
+		padding: 90px 0 90px 0;
+		position: relative;
+		background-image: url("../../../assets/logo-bg-white.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-position-y: 30px;
+	}
+
+	.signup-form > div {
+		width: 85%;
+	}
+
+	.signup-form h1 {
+		font-size: 24px;
+	}
+
+	.signup-form h4 {
+		font-size: 14px;
+		margin-bottom: 26px;
+	}
+
+	.signup-form form .label {
+		font-size: 15px;
+		margin-bottom: 14px;
+	}
+
+	.signup-form form .label input {
+		display: block;
+		height: 40px;
+		width: 100%;
+		padding: 0 5px;
+	}
+
+	#errorMsg {
+		font-size: 12px;
+		letter-spacing: 0px;
+	}
+
+	.signup-form form .label select {
+		font-size: 14px;
+		height: 40px;
+		width: 100%;
+		padding: 0 5px;
+	}
+
+	.signup-form form .pass .passInput {
+		height: 40px;
+		width: 100%;
+		margin-top: 4px;
+		padding-right: 10px;
+	}
+
+	.signup-form form .pass .passInput input {
+		margin: auto 0;
+		height: 36px;
+	}
+
+	.signup-form form .pass .passInput p {
+		font-size: 12px;
+	}
+
+	.signup-form form button {
+		height: 40px;
+		font-size: 14px;
+		margin-top: 20px;
+	}
+
+	.signup-form #par {
+		font-size: 14px;
+		margin-top: 10px;
+	}
+
+	.signup-form #par span,
+	.signup-form #par #link {
+		color: #001ac6;
+		padding-left: 5px;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.sign-up-container .signup-form .foot-design {
+		height: 90px;
+		width: 90px;
+	}
 }

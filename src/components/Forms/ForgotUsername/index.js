@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './Forgot.css';
+import './styles.css';
 
 import Axios from 'axios';
-class Forgot extends Component {
+
+class index extends Component {
 	state = {
 		formValues: {
 			email: ''
@@ -60,7 +61,7 @@ class Forgot extends Component {
 
 		const { formValidity, formValues } = this.state;
 		const user = {
-			user: formValues.email
+			email: formValues.email
 		};
 
 		if (Object.values(formValidity).every(Boolean)) {
@@ -68,7 +69,7 @@ class Forgot extends Component {
 				isSubmitting: true
 			});
 
-			Axios.post('https://www.spendwise.ng/api/accounts/token_request/', user, {
+			Axios.post("https://www.spendwise.ng/api/accounts/get_username/", user, {
 				headers: {
 					'Content-Type': 'application/json'
 				}
@@ -80,10 +81,9 @@ class Forgot extends Component {
 								isSubmitting: false,
 								submitted: true
 							});
-							localStorage.setItem('user details', JSON.stringify(res.data));
 							setTimeout(() => {
-								this.props.history.push('/reset');
-							}, 3500);
+								this.props.history.push('/signin');
+							}, 3000);
 							return res.data;
 						}, 2000);
 					} else return null;
@@ -111,7 +111,7 @@ class Forgot extends Component {
 		const { formErrors, formValues, isSubmitting, submitted } = this.state;
 
 		return (
-			<main className="forgot-container">
+			<main className="forgot-username">
 				<section className="left">
 					<img src={require('../../../assets/logo.png')} alt="img" className="logo" />
 
@@ -129,10 +129,10 @@ class Forgot extends Component {
 					</div>
 				</section>
 
-				<article className="forgot-form">
+				<article className="username-form">
 					<div>
-						<h1>Forgot Password?</h1>
-						<h4>Enter your email address to get a reset URL via email.</h4>
+						<h1>Forgot Username?</h1>
+						<h4>Enter your email address to get your username.</h4>
 
 						<form onSubmit={this.handleSubmit}>
 							<label htmlFor="username" className="label">
@@ -150,9 +150,7 @@ class Forgot extends Component {
 							<button>{!isSubmitting ? 'Reset Password' : 'Resetting...'}</button>
 							<center>
 								{submitted ? (
-									<p style={{ fontFamily: 'sans-serif', marginTop: 10 }}>
-										Token has been sent to registered email
-									</p>
+									<p style={{ fontFamily: 'sans-serif', marginTop: 10 }}>Your username has been sent to your email</p>
 								) : (
 									''
 								)}
@@ -169,4 +167,4 @@ class Forgot extends Component {
 	}
 }
 
-export default Forgot;
+export default index;

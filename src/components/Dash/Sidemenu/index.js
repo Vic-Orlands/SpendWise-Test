@@ -7,7 +7,7 @@ export default class index extends Component {
 			<div className="sidemenu-container">
 				<img src={require('../../../assets/logo-bg-white.png')} alt="logo" id="side-logo" />
 
-				<ul>
+				<ul className="sidemenu-list">
 					<div className="first">
 						<img src={require('../../../assets/dash.png')} alt="logo" />
 						<li>Dashboard</li>
@@ -30,19 +30,19 @@ export default class index extends Component {
 				</ul>
 
 				<footer>
-					<ul>
-							<div>
-						<img src={require('../../../assets/settings.png')} alt="logo" id="icon" />
-						<li>Setting</li>
-					</div>
+					<ul className="footer-list">
+						<div>
+							<img src={require('../../../assets/settings.png')} alt="logo" id="icon" />
+							<li>Setting</li>
+						</div>
 
-					<div>
-						<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
-						<li>Sign out</li>
-					</div>
-				</ul>
-				<div className="blue"></div>
-				<div className="orange"></div>
+						<div>
+							<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
+							<li>Sign out</li>
+						</div>
+					</ul>
+					<div className="blue" />
+					<div className="orange" />
 				</footer>
 			</div>
 		);

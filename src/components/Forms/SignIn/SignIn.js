@@ -31,7 +31,7 @@ class SignIn extends Component {
 
 	handleInputChange = ({ target }) => {
 		const { formValues } = this.state;
-		formValues[target.name] = target.value.toLowerCase();
+		formValues[target.name] = target.value;
 		this.setState({ formValues });
 		this.handleValidation(target);
 	};
@@ -50,7 +50,7 @@ class SignIn extends Component {
 		const isPassword = name === 'password';
 
 		validity[name] = value.length > 0;
-		fieldValidationErrors[name] = validity[name] ? '' : `${name} is required and cannot be empty`;
+		fieldValidationErrors[name] = validity[name] ? '' : `${name} is required`;
 
 		if (validity[name]) {
 			if (isPassword) {
@@ -73,7 +73,7 @@ class SignIn extends Component {
 
 		const { formValidity, formValues, isChecked } = this.state;
 		const currentUser = {
-			username: formValues.username,
+			username: formValues.username.toLowerCase(),
 			password: formValues.password
 		};
 
@@ -92,7 +92,7 @@ class SignIn extends Component {
 							localStorage.setItem('loggedIn', true);
 						}
 						localStorage.setItem('usertoken', JSON.stringify(res.data));
-						this.props.history.push('/dash');
+						this.props.history.push('/');
 						return res.data;
 					} else return null;
 				})
@@ -196,7 +196,14 @@ class SignIn extends Component {
 								/>
 								<label htmlFor="checkbox">Remember Me</label>
 
-								<p href="#">Forgot Password?</p>
+								<div>
+									<NavLink to="/forgotUsername" id="forgotLlink">
+										<p>Forgot Username?</p>
+									</NavLink>
+									<NavLink to="/forgot" id="forgotLlink">
+										<p id="secondPar">Forgot Password?</p>
+									</NavLink>
+								</div>
 							</div>
 
 							<button>{!isSubmitting ? 'Sign In' : 'Logging in...'}</button>

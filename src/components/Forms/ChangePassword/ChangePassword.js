@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-import './Reset.css';
+import './ChangePassword.css';
 
 import Axios from 'axios';
 
-class Reset extends Component {
+class ChangePassword extends Component {
 	state = {
 		show: true,
 		formValues: {
-			username: '',
-			otp: '',
+			current_password: '',
 			password: '',
 			confirm_password: ''
 		},
 		formErrors: {
-			username: '',
-			otp: '',
+			current_password: '',
 			password: '',
 			confirm_password: ''
 		},
@@ -32,28 +30,6 @@ class Reset extends Component {
 		});
 	};
 
-	componentDidMount = () => {
-		let userName = JSON.parse(localStorage.getItem('user details'));
-		if (userName) {
-			this.setState({
-				formValues: {
-					username: userName.username,
-					otp: '',
-					password: '',
-					confirm_password: ''
-				}
-			});
-		} else
-			this.setState({
-				formValues: {
-					username: '',
-					otp: '',
-					password: '',
-					confirm_password: ''
-				}
-			});
-	};
-
 	handleInputChange = ({ target }) => {
 		const { formValues } = this.state;
 		formValues[target.name] = target.value;
@@ -65,25 +41,19 @@ class Reset extends Component {
 		const { name, value } = target;
 		const fieldValidationErrors = this.state.formErrors;
 		const validity = this.state.formValidity;
-		const isUsername = name === 'username';
-		const isOtp = name === 'otp';
+		const isCurrentPassword = name === 'current_password';
 		const isPassword = name === 'password';
 		const isSamePassword = name === 'confirm_password';
 
-		const otpTest = /^\d{6}$/;
 		const passwrdTest = /^.*(?=.{6,})(?=.*\d).*$/;
 
 		validity[name] = value.length > 0;
-		fieldValidationErrors[name] = validity[name] ? '' : `Required`;
+		fieldValidationErrors[name] = validity[name] ? '' : `${name} is required`;
 
 		if (validity[name]) {
-			if (isUsername) {
-				validity[name] = value.length > 0;
-				fieldValidationErrors[name] = validity[name] ? '' : `${name} must be a valid username`;
-			}
-			if (isOtp) {
-				validity[name] = otpTest.test(value);
-				fieldValidationErrors[name] = validity[name] ? '' : `${name} is not valid`;
+			if (isCurrentPassword) {
+				validity[name] = passwrdTest.test(value);
+				fieldValidationErrors[name] = validity[name] ? '' : `min of 6 and contain numbers`;
 			}
 			if (isPassword) {
 				validity[name] = passwrdTest.test(value);
@@ -106,9 +76,8 @@ class Reset extends Component {
 
 		const { formValidity, formValues } = this.state;
 		const currentUser = {
-			username: formValues.username.toLowerCase(),
-			otp: formValues.otp,
-			password: formValues.password,
+			current_password: formValues.current_password,
+			new_password: formValues.password,
 			confirm_password: formValues.confirm_password
 		};
 
@@ -116,8 +85,11 @@ class Reset extends Component {
 			this.setState({
 				isSubmitting: true
 			});
-			Axios.post('https://www.spendwise.ng/api/accounts/password_reset/', currentUser, {
+			let userToken = JSON.parse(localStorage.getItem('usertoken'));
+
+			Axios.post('https://www.spendwise.ng/api/accounts/change_password/', currentUser, {
 				headers: {
+					Authorization: `Token ${userToken.token}`,
 					'Content-Type': 'application/json'
 				}
 			})
@@ -129,8 +101,8 @@ class Reset extends Component {
 								submitted: true
 							});
 							setTimeout(() => {
-								this.props.history.push('/signin');
-							}, 3000);
+								this.props.history.push('/');
+							}, 3500);
 							return res.data;
 						}, 2000);
 					} else return null;
@@ -138,7 +110,7 @@ class Reset extends Component {
 				.catch((err) => {
 					this.setState({
 						formErrors: {
-							otp: 'Token Expired. Request another please.'
+							current_password: 'Incorrect password'
 						},
 						isSubmitting: false
 					});
@@ -153,11 +125,11 @@ class Reset extends Component {
 			}
 		}
 	};
-
 	render() {
 		const { formErrors, formValues, isSubmitting, submitted } = this.state;
+
 		return (
-			<main className="chngePass-container">
+			<main className="reset-container">
 				<section className="left">
 					<img src={require('../../../assets/logo.png')} alt="img" className="logo" />
 
@@ -175,34 +147,27 @@ class Reset extends Component {
 					</div>
 				</section>
 
-				<article className="chngePass-form">
+				<article className="reset-form">
 					<div>
-						<h1>Reset Password</h1>
+						<h1>Change Password</h1>
 
 						<form onSubmit={this.handleSubmit}>
 							<label htmlFor="username" className="label">
-								Enter Username
-								{this.state.formErrors.username ? <p id="errorMsg">{formErrors.username}</p> : ''}
+								Enter Current Password
+								{this.state.formErrors.current_password ? (
+									<p id="errorMsg">{formErrors.current_password}</p>
+								) : (
+									''
+								)}
 								<input
 									type="text"
-									name="username"
-									value={formValues.username || ''}
+									name="current_password"
+									value={formValues.current_password || ''}
 									onChange={this.handleInputChange}
-									autoComplete="username"
-								/>
+									autoComplete="current-password"
+								/>{' '}
 							</label>
-							<label htmlFor="otp" className="label">
-								Enter OTP
-								{this.state.formErrors.otp ? <p id="errorMsg">{formErrors.otp}</p> : ''}
-								<input
-									type="text"
-									name="otp"
-									value={formValues.otp || ''}
-									onChange={this.handleInputChange}
-									autoComplete="otp"
-								/>
-							</label>
-							<label htmlFor="password" className="label">
+							<label htmlFor="username" className="label">
 								Enter New Password
 								{this.state.formErrors.password ? <p id="errorMsg">{formErrors.password}</p> : ''}
 								<input
@@ -211,8 +176,8 @@ class Reset extends Component {
 									value={formValues.password || ''}
 									onChange={this.handleInputChange}
 									autoComplete="new-password"
-								/>
-							</label>{' '}
+								/>{' '}
+							</label>
 							<label htmlFor="password" className="label">
 								Confirm New Password
 								{this.state.formErrors.confirm_password ? (
@@ -223,16 +188,17 @@ class Reset extends Component {
 								<input
 									type="text"
 									name="confirm_password"
-									value={formValues.confirm_password || ''}
+									value={formValues.confirm_password}
 									onChange={this.handleInputChange}
 									autoComplete="new-password"
-								/>
+								/>{' '}
 							</label>
+
 							<button>{!isSubmitting ? 'Save New Password' : 'Saving...'}</button>
 							<center>
 								{submitted ? (
 									<p style={{ fontFamily: 'sans-serif', marginTop: 10 }}>
-										Password has been resetted successfully!
+										Password has been changed successfully!
 									</p>
 								) : (
 									''
@@ -250,4 +216,4 @@ class Reset extends Component {
 	}
 }
 
-export default Reset;
+export default ChangePassword;

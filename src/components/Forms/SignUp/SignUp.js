@@ -31,7 +31,8 @@ class SignUp extends Component {
 			password: false,
 			password2: false
 		},
-		isSubmitting: false
+		isSubmitting: false,
+		submitted: ""
 	};
 
 	showPassword = (e) => {
@@ -50,7 +51,7 @@ class SignUp extends Component {
 
 	handleInputChange = ({ target }) => {
 		const { formValues } = this.state;
-		formValues[target.name] = target.value.toLowerCase();
+		formValues[target.name] = target.value;
 		this.setState({ formValues });
 		this.handleValidation(target);
 	};
@@ -74,9 +75,10 @@ class SignUp extends Component {
 
 		const emailTest = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 		const phoneTest = /^\d{11}$/;
+		const passwrdTest = /^.*(?=.{6,})(?=.*\d).*$/
 
 		validity[name] = value.length > 0;
-		fieldValidationErrors[name] = validity[name] ? '' : `${name} is required and cannot be empty`;
+		fieldValidationErrors[name] = validity[name] ? '' : `${name} is required`;
 
 		if (validity[name]) {
 			if (isUsername) {
@@ -92,8 +94,10 @@ class SignUp extends Component {
 				fieldValidationErrors[name] = validity[name] ? '' : `${name} must be a valid phone number`;
 			}
 			if (isPassword) {
-				validity[name] = value.length >= 6;
-				fieldValidationErrors[name] = validity[name] ? '' : `${name} must be above 6 characters`;
+				validity[name] = passwrdTest.test(value);
+				fieldValidationErrors[name] = validity[name]
+					? ''
+					: `${name} must be min of 6 characters and contain number`;
 			}
 			if (isSamePassword) {
 				validity[name] = value === this.state.formValues.password;
@@ -107,7 +111,7 @@ class SignUp extends Component {
 		});
 	};
 
-	//---------------input ref to take user to top input if user exists-------------
+	//---------------input ref to take user to first input if user exists-------------
 	inputRef = createRef();
 
 	onSubmit = (e) => {
@@ -115,7 +119,7 @@ class SignUp extends Component {
 		const { formValues, formValidity } = this.state;
 
 		let newUser = {
-			username: formValues.username,
+			username: formValues.username.toLowerCase(),
 			email: formValues.email,
 			phone: formValues.phone,
 			state: formValues.stat,
@@ -135,8 +139,9 @@ class SignUp extends Component {
 				})
 				.then((res) => {
 					if (res.status === 201) {
+						this.setState({ isSubmitting: false, submitted: "User registered, please proceed to login" })
 						console.log(res.status, res.data.message);
-						this.props.history.push('/');
+						// this.props.history.push('/');
 					} else return null;
 				})
 				.catch((err) => {
@@ -144,7 +149,8 @@ class SignUp extends Component {
 						formErrors: {
 							username: 'User exists, Login instead'
 						},
-						isSubmitting: false
+						isSubmitting: false,
+						submitted: 'User exists, Login instead'
 					});
 					this.inputRef.current.focus();
 				});
@@ -160,7 +166,7 @@ class SignUp extends Component {
 	};
 
 	render() {
-		const { formErrors, formValues, isSubmitting } = this.state;
+		const { formErrors, formValues, isSubmitting, submitted } = this.state;
 		return (
 			<main className="sign-up-container">
 				<section className="left">
@@ -332,11 +338,12 @@ class SignUp extends Component {
 							)}
 
 							<button>{!isSubmitting ? 'Sign Up' : 'Signing up now...'}</button>
+							{submitted ? <center>submitted</center> : ""}
 						</form>
 
 						<p id="par">
 							Already have an account?<span>
-								<NavLink to="/" id="link">
+								<NavLink to="/signin" id="link">
 									Log in
 								</NavLink>
 							</span>

@@ -9,12 +9,12 @@
 	box-sizing: border-box;
 }
 
-.reset-container {
+.chngePass-container {
 	overflow: hidden;
 	display: flex;
 }
 
-.reset-container .left {
+.chngePass-container .left {
 	width: 50%;
 	height: 100vh;
 	background: #2e41c0;
@@ -22,19 +22,19 @@
 	position: relative;
 }
 
-.reset-container .left .logo {
+.chngePass-container .left .logo {
 	height: 59.78px;
 	width: 236.28px;
 }
 
 /* ----------------custom icon styling starts here---------------------- */
 
-.reset-container .left .flex-icons {
+.chngePass-container .left .flex-icons {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.reset-container .left .wallet-bg {
+.chngePass-container .left .wallet-bg {
 	width: 111.63px;
 	height: 111.63px;
 	background: #ffaa00;
@@ -50,13 +50,13 @@
 	animation-iteration-count: infinite;
 }
 
-.reset-container .left .wallet {
+.chngePass-container .left .wallet {
 	height: 44.00377655029297px;
 	width: 50px;
 	color: #ffffff;
 }
 
-.reset-container .left .goal-bg {
+.chngePass-container .left .goal-bg {
 	width: 133.95px;
 	height: 133.95px;
 	background: #00c69e;
@@ -72,13 +72,13 @@
 	animation-iteration-count: infinite;
 }
 
-.reset-container .left .goal {
+.chngePass-container .left .goal {
 	height: 57px;
 	width: 57.02px;
 	color: #ffffff;
 }
 
-.reset-container .left .coin-bg {
+.chngePass-container .left .coin-bg {
 	width: 134.54px;
 	height: 134.54px;
 	background: #27bbff;
@@ -94,7 +94,7 @@
 	animation-iteration-count: infinite;
 }
 
-.reset-container .left .coin {
+.chngePass-container .left .coin {
 	height: 48px;
 	width: 55px;
 	color: #ffffff;
@@ -116,27 +116,27 @@
 
 /* --------------bouncing animations styling ends here-------------- */
 
-.reset-container .left .flex-icons .man {
+.chngePass-container .left .flex-icons .man {
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
 	margin: auto;
-height: 584px;
-width: 584px;
-left: 68px;
+	height: 584px;
+	width: 584px;
+	left: 68px;
 }
 
 /* ----------------custom icon styling ends here---------------------- */
 
-.reset-form {
+.chngePass-form {
 	width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.reset-form h1 {
+.chngePass-form h1 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 32px;
 	font-style: normal;
@@ -147,7 +147,7 @@ left: 68px;
 	margin-bottom: 8px;
 }
 
-.reset-form form .label {
+.chngePass-form form .label {
 	display: block;
 	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
@@ -159,7 +159,7 @@ left: 68px;
 	margin-top: 30px;
 }
 
-.reset-form form .label input {
+.chngePass-form form .label input {
 	display: block;
 	height: 48px;
 	width: 352.32px;
@@ -167,14 +167,14 @@ left: 68px;
 	padding-left: 10px;
 }
 
-.reset-form form .label input:active,
-.reset-form form .label input:focus {
+.chngePass-form form .label input:active,
+.chngePass-form form .label input:focus {
 	border: none;
 	outline: 1.06448px solid #6e7fee;
 	box-shadow: 0px 4.2579px 10.6448px #d2dafc;
 }
 
-.reset-form form button {
+.chngePass-form form button {
 	font-family: 'Poppins', sans-serif;
 	background: #001ac6;
 	backdrop-filter: blur(6.38686px);
@@ -190,11 +190,11 @@ left: 68px;
 	cursor: pointer;
 }
 
-.reset-form form button:hover {
+.chngePass-form form button:hover {
 	background-color: #07156e;
 }
 
-.reset-container .foot-design {
+.chngePass-container .foot-design {
 	height: 100px;
 	width: 100px;
 	border: 4px solid #001ac6;
@@ -205,7 +205,7 @@ left: 68px;
 	bottom: 0;
 }
 
-.reset-container .foot-design-sm {
+.chngePass-container .foot-design-sm {
 	height: 55px;
 	width: 55px;
 	border: 4px solid #ffaa00;
@@ -218,4 +218,70 @@ left: 68px;
 
 /* ---------------mobile responsiveness------------ */
 @media screen and (max-width: 760px) {
+	.chngePass-container .left {
+		display: none;
+	}
+
+	.chngePass-form {
+		width: 100%;
+		height: 100vh;
+		clear: both;
+		padding: 50px 0 80px 0;
+		position: relative;
+		background-image: url("../../../assets/logo-bg-white.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-position-y: 40px;
+	}
+
+	.chngePass-form > div {
+		width: 85%;
+	}
+
+	.chngePass-form h1 {
+		font-size: 24px;
+	}
+
+	.chngePass-form form .label {
+		font-size: 14px;
+		margin-bottom: 0px;
+		margin-top: 20px;
+	}
+
+	.chngePass-form form .label input {
+		display: block;
+		height: 40px;
+		width: 100%;
+		margin-top: 4px;
+		padding: 0 5px;
+	}
+
+	#errorMsg {
+		font-size: 12px;
+		letter-spacing: 0px;
+	}
+
+	.chngePass-form form button {
+		height: 40px;
+		font-size: 14px;
+		margin-top: 30px;
+	}
+
+	.chngePass-form #par {
+		font-size: 14px;
+		margin-top: 10px;
+	}
+
+	.chngePass-form #par span,
+	.chngePass-form #par #link {
+		color: #001ac6;
+		padding-left: 5px;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.chngePass-container .foot-design {
+		height: 90px;
+		width: 90px;
+	}
 }

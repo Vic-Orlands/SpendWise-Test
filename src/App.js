@@ -5,8 +5,10 @@ import SignUp from './components/Forms/SignUp/SignUp';
 
 import Reset from './components/Forms/ResetPassword/Reset.Password';
 import Forgot from './components/Forms/ForgotPassword/Forgot.Password';
+import ForgotUsername from './components/Forms/ForgotUsername/index';
 
 import Dashboard from './components/Dash/Dashboard/index';
+import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route
@@ -15,7 +17,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 			localStorage.getItem('loggedIn') ? (
 				<Component {...props} />
 			) : (
-				<Redirect to={{ pathname: '/', state: { from: props.location } }} />
+				<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
 			)}
 	/>
 );
@@ -25,12 +27,16 @@ const App = () => {
 		<BrowserRouter>
 			<div>
 				<Switch>
-					<Route path="/" component={SignIn} exact={true} />
-					<Route path="/signup" component={SignUp} />
+					<PrivateRoute path="/" component={Dashboard} exact={true} />
 
-					<PrivateRoute path="/reset" component={Reset} />
-					<PrivateRoute path="/forgot" component={Forgot} />
-					<PrivateRoute path="/dash" component={Dashboard} />
+					<Route path="/signin" component={SignIn} />
+					<Route path="/signup" component={SignUp} />
+					<Route path="/reset" component={Reset} />
+					<Route path="/forgot" component={Forgot} />
+					<Route path="/forgotUsername" component={ForgotUsername} />
+
+					{/* ----------------------private routes--------------------- */}
+					<PrivateRoute path="/chngePass" component={ChangePassword} />
 				</Switch>
 			</div>
 		</BrowserRouter>

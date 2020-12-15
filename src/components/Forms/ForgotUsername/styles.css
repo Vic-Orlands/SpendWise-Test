@@ -9,12 +9,12 @@
 	box-sizing: border-box;
 }
 
-.forgot-container {
+.forgot-username {
 	overflow: hidden;
 	display: flex;
 }
 
-.forgot-container .left {
+.forgot-username .left {
 	width: 50%;
 	height: 100vh;
 	background: #2e41c0;
@@ -22,19 +22,19 @@
 	position: relative;
 }
 
-.forgot-container .left .logo {
+.forgot-username .left .logo {
 	height: 59.78px;
 	width: 236.28px;
 }
 
 /* ----------------custom icon styling starts here---------------------- */
 
-.forgot-container .left .flex-icons {
+.forgot-username .left .flex-icons {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 }
 
-.forgot-container .left .wallet-bg {
+.forgot-username .left .wallet-bg {
 	width: 111.63px;
 	height: 111.63px;
 	background: #ffaa00;
@@ -50,13 +50,13 @@
 	animation-iteration-count: infinite;
 }
 
-.forgot-container .left .wallet {
+.forgot-username .left .wallet {
 	height: 44.00377655029297px;
 	width: 50px;
 	color: #ffffff;
 }
 
-.forgot-container .left .goal-bg {
+.forgot-username .left .goal-bg {
 	width: 133.95px;
 	height: 133.95px;
 	background: #00c69e;
@@ -72,13 +72,13 @@
 	animation-iteration-count: infinite;
 }
 
-.forgot-container .left .goal {
+.forgot-username .left .goal {
 	height: 57px;
 	width: 57.02px;
 	color: #ffffff;
 }
 
-.forgot-container .left .coin-bg {
+.forgot-username .left .coin-bg {
 	width: 134.54px;
 	height: 134.54px;
 	background: #27bbff;
@@ -94,7 +94,7 @@
 	animation-iteration-count: infinite;
 }
 
-.forgot-container .left .coin {
+.forgot-username .left .coin {
 	height: 48px;
 	width: 55px;
 	color: #ffffff;
@@ -116,7 +116,7 @@
 
 /* --------------bouncing animations styling ends here-------------- */
 
-.forgot-container .left .flex-icons .man {
+.forgot-username .left .flex-icons .man {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -129,14 +129,14 @@
 
 /* ----------------custom icon styling ends here---------------------- */
 
-.forgot-form {
+.username-form {
 	width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.forgot-form h1 {
+.username-form h1 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 32px;
 	font-style: normal;
@@ -147,7 +147,7 @@
 	margin-bottom: 0;
 }
 
-.forgot-form h4 {
+.username-form h4 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 16px;
 	font-style: normal;
@@ -159,7 +159,7 @@
 	margin-bottom: 32px;
 }
 
-.forgot-form form .label {
+.username-form form .label {
 	display: block;
 	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
@@ -170,11 +170,11 @@
 	color: #777777;
 }
 
-.forgot-form form .label:nth-child(2) {
+.username-form form .label:nth-child(2) {
 	margin-bottom: 13.8px;
 }
 
-.forgot-form form .label input {
+.username-form form .label input {
 	display: block;
 	height: 48px;
 	width: 352.32px;
@@ -182,14 +182,14 @@
 	padding-left: 10px;
 }
 
-.forgot-form form .label input:active,
-.forgot-form form .label input:focus {
+.username-form form .label input:active,
+.username-form form .label input:focus {
 	border: none;
 	outline: 1.06448px solid #6e7fee;
 	box-shadow: 0px 4.2579px 10.6448px #d2dafc;
 }
 
-.forgot-form form button {
+.username-form form button {
 	font-family: 'Poppins', sans-serif;
 	background: #001ac6;
 	backdrop-filter: blur(6.38686px);
@@ -205,11 +205,11 @@
 	cursor: pointer;
 }
 
-.forgot-form form button:hover {
+.username-form form button:hover {
 	background-color: #07156e;
 }
 
-.forgot-container .foot-design {
+.forgot-username .foot-design {
 	height: 100px;
 	width: 100px;
 	border: 4px solid #001ac6;
@@ -220,7 +220,7 @@
 	bottom: 0;
 }
 
-.forgot-container .foot-design-sm {
+.forgot-username .foot-design-sm {
 	height: 55px;
 	width: 55px;
 	border: 4px solid #ffaa00;
@@ -233,11 +233,11 @@
 
 /* ---------------mobile responsiveness------------ */
 @media screen and (max-width: 760px) {
-	.forgot-container .left {
+	.forgot-username .left {
 		display: none;
 	}
 
-	.forgot-form {
+	.username-form {
 		width: 100%;
 		height: 100vh;
 		clear: both;
@@ -249,26 +249,26 @@
 		background-position-y: 100px;
 	}
 
-	.forgot-form > div {
+	.username-form > div {
 		width: 85%;
 	}
 
-	.forgot-form h1 {
+	.username-form h1 {
 		font-size: 24px;
 		line-height: 40px;
 	}
 
-	.forgot-form h4 {
+	.username-form h4 {
 		font-size: 14px;
 	}
 
-	.forgot-form form .label {
+	.username-form form .label {
 		font-size: 14px;
 		margin-bottom: 0px;
 		margin-top: 20px;
 	}
 
-	.forgot-form form .label input {
+	.username-form form .label input {
 		display: block;
 		height: 40px;
 		width: 100%;
@@ -281,13 +281,13 @@
 		letter-spacing: 0px;
 	}
 
-	.forgot-form form button {
+	.username-form form button {
 		height: 40px;
 		font-size: 14px;
 		margin-top: 30px;
 	}
 
-	.forgot-container .foot-design {
+	.forgot-username .foot-design {
 		height: 90px;
 		width: 90px;
 	}

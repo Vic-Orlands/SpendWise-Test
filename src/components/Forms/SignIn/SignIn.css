@@ -173,7 +173,7 @@
 
 .signin-form form .label input {
 	display: block;
-	height: 48px;
+	height: 46px;
 	width: 352.32px;
 	margin-top: 11.4px;
 	padding-left: 10px;
@@ -199,8 +199,7 @@
 .signin-form form .pass .passInput input {
 	border: none;
 	margin: auto 0;
-	margin-bottom: 13.8px;
-	height: 46px;
+	height: 44px;
 }
 
 .signin-form form .pass .passInput input:active,
@@ -249,13 +248,30 @@
 }
 
 .signin-form form .forgot p {
+	font-family: 'Noto Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 13.8382px;
+	font-size: 12px;
 	line-height: 18px;
 	color: #000000;
 	border-radius: 2.12895px;
 	cursor: pointer;
+}
+
+.signin-form form .forgot #secondPar {
+	font-family: 'Noto Sans', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 18px;
+	color: #000000;
+	border-radius: 2.12895px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.signin-form form .forgot #forgotLlink {
+	text-decoration: none;
 }
 
 .signin-form form button {
@@ -270,7 +286,7 @@
 	font-size: 17.0316px;
 	line-height: 22px;
 	color: #ffffff;
-	margin-top: 41.56px;
+	margin-top: 30px;
 	cursor: pointer;
 }
 
@@ -321,4 +337,95 @@
 
 /* ---------------mobile responsiveness------------ */
 @media screen and (max-width: 760px) {
+	.sign-in-container .left {
+		display: none;
+	}
+
+	.signin-form {
+		width: 100%;
+		height: 100vh;
+		clear: both;
+		padding: 50px 0 80px 0;
+		position: relative;
+		background-image: url("../../../assets/logo-bg-white.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-position-y: 50px;
+	}
+
+	.signin-form > div {
+		width: 85%;
+	}
+
+	.signin-form h1 {
+		font-size: 24px;
+	}
+
+	.signin-form h4 {
+		font-size: 14px;
+		margin-bottom: 26px;
+	}
+
+	.signin-form form .label {
+		font-size: 15px;
+		margin-bottom: 14px;
+	}
+
+	.signin-form form .label input {
+		display: block;
+		height: 40px;
+		width: 100%;
+		padding: 0 5px;
+	}
+
+	#errorMsg {
+		font-size: 12px;
+		letter-spacing: 0px;
+	}
+
+	.signin-form form .pass .passInput {
+		height: 40px;
+		width: 100%;
+		margin-top: 4px;
+		padding-right: 10px;
+	}
+
+	.signin-form form .pass .passInput input {
+		margin: auto 0;
+		height: 36px;
+	}
+
+	.signin-form form .pass .passInput p {
+		font-size: 12px;
+	}
+
+	.signin-form form button {
+		height: 40px;
+		font-size: 14px;
+		margin-top: 20px;
+	}
+
+	.signin-form #par {
+		font-size: 14px;
+		margin-top: 10px;
+	}
+
+	.signin-form #par span,
+	.signin-form #par #link {
+		color: #001ac6;
+		padding-left: 5px;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.signin-form form .forgot #secondPar {
+		font-size: 12px;
+		line-height: 14px;
+		margin-top: 6px;
+	}
+
+	.sign-in-container .foot-design {
+		height: 90px;
+		width: 90px;
+	}
 }

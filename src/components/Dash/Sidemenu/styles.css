@@ -10,85 +10,94 @@
 }
 
 .sidemenu-container {
-    width: 15%;
-    height: 100vh;
-    background-color: #ffffff;
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.09);
-    padding: 32px 0;
-    position: absolute;
+	width: 15%;
+	height: 100vh;
+	background-color: #ffffff;
+	box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.09);
+	padding: 32px 0;
+	position: absolute;
 }
 
 .sidemenu-container #side-logo {
-    display: flex;
-    margin: auto;
+	display: flex;
+	margin: auto;
 }
 
 .sidemenu-container ul {
-    list-style: none;
+	list-style: none;
 }
 
-.sidemenu-container ul .first {
-    height: 48px;
-width: 210px;
-border-radius: 5px;
-background: #2E41C0;
-display: flex;
-margin: 81px auto 24px auto;
-padding: 15px;
+.sidemenu-container .sidemenu-list .first {
+	height: 48px;
+	width: 210px;
+	border-radius: 5px;
+	background: #2e41c0;
+	display: flex;
+	margin: 81px auto 24px auto;
+	padding: 15px;
 }
 
-.sidemenu-container ul .first img {
-    color: #ffffff;
-    margin-right: 23px;
+.sidemenu-container .sidemenu-list .first img {
+	color: #ffffff;
+	margin-right: 23px;
 }
 
-.sidemenu-container ul .first li {
-    color: #ffffff;
+.sidemenu-container .sidemenu-list .first li {
+	color: #ffffff;
 }
+
+.sidemenu-container .sidemenu-list div {
+    display: flex;
+    background-color: black;
+     color: white;
+     margin: 14px auto 14px auto;
+     padding: 15px;
+    }
 
 .sidemenu-container #icon {
-    /* color: #D9DAE1; */
-    /* background-color: black; */
+    width: 20px;
+	margin-right: 23px;
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
+	position: absolute;
+	bottom: 0;
 }
 
-footer ul div {
-    display: flex;
-    margin-bottom: 15px;
+footer .footer-list div {
+	display: flex;
+	margin-bottom: 15px;
 }
 
-footer ul div img {
-    margin-right: 23px;
-    margin-top: 39px;
-    margin-left: 32px;
+footer .footer-list div img {
+    height: 18px;
+	margin-right: 23px;
+	margin-top: 39px;
+	margin-left: 32px;
 }
 
-footer ul div li {
-padding-top: 39px;
+footer .footer-list div li {
+	padding-top: 39px;
 }
 
 footer .blue {
-position: relative;
-width: 100px;
-height: 110px;
-border: 7px solid #2564F7;
-border-left: none;
-border-bottom: none;
-box-sizing: border-box;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	border: 7px solid #2564f7;
+	border-left: none;
+	border-bottom: none;
+    box-sizing: border-box;
+    margin-top: 20px;
 }
 
 footer .orange {
-position: absolute;
-bottom: 0;
-width: 140px;
-height: 70px;
-border: 7px solid #FFAA00;
-border-left: none;
-border-bottom: none;
-box-sizing: border-box;
-
+	position: absolute;
+	bottom: 0;
+	width: 70px;
+	height: 70px;
+	border: 7px solid #ffaa00;
+	border-left: none;
+	border-bottom: none;
+	box-sizing: border-box;
 }
