@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
+import { NavLink } from 'react-router-dom';
 
 export default class index extends Component {
 	render() {
@@ -14,18 +15,23 @@ export default class index extends Component {
 					</div>
 
 					<div>
-						<img src={require('../../../assets/wallet.png')} alt="logo" id="icon" />
+						<img src={require('../assets/money.png')} alt="logo" id="icon" />
 						<li>Expense</li>
 					</div>
 
 					<div>
-						<img src={require('../../../assets/coin.png')} alt="logo" id="icon" />
+						<img src={require('../assets/coins.png')} alt="logo" id="icon" />
 						<li>Budget</li>
 					</div>
 
 					<div>
-						<img src={require('../../../assets/goal.png')} alt="logo" id="icon" />
+						<img src={require('../assets/goal.png')} alt="logo" id="icon" />
 						<li>Goals</li>
+					</div>
+
+					<div>
+						<img src={require('../assets/wallet.png')} alt="logo" id="icon" />
+						<li>My finance</li>
 					</div>
 				</ul>
 
@@ -33,13 +39,15 @@ export default class index extends Component {
 					<ul className="footer-list">
 						<div>
 							<img src={require('../../../assets/settings.png')} alt="logo" id="icon" />
-							<li>Setting</li>
+							<li>Settings</li>
 						</div>
 
-						<div>
-							<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
-							<li>Sign out</li>
-						</div>
+						<NavLink to="/signin" id="link">
+							<div>
+								<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
+								<li>Sign out</li>
+							</div>
+						</NavLink>
 					</ul>
 					<div className="blue" />
 					<div className="orange" />

@@ -32,7 +32,7 @@ class SignUp extends Component {
 			password2: false
 		},
 		isSubmitting: false,
-		submitted: ""
+		submitted: ''
 	};
 
 	showPassword = (e) => {
@@ -75,7 +75,7 @@ class SignUp extends Component {
 
 		const emailTest = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 		const phoneTest = /^\d{11}$/;
-		const passwrdTest = /^.*(?=.{6,})(?=.*\d).*$/
+		const passwrdTest = /^.*(?=.{7,})(?=.*\d).*$/;
 
 		validity[name] = value.length > 0;
 		fieldValidationErrors[name] = validity[name] ? '' : `${name} is required`;
@@ -97,7 +97,7 @@ class SignUp extends Component {
 				validity[name] = passwrdTest.test(value);
 				fieldValidationErrors[name] = validity[name]
 					? ''
-					: `${name} must be min of 6 characters and contain number`;
+					: `${name} must be min of 7 characters and contain number`;
 			}
 			if (isSamePassword) {
 				validity[name] = value === this.state.formValues.password;
@@ -113,6 +113,7 @@ class SignUp extends Component {
 
 	//---------------input ref to take user to first input if user exists-------------
 	inputRef = createRef();
+	emailRef = createRef();
 
 	onSubmit = (e) => {
 		e.preventDefault();
@@ -139,20 +140,27 @@ class SignUp extends Component {
 				})
 				.then((res) => {
 					if (res.status === 201) {
-						this.setState({ isSubmitting: false, submitted: "User registered, please proceed to login" })
-						console.log(res.status, res.data.message);
-						// this.props.history.push('/');
+						this.setState({ isSubmitting: false, submitted: 'Registered successfully!, please proceed to login' });
 					} else return null;
 				})
 				.catch((err) => {
-					this.setState({
-						formErrors: {
-							username: 'User exists, Login instead'
-						},
-						isSubmitting: false,
-						submitted: 'User exists, Login instead'
-					});
-					this.inputRef.current.focus();
+					if (err.response.data.username && err.response.data.email) {
+						this.setState({
+							formErrors: {
+								email: 'Email already exists, please login'
+							},
+							isSubmitting: false
+						});
+						this.emailRef.current.focus();
+					} else if (err.response.data.username) {
+						this.setState({
+							formErrors: {
+								username: 'A user with that username already exists'
+							},
+							isSubmitting: false
+						});
+						this.inputRef.current.focus();
+					}
 				});
 		} else {
 			for (let key in formValues) {
@@ -214,6 +222,7 @@ class SignUp extends Component {
 									value={formValues.email}
 									onChange={this.handleInputChange}
 									autoComplete="email"
+									ref={this.emailRef}
 								/>
 							</label>
 
@@ -338,7 +347,11 @@ class SignUp extends Component {
 							)}
 
 							<button>{!isSubmitting ? 'Sign Up' : 'Signing up now...'}</button>
-							{submitted ? <center>submitted</center> : ""}
+							{submitted ? (
+								<center style={{ marginTop: 10, fontFamily: 'sans-serif' }}>{submitted}</center>
+							) : (
+								''
+							)}
 						</form>
 
 						<p id="par">

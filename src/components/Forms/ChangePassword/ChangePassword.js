@@ -45,7 +45,7 @@ class ChangePassword extends Component {
 		const isPassword = name === 'password';
 		const isSamePassword = name === 'confirm_password';
 
-		const passwrdTest = /^.*(?=.{6,})(?=.*\d).*$/;
+		const passwrdTest = /^.*(?=.{7,})(?=.*\d).*$/;
 
 		validity[name] = value.length > 0;
 		fieldValidationErrors[name] = validity[name] ? '' : `${name} is required`;
@@ -53,11 +53,11 @@ class ChangePassword extends Component {
 		if (validity[name]) {
 			if (isCurrentPassword) {
 				validity[name] = passwrdTest.test(value);
-				fieldValidationErrors[name] = validity[name] ? '' : `min of 6 and contain numbers`;
+				fieldValidationErrors[name] = validity[name] ? '' : `min of 7 and contain numbers`;
 			}
 			if (isPassword) {
 				validity[name] = passwrdTest.test(value);
-				fieldValidationErrors[name] = validity[name] ? '' : `min of 6 and contain numbers`;
+				fieldValidationErrors[name] = validity[name] ? '' : `min of 7 and contain numbers`;
 			}
 			if (isSamePassword) {
 				validity[name] = value === this.state.formValues.password;

@@ -54,8 +54,8 @@ class SignIn extends Component {
 
 		if (validity[name]) {
 			if (isPassword) {
-				validity[name] = value.length >= 6;
-				fieldValidationErrors[name] = validity[name] ? '' : `${name} must be above 6 characters`;
+				validity[name] = value.length >= 7;
+				fieldValidationErrors[name] = validity[name] ? '' : `${name} must be above 7 characters`;
 			}
 		}
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './styles.css';
 import Sidemenu from '../Sidemenu/index';
 import Nav from '../Nav/index';
+import TopDash from '../Top-Dash/index';
 
-import { IoIosAddCircle } from 'react-icons/io';
+import './styles.css';
 export default class index extends Component {
 	render() {
 		return (
@@ -12,40 +12,66 @@ export default class index extends Component {
 				<section className="dash">
 					<Nav />
 
-					<section className="main-dash">
-						<aside>
-							<IoIosAddCircle id="addFnt" />
-							<h3>Add Bank Account</h3>
-						</aside>
+					<TopDash />
 
-						<header>
-							<div className="first-box">
-								<img src={require('../assets/box.png')} alt="box-img" />
+					<section className="graph-expenses">
+						<div className="graph" />
+						<div className="expenses">
+							<hgroup>
+								<h2>Recent Expenses</h2>
+								<h4>View all</h4>
+							</hgroup>
 
-								<h2>$200,000</h2>
-							</div>
-
-							<div className="green-box">
+							<div className="trans">
+								<img src={require('../assets/car.png')} alt="car+img" />
 								<div>
-									<h3>Your account</h3>
+									<h5>Transport</h5>
+									<p>20 sep, 4:30pm</p>
 								</div>
+
+								<h6>N1,284.89</h6>
 							</div>
 
-							<div className="brown-box">
+							<div className="trans">
+								<img src={require('../assets/food.png')} alt="car+img" />
 								<div>
-									<h3>Your account</h3>
+									<h5>Food</h5>
+									<p>20 sep, 4:30pm</p>
 								</div>
+
+								<h6>N752.68</h6>
 							</div>
-						</header>
-						hello
-						<h1>Dashboard</h1>
-						<h1>Dashboard</h1>
-						<h1>Dashboard</h1>
-						<h1>Dashboard</h1>
-						<h1>Dashboard</h1>
-						<h1>Dashboard</h1>
-						<h1>Dashboard</h1>
-						<h1>Dashboard</h1>
+
+							<div className="trans">
+								<img src={require('../assets/car.png')} alt="car+img" />
+								<div>
+									<h5>Transport</h5>
+									<p>20 sep, 4:30pm</p>
+								</div>
+
+								<h6>N1,000.00</h6>
+							</div>
+
+							<div className="trans">
+								<img src={require('../assets/food.png')} alt="car+img" />
+								<div>
+									<h5>Food</h5>
+									<p>20 sep, 4:30pm</p>
+								</div>
+
+								<h6>N256.16</h6>
+							</div>
+
+							<div className="trans">
+								<img src={require('../assets/car.png')} alt="car+img" />
+								<div>
+									<h5>Transport</h5>
+									<p>20 sep, 4:30pm</p>
+								</div>
+
+								<h6>N1,000.00</h6>
+							</div>
+						</div>
 					</section>
 				</section>
 			</section>

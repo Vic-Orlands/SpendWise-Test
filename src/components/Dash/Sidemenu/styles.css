@@ -8,14 +8,14 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+/* --------------main container styling starts here----------------------- */
 .sidemenu-container {
 	width: 15%;
 	height: 100vh;
 	background-color: #ffffff;
 	box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.09);
 	padding: 32px 0;
-	position: absolute;
+	position: fixed;
 }
 
 .sidemenu-container #side-logo {
@@ -23,6 +23,7 @@
 	margin: auto;
 }
 
+/* -------------------------------list styling starts here---------------------------------- */
 .sidemenu-container ul {
 	list-style: none;
 }
@@ -33,31 +34,61 @@
 	border-radius: 5px;
 	background: #2e41c0;
 	display: flex;
-	margin: 81px auto 24px auto;
+	margin: 50px auto 10px auto;
 	padding: 15px;
 }
 
 .sidemenu-container .sidemenu-list .first img {
 	color: #ffffff;
 	margin-right: 23px;
+	width: 16px;
+	height: 16px;
 }
 
 .sidemenu-container .sidemenu-list .first li {
 	color: #ffffff;
+	font-family: sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0.01em;
 }
 
 .sidemenu-container .sidemenu-list div {
-    display: flex;
-    background-color: black;
-     color: white;
-     margin: 14px auto 14px auto;
-     padding: 15px;
-    }
+	display: flex;
+	width: 210px;
+	margin: 10px auto;
+	padding: 15px;
+}
+
+.sidemenu-container .sidemenu-list div:hover {
+	border-radius: 5px;
+	width: 210px;
+	background: #2e41c0;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.sidemenu-container .sidemenu-list div img {
+	width: 16px;
+	height: 16px;
+}
+
+.sidemenu-container .sidemenu-list div li {
+	font-family: sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0.01em;
+}
 
 .sidemenu-container #icon {
-    width: 20px;
+	width: 20px;
 	margin-right: 23px;
 }
+/* -------------------------------list styling stops here---------------------------------- */
 
 footer {
 	position: absolute;
@@ -65,38 +96,58 @@ footer {
 }
 
 footer .footer-list div {
+	width: 210px;
 	display: flex;
-	margin-bottom: 15px;
+	margin: 10px 5px;
+	padding: 10px 10px;
+}
+
+footer .footer-list div:hover {
+	border-radius: 5px;
+	background: #2e41c0;
+	color: #ffffff;
+	cursor: pointer;
 }
 
 footer .footer-list div img {
-    height: 18px;
+	height: 18px;
 	margin-right: 23px;
-	margin-top: 39px;
-	margin-left: 32px;
+	margin-left: 15px;
+	width: 16px;
+	height: 16px;
 }
 
 footer .footer-list div li {
-	padding-top: 39px;
+	font-family: sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+footer #link {
+	text-decoration: none;
+	color: #000000;
 }
 
 footer .blue {
 	position: relative;
-	width: 100px;
+	width: 70px;
 	height: 100px;
 	border: 7px solid #2564f7;
+	opacity: 0.7;
 	border-left: none;
 	border-bottom: none;
-    box-sizing: border-box;
-    margin-top: 20px;
+	box-sizing: border-box;
+	margin-top: 20px;
 }
 
 footer .orange {
 	position: absolute;
 	bottom: 0;
-	width: 70px;
+	width: 100px;
 	height: 70px;
 	border: 7px solid #ffaa00;
+	opacity: 0.7;
 	border-left: none;
 	border-bottom: none;
 	box-sizing: border-box;
