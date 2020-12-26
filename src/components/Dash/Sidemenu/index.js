@@ -3,6 +3,11 @@ import './styles.css';
 import { NavLink } from 'react-router-dom';
 
 export default class index extends Component {
+	onLogOut = (e) => {
+		e.preventDefault();
+		localStorage.removeItem('loggedIn');
+	};
+
 	render() {
 		return (
 			<div className="sidemenu-container">
@@ -43,7 +48,7 @@ export default class index extends Component {
 						</div>
 
 						<NavLink to="/signin" id="link">
-							<div>
+							<div onClick={this.onLogOut}>
 								<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
 								<li>Sign out</li>
 							</div>

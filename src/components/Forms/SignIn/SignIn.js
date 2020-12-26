@@ -9,7 +9,6 @@ class SignIn extends Component {
 		show: true,
 		formValues: {
 			username: '',
-			email: '',
 			password: ''
 		},
 		formErrors: {
@@ -40,7 +39,6 @@ class SignIn extends Component {
 		this.setState({
 			isChecked: event.target.checked
 		});
-		console.log(event.target.checked);
 	};
 
 	handleValidation = (target) => {
@@ -70,8 +68,8 @@ class SignIn extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+		const { formValues, formValidity, isChecked } = this.state;
 
-		const { formValidity, formValues, isChecked } = this.state;
 		const currentUser = {
 			username: formValues.username.toLowerCase(),
 			password: formValues.password
