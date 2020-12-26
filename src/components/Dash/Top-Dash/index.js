@@ -12,9 +12,15 @@ export default class index extends Component {
 
 	componentDidMount = () => {
 		let user = JSON.parse(localStorage.getItem('usertoken'));
-		this.setState({
-			user: user.user
-		});
+		if (user) {
+			this.setState({
+				user: user.user
+			});
+		} else {
+			this.setState({
+				user: 'User'
+			});
+		}
 	};
 
 	render() {
