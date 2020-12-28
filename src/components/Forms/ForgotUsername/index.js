@@ -109,6 +109,7 @@ class index extends Component {
 
 	render() {
 		const { formErrors, formValues, isSubmitting, submitted } = this.state;
+		const isEnabled = !formValues.email
 
 		return (
 			<main className="forgot-username">
@@ -147,7 +148,7 @@ class index extends Component {
 								/>
 							</label>
 
-							<button>{!isSubmitting ? 'Reset Password' : 'Resetting...'}</button>
+							<button disabled={isEnabled}>{!isSubmitting ? 'Reset Password' : 'Resetting...'}</button>
 							<center>
 								{submitted ? (
 									<p style={{ fontFamily: 'sans-serif', marginTop: 10 }}>Your username has been sent to your email</p>

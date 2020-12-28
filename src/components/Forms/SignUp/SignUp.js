@@ -97,7 +97,7 @@ class SignUp extends Component {
 				validity[name] = passwrdTest.test(value);
 				fieldValidationErrors[name] = validity[name]
 					? ''
-					: `${name} must be min of 7 characters and contain number`;
+					: `must be min of 7 characters and contain number`;
 			}
 			if (isSamePassword) {
 				validity[name] = value === this.state.formValues.password;
@@ -175,6 +175,7 @@ class SignUp extends Component {
 
 	render() {
 		const { formErrors, formValues, isSubmitting, submitted } = this.state;
+		const isEnabled = !formValues.username || !formValues.email || !formValues.phone || !formValues.password || !formValues.password2
 		return (
 			<main className="sign-up-container">
 				<section className="left">
@@ -346,7 +347,7 @@ class SignUp extends Component {
 								</label>
 							)}
 
-							<button>{!isSubmitting ? 'Sign Up' : 'Signing up now...'}</button>
+							<button disabled={isEnabled}>{!isSubmitting ? 'Sign Up' : 'Signing up now...'}</button>
 							{submitted ? (
 								<center style={{ marginTop: 10, fontFamily: 'sans-serif' }}>{submitted}</center>
 							) : (

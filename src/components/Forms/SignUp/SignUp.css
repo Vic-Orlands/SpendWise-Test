@@ -176,8 +176,7 @@
 }
 
 #errorMsg {
-	font-size: 10px;
-	letter-spacing: .1px;
+	font-size: 9px;
 	float: right;
 	clear: both;
 	color: tomato;
@@ -246,6 +245,10 @@
 
 .signup-form form button:hover {
 	background-color: #07156e;
+}
+
+.signup-form form button:disabled {
+	background-color: grey;
 }
 
 .signup-form #par {

@@ -294,6 +294,10 @@
 	background-color: #07156e;
 }
 
+.signin-form form button:disabled {
+	background-color: grey;
+}
+
 .signin-form #par {
 	font-family: 'Poppins', sans-serif;
 	text-align: center;

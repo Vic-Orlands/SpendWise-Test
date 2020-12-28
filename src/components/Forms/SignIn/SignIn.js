@@ -95,12 +95,21 @@ class SignIn extends Component {
 					} else return null;
 				})
 				.catch((err) => {
-					this.setState({
-						formErrors: {
-							password: 'Incorrect username and password'
-						},
-						isSubmitting: false
-					});
+					if (err.response.data) {
+						this.setState({
+							formErrors: {
+								password: 'Incorrect username and password'
+							},
+							isSubmitting: false
+						});
+					} else {
+						this.setState({
+							formErrors: {
+								password: 'Your network is poor'
+							},
+							isSubmitting: false
+						});
+					}
 					this.inputRef.current.focus();
 				});
 		} else {
@@ -203,8 +212,7 @@ class SignIn extends Component {
 									</NavLink>
 								</div>
 							</div>
-
-							<button>{!isSubmitting ? 'Sign In' : 'Logging in...'}</button>
+							<button disabled={!formValues.username || !formValues.password}>{!isSubmitting ? 'Sign In' : 'Logging in...'}</button>
 						</form>
 
 						<p id="par">

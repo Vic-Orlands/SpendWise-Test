@@ -209,6 +209,10 @@
 	background-color: #07156e;
 }
 
+.username-form form button:disabled {
+	background-color: grey;
+}
+
 .forgot-username .foot-design {
 	height: 100px;
 	width: 100px;

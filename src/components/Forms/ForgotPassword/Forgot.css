@@ -209,6 +209,10 @@
 	background-color: #07156e;
 }
 
+.forgot-form form button:disabled {
+	background-color: grey;
+}
+
 .forgot-container .foot-design {
 	height: 100px;
 	width: 100px;

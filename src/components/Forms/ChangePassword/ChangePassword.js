@@ -127,6 +127,7 @@ class ChangePassword extends Component {
 	};
 	render() {
 		const { formErrors, formValues, isSubmitting, submitted } = this.state;
+		const isEnabled = !formValues.current_password || !formValues.password || !formValues.confirm_password
 
 		return (
 			<main className="reset-container">
@@ -194,7 +195,7 @@ class ChangePassword extends Component {
 								/>{' '}
 							</label>
 
-							<button>{!isSubmitting ? 'Save New Password' : 'Saving...'}</button>
+							<button disabled={isEnabled}>{!isSubmitting ? 'Save New Password' : 'Saving...'}</button>
 							<center>
 								{submitted ? (
 									<p style={{ fontFamily: 'sans-serif', marginTop: 10 }}>
