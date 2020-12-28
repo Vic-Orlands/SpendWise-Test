@@ -10,11 +10,16 @@ import ForgotUsername from './components/Forms/ForgotUsername/index';
 import Dashboard from './components/Dash/Dashboard/index';
 import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
 
+const existingUser = localStorage.getItem('loggedIn');
+const temporaryUser = sessionStorage.getItem('loggedIn');
+
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route
 		{...rest}
 		render={(props) =>
-			localStorage.getItem('loggedIn') ? (
+			existingUser ? (
+				<Component {...props} />
+			) : temporaryUser ? (
 				<Component {...props} />
 			) : (
 				<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />

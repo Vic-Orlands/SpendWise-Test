@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 
+import axios from 'axios';
 import { IoIosAddCircle } from 'react-icons/io';
 export default class index extends Component {
 	state = {
@@ -21,6 +22,20 @@ export default class index extends Component {
 				user: 'User'
 			});
 		}
+		let userToken = JSON.parse(localStorage.getItem('usertoken'));
+
+		axios
+			.get('https://www.spendwise.ng/api/budget/all_budgets/', {
+				headers: {
+					Authorization: `Token <${userToken.token}>`,
+					'Content-Type': 'application/json'
+				}
+			})
+			.then((res) => res.json())
+			.then((res) => {
+				console.log(res);
+				console.log(res.data);
+			});
 	};
 
 	render() {

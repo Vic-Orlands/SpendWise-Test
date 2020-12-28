@@ -88,9 +88,13 @@ class SignIn extends Component {
 					if (res.status === 200) {
 						if (isChecked) {
 							localStorage.setItem('loggedIn', true);
+							localStorage.setItem('usertoken', JSON.stringify(res.data));
+							this.props.history.push('/');
+						} else {
+							sessionStorage.setItem('loggedIn', true);
+							localStorage.setItem('usertoken', JSON.stringify(res.data));
+							this.props.history.push('/');
 						}
-						localStorage.setItem('usertoken', JSON.stringify(res.data));
-						this.props.history.push('/');
 						return res.data;
 					} else return null;
 				})
@@ -212,7 +216,9 @@ class SignIn extends Component {
 									</NavLink>
 								</div>
 							</div>
-							<button disabled={!formValues.username || !formValues.password}>{!isSubmitting ? 'Sign In' : 'Logging in...'}</button>
+							<button disabled={!formValues.username || !formValues.password}>
+								{!isSubmitting ? 'Sign In' : 'Logging in...'}
+							</button>
 						</form>
 
 						<p id="par">
