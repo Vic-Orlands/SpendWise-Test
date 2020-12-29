@@ -10,8 +10,8 @@ import ForgotUsername from './components/Forms/ForgotUsername/index';
 import Dashboard from './components/Dash/Dashboard/index';
 import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
 
-const existingUser = localStorage.getItem('loggedIn');
-const temporaryUser = sessionStorage.getItem('loggedIn');
+const existingUser = localStorage.getItem('authToken');
+const temporalUser = sessionStorage.getItem('authToken');
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route
@@ -19,7 +19,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 		render={(props) =>
 			existingUser ? (
 				<Component {...props} />
-			) : temporaryUser ? (
+			) : temporalUser ? (
 				<Component {...props} />
 			) : (
 				<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />

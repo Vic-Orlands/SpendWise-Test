@@ -6,9 +6,14 @@ const Nav = () => {
 
 	useEffect(() => {
 		let user = JSON.parse(localStorage.getItem('usertoken'));
-		if (user) {
+		let userr = JSON.parse(sessionStorage.getItem('usertoken'));
+		if (userr) {
+			setUser(userr.user);
+		} else if (user) {
 			setUser(user.user);
-		} else setUser('User');
+		} else {
+			setUser('User');
+		}
 	}, []);
 
 	return (

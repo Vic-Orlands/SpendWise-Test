@@ -13,7 +13,12 @@ export default class index extends Component {
 
 	componentDidMount = () => {
 		let user = JSON.parse(localStorage.getItem('usertoken'));
-		if (user) {
+		let userr = JSON.parse(sessionStorage.getItem('usertoken'));
+		if (userr) {
+			this.setState({
+				user: userr.user
+			});
+		} else if (user) {
 			this.setState({
 				user: user.user
 			});
@@ -22,12 +27,12 @@ export default class index extends Component {
 				user: 'User'
 			});
 		}
-		let userToken = JSON.parse(localStorage.getItem('usertoken'));
+		let userToken = JSON.parse(localStorage.getItem('authToken'));
 
 		axios
 			.get('https://www.spendwise.ng/api/budget/all_budgets/', {
 				headers: {
-					Authorization: `Token <${userToken.token}>`,
+					Authorization: `Token <${userToken}>`,
 					'Content-Type': 'application/json'
 				}
 			})

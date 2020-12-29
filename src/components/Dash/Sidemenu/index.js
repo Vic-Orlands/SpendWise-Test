@@ -3,12 +3,14 @@ import './styles.css';
 import { NavLink } from 'react-router-dom';
 
 export default class index extends Component {
-	onLogOut = (e) => {
-		e.preventDefault();
-		localStorage.removeItem('loggedIn');
-		sessionStorage.removeItem('loggedIn');
-		window.location.reload();
-	};
+	// onLogOut = (e) => {
+	// 	e.preventDefault();
+	// 	localStorage.removeItem('authToken');
+	// 	sessionStorage.removeItem('authToken');
+	// 	localStorage.removeItem('usertoken');
+	// 	sessionStorage.removeItem('usertoken');
+	// 	window.location.reload();
+	// };
 
 	render() {
 		return (
@@ -49,12 +51,12 @@ export default class index extends Component {
 							<li>Settings</li>
 						</div>
 
-						{/* <NavLink to="/signin" id="link"> */}
-						<div onClick={this.onLogOut}>
-							<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
-							<li>Sign out</li>
-						</div>
-						{/* </NavLink> */}
+						<NavLink to="/signin" id="link">
+							<div>
+								<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
+								<li>Sign out</li>
+							</div>
+						</NavLink>
 					</ul>
 					<div className="blue" />
 					<div className="orange" />

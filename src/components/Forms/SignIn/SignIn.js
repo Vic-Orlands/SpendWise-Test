@@ -87,15 +87,13 @@ class SignIn extends Component {
 				.then((res) => {
 					if (res.status === 200) {
 						if (isChecked) {
-							localStorage.setItem('loggedIn', true);
 							localStorage.setItem('usertoken', JSON.stringify(res.data));
-							this.props.history.push('/');
+							localStorage.setItem('authToken', JSON.stringify(res.data.token));
 						} else {
-							sessionStorage.setItem('loggedIn', true);
-							localStorage.setItem('usertoken', JSON.stringify(res.data));
-							this.props.history.push('/');
+							sessionStorage.setItem('usertoken', JSON.stringify(res.data));
+							sessionStorage.setItem('authToken', JSON.stringify(res.data.token));
 						}
-						return res.data;
+						this.props.history.push('/');
 					} else return null;
 				})
 				.catch((err) => {
@@ -199,12 +197,7 @@ class SignIn extends Component {
 							)}
 
 							<div className="forgot">
-								<input
-									type="checkbox"
-									checked={isChecked}
-									name="lsRememberMe"
-									onChange={this.onHandleCheckbox}
-								/>
+								<input type="checkbox" checked={isChecked} onChange={this.onHandleCheckbox} />
 								<label htmlFor="checkbox">Remember Me</label>
 
 								<div>
