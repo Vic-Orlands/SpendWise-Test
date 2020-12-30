@@ -12,13 +12,8 @@ export default class index extends Component {
 	};
 
 	componentDidMount = () => {
-		let user = JSON.parse(localStorage.getItem('usertoken'));
-		let userr = JSON.parse(sessionStorage.getItem('usertoken'));
-		if (userr) {
-			this.setState({
-				user: userr.user
-			});
-		} else if (user) {
+		let user = JSON.parse(localStorage.getItem('USER')) || JSON.parse(sessionStorage.getItem('USER'));
+		if (user) {
 			this.setState({
 				user: user.user
 			});
@@ -27,20 +22,20 @@ export default class index extends Component {
 				user: 'User'
 			});
 		}
-		let userToken = JSON.parse(localStorage.getItem('authToken'));
-
-		axios
-			.get('https://www.spendwise.ng/api/budget/all_budgets/', {
-				headers: {
-					Authorization: `Token <${userToken}>`,
-					'Content-Type': 'application/json'
-				}
-			})
-			.then((res) => res.json())
-			.then((res) => {
-				console.log(res);
-				console.log(res.data);
-			});
+		// let userToken =
+		// 	JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
+		// axios
+		// 	.post('https://www.spendwise.ng/api/tx/all_tx/', {
+		// 		headers: {
+		// 			Authorization: `Token <${userToken}>`,
+		// 			'Content-Type': 'application/json'
+		// 		}
+		// 	})
+		// 	.then((res) => res.json())
+		// 	.then((res) => {
+		// 		console.log(res);
+		// 		console.log(res.data);
+		// 	});
 	};
 
 	render() {

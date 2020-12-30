@@ -10,41 +10,47 @@ import ForgotUsername from './components/Forms/ForgotUsername/index';
 import Dashboard from './components/Dash/Dashboard/index';
 import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
 
-const existingUser = localStorage.getItem('authToken');
-const temporalUser = sessionStorage.getItem('authToken');
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-	<Route
-		{...rest}
-		render={(props) =>
-			existingUser ? (
-				<Component {...props} />
-			) : temporalUser ? (
-				<Component {...props} />
-			) : (
-				<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
-			)}
-	/>
-);
+// const PrivateRoute = ({ component: Component, ...rest }) => (
+// 	<Route
+// 		{...rest}
+// 		render={(props) =>
+// 			existingUser ? (
+// 				<Component {...props} />
+// 			) : (
+// 				<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
+// 			)}
+// 	/>
+// );
 
 const App = () => {
+	const existingUser = localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
 	return (
-		<BrowserRouter>
-			<div>
-				<Switch>
-					<PrivateRoute path="/" component={Dashboard} exact={true} />
-
-					<Route path="/signin" component={SignIn} />
-					<Route path="/signup" component={SignUp} />
-					<Route path="/reset" component={Reset} />
-					<Route path="/forgot" component={Forgot} />
-					<Route path="/forgotUsername" component={ForgotUsername} />
-
-					{/* ----------------------private routes--------------------- */}
-					<PrivateRoute path="/chngePass" component={ChangePassword} />
-				</Switch>
-			</div>
-		</BrowserRouter>
+		<div>
+			{existingUser ? (
+				<BrowserRouter>
+					<div>
+						<Switch>
+							{/* ----------------------private routes--------------------- */}
+							<Route path="/" component={Dashboard} exact={true} />
+							<Route path="/page/chngePass" component={ChangePassword} />
+						</Switch>
+					</div>
+				</BrowserRouter>
+			) : (
+				<BrowserRouter>
+					<div>
+						<Switch>
+							{/* ----------------------public routes--------------------- */}
+							<Route path="/" component={SignIn} exact={true} />
+							<Route path="/signup" component={SignUp} />
+							<Route path="/reset" component={Reset} />
+							<Route path="/forgot" component={Forgot} />
+							<Route path="/forgotUsername" component={ForgotUsername} />
+						</Switch>
+					</div>
+				</BrowserRouter>
+			)}
+		</div>
 	);
 };
 
