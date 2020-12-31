@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './styles.css';
 
-import axios from 'axios';
+import Axios from 'axios';
 import { IoIosAddCircle } from 'react-icons/io';
 export default class index extends Component {
 	state = {
 		percentage1: 50,
 		percentage2: 20,
 		percentage3: 70,
-		user: ''
+		user: '',
+		budget_status: ''
 	};
 
 	componentDidMount = () => {
+		// ------------------------get username from saved storage--------------------------
 		let user = JSON.parse(localStorage.getItem('USER')) || JSON.parse(sessionStorage.getItem('USER'));
 		if (user) {
 			this.setState({
@@ -22,23 +24,39 @@ export default class index extends Component {
 				user: 'User'
 			});
 		}
-		// let userToken =
-		// 	JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
-		// axios
-		// 	.post('https://www.spendwise.ng/api/tx/all_tx/', {
-		// 		headers: {
-		// 			Authorization: `Token <${userToken}>`,
-		// 			'Content-Type': 'application/json'
-		// 		}
-		// 	})
-		// 	.then((res) => res.json())
-		// 	.then((res) => {
-		// 		console.log(res);
-		// 		console.log(res.data);
-		// 	});
+
+		// ------------------------get user token from saved storage--------------------------
+		let userToken =
+			JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
+
+		// ------------------------getting all budget status of user--------------------------
+		Axios.post(
+			'https://www.spendwise.ng/api/budget/all_budgets_status/',
+			{
+				body: {
+					month: '10'
+				}
+			},
+			{
+				headers: {
+					Authorization: `Token ${userToken}`
+				}
+			}
+		)
+			.then((res) => {
+				if (res.status === 200) {
+					this.setState({
+						budget_status: res.data.result
+					});
+				}
+			})
+			.catch((err) => {
+				console.log(err.response.data);
+			});
 	};
 
 	render() {
+		const { budget_status } = this.state;
 		return (
 			<section className="main-dash">
 				<header>
@@ -98,17 +116,17 @@ export default class index extends Component {
 
 							<div className="green-flex">
 								<div>
-									<h2>7</h2>
+									<h2>{budget_status.total}</h2>
 									<h3>Set Budgets</h3>
 								</div>
 
 								<div id="harsh">
-									<h2>3</h2>
+									<h2>{budget_status.exceeded}</h2>
 									<h3>Exceeded</h3>
 								</div>
 
 								<div>
-									<h2>4</h2>
+									<h2>{budget_status.on_track}</h2>
 									<h3>On track</h3>
 								</div>
 							</div>

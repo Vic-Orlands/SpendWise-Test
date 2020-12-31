@@ -93,7 +93,6 @@ class SignIn extends Component {
 							sessionStorage.setItem('USER', JSON.stringify(res.data));
 							sessionStorage.setItem('authToken', JSON.stringify(res.data.token));
 						}
-						// this.props.history.push('/');
 						window.location.reload();
 					} else return null;
 				})

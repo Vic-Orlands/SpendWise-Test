@@ -82,7 +82,7 @@ class index extends Component {
 								submitted: true
 							});
 							setTimeout(() => {
-								this.props.history.push('/signin');
+								this.props.history.push('/');
 							}, 3000);
 							return res.data;
 						}, 2000);
