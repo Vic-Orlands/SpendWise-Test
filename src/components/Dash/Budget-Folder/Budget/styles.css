@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.budget-container {
+	width: 85%;
+	float: right;
+	background: #e5e5e5;
+	min-height: 100vh;
+	max-height: 100%;
+}
+
+/* ---------------------------top-section styling starts here------------------------------- */
+.top-section {
+	height: 160px;
+	width: 97%;
+	border-radius: 5px;
+	margin: 30px auto;
+	background-image: url("../../assets/budget-topBar.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.top-section > div {
+	margin: auto 40px;
+	z-index: 99999;
+}
+
+.top-section > div h2 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 28px;
+	color: #ffffff;
+	z-index: 99999;
+}
+
+.top-section > div h5 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 28px;
+	color: #ffffff;
+}
+
+.top-section h4 {
+	width: 126.95px;
+	height: 40px;
+	background: #ffaa00;
+	border: 2px solid #da9100;
+	border-radius: 5px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	text-align: center;
+	line-height: 18px;
+	color: #464242;
+	margin: auto 59px;
+	padding: 10px 0;
+}
+
+.top-section h4:hover {
+	background: #ffbc21;
+	border: 2px solid #ffbc21;
+	color: #000000;
+	cursor: pointer;
+}
+
+/* ---------------------------archive. recent button styling starts here------------------------------- */
+
+.box-section {
+	padding: 0 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.box-section > div {
+	display: flex;
+}
+
+.box-section > div h4 {
+	height: 38.34px;
+	background: #ffffff;
+	border: 1px solid #e0e3e8;
+	border-radius: 5px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 19px;
+	color: #404040;
+	margin-right: 7px;
+	padding: 0;
+	cursor: pointer;
+}
+
+.box-section > div h4:nth-child(1) {
+	width: 138.2px;
+	padding: 0 10px 0 40px;
+}
+
+.box-section > div h4:nth-child(2) {
+	width: 140px;
+	padding: 0 16px;
+}
+
+.box-section > div h4:hover {
+	background: #ffffff;
+}
+
+.box-section h4 {
+	width: 138.2px;
+	height: 38.34px;
+	background: #0089b4;
+	border: 1px solid #0089b4;
+	border-radius: 5px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 19px;
+	display: flex;
+	align-items: center;
+	color: #ffffff;
+	padding: 0 20px;
+}
+
+.box-section h4:hover {
+	background: #01617e;
+	cursor: pointer;
+}
+
+.box-section #icon {
+	font-size: 20px;
+	margin-top: 2px;
+}
+
+/* -------------------bugdet-section styling starts here------------------ */
+
+.budget {
+	margin: 30px 40px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.budget .category {
+	flex-grow: 1;
+}
+
+/* ------------------category top styling--------------------- */
+.budget .category .top {
+	background: rgba(170, 171, 173, 0.685);
+	box-shadow: 0px 15px 35px rgba(73, 87, 94, 0.05);
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	padding: 0 20px;
+	height: 40px;
+}
+
+.budget .category .top h5 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 16px;
+	color: #5b5c5f;
+	flex-grow: 0.8;
+}
+
+.budget .category .top > div {
+	display: flex;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+.budget .category .top > div h6 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 16px;
+	color: #5b5c5f;
+}
+
+/* ------------------category bottom styling--------------------- */
+.budget .category .bottom {
+	background-color: #ffffff;
+	border-radius: 4px;
+	padding: 10px 25px;
+}
+
+.budget .category .bottom .shelf {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0;
+	border-bottom: 1px solid #EDEDED;
+}
+
+.budget .category .bottom .shelf:nth-last-child(1) {
+	border-bottom: none;
+}
+
+.budget .category .bottom .shelf div:nth-child(1) {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.budget .category .bottom .shelf div #inpt {
+	height: 16px;
+	width: 16px;
+	border-radius: 2px;
+	border: 2px solid #d5d5d5;
+	cursor: pointer;
+}
+
+.budget .category .bottom .shelf div:nth-child(1) img {
+	margin: 0 20px;
+}
+
+.budget .category .bottom .shelf div:nth-child(1) p {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+	color: #000000;
+}
+
+.budget .category .bottom .shelf div:nth-child(2) {
+	flex-grow: 0.59;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.budget .category .bottom .shelf div:nth-child(2) h3 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 18px;
+	color: #000000;
+}
+.budget .category .bottom .shelf div:nth-child(2) h4 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 19px;
+	color: #009a5b;
+}
+
+#scd {
+	color: #355691;
+}
+
+/* ------------------aside budget info------------------ */
+.budget-info {
+	width: 344.38px;
+	/* height: 522.4px; */
+	height: auto;
+	background: #ffffff;
+	border-radius: 5px;
+	margin-left: 17.11px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.budget-info p {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 19px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #666666;
+}

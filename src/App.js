@@ -7,8 +7,9 @@ import Reset from './components/Forms/ResetPassword/Reset.Password';
 import Forgot from './components/Forms/ForgotPassword/Forgot.Password';
 import ForgotUsername from './components/Forms/ForgotUsername/index';
 
-import Dashboard from './components/Dash/Dashboard/index';
+import Dashboard from './components/Dash/Dashboard-Folder/Dashboard/index';
 import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
+import Budget from "./components/Dash/Budget-Folder/Budget/index"
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 // 	<Route
@@ -31,8 +32,9 @@ const App = () => {
 					<div>
 						<Switch>
 							{/* ----------------------private routes--------------------- */}
-							<Route path="/" component={Dashboard} exact={true} />
 							<Route path="/page/chngePass" component={ChangePassword} />
+							<Route path="/page/budget" component={Budget} />
+							<Route path="/" component={Dashboard} exact={true} />
 						</Switch>
 					</div>
 				</BrowserRouter>

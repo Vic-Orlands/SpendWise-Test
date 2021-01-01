@@ -70,7 +70,7 @@ export default class index extends Component {
 
 				<section className="top-box-container">
 					<div className="first-box">
-						<img src={require('../assets/box.png')} alt="box-img" />
+						<img src={require('../../assets/box.png')} alt="box-img" />
 
 						<div className="first-box-content">
 							<div className="spent">
@@ -85,7 +85,7 @@ export default class index extends Component {
 
 							<div className="amt">
 								<div className="tday">
-									<h5>-N7000</h5>
+									<h5>-&#8358;7000</h5>
 									<h6>today</h6>
 								</div>
 								<div className="bdget">
@@ -105,7 +105,7 @@ export default class index extends Component {
 								<p>Click to view account summary</p>
 								<div className="view">
 									<h6>View</h6>
-									<img src={require('../assets/forward.png')} alt="img" />
+									<img src={require('../../assets/forward.png')} alt="img" />
 								</div>
 							</div>
 						</div>
@@ -134,12 +134,12 @@ export default class index extends Component {
 					</div>
 
 					<div className="graduate">
-						<img src={require('../assets/graduate.png')} alt="img" />
+						<img src={require('../../assets/graduate.png')} alt="img" />
 						<h2>Masters Program</h2>
 						<h4>Education</h4>
 						<div>
-							<p>N1,832,000</p>
-							<p>N5,832,000</p>
+							<p>&#8358;1,832,000</p>
+							<p>&#8358;5,832,000</p>
 						</div>
 						<div className="progress-bar2">
 							<div className="filler2" style={{ width: `${this.state.percentage2}%` }} />
@@ -147,12 +147,12 @@ export default class index extends Component {
 					</div>
 
 					<div className="graduate">
-						<img src={require('../assets/graduate.png')} alt="img" />
+						<img src={require('../../assets/graduate.png')} alt="img" />
 						<h2>Masters Program</h2>
 						<h4>Education</h4>
 						<div>
-							<p>N1,832,000</p>
-							<p>N5,832,000</p>
+							<p>&#8358;1,832,000</p>
+							<p>&#8358;5,832,000</p>
 						</div>
 						<div className="progress-bar3">
 							<div className="filler3" style={{ width: `${this.state.percentage3}%` }} />

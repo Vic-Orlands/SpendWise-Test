@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './styles.css';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class index extends Component {
 	onLogOut = (e) => {
 		e.preventDefault();
 		localStorage.clear();
 		sessionStorage.clear();
-		window.location.reload()
+		window.location.reload();
 	};
 
 	render() {
@@ -16,30 +16,32 @@ export default class index extends Component {
 				<img src={require('../../../assets/logo-bg-white.png')} alt="logo" id="side-logo" />
 
 				<ul className="sidemenu-list">
-					<div className="first">
-						<img src={require('../../../assets/dash.png')} alt="logo" />
+					<NavLink to="/" className="div" activeClassName="active" id="link">
+						<img src={require('../../../assets/dash.png')} alt="logo" id="icon" />
 						<li>Dashboard</li>
-					</div>
+					</NavLink>
 
-					<div>
+					<NavLink to="/gff" className="div" activeClassName="active">
 						<img src={require('../assets/money.png')} alt="logo" id="icon" />
 						<li>Expense</li>
-					</div>
+					</NavLink>
 
-					<div>
+					<NavLink to="/page/budget" className="div" activeClassName="active">
 						<img src={require('../assets/coins.png')} alt="logo" id="icon" />
 						<li>Budget</li>
-					</div>
+					</NavLink>
 
-					<div>
+					<NavLink to="/gff" className="div" activeClassName="active">
+						{' '}
 						<img src={require('../assets/goal.png')} alt="logo" id="icon" />
 						<li>Goals</li>
-					</div>
+					</NavLink>
 
-					<div>
+					<NavLink to="/gff" className="div" activeClassName="active">
+						{' '}
 						<img src={require('../assets/wallet.png')} alt="logo" id="icon" />
 						<li>My finance</li>
-					</div>
+					</NavLink>
 				</ul>
 
 				<footer>
@@ -50,10 +52,10 @@ export default class index extends Component {
 						</div>
 
 						{/* <NavLink to="/signin" id="link"> */}
-							<div onClick={this.onLogOut}>
-								<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
-								<li>Sign out</li>
-							</div>
+						<div onClick={this.onLogOut}>
+							<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
+							<li>Sign out</li>
+						</div>
 						{/* </NavLink> */}
 					</ul>
 					<div className="blue" />

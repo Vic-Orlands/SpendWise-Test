@@ -7,6 +7,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
 .dash {
@@ -18,7 +19,7 @@
 }
 
 .dash .main-dash {
-	padding: 20px;
+	padding: 20px 40px;
 }
 
 .main-dash header {
@@ -26,12 +27,10 @@
 	justify-content: space-between;
 	margin-top: 10px;
 	margin-bottom: 43px;
-	padding: 0 30px;
 }
 
 .main-dash header h1 {
-    align-self: flex-end;
-	font-family: "Poppins", sans-serif;
+	align-self: flex-end;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 25px;
@@ -62,7 +61,6 @@
 }
 
 .main-dash h3 {
-	font-family: "Poppins", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
@@ -70,10 +68,11 @@
 	margin-left: 5px;
 }
 
+/* ----------------------top-box container styling starts here------------------------------------- */
 .main-dash .top-box-container {
 	display: flex;
 	justify-content: space-between;
-	padding: 0 30px;
+	flex-wrap: wrap;
 }
 
 .main-dash .top-box-container .first-box {
@@ -95,7 +94,6 @@
 }
 
 .spent h4 {
-	font-family: "Poppins", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
@@ -108,7 +106,6 @@
 	height: 25px;
 	background: #ffffff;
 	border-radius: 45px;
-	font-family: "Poppins", sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
@@ -117,7 +114,6 @@
 }
 
 .first-box-content h2 {
-	font-family: "Poppins", sans-serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 25px;
@@ -153,7 +149,6 @@
 }
 
 .first-box-content .amt .tday h5 {
-	font-family: "Poppins", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 13px;
@@ -162,7 +157,6 @@
 }
 
 .first-box-content .amt .tday h6 {
-	font-family: "Poppins", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 11px;
@@ -171,7 +165,6 @@
 }
 
 .first-box-content .amt .bdget h5 {
-	font-family: "Poppins", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 15px;
@@ -179,7 +172,6 @@
 }
 
 .first-box-content .amt .bdget h6 {
-	font-family: "Poppins", sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 11px;
@@ -188,8 +180,10 @@
 	color: #ffffff;
 }
 
+/* ----------------------------brown-box styling starts here---------------------------------- */
+
 .main-dash .top-box-container .brown-box {
-	width: 276px;
+	width: 320px;
 	height: 101px;
 	background: #cb8801;
 	border: 2.25px solid #a66f01;
@@ -225,7 +219,6 @@
 }
 
 .brown-box h3 {
-	font-family: "Poppins", sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 700;
@@ -237,7 +230,6 @@
 }
 
 .brown-box p {
-	/* font-family: "Poppins", sans-serif; */
 	font-style: normal;
 	font-weight: normal;
 	font-size: 12px;
@@ -253,16 +245,15 @@
 	height: 34px;
 	background: rgba(255, 255, 255, 0.35);
 	border-radius: 48px;
-    margin: -15px 6px 11px auto;
-    cursor: pointer;
+	margin: -15px 6px 11px auto;
+	cursor: pointer;
 }
 
 .brown-box .view:hover {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 .brown-box .view h6 {
-	font-family: Avenir;
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 500;
@@ -270,9 +261,9 @@
 	margin-right: 5px;
 }
 
-/* ----------------------third box or green box---------------------- */
+/* ----------------------------green-box styling starts here---------------------------------- */
 .main-dash .top-box-container .green-box {
-	width: 276px;
+	width: 320px;
 	height: 101px;
 	background: #367662;
 	border: 2.24561px solid #3ba785;
@@ -321,11 +312,10 @@
 	border-top: none;
 	border-bottom: none;
 	height: 100%;
-	padding: 26px 10px;
+	padding: 26px 19px;
 }
 
 .green-box .green-flex h2 {
-	font-family: sans-serif;
 	font-size: 22px;
 	font-style: normal;
 	font-weight: 400;
@@ -334,7 +324,6 @@
 }
 
 .green-box .green-flex h3 {
-	font-family: sans-serif;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 400;
@@ -344,7 +333,7 @@
 /* -----------------------------graduate container---------------------------------- */
 
 .graduate {
-	width: 200px;
+	width: 230px;
 	height: 221px;
 	padding: 0 10px;
 	background: #ffffff;
@@ -358,17 +347,15 @@
 }
 
 .graduate h2 {
-	font-family: Google Sans;
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 19px;
-    margin-bottom: 3px;
-    color: #000000;
+	margin-bottom: 3px;
+	color: #000000;
 }
 
 .graduate h4 {
-	font-family: Google Sans;
 	font-size: 11px;
 	font-style: normal;
 	font-weight: 400;
@@ -383,7 +370,6 @@
 }
 
 .graduate > div p {
-	font-family: Google Sans;
 	font-size: 10px;
 	font-style: normal;
 	font-weight: 400;
@@ -395,7 +381,7 @@
 .progress-bar2 {
 	position: relative;
 	border-radius: 50px;
-	width: 180px;
+	width: 210px;
 	height: 5px;
 	background: #d2d2d2;
 	opacity: 0.9;
@@ -414,7 +400,7 @@
 .progress-bar3 {
 	position: relative;
 	border-radius: 50px;
-	width: 180px;
+	width: 210px;
 	height: 5px;
 	background: #d2d2d2;
 	opacity: 0.9;
@@ -430,3 +416,176 @@
 	border-radius: 5px;
 }
 /* ------------------------progress-bar styling stops here---------------------- */
+
+/* ------------------mobile responsiveness styling starts here--------------------- */
+@media screen and (max-width: 760px) {
+	.dash {
+		width: 100%;
+	}
+
+	.dash .main-dash {
+		margin-top: 70px;
+		padding: 20px;
+	}
+
+	.main-dash .top-box-container {
+		justify-content: space-evenly;
+	}
+
+	.main-dash header {
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+
+	.main-dash header h1 {
+		font-size: 16px;
+	}
+
+	.main-dash .aside {
+		width: 160px;
+		padding: 10px 8px;
+	}
+
+	.main-dash .aside #addFnt {
+		width: 15px;
+		height: 15px;
+	}
+
+	.main-dash h3 {
+		font-size: 12px;
+	}
+
+	/* ----------------------top-box container styling starts here------------------------------------- */
+	.main-dash .top-box-container .first-box img {
+		width: 100%;
+	}
+
+	.spent h4 {
+		font-size: 14px;
+	}
+
+	.first-box-content h2 {
+		font-size: 22px;
+	}
+
+	.first-box-content .amt {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.first-box-content .amt .tday h5 {
+		font-size: 14px;
+	}
+
+	.first-box-content .amt .tday h6 {
+		font-size: 12px;
+	}
+
+	.first-box-content .amt .bdget h5 {
+		font-size: 14px;
+	}
+
+	.first-box-content .amt .bdget h6 {
+		font-size: 12px;
+	}
+
+	/* ----------------------------brown-box styling starts here---------------------------------- */
+
+	.main-dash .top-box-container .brown-box {
+		width: 100%;
+		height: 130px;
+		margin: 15px 0 20px 0px;
+	}
+
+	.main-dash .top-box-container .brown-box .grad1 {
+		width: 80px;
+		height: 80px;
+	}
+
+	.main-dash .top-box-container .brown-box .grad2 {
+		width: 80px;
+		height: 80px;
+		top: 40px;
+		right: 80px;
+	}
+
+	.brown-box h3 {
+		font-size: 22px;
+		margin-top: 40px;
+		margin-bottom: 4px;
+	}
+
+	.brown-box p {
+		font-size: 14px;
+	}
+
+	.brown-box .view {
+		margin: 0px 6px 11px auto;
+		padding: 7px 12px;
+	}
+
+	.brown-box .view h6 {
+		font-size: 14px;
+		padding-top: 2px;
+	}
+
+	/* ----------------------------green-box styling starts here---------------------------------- */
+	.main-dash .top-box-container .green-box {
+		width: 100%;
+		height: 130px;
+		margin: 0 0 20px 0;
+	}
+
+	.main-dash .top-box-container .green-box .grad11 {
+		width: 80px;
+		height: 80px;
+	}
+
+	.main-dash .top-box-container .green-box .grad12 {
+		width: 80px;
+		height: 80px;
+		top: 38px;
+		right: 40px;
+	}
+
+	.green-box .green-flex > div {
+		padding: 0 25px 0 10px;
+	}
+
+	.green-box .green-flex > div:nth-last-child(1) {
+		padding: 0 10px 0 25px;
+	}
+
+	.green-box .green-flex #harsh {
+		padding: 40px 25px;
+	}
+
+	/* -----------------------------graduate container---------------------------------- */
+
+	.graduate {
+		width: 180px;
+		height: 221px;
+		padding: 0 10px;
+	}
+
+	.graduate > img {
+		margin: 57px 0 13.65px 60px;
+	}
+
+	.graduate h2 {
+		font-size: 14px;
+	}
+
+	.graduate h4 {
+		font-size: 12px;
+	}
+
+	/* ------------------------second and third progress-bar---------------------- */
+	.progress-bar2 {
+		width: 160px;
+	}
+
+	.progress-bar3 {
+		width: 160px;
+	}
+}

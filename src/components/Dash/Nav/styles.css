@@ -46,3 +46,182 @@ nav div p {
 	line-height: 20px;
 	margin: 0 49.62px 0 13.46px;
 }
+
+nav #icon-bar {
+	display: none;
+}
+
+.nav-sidemenu {
+	display: none;
+}
+
+/* ------------------mobile responsiveness styling starts here--------------------- */
+@media screen and (max-width: 760px) {
+	nav {
+		width: 100%;
+		position: fixed;
+		z-index: 999999;
+	}
+
+	nav #icon-bar {
+		display: block;
+		color: rgb(0, 0, 221);
+		font-size: 24px;
+		margin-right: auto;
+		margin-left: 20px;
+		cursor: pointer;
+	}
+
+	nav #nav-icon {
+		width: 15px;
+	}
+
+	nav div h1 {
+		font-size: 12px;
+		line-height: 18px;
+		padding: 6px 9px;
+		margin-left: 30px;
+	}
+
+	nav div p {
+		font-family: "Poppins", sans-serif;
+		font-size: 14px;
+		margin: 0 20px 0 10px;
+	}
+
+	/* -----------------------mobile sidemenu------------------------- */
+	.nav-sidemenu {
+		display: block;
+		width: 50%;
+		height: 90%;
+		background: #ffffff;
+		box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.09);
+		padding: 10px 0;
+		position: fixed;
+		left: 0;
+		top: 70px;
+		z-index: 9999999;
+	}
+
+	.nav-sidemenu #side-logo {
+		display: flex;
+		margin: auto;
+		width: 120px;
+	}
+
+	/* -------------------------------list styling starts here---------------------------------- */
+	.nav-sidemenu ul {
+		list-style: none;
+	}
+
+	.nav-sidemenu .nav-side-list .div {
+		display: flex;
+		width: 180px;
+		margin: 8px auto;
+		padding: 12px 15px;
+		text-decoration: none;
+		color: #000000;
+	}
+
+	.nav-side-list #link {
+		margin-top: 30px;
+	}
+
+	.nav-sidemenu .nav-side-list .div:hover,
+	.nav-sidemenu .nav-side-list .div:hover li {
+		border-radius: 5px;
+		background: #2e41c0;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	.nav-sidemenu .nav-side-list .div li {
+		font-family: sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 18px;
+		letter-spacing: 0.01em;
+	}
+
+	.nav-sidemenu #icon {
+		width: 16px;
+		height: 16px;
+		margin-right: 23px;
+	}
+
+	.active {
+		background: #2e41c0;
+		border-radius: 5px;
+		width: 210px;
+	}
+
+	.active li {
+		color: #ffffff;
+	}
+
+	/* -------------------------------list styling stops here---------------------------------- */
+
+	footer {
+		position: absolute;
+		bottom: 0;
+	}
+
+	footer .footer-list div {
+		width: 210px;
+		display: flex;
+		margin: 10px 5px;
+		padding: 10px 10px;
+	}
+
+	footer .footer-list div:hover {
+		border-radius: 5px;
+		background: #2e41c0;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	footer .footer-list div img {
+		height: 18px;
+		margin-right: 23px;
+		margin-left: 15px;
+		width: 16px;
+		height: 16px;
+	}
+
+	footer .footer-list div li {
+		font-family: sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	footer #link {
+		text-decoration: none;
+		color: #000000;
+	}
+
+	footer .blue {
+		position: relative;
+		width: 70px;
+		height: 100px;
+		border: 7px solid #2564f7;
+		opacity: 0.7;
+		border-left: none;
+		border-bottom: none;
+		box-sizing: border-box;
+		margin-top: 20px;
+	}
+
+	footer .orange {
+		position: absolute;
+		bottom: 0;
+		width: 100px;
+		height: 70px;
+		border: 7px solid #ffaa00;
+		opacity: 0.7;
+		border-left: none;
+		border-bottom: none;
+		box-sizing: border-box;
+	}
+}
