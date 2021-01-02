@@ -34,7 +34,8 @@ export default () => {
 				}
 			})
 			.catch((err) => {
-				console.log(err.response.data);
+				console.log(err);
+				// console.log(err.response.data);
 			});
 	}, []);
 
@@ -197,37 +198,45 @@ export default () => {
 						</section>
 
 						<section className="budget-info">
-							<p>You have ₦1,500,000 left on this budget</p>
-							<div>
-								<div>
-									<input type="checkbox" />
-									<h6>Amount Left</h6>
-								</div>
-								<div>
-									<input type="checkbox" />
-									<h6>Amount Spent</h6>
-								</div>
-							</div>
+							{!budget ? (
+								<div className="budget-info-content">
+									<p>
+										You have <span>₦1,500,000</span> left on this budget
+									</p>
+									<div className="chkBox">
+										<div>
+											<h4 />
+											<h6>Amount Left</h6>
+										</div>
+										<div>
+											<h4 />
+											<h6>Amount Spent</h6>
+										</div>
+									</div>
 
-							<div>
-								<div>
-									<h6>Amount Left</h6>
-									<h5>₦500,000</h5>
+									<div className="sumSpent">
+										<div>
+											<h6>Amount Left</h6>
+											<h5>₦500,000</h5>
+										</div>
+
+										<div>
+											<h6>Amount Spent</h6>
+											<h5>₦2,000,000</h5>
+										</div>
+									</div>
+
+									<div className="edit-archive-bdgt">
+										<h3>Edit Budget</h3>
+										<h3>Archive Budget</h3>
+									</div>
 								</div>
-
-								<div>
-									<h6>Amount Spent</h6>
-									<h5>₦2,000,000</h5>
+							) : (
+								<div className="budget-error">
+									<img src={require('../../assets/info.png')} alt="img" />
+									<p>Select budget to display information</p>
 								</div>
-							</div>
-
-							<div>
-								<h3>Edit Budget</h3>
-								<h3>Archive Budget</h3>
-							</div>
-
-							<img src={require('../../assets/info.png')} alt="img" />
-							<p>Select budget to display information</p>
+							)}
 						</section>
 					</section>
 				</div>

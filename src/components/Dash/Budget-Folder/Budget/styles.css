@@ -267,26 +267,120 @@
 /* ------------------aside budget info------------------ */
 .budget-info {
 	width: 344.38px;
-	/* height: 522.4px; */
-	height: auto;
 	background: #ffffff;
 	border-radius: 5px;
 	margin-left: 17.11px;
+}
+
+.budget-info .budget-info-content {
+	padding: 40px 20px;
+}
+
+.budget-info .budget-info-content p {
+	font-size: 14px;
+}
+
+.budget-info .budget-info-content p span {
+	font-weight: bold;
+	color: rgb(0, 161, 8);
+}
+
+.budget-info-content .chkBox {
+	display: flex;
+	margin: 10px 0 20px 0;
+}
+
+.budget-info-content .chkBox div {
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+}
+
+.budget-info-content .chkBox div h4 {
+	width: 9.6px;
+	height: 9.6px;
+	background: #d9dae1;
+	border-radius: 50%;
+}
+
+.budget-info-content .chkBox div:nth-child(2) h4 {
+	background: #0089b4;
+}
+
+.budget-info-content .chkBox div h6 {
+	margin-left: -5px;
+	padding-left: 10px;
+}
+
+.budget-info-content .sumSpent {
+	display: flex;
+	justify-content: space-between;
+	background-color: #e8e8eb;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.budget-info-content .sumSpent div h6 {
+	color: #19304d;
+	font-size: 13.4454px;
+}
+
+.budget-info-content .sumSpent div h5 {
+	color: #147efb;
+	font-size: 14px;
+	text-align: center;
+}
+
+.budget-info-content .sumSpent div:nth-child(2) h5 {
+	font-size: 14px;
+	color: #355691;
+}
+
+.edit-archive-bdgt {
+	display: flex;
+	justify-content: space-between;
+	margin: 30px 0;
+}
+
+.edit-archive-bdgt h3 {
+	font-size: 14px;
+	background: #0089b4;
+	border: 2px solid #007ca3;
+	box-shadow: 0px 4px 10px rgba(0, 137, 180, 0.2);
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: #ffffff;
+}
+
+.edit-archive-bdgt h3:hover {
+	background: #005b77;
+}
+
+.edit-archive-bdgt h3:nth-child(2) {
+	background-color: transparent;
+	color: #0089b4;
+}
+
+.edit-archive-bdgt h3:nth-child(2):hover {
+	background: #0089b4;
+	color: #ffffff;
+}
+
+.budget-info .budget-error {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-.budget-info p {
+.budget-info .budget-error p {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 14px;
-	line-height: 19px;
-	display: flex;
-	align-items: center;
-	text-align: center;
+	font-size: 16px;
 	color: #666666;
+	margin-top: 10px;
 }
 
 /* ------------------mobile responsiveness styling starts here--------------------- */
