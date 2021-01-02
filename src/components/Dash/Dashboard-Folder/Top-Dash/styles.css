@@ -102,15 +102,13 @@
 }
 
 .spent h5 {
-	width: 61px;
-	height: 25px;
 	background: #ffffff;
 	border-radius: 45px;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
 	text-align: center;
-	padding-top: 1.15px;
+	padding: 5px 18px;
 }
 
 .first-box-content h2 {
@@ -428,44 +426,50 @@
 		padding: 20px;
 	}
 
-	.main-dash .top-box-container {
-		justify-content: space-evenly;
-	}
-
 	.main-dash header {
 		margin-top: 0px;
 		margin-bottom: 20px;
 	}
 
 	.main-dash header h1 {
-		font-size: 16px;
+		font-size: 20px;
 	}
 
 	.main-dash .aside {
-		width: 160px;
+		width: 180px;
 		padding: 10px 8px;
 	}
 
 	.main-dash .aside #addFnt {
-		width: 15px;
-		height: 15px;
+		width: 18px;
+		height: 18px;
 	}
 
 	.main-dash h3 {
-		font-size: 12px;
-	}
-
-	/* ----------------------top-box container styling starts here------------------------------------- */
-	.main-dash .top-box-container .first-box img {
-		width: 100%;
-	}
-
-	.spent h4 {
 		font-size: 14px;
 	}
 
+	/* ----------------------top-box container styling starts here------------------------------------- */
+	.main-dash .top-box-container .first-box {
+		width: 100%;
+	}
+
+	.main-dash .top-box-container .first-box img {
+		width: 100%;
+		height: 250px;
+	}
+
+	.spent h4 {
+		font-size: 16px;
+	}
+
+	.spent h5 {
+		font-size: 16px;
+	}
+
 	.first-box-content h2 {
-		font-size: 22px;
+		font-size: 28px;
+		margin-bottom: 20px;
 	}
 
 	.first-box-content .amt {
@@ -474,58 +478,71 @@
 	}
 
 	.first-box-content .amt .tday h5 {
-		font-size: 14px;
+		font-size: 18px;
 	}
 
 	.first-box-content .amt .tday h6 {
-		font-size: 12px;
-	}
-
-	.first-box-content .amt .bdget h5 {
 		font-size: 14px;
 	}
 
+	.first-box-content .amt .bdget h5 {
+		font-size: 18px;
+	}
+
 	.first-box-content .amt .bdget h6 {
-		font-size: 12px;
+		font-size: 14px;
+	}
+
+	/* ------------------------progress-bar---------------------- */
+	.progress-bar {
+		width: 100%;
+		height: 8px;
 	}
 
 	/* ----------------------------brown-box styling starts here---------------------------------- */
 
+	.main-dash .top-box-container .brown-green {
+		width: 100%;
+	}
+
 	.main-dash .top-box-container .brown-box {
 		width: 100%;
-		height: 130px;
+		height: 150px;
 		margin: 15px 0 20px 0px;
+		padding: 0 10px;
 	}
 
 	.main-dash .top-box-container .brown-box .grad1 {
-		width: 80px;
-		height: 80px;
+		width: 90px;
+		height: 90px;
 	}
 
 	.main-dash .top-box-container .brown-box .grad2 {
-		width: 80px;
-		height: 80px;
-		top: 40px;
-		right: 80px;
+		width: 90px;
+		height: 90px;
+		top: 50px;
+		right: 90px;
 	}
 
 	.brown-box h3 {
-		font-size: 22px;
-		margin-top: 40px;
-		margin-bottom: 4px;
+		font-size: 24px;
+		margin-top: 50px;
+		margin-bottom: 5px;
 	}
 
 	.brown-box p {
-		font-size: 14px;
+		font-size: 18px;
 	}
 
 	.brown-box .view {
 		margin: 0px 6px 11px auto;
-		padding: 7px 12px;
+		padding: 8px 10px 8px 12px;
+		width: 95px;
+		height: 40px;
 	}
 
 	.brown-box .view h6 {
-		font-size: 14px;
+		font-size: 18px;
 		padding-top: 2px;
 	}
 
@@ -549,43 +566,51 @@
 	}
 
 	.green-box .green-flex > div {
-		padding: 0 25px 0 10px;
+		padding: 0 20px 0 30px;
 	}
 
 	.green-box .green-flex > div:nth-last-child(1) {
-		padding: 0 10px 0 25px;
+		padding: 0 30px 0 20px;
 	}
 
 	.green-box .green-flex #harsh {
-		padding: 40px 25px;
+		padding: 40px 50px;
 	}
 
 	/* -----------------------------graduate container---------------------------------- */
 
 	.graduate {
-		width: 180px;
-		height: 221px;
+		width: 46.5%;
+		height: 100%;
 		padding: 0 10px;
+		border-radius: 6px;
 	}
 
 	.graduate > img {
-		margin: 57px 0 13.65px 60px;
+		margin: 57px 0 15px 85px;
 	}
 
 	.graduate h2 {
-		font-size: 14px;
+		font-size: 18px;
 	}
 
 	.graduate h4 {
-		font-size: 12px;
+		font-size: 14px;
+	}
+
+	.graduate div p {
+		font-size: 14px;
+		margin-top: 10px;
 	}
 
 	/* ------------------------second and third progress-bar---------------------- */
 	.progress-bar2 {
-		width: 160px;
+		width: 100%;
+		margin-top: 5px;
 	}
 
 	.progress-bar3 {
-		width: 160px;
+		width: 100%;
+		margin-top: 5px;
 	}
 }

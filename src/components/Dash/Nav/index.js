@@ -6,12 +6,18 @@ import { FaBars } from 'react-icons/fa';
 
 const Nav = () => {
 	const [ user, setUser ] = useState(null);
+	const [ username, setUsername ] = useState(null);
 	const [ open, setOpen ] = useState(false);
 
 	useEffect(() => {
 		let user = JSON.parse(localStorage.getItem('USER')) || JSON.parse(sessionStorage.getItem('USER'));
+		let first_name = user.first_name.charAt(0);
+		let surname = user.surname.charAt(0);
+		let abbrevName = first_name.concat(surname);
+
 		if (user) {
 			setUser(user.user);
+			setUsername(abbrevName);
 		} else {
 			setUser('User');
 		}
@@ -81,7 +87,7 @@ const Nav = () => {
 			<img src={require('../assets/Vector.png')} alt="notifications_img" id="nav-icon" />
 
 			<div>
-				<h1>EF</h1>
+				<h1>{username}</h1>
 				<p>{user}</p>
 			</div>
 		</nav>

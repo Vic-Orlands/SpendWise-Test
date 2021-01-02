@@ -45,190 +45,192 @@ export default () => {
 			<section className="budget-container">
 				<Nav />
 
-				<div className="top-section">
-					<div>
-						<h2>Budget</h2>
-						<h5>
-							You currently have <span>{budget.total}</span> set budgets,
-							<span style={{ color: 'lightgreen' }}> {budget.on_track}</span> on-track and
-							<span style={{ color: 'tomato' }}> {budget.exceeded}</span> exceeded
-						</h5>
+				<div className="parent">
+					<div className="top-section">
+						<div>
+							<h2>Budget</h2>
+							<h5>
+								You currently have <span>{budget.total}</span> set budgets,
+								<span style={{ color: 'lightgreen' }}> {budget.on_track}</span> on-track and
+								<span style={{ color: 'tomato' }}> {budget.exceeded}</span> exceeded
+							</h5>
+						</div>
+
+						<h4>Create Budget</h4>
 					</div>
 
-					<h4>Create Budget</h4>
+					<section className="box-section">
+						<div>
+							<h4>
+								Status <MdKeyboardArrowDown id="icon" />
+							</h4>
+							<h4>
+								Most Recent
+								<MdKeyboardArrowDown id="icon" />
+							</h4>
+						</div>
+
+						<h4>View Archive</h4>
+					</section>
+
+					<section className="budget">
+						<section className="category">
+							<div className="top">
+								<h5>Category</h5>
+
+								<div>
+									<h6>Status</h6>
+									<h6>Spent</h6>
+									<h6>Budget</h6>
+									<h6>
+										Date created<MdArrowDownward />
+									</h6>
+								</div>
+							</div>
+
+							<div className="bottom">
+								<div className="shelf">
+									<div>
+										<input type="checkbox" id="inpt" />
+										<img src={require('../../assets/food.png')} alt="img" />
+										<p>Food</p>
+									</div>
+
+									<div>
+										<h3>On-track</h3>
+										<h4>&#8358;20,000</h4>
+										<h4 id="scd">&#8358;20,000,000</h4>
+										<h3>April 4, 2020</h3>
+									</div>
+								</div>
+
+								<div className="shelf">
+									<div>
+										<input type="checkbox" id="inpt" />
+										<img src={require('../../assets/food.png')} alt="img" />
+										<p>Food</p>
+									</div>
+
+									<div>
+										<h3>On-track</h3>
+										<h4>&#8358;20,000</h4>
+										<h4 id="scd">&#8358;20,000,000</h4>
+										<h3>April 4, 2020</h3>
+									</div>
+								</div>
+
+								<div className="shelf">
+									<div>
+										<input type="checkbox" id="inpt" />
+										<img src={require('../../assets/food.png')} alt="img" />
+										<p>Food</p>
+									</div>
+
+									<div>
+										<h3>On-track</h3>
+										<h4>&#8358;20,000</h4>
+										<h4 id="scd">&#8358;20,000,000</h4>
+										<h3>April 4, 2020</h3>
+									</div>
+								</div>
+
+								<div className="shelf">
+									<div>
+										<input type="checkbox" id="inpt" />
+										<img src={require('../../assets/food.png')} alt="img" />
+										<p>Food</p>
+									</div>
+
+									<div>
+										<h3>On-track</h3>
+										<h4>&#8358;20,000</h4>
+										<h4 id="scd">&#8358;20,000,000</h4>
+										<h3>April 4, 2020</h3>
+									</div>
+								</div>
+
+								<div className="shelf">
+									<div>
+										<input type="checkbox" id="inpt" />
+										<img src={require('../../assets/food.png')} alt="img" />
+										<p>Food</p>
+									</div>
+
+									<div>
+										<h3>On-track</h3>
+										<h4>&#8358;20,000</h4>
+										<h4 id="scd">&#8358;20,000,000</h4>
+										<h3>April 4, 2020</h3>
+									</div>
+								</div>
+
+								<div className="shelf">
+									<div>
+										<input type="checkbox" id="inpt" />
+										<img src={require('../../assets/food.png')} alt="img" />
+										<p>Food</p>
+									</div>
+
+									<div>
+										<h3>On-track</h3>
+										<h4>&#8358;20,000</h4>
+										<h4 id="scd">&#8358;20,000,000</h4>
+										<h3>April 4, 2020</h3>
+									</div>
+								</div>
+
+								<div className="shelf">
+									<div>
+										<input type="checkbox" id="inpt" />
+										<img src={require('../../assets/food.png')} alt="img" />
+										<p>Food</p>
+									</div>
+
+									<div>
+										<h3>On-track</h3>
+										<h4>&#8358;20,000</h4>
+										<h4 id="scd">&#8358;20,000,000</h4>
+										<h3>April 4, 2020</h3>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section className="budget-info">
+							<p>You have ₦1,500,000 left on this budget</p>
+							<div>
+								<div>
+									<input type="checkbox" />
+									<h6>Amount Left</h6>
+								</div>
+								<div>
+									<input type="checkbox" />
+									<h6>Amount Spent</h6>
+								</div>
+							</div>
+
+							<div>
+								<div>
+									<h6>Amount Left</h6>
+									<h5>₦500,000</h5>
+								</div>
+
+								<div>
+									<h6>Amount Spent</h6>
+									<h5>₦2,000,000</h5>
+								</div>
+							</div>
+
+							<div>
+								<h3>Edit Budget</h3>
+								<h3>Archive Budget</h3>
+							</div>
+
+							<img src={require('../../assets/info.png')} alt="img" />
+							<p>Select budget to display information</p>
+						</section>
+					</section>
 				</div>
-
-				<section className="box-section">
-					<div>
-						<h4>
-							Status <MdKeyboardArrowDown id="icon" />
-						</h4>
-						<h4>
-							Most Recent
-							<MdKeyboardArrowDown id="icon" />
-						</h4>
-					</div>
-
-					<h4>View Archive</h4>
-				</section>
-
-				<section className="budget">
-					<section className="category">
-						<div className="top">
-							<h5>Category</h5>
-
-							<div>
-								<h6>Status</h6>
-								<h6>Spent</h6>
-								<h6>Budget</h6>
-								<h6>
-									Date created<MdArrowDownward />
-								</h6>
-							</div>
-						</div>
-
-						<div className="bottom">
-							<div className="shelf">
-								<div>
-									<input type="checkbox" id="inpt" />
-									<img src={require('../../assets/food.png')} alt="img" />
-									<p>Food</p>
-								</div>
-
-								<div>
-									<h3>On-track</h3>
-									<h4>&#8358;20,000</h4>
-									<h4 id="scd">&#8358;20,000,000</h4>
-									<h3>April 4, 2020</h3>
-								</div>
-							</div>
-
-							<div className="shelf">
-								<div>
-									<input type="checkbox" id="inpt" />
-									<img src={require('../../assets/food.png')} alt="img" />
-									<p>Food</p>
-								</div>
-
-								<div>
-									<h3>On-track</h3>
-									<h4>&#8358;20,000</h4>
-									<h4 id="scd">&#8358;20,000,000</h4>
-									<h3>April 4, 2020</h3>
-								</div>
-							</div>
-
-							<div className="shelf">
-								<div>
-									<input type="checkbox" id="inpt" />
-									<img src={require('../../assets/food.png')} alt="img" />
-									<p>Food</p>
-								</div>
-
-								<div>
-									<h3>On-track</h3>
-									<h4>&#8358;20,000</h4>
-									<h4 id="scd">&#8358;20,000,000</h4>
-									<h3>April 4, 2020</h3>
-								</div>
-							</div>
-
-							<div className="shelf">
-								<div>
-									<input type="checkbox" id="inpt" />
-									<img src={require('../../assets/food.png')} alt="img" />
-									<p>Food</p>
-								</div>
-
-								<div>
-									<h3>On-track</h3>
-									<h4>&#8358;20,000</h4>
-									<h4 id="scd">&#8358;20,000,000</h4>
-									<h3>April 4, 2020</h3>
-								</div>
-							</div>
-
-							<div className="shelf">
-								<div>
-									<input type="checkbox" id="inpt" />
-									<img src={require('../../assets/food.png')} alt="img" />
-									<p>Food</p>
-								</div>
-
-								<div>
-									<h3>On-track</h3>
-									<h4>&#8358;20,000</h4>
-									<h4 id="scd">&#8358;20,000,000</h4>
-									<h3>April 4, 2020</h3>
-								</div>
-							</div>
-
-							<div className="shelf">
-								<div>
-									<input type="checkbox" id="inpt" />
-									<img src={require('../../assets/food.png')} alt="img" />
-									<p>Food</p>
-								</div>
-
-								<div>
-									<h3>On-track</h3>
-									<h4>&#8358;20,000</h4>
-									<h4 id="scd">&#8358;20,000,000</h4>
-									<h3>April 4, 2020</h3>
-								</div>
-							</div>
-
-							<div className="shelf">
-								<div>
-									<input type="checkbox" id="inpt" />
-									<img src={require('../../assets/food.png')} alt="img" />
-									<p>Food</p>
-								</div>
-
-								<div>
-									<h3>On-track</h3>
-									<h4>&#8358;20,000</h4>
-									<h4 id="scd">&#8358;20,000,000</h4>
-									<h3>April 4, 2020</h3>
-								</div>
-							</div>
-						</div>
-					</section>
-
-					<section className="budget-info">
-						<p>You have ₦1,500,000 left on this budget</p>
-						<div>
-							<div>
-								<input type="checkbox" />
-								<h6>Amount Left</h6>
-							</div>
-							<div>
-								<input type="checkbox" />
-								<h6>Amount Spent</h6>
-							</div>
-						</div>
-
-						<div>
-							<div>
-								<h6>Amount Left</h6>
-								<h5>₦500,000</h5>
-							</div>
-
-							<div>
-								<h6>Amount Spent</h6>
-								<h5>₦2,000,000</h5>
-							</div>
-						</div>
-
-						<div>
-							<h3>Edit Budget</h3>
-							<h3>Archive Budget</h3>
-						</div>
-
-						<img src={require('../../assets/info.png')} alt="img" />
-						<p>Select budget to display information</p>
-					</section>
-				</section>
 			</section>
 		</section>
 	);

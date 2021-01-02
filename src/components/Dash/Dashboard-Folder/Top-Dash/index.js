@@ -96,7 +96,7 @@ export default class index extends Component {
 						</div>
 					</div>
 
-					<div>
+					<div className="brown-green">
 						<div className="brown-box">
 							<div className="grad1" />
 							<div className="grad2" />

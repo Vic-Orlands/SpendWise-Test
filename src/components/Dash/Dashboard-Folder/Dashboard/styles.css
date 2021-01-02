@@ -133,7 +133,7 @@
 
 .expenses .errorMessage h5 {
 	color: grey;
-	font-size: 13px;
+	font-size: 18px;
 	margin-top: 10px;
 	margin-bottom: 30px;
 }
@@ -163,15 +163,15 @@
 	}
 
 	.expenses hgroup h2 {
-		font-size: 14px;
+		font-size: 18px;
 	}
 
 	.expenses hgroup h4 {
-		font-size: 12px;
+		font-size: 14px;
 	}
 
 	.expenses .trans {
-		padding: 10px 0;
+		padding: 15px 0;
 	}
 
 	.expenses .trans:nth-last-child(1) {
@@ -179,11 +179,20 @@
 		padding-bottom: 0px;
 	}
 
+	.expenses .trans img {
+		width: 32px;
+		height: 32px;
+	}
+
 	.expenses .trans > div h5 {
-		font-size: 14px;
+		font-size: 16px;
+	}
+
+	.expenses .trans h6 {
+		font-size: 16px;
 	}
 
 	.expenses .trans > div p {
-		font-size: 10px;
+		font-size: 14px;
 	}
 }

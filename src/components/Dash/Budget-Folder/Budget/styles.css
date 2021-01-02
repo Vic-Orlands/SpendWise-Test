@@ -151,6 +151,7 @@
 	margin: 30px 40px;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .budget .category {
@@ -204,7 +205,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 20px 0;
-	border-bottom: 1px solid #EDEDED;
+	border-bottom: 1px solid #ededed;
 }
 
 .budget .category .bottom .shelf:nth-last-child(1) {
@@ -286,4 +287,76 @@
 	align-items: center;
 	text-align: center;
 	color: #666666;
+}
+
+/* ------------------mobile responsiveness styling starts here--------------------- */
+@media screen and (max-width: 760px) {
+	.budget-container {
+		width: 100%;
+		clear: both;
+	}
+
+	/* ---------------------------top-section styling starts here------------------------------- */
+	.parent {
+		margin: 80px 20px 20px 20px;
+	}
+
+	.top-section {
+		height: 120px;
+		width: 100%;
+		margin: 0px;
+		background-position: center;
+	}
+
+	.top-section > div {
+		margin: 0 0 0 10px;
+		padding: 0px;
+		height: 50%;
+	}
+
+	.top-section > div h2 {
+		font-size: 18px;
+	}
+
+	.top-section > div h5 {
+		font-size: 12px;
+		line-height: 20px;
+	}
+
+	.top-section h4 {
+		width: 120px;
+		height: 40px;
+		font-size: 12px;
+		line-height: 14px;
+		margin: auto 10px;
+	}
+
+	.box-section {
+		padding: 0px;
+	}
+
+	.budget {
+		margin: 20px 0px;
+	}
+
+	.budget .category .top h5 {
+		font-size: 14px;
+	}
+
+	/* ------------------category bottom styling--------------------- */
+	.budget .category .bottom {
+		border-radius: 5px;
+		padding: 10px 20px;
+	}
+
+	.budget .category .bottom .shelf div:nth-child(1) img {
+		margin: 0 10px;
+	}
+
+	/* ------------------aside budget info------------------ */
+	.budget-info {
+		width: 100%;
+		margin: 20px 0 0 0;
+		padding: 20px 0;
+	}
 }
