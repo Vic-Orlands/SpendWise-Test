@@ -198,14 +198,19 @@
 .budget .category .bottom {
 	background-color: #ffffff;
 	border-radius: 4px;
-	padding: 10px 25px;
+	padding: 10px 0;
 }
 
 .budget .category .bottom .shelf {
 	display: flex;
 	justify-content: space-between;
-	padding: 20px 0;
+	padding: 20px 25px;
 	border-bottom: 1px solid #ededed;
+}
+
+.budget .category .bottom .shelf:hover {
+	background: rgba(170, 171, 173, 0.685);
+	cursor: pointer;
 }
 
 .budget .category .bottom .shelf:nth-last-child(1) {
@@ -216,6 +221,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-right: 150px;
 }
 
 .budget .category .bottom .shelf div #inpt {
@@ -239,7 +245,7 @@
 }
 
 .budget .category .bottom .shelf div:nth-child(2) {
-	flex-grow: 0.59;
+	flex-grow: 1;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -248,12 +254,13 @@
 .budget .category .bottom .shelf div:nth-child(2) h3 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px;
 	color: #000000;
 }
 .budget .category .bottom .shelf div:nth-child(2) h4 {
 	font-style: normal;
+	margin: 0 15px;
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 19px;
@@ -296,14 +303,14 @@
 	margin-right: 20px;
 }
 
-.budget-info-content .chkBox div h4 {
+.budget-info-content .chkBox div #h4 {
 	width: 9.6px;
 	height: 9.6px;
 	background: #d9dae1;
 	border-radius: 50%;
 }
 
-.budget-info-content .chkBox div:nth-child(2) h4 {
+.budget-info-content .chkBox div:nth-child(2) #h4 {
 	background: #0089b4;
 }
 
@@ -433,18 +440,32 @@
 		margin: 20px 0px;
 	}
 
+	/* ------------------category bottom styling--------------------- */
+	.budget .category .bottom {
+		border-radius: 5px;
+	}
+	
+	.budget .category .bottom .shelf {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.budget .category .bottom .shelf div:nth-child(1) {
+		margin-right: 20px;
+	}
+
+	.budget .category .bottom .shelf div:nth-child(1) p {
+		font-size: 12px;
+		line-height: 0px;
+	}
+
 	.budget .category .top h5 {
 		font-size: 14px;
 	}
 
-	/* ------------------category bottom styling--------------------- */
-	.budget .category .bottom {
-		border-radius: 5px;
-		padding: 10px 20px;
-	}
-
 	.budget .category .bottom .shelf div:nth-child(1) img {
-		margin: 0 10px;
+		margin: 0 6px;
+		height: 20px;
 	}
 
 	/* ------------------aside budget info------------------ */

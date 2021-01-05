@@ -8,8 +8,10 @@ import { MdKeyboardArrowDown, MdArrowDownward } from 'react-icons/md';
 
 export default () => {
 	const [ budget, setBudget ] = useState('');
+	const [ track, setTrack ] = useState([]);
+	const [ oneTrack, setOneTrack ] = useState("");
 
-	useEffect(() => {
+	const fetchedUrl = () => {
 		// ------------------------get user token from saved storage--------------------------
 		let userToken =
 			JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
@@ -35,9 +37,74 @@ export default () => {
 			})
 			.catch((err) => {
 				console.log(err);
+			});
+	};
+
+	const fetchedUrl2 = () => {
+		// ------------------------get user token from saved storage--------------------------
+		let userToken =
+			JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
+
+		// ------------------------getting all budget status of user--------------------------
+		Axios.post(
+			'https://www.spendwise.ng/api/budget/all_budgets/',
+			{
+				body: {
+					month: '10'
+				}
+			},
+			{
+				headers: {
+					Authorization: `Token ${userToken}`
+				}
+			}
+		)
+			.then((res) => {
+				if (res.status === 200) {
+					setTrack(res.data.results);
+				}
+			})
+			.catch((err) => {
+				console.log(err);
 				// console.log(err.response.data);
 			});
+	};
+
+	useEffect(() => {
+		fetchedUrl();
+		fetchedUrl2();
+		Promise.all([ fetchedUrl, fetchedUrl2 ]);
 	}, []);
+
+	// ----------------------------------function to fetch user by id--------------------------------
+
+	const fetchBudgetById = (item) => {
+		let user_id = item;
+		// ------------------------get user token from saved storage--------------------------
+		let userToken =
+			JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
+
+		Axios.post(
+			'https://www.spendwise.ng/api/budget/get_budget/',
+			{
+				budget_id: `${user_id}`
+			},
+			{
+				headers: {
+					Authorization: `Token ${userToken}`
+				}
+			}
+		)
+			.then((res) => {
+				if (res.status === 200) {
+				console.log(res.data);
+				setOneTrack(res.data);
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
 	return (
 		<section>
@@ -90,126 +157,38 @@ export default () => {
 							</div>
 
 							<div className="bottom">
-								<div className="shelf">
-									<div>
-										<input type="checkbox" id="inpt" />
-										<img src={require('../../assets/food.png')} alt="img" />
-										<p>Food</p>
-									</div>
+								{track.map((item) => (
+									<div className="shelf" onClick={() => fetchBudgetById(item.id)} key={item.id}>
+										<div>
+											<input type="checkbox" id="inpt" />
+											<img src={require('../../assets/food.png')} alt="img" />
+											<p>{item.category}</p>
+										</div>
 
-									<div>
-										<h3>On-track</h3>
-										<h4>&#8358;20,000</h4>
-										<h4 id="scd">&#8358;20,000,000</h4>
-										<h3>April 4, 2020</h3>
+										<div>
+											<h3>{item.status}</h3>
+											<h4>&#8358;{item.balance}</h4>
+											<h4 id="scd">&#8358;{item.budget_amount}</h4>
+											<h3>April 4, 2020</h3>
+										</div>
 									</div>
-								</div>
-
-								<div className="shelf">
-									<div>
-										<input type="checkbox" id="inpt" />
-										<img src={require('../../assets/food.png')} alt="img" />
-										<p>Food</p>
-									</div>
-
-									<div>
-										<h3>On-track</h3>
-										<h4>&#8358;20,000</h4>
-										<h4 id="scd">&#8358;20,000,000</h4>
-										<h3>April 4, 2020</h3>
-									</div>
-								</div>
-
-								<div className="shelf">
-									<div>
-										<input type="checkbox" id="inpt" />
-										<img src={require('../../assets/food.png')} alt="img" />
-										<p>Food</p>
-									</div>
-
-									<div>
-										<h3>On-track</h3>
-										<h4>&#8358;20,000</h4>
-										<h4 id="scd">&#8358;20,000,000</h4>
-										<h3>April 4, 2020</h3>
-									</div>
-								</div>
-
-								<div className="shelf">
-									<div>
-										<input type="checkbox" id="inpt" />
-										<img src={require('../../assets/food.png')} alt="img" />
-										<p>Food</p>
-									</div>
-
-									<div>
-										<h3>On-track</h3>
-										<h4>&#8358;20,000</h4>
-										<h4 id="scd">&#8358;20,000,000</h4>
-										<h3>April 4, 2020</h3>
-									</div>
-								</div>
-
-								<div className="shelf">
-									<div>
-										<input type="checkbox" id="inpt" />
-										<img src={require('../../assets/food.png')} alt="img" />
-										<p>Food</p>
-									</div>
-
-									<div>
-										<h3>On-track</h3>
-										<h4>&#8358;20,000</h4>
-										<h4 id="scd">&#8358;20,000,000</h4>
-										<h3>April 4, 2020</h3>
-									</div>
-								</div>
-
-								<div className="shelf">
-									<div>
-										<input type="checkbox" id="inpt" />
-										<img src={require('../../assets/food.png')} alt="img" />
-										<p>Food</p>
-									</div>
-
-									<div>
-										<h3>On-track</h3>
-										<h4>&#8358;20,000</h4>
-										<h4 id="scd">&#8358;20,000,000</h4>
-										<h3>April 4, 2020</h3>
-									</div>
-								</div>
-
-								<div className="shelf">
-									<div>
-										<input type="checkbox" id="inpt" />
-										<img src={require('../../assets/food.png')} alt="img" />
-										<p>Food</p>
-									</div>
-
-									<div>
-										<h3>On-track</h3>
-										<h4>&#8358;20,000</h4>
-										<h4 id="scd">&#8358;20,000,000</h4>
-										<h3>April 4, 2020</h3>
-									</div>
-								</div>
+								))}
 							</div>
 						</section>
 
 						<section className="budget-info">
-							{!budget ? (
+							{oneTrack ? (
 								<div className="budget-info-content">
 									<p>
-										You have <span>₦1,500,000</span> left on this budget
+										You have <span>₦{oneTrack.balance}</span> left on this budget
 									</p>
 									<div className="chkBox">
 										<div>
-											<h4 />
+											<div id="h4" />
 											<h6>Amount Left</h6>
 										</div>
 										<div>
-											<h4 />
+											<div id="h4" />
 											<h6>Amount Spent</h6>
 										</div>
 									</div>
@@ -217,12 +196,12 @@ export default () => {
 									<div className="sumSpent">
 										<div>
 											<h6>Amount Left</h6>
-											<h5>₦500,000</h5>
+											<h5>₦{oneTrack.balance}</h5>
 										</div>
 
 										<div>
 											<h6>Amount Spent</h6>
-											<h5>₦2,000,000</h5>
+											<h5>₦{oneTrack.budget_amount}</h5>
 										</div>
 									</div>
 
