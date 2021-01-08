@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Nav from '../../Nav/index';
-import Sidemenu from '../../Sidemenu/index';
+import Nav from '../../../Dash/Nav/index';
+import Sidemenu from '../../../Dash/Sidemenu/index';
+
+import CreateBudget from '../CreateBudget/index';
 
 import './styles.css';
 import Axios from 'axios';
 import { MdKeyboardArrowDown, MdArrowDownward } from 'react-icons/md';
 
-export default () => {
-	const [ budget, setBudget ] = useState('');
+export default (props) => {
 	const [ track, setTrack ] = useState([]);
-	const [ oneTrack, setOneTrack ] = useState("");
+	const [ open, setOpen ] = useState(false);
+	const [ budget, setBudget ] = useState('');
+	const [ oneTrack, setOneTrack ] = useState('');
 
 	const fetchedUrl = () => {
 		// ------------------------get user token from saved storage--------------------------
@@ -97,13 +100,16 @@ export default () => {
 		)
 			.then((res) => {
 				if (res.status === 200) {
-				console.log(res.data);
-				setOneTrack(res.data);
+					setOneTrack(res.data);
 				}
 			})
 			.catch((err) => {
 				console.log(err);
 			});
+	};
+
+	const openSide = (e) => {
+		setOpen(!open);
 	};
 
 	return (
@@ -124,7 +130,13 @@ export default () => {
 							</h5>
 						</div>
 
-						<h4>Create Budget</h4>
+						<h4
+							onClick={(e) => {
+								openSide(e);
+							}}
+						>
+							Create Budget
+						</h4>
 					</div>
 
 					<section className="box-section">
@@ -220,6 +232,7 @@ export default () => {
 					</section>
 				</div>
 			</section>
+			<CreateBudget open={open} onClose={openSide} />
 		</section>
 	);
 };

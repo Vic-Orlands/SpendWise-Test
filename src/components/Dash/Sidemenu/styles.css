@@ -28,19 +28,20 @@
 /* -------------------------------list styling starts here---------------------------------- */
 .sidemenu-container ul {
 	list-style: none;
+	padding: 0 10px;
 }
 
 .sidemenu-container .sidemenu-list .div {
 	display: flex;
-	width: 210px;
-	margin: 10px auto;
-	padding: 15px;
+	width: 100%;
+	margin: 5px auto;
+	padding: 12px 15px;
 	text-decoration: none;
 	color: #000000;
 }
 
 .sidemenu-list #link {
-	margin-top: 50px;
+	margin-top: 40px;
 }
 
 .sidemenu-container .sidemenu-list .div:hover,
@@ -52,7 +53,7 @@
 }
 
 .sidemenu-container .sidemenu-list .div li {
-	font-size: 14px;
+	font-size: 1rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 18px;
@@ -62,7 +63,7 @@
 .sidemenu-container #icon {
 	width: 16px;
 	height: 16px;
-	margin-right: 23px;
+	margin-right: 20px;
 }
 
 .active {
@@ -80,13 +81,12 @@
 footer {
 	position: absolute;
 	bottom: 0;
+	width: 100%;
 }
 
 footer .footer-list div {
-	width: 210px;
 	display: flex;
-	margin: 0 0 5px 16px;
-	padding: 15px;
+	padding: 12px 15px;
 }
 
 footer .footer-list div:hover {
@@ -97,11 +97,9 @@ footer .footer-list div:hover {
 }
 
 footer .footer-list div img {
-	height: 18px;
-	margin-right: 23px;
-	margin-left: 15px;
 	width: 16px;
 	height: 16px;
+	margin-right: 23px;
 }
 
 footer .footer-list div li {
@@ -118,20 +116,20 @@ footer #link {
 footer .blue {
 	position: relative;
 	width: 70px;
-	height: 100px;
+	height: 95px;
 	border: 7px solid #2564f7;
 	opacity: 0.7;
 	border-left: none;
 	border-bottom: none;
 	box-sizing: border-box;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 footer .orange {
 	position: absolute;
 	bottom: 0;
 	width: 100px;
-	height: 70px;
+	height: 65px;
 	border: 7px solid #ffaa00;
 	opacity: 0.7;
 	border-left: none;

@@ -9,7 +9,7 @@ import ForgotUsername from './components/Forms/ForgotUsername/index';
 
 import Dashboard from './components/Dash/Dashboard-Folder/Dashboard/index';
 import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
-import Budget from "./components/Dash/Budget-Folder/Budget/index"
+import Budget from "./components/Dash/Budget-Folder/Budget-Page/index"
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 // 	<Route
