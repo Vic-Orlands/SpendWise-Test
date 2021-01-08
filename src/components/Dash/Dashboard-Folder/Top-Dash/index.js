@@ -90,7 +90,7 @@ export default class index extends Component {
 						<div className="grad12" />
 
 						<div className="green-flex">
-							<div>
+							<div id="un">
 								<h2>{budget_status.total}</h2>
 								<h3>Set Budgets</h3>
 							</div>
@@ -100,7 +100,7 @@ export default class index extends Component {
 								<h3>Exceeded</h3>
 							</div>
 
-							<div>
+							<div id="trois">
 								<h2>{budget_status.on_track}</h2>
 								<h3>On track</h3>
 							</div>

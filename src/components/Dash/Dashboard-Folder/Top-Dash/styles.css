@@ -394,16 +394,16 @@
 		right: 40px;
 	}
 
-	.green-box .green-flex > div {
-		padding: 0 20px 0 30px;
+	.green-box .green-flex #un {
+		padding: 0 2rem 0 1.5rem;
 	}
 
-	.green-box .green-flex > div:nth-last-child(1) {
-		padding: 0 30px 0 20px;
+	.green-box .green-flex #trois {
+		padding: 0 1.5rem 0 2rem;
 	}
 
 	.green-box .green-flex #harsh {
-		padding: 40px 50px;
+		padding: 40px 3rem;
 	}
 
 	.graph {

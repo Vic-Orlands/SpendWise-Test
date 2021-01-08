@@ -417,18 +417,18 @@
 	}
 
 	.top-section > div h2 {
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 	}
 
 	.top-section > div h5 {
-		font-size: .9rem;
+		font-size: .8rem;
 		line-height: 14px;
 	}
 
 	.top-section h4 {
 		width: 120px;
 		height: 40px;
-		font-size: .9rem;
+		font-size: .8rem;
 		line-height: 14px;
 		margin: auto 10px;
 	}
@@ -444,21 +444,18 @@
 		border-radius: 5px;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 14px;
 		line-height: 19px;
 		color: #404040;
 		margin-right: 7px;
 		padding: 0;
 		cursor: pointer;
-
-		font-size: .9rem;
 	}
-	
+
 	.box-section > div h4:nth-child(1) {
 		width: auto;
 		padding: 0 10px 0 18px;
 	}
-	
+
 	.box-section > div h4:nth-child(2) {
 		width: auto;
 		padding: 0 8px 0 10px;
@@ -478,7 +475,7 @@
 	.budget .category .bottom {
 		border-radius: 5px;
 	}
-	
+
 	.budget .category .bottom .shelf {
 		padding-left: 20px;
 		padding-right: 20px;
@@ -515,8 +512,7 @@
 	}
 	.budget .category .bottom .shelf div:nth-child(2) h4 {
 		margin: 0;
-		font-size: .7rem; 
-
+		font-size: .7rem;
 	}
 
 	/* ------------------aside budget info------------------ */
