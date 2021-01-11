@@ -6,11 +6,13 @@ import CreateBudget from '../CreateBudget/index';
 
 import './styles.css';
 import Axios from 'axios';
-import { MdKeyboardArrowDown, MdArrowDownward } from 'react-icons/md';
+import { AiOutlineClose } from 'react-icons/ai';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 export default (props) => {
 	const [ track, setTrack ] = useState([]);
 	const [ open, setOpen ] = useState(false);
+	const [ openMobileModal, setOpenMobileModal ] = useState(false);
 	const [ budget, setBudget ] = useState('');
 	const [ oneTrack, setOneTrack ] = useState('');
 
@@ -101,6 +103,7 @@ export default (props) => {
 			.then((res) => {
 				if (res.status === 200) {
 					setOneTrack(res.data);
+					setOpenMobileModal(!openMobileModal);
 				}
 			})
 			.catch((err) => {
@@ -110,6 +113,10 @@ export default (props) => {
 
 	const openSide = (e) => {
 		setOpen(!open);
+	};
+
+	const onclose = () => {
+		setOpenMobileModal(!openMobileModal);
 	};
 
 	return (
@@ -155,37 +162,69 @@ export default (props) => {
 
 					<section className="budget">
 						<section className="category">
-							<div className="top">
-								<h5>Category</h5>
-
-								<div>
-									<h6>Status</h6>
-									<h6>Spent</h6>
-									<h6>Budget</h6>
-									<h6>
-										Date created<MdArrowDownward />
-									</h6>
-								</div>
-							</div>
-
-							<div className="bottom">
+							<table className="table">
+								<thead>
+									<tr>
+										<td className="text-left">Category</td>
+										<td>Category</td>
+										<td>Category</td>
+										<td>Category</td>
+										<td>Category</td>
+									</tr>
+								</thead>
 								{track.map((item) => (
-									<div className="shelf" onClick={() => fetchBudgetById(item.id)} key={item.id}>
-										<div>
+									<tr className="shelf" onClick={() => fetchBudgetById(item.id)} key={item.id}>
+										<td>
 											<input type="checkbox" id="inpt" />
 											<img src={require('../../assets/food.png')} alt="img" />
 											<p>{item.category}</p>
+										</td>
+
+										<td id="h3">{item.status}</td>
+										<td id="h4">&#8358;{item.balance}</td>
+										<td id="h45">&#8358;{item.budget_amount}</td>
+										<td id="h3">April 4, 2020</td>
+									</tr>
+								))}
+							</table>
+							{openMobileModal && (
+								<section className="budget-infos">
+									<div className="budget-info-content">
+									<AiOutlineClose id="font" onClick={onclose} /> 
+
+										<p>
+											You have <span>₦{oneTrack.balance}</span> left on this budget
+										</p>
+										<div className="chkBox">
+											<div>
+												<div id="h4" />
+												<h6>Amount Left</h6>
+											</div>
+											<div>
+												<div id="h4" />
+												<h6>Amount Spent</h6>
+											</div>
 										</div>
 
-										<div>
-											<h3>{item.status}</h3>
-											<h4>&#8358;{item.balance}</h4>
-											<h4 id="scd">&#8358;{item.budget_amount}</h4>
-											<h3>April 4, 2020</h3>
+										<div className="sumSpent">
+											<div>
+												<h6>Amount Left</h6>
+												<h5>₦{oneTrack.balance}</h5>
+											</div>
+
+											<div>
+												<h6>Amount Spent</h6>
+												<h5>₦{oneTrack.budget_amount}</h5>
+											</div>
+										</div>
+
+										<div className="edit-archive-bdgt">
+											<h3>Edit Budget</h3>
+											<h3>Archive Budget</h3>
 										</div>
 									</div>
-								))}
-							</div>
+								</section>
+							)}
 						</section>
 
 						<section className="budget-info">
