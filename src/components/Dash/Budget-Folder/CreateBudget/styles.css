@@ -29,10 +29,10 @@
 	margin-left: auto;
 	padding: 2rem 3rem;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-	animation: dropdwn ease-in-out 700ms;
+	animation: slide-from-right ease-in-out 700ms;
 }
 
-@keyframes dropdwn {
+@keyframes slide-from-right {
 	0% {
 		opacity: 0;
 		margin-right: -300px;
@@ -58,28 +58,25 @@
 .create-budget #font {
 	font-size: 18px;
 	color: #333758;
-	margin-bottom: 30px;
+	margin-bottom: 3rem;
 	float: right;
 	cursor: pointer;
 }
 
 .create-budget h1 {
 	clear: both;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 1.75rem;
-	line-height: 36px;
+	margin-bottom: 0px;
 	letter-spacing: 0.5px;
 	color: #333758;
 }
 
 .create-budget h3 {
 	font-size: .936rem;
-	font-style: normal;
 	font-weight: 400;
 	text-align: left;
 	color: #333758;
-	margin-top: 10px;
+	margin-top: 5px;
 	margin-bottom: 3.36rem;
 }
 
@@ -87,8 +84,7 @@
 	display: block;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 15px;
-	line-height: 20px;
+	font-size: .94rem;
 	color: #253858;
 	margin-bottom: .6rem;
 }
@@ -125,10 +121,7 @@
 .create-budget form .dropdown-content li {
 	padding: 12px 30px;
 	border-top: 1px solid #e8f1fe;
-	font-style: normal;
-	font-weight: normal;
 	font-size: .87rem;
-	line-height: 203.52%;
 	display: flex;
 	align-items: center;
 	color: #404040;
@@ -175,18 +168,15 @@
 	height: 90%;
 	border: none;
 	padding: 5px 5px 0 10px;
-	font-size: 14px;
 	font-size: .95rem;
 	color: #818c94;
 }
 
 .create-budget form .dropdown-content li:nth-child(1) input:focus,
-.create-budget form .dropdown-content li:nth-child(1) input:active
- {
+.create-budget form .dropdown-content li:nth-child(1) input:active {
 	outline: #ffffff;
 }
 /* --------------------------drop-down content styling stops here-------------------------- */
-
 
 .create-budget form input {
 	width: 100%;
@@ -307,11 +297,74 @@
 		transform: translate(-5%, 6%);
 	}
 
-	.create-budget form .dropdown-content li:nth-child(1) input {
-		width: 95%;
+	.create-budget #font {
+		font-size: 1rem;
 	}
 
+	.create-budget form p {
+		height: 2.5rem;
+	}
+
+	/* --------------------------drop-down content styling-------------------------- */
+	.create-budget form .dropdown-content {
+		padding-top: 20px;
+	}
+
+	.create-budget form .dropdown-content li {
+		padding: .8rem 2rem;
+		font-size: .8rem;
+	}
+
+	.create-budget form .dropdown-content li .pen {
+		height: 3em;
+		width: 3em;
+	}
+
+	.create-budget form .dropdown-content li .penn {
+		height: 3.2em;
+		width: 3em;
+	}
+
+	.create-budget form .dropdown-content li:nth-child(1) {
+		margin: 0 20px 10px 20px;
+		padding-left: 5px;
+		height: 2.5rem;
+	}
+
+	.create-budget form .dropdown-content li:nth-child(1) img {
+		height: 2vh;
+		margin: auto 0 auto .5rem;
+	}
+
+	.create-budget form .dropdown-content li:nth-child(1) input {
+		width: 92%;
+		font-size: .8rem;
+	}
+
+	/* --------------------------drop-down content styling stops here-------------------------- */
+
 	.create-budget form input {
-		width: 100%;
+		height: 2.5rem;
+	}
+
+	.create-budget > div h5 {
+		font-size: .9rem;
+		line-height: 0;
+	}
+
+	.create-budget > div > div {
+		margin-bottom: 4rem;
+	}
+
+	.create-budget .create-cancel-btn button:nth-child(1) {
+		height: 3rem;
+		font-size: .9rem;
+		margin-right: 1rem;
+	}
+
+	.create-budget .create-cancel-btn button:nth-child(2) {
+		height: 3rem;
+		font-size: .9rem;
+		margin-left: 1rem;
 	}
 }

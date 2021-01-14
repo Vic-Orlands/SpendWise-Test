@@ -10,6 +10,8 @@ import ForgotUsername from './components/Forms/ForgotUsername/index';
 import Dashboard from './components/Dash/Dashboard-Folder/Dashboard/index';
 import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
 import Budget from "./components/Dash/Budget-Folder/Budget-Page/index"
+import Finance from "./components/Dash/Finance-Folder/Finance-Page/index"
+import Expense from './components/Dash/Expense-Folder/Expense-Page/index';
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 // 	<Route
@@ -34,6 +36,8 @@ const App = () => {
 							{/* ----------------------private routes--------------------- */}
 							<Route path="/page/chngePass" component={ChangePassword} />
 							<Route path="/page/budget" component={Budget} />
+							<Route path="/page/finance" component={Finance} />
+							<Route path="/page/expense" component={Expense} />
 							<Route path="/" component={Dashboard} exact={true} />
 						</Switch>
 					</div>

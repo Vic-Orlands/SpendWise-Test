@@ -10,9 +10,9 @@
 }
 
 .graph-expenses {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 30px;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-row-gap: 30px;
 
 	/* -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -23,17 +23,20 @@
 	background-color: #fff; */
 }
 
-
 /* -----------------------------graduate container---------------------------------- */
 
 .graduate {
 	width: 50%;
-	height: 221px;
-	padding: 0 10px;
+	height: 28.7vh;
+	padding: 20px 10px;
 	background: #ffffff;
 	box-shadow: 0px 4.26px 27.3921px rgba(0, 0, 0, 0.06), 0px 2.28268px 6.84803px rgba(0, 0, 0, 0.04),
 		0px 0px 1.14134px rgba(0, 0, 0, 0.04);
 	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .graduate:nth-child(1) {
@@ -41,37 +44,37 @@
 }
 
 .graduate > img {
-	margin: 57px 0 13.65px 70px;
+	margin: 20% 0 6% 0;
 }
 
 .graduate h2 {
-	font-size: 15px;
+	font-size: 1rem;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 19px;
 	margin-bottom: 3px;
 	color: #000000;
+	align-self: flex-start;
 }
 
 .graduate h4 {
-	font-size: 11px;
+	font-size: .7rem;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 14px;
 	margin-bottom: 13px;
 	color: #a6a6a6;
+	align-self: flex-start;
 }
 
 .graduate > div {
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 }
 
 .graduate > div p {
-	font-size: 10px;
+	font-size: .7rem;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 13px;
 	margin-bottom: 12px;
 }
 
@@ -88,7 +91,7 @@
 	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
-    color: #404040;
+	color: #404040;
 	display: flex;
 	align-items: center;
 }
@@ -107,7 +110,6 @@
 	background: #d2d2d2;
 	opacity: 0.9;
 	border-radius: 5px;
-	margin-bottom: 36.88px;
 }
 
 .filler2 {
@@ -126,7 +128,6 @@
 	background: #d2d2d2;
 	opacity: 0.9;
 	border-radius: 5px;
-	margin-bottom: 36.88px;
 }
 
 .filler3 {
@@ -147,13 +148,14 @@
 .expenses hgroup {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 20px;
+	align-items: center;
+	margin-bottom: 10px;
 }
 
 .expenses hgroup h2 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 18px;
+	font-size: 1.13rem;
 	line-height: 24px;
 	letter-spacing: 0.019em;
 	color: #262628;
@@ -165,7 +167,7 @@
 	border-radius: 5px;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 13px;
+	font-size: .8rem;
 	line-height: 18px;
 	padding: 5px 15px;
 	cursor: pointer;
@@ -179,18 +181,15 @@
 .expenses .trans {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: 9px 0;
 	border-bottom: 1px solid #e2e2e2;
-}
-
-.expenses .trans:nth-last-child(1) {
-	border-bottom: none;
 }
 
 .expenses .trans img {
 	width: 28px;
 	height: 28px;
-	margin: auto 13px auto 0;
+	margin: 0 13px 0 0;
 }
 
 .expenses .trans > div {
@@ -200,18 +199,18 @@
 .expenses .trans > div h5 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 16px;
-	line-height: 22px;
+	font-size: .9rem;
 	letter-spacing: -0.0241176em;
 	color: #262628;
+	margin-bottom: 0;
 }
 
 .expenses .trans > div p {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 11px;
-	line-height: 13px;
+	font-size: .7rem;
 	letter-spacing: 0.00636364em;
+	margin-bottom: 0;
 	color: #bab9c1;
 }
 
@@ -245,88 +244,30 @@
 /* ------------------mobile responsiveness styling starts here--------------------- */
 @media screen and (max-width: 760px) {
 	.graph-expenses {
-        grid-row-gap: 30px;    }
+		grid-row-gap: 1.5rem;
+	}
 
-	/* -----------------------------graduate container---------------------------------- */
+	#goals {
+		font-size: .9rem;
+		top: -25px;
+	}
+
+	#goals img {
+		height: 3vh;
+	}
 
 	.graduate {
-		width: 46.5%;
 		height: 100%;
-		padding: 0 10px;
-		border-radius: 6px;
-	}
-
-	.graduate > img {
-		margin: 57px 0 15px 85px;
-	}
-
-	.graduate h2 {
-		font-size: 18px;
-	}
-
-	.graduate h4 {
-		font-size: 14px;
+		padding: 1rem .5rem 1.5rem .5rem;
 	}
 
 	.graduate div p {
-		font-size: 14px;
-		margin-top: 10px;
+		margin-bottom: .5rem;
 	}
 
-	/* ------------------------second and third progress-bar---------------------- */
-	.progress-bar2 {
-		width: 100%;
-		margin-top: 5px;
-	}
-
-	.progress-bar3 {
-		width: 100%;
-		margin-top: 5px;
-	}
-    
 	.graph-expenses .expenses {
 		width: 100%;
 		margin: 0px;
-		padding: 25px;
-	}
-
-	.expenses hgroup {
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 10px;
-	}
-
-	.expenses hgroup h2 {
-		font-size: 18px;
-	}
-
-	.expenses hgroup h4 {
-		font-size: 14px;
-	}
-
-	.expenses .trans {
-		padding: 15px 0;
-	}
-
-	.expenses .trans:nth-last-child(1) {
-		border-bottom: none;
-		padding-bottom: 0px;
-	}
-
-	.expenses .trans img {
-		width: 32px;
-		height: 32px;
-	}
-
-	.expenses .trans > div h5 {
-		font-size: 16px;
-	}
-
-	.expenses .trans h6 {
-		font-size: 16px;
-	}
-
-	.expenses .trans > div p {
-		font-size: 14px;
+		padding: 1rem;
 	}
 }

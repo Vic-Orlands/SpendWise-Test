@@ -43,7 +43,7 @@ const Nav = () => {
 							<li>Dashboard</li>
 						</NavLink>
 
-						<NavLink to="/gff" className="div" activeClassName="active">
+						<NavLink to="/page/expense" className="div" activeClassName="active">
 							<img src={require('../assets/money.png')} alt="logo" id="icon" />
 							<li>Expense</li>
 						</NavLink>
@@ -59,7 +59,7 @@ const Nav = () => {
 							<li>Goals</li>
 						</NavLink>
 
-						<NavLink to="/gff" className="div" activeClassName="active">
+						<NavLink to="/page/finance" className="div" activeClassName="active">
 							{' '}
 							<img src={require('../assets/wallet.png')} alt="logo" id="icon" />
 							<li>My finance</li>

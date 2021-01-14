@@ -74,26 +74,26 @@ nav #icon-bar {
 	}
 
 	nav div h1 {
-		font-size: 12px;
+		font-size: .9rem;
 		line-height: 18px;
 		padding: 6px 9px;
+		margin: auto;
 		margin-left: 30px;
 	}
 
 	nav div p {
 		font-size: 1.1rem;
-		letter-spacing: .5px;
 		margin: 0 20px 0 10px;
 	}
 
 	/* -----------------------mobile sidemenu------------------------- */
 	.nav-sidemenu {
 		display: block;
-		width: 40%;
+		width: 50%;
 		height: 95%;
 		background: #ffffff;
 		box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.09);
-		padding: 10px 0;
+		padding: .5rem 0;
 		position: fixed;
 		left: 0;
 		top: 60px;
@@ -102,26 +102,28 @@ nav #icon-bar {
 
 	.nav-sidemenu #side-logo {
 		display: flex;
-		margin: 10px auto 0 auto;
-		width: 150px;
+		margin: .5rem auto 0 auto;
+		width: 70%;
 	}
 
 	/* -------------------------------list styling starts here---------------------------------- */
 	.nav-sidemenu ul {
 		list-style: none;
+		padding: 0 .5rem;
 	}
 
 	.nav-sidemenu .nav-side-list .div {
 		display: flex;
-		width: 92%;
-		margin: 10px auto;
-		padding: 12px 15px;
+		align-items: center;
+		width: 100%;
+		margin: .5rem auto;
+		padding: .5rem .7rem;
 		text-decoration: none;
 		color: #000000;
 	}
 
 	.nav-side-list #link {
-		margin-top: 40px;
+		margin-top: 2rem;
 	}
 
 	.nav-sidemenu .nav-side-list .div:hover,
@@ -133,17 +135,15 @@ nav #icon-bar {
 	}
 
 	.nav-sidemenu .nav-side-list .div li {
-		font-size: 1rem;
-		font-style: normal;
+		font-size: .9rem;
 		font-weight: 400;
-		line-height: 18px;
 		letter-spacing: 0.01em;
 	}
 
 	.nav-sidemenu #icon {
-		width: 18px;
-		height: 18px;
-		margin-right: 23px;
+		width: 4vw;
+		height: 2.5vh;
+		margin-right: 2rem;
 	}
 
 	.active {
@@ -157,43 +157,29 @@ nav #icon-bar {
 	}
 
 	/* -------------------------------list styling stops here---------------------------------- */
-
 	footer {
 		position: absolute;
 		bottom: 0;
 	}
 
 	footer .footer-list div {
-		width: 210px;
+		width: 100%;
 		display: flex;
-		margin: 10px 5px;
-		padding: 10px 10px;
-	}
+		padding: 0;
+		margin: .5rem auto;
+		padding: .5rem .7rem;
+		}
 
 	footer .footer-list div:hover {
-		border-radius: 5px;
 		background: #2e41c0;
 		color: #ffffff;
 		cursor: pointer;
 	}
 
-	footer .footer-list div img {
-		height: 18px;
-		margin-right: 23px;
-		margin-left: 15px;
-		width: 16px;
-		height: 16px;
-	}
-
 	footer .footer-list div li {
-		font-size: 14px;
-		font-style: normal;
+		font-size: .9rem;
 		font-weight: 400;
-	}
-
-	footer #link {
-		text-decoration: none;
-		color: #000000;
+		letter-spacing: 0.01em;
 	}
 
 	footer .blue {
@@ -210,6 +196,7 @@ nav #icon-bar {
 
 	footer .orange {
 		position: absolute;
+		left: 0;
 		bottom: 0;
 		width: 100px;
 		height: 70px;

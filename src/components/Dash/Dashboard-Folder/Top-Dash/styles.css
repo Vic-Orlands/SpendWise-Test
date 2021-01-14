@@ -18,60 +18,58 @@
 }
 
 .top-box-container .first-box {
-	position: relative;
+	width: 25vw;
+	height: 28.7vh;
+	background: url("../../assets/box.png") no-repeat;
+	background-size: cover;
+	border-radius: 5px;
 }
 
 .first-box .first-box-content {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 25.95px 20px;
+	height: 100%;
+	width: 100%;
+	padding: 20px;
 }
 
 .first-box .first-box-content .spent {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .spent h4 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 18px;
-	line-height: 23px;
+	font-size: 1.1rem;
 	color: #ffffff;
 }
 
 .spent h5 {
 	background: #ffffff;
 	border-radius: 45px;
-	font-size: 14px;
-	font-style: normal;
+	font-size: .9rem;
 	font-weight: 400;
 	text-align: center;
 	padding: 5px 18px;
 }
 
 .first-box-content h2 {
-	font-style: normal;
 	font-weight: bold;
-	font-size: 25px;
-	line-height: 32px;
+	font-size: 1.7rem;
 	color: #ffffff;
-	margin: 28.38px 0 11.48px 0;
+	margin: 2rem 0 .6rem 0;
 }
 
 /* ------------------------progress-bar---------------------- */
 .progress-bar {
 	position: relative;
 	border-radius: 50px;
-	width: 352.41px;
+	width: 100%;
 	height: 5.74px;
 	background: #d2d2d2;
 	opacity: 0.9;
 	border-radius: 5px;
-	margin-bottom: 36.88px;
+	margin-bottom: 2rem;
 }
 
 .filler {
@@ -86,20 +84,21 @@
 .first-box-content .amt {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .first-box-content .amt .tday h5 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 13px;
-	line-height: 17px;
+	font-size: .8rem;
+	margin-bottom: 0;
 	color: #ffffff;
 }
 
 .first-box-content .amt .tday h6 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 11px;
+	font-size: .7rem;
 	color: #ffffff;
 	text-align: right;
 }
@@ -107,29 +106,38 @@
 .first-box-content .amt .bdget h5 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 15px;
+	font-size: .8rem;
 	color: #ffffff;
+	margin-bottom: 0;
 }
 
 .first-box-content .amt .bdget h6 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 11px;
-	line-height: 17px;
+	font-size: .7rem;
 	text-align: right;
 	color: #ffffff;
+}
+
+#dashLink {
+	text-decoration: none;
+	color: #000000;
+}
+
+.top-box-container .brown-green {
+	height: 28.5vh;
+	width: 23vw;
 }
 
 /* ----------------------------brown-box styling starts here---------------------------------- */
 
 .top-box-container .brown-box {
 	width: 100%;
-	height: 101px;
+	height: 46%;
 	background: #cb8801;
 	border: 2.25px solid #a66f01;
-	box-sizing: border-box;
 	box-shadow: 0px 4.49123px 11.2281px rgba(203, 135, 1, 0.2);
-	border-radius: 6px;
+	border-radius: 5px;
 	margin: 0 0 18px 0;
 	position: relative;
 }
@@ -139,11 +147,10 @@
 	width: 63px;
 	height: 60px;
 	background: #ffffff;
-	mix-blend-mode: normal;
 	opacity: 0.08;
 	border-radius: 50%;
 	top: 6px;
-	right: 54px;
+	right: 20%;
 }
 
 .top-box-container .brown-box .grad2 {
@@ -151,15 +158,14 @@
 	width: 63px;
 	height: 60px;
 	background: #ffffff;
-	mix-blend-mode: normal;
 	opacity: 0.08;
 	border-radius: 50%;
 	top: 30px;
-	right: 65px;
+	right: 25%;
 }
 
 .brown-box div h3 {
-	font-size: 20px;
+	font-size: 1.2rem;
 	font-style: normal;
 	font-weight: 700;
 	color: #ffffff;
@@ -167,7 +173,7 @@
 	margin-bottom: 0;
 }
 
-.brown-box p {
+.brown-box div p {
 	font-style: normal;
 	font-weight: normal;
 	font-size: .9rem;
@@ -176,14 +182,15 @@
 }
 
 .brown-box .view {
-	display: flex;
 	padding: 5px 10px;
 	width: 78px;
-	height: 34px;
 	background: rgba(255, 255, 255, 0.35);
 	border-radius: 48px;
-	margin: -20px 6px 11px auto;
+	margin: -8% .4rem 0 auto;
 	cursor: pointer;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .brown-box .view:hover {
@@ -191,21 +198,24 @@
 }
 
 .brown-box .view h6 {
-	font-size: 12px;
+	font-size: .85rem;
 	font-style: normal;
 	font-weight: 500;
-	margin: auto 5px auto 0;
+	margin: 0 5px 0 0;
+}
+
+.brown-box .view img {
+	height: 3vh;
 }
 
 /* ----------------------------green-box styling starts here---------------------------------- */
 .top-box-container .green-box {
-	width: 24rem;
-	height: 101px;
+	width: 100%;
+	height: 46%;
 	background: #367662;
 	border: 2.24561px solid #3ba785;
-	box-sizing: border-box;
 	box-shadow: 0px 4.49123px 11.2281px rgba(203, 135, 1, 0.2);
-	border-radius: 6px;
+	border-radius: 5px;
 	position: relative;
 }
 
@@ -214,7 +224,6 @@
 	width: 63px;
 	height: 60px;
 	background: #ffffff;
-	mix-blend-mode: normal;
 	opacity: 0.08;
 	border-radius: 50%;
 	top: 8px;
@@ -226,18 +235,18 @@
 	width: 63px;
 	height: 60px;
 	background: #ffffff;
-	mix-blend-mode: normal;
 	opacity: 0.08;
 	border-radius: 50%;
-	top: 38px;
+	top: 30px;
 	right: 40px;
 }
 
 .green-box .green-flex {
+	width: 100%;
+	height: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
-	padding: 0 22px 0 16px;
 	color: #ffffff;
 }
 
@@ -246,25 +255,22 @@
 	border-top: none;
 	border-bottom: none;
 	height: 100%;
-	padding: 26px 1.5rem;
+	padding: 1.85rem 1.5rem;
 }
 
 .green-box .green-flex h2 {
-	font-size: 22px;
-	font-style: normal;
+	font-size: 1.6rem;
 	font-weight: 400;
-	line-height: 28px;
 	text-align: center;
+	margin-bottom: 0;
 }
 
 .green-box .green-flex h3 {
 	font-size: .9rem;
-	font-style: normal;
 	font-weight: 400;
-	line-height: 17px;
 }
 
-.top-box-container .graph {
+.graph {
 	background: #ffffff;
 	box-shadow: 0px 18.4132px 27.6197px rgba(0, 0, 0, 0.06), 0px 2.30164px 6.90493px rgba(0, 0, 0, 0.04),
 		0px 0px 1.15082px rgba(0, 0, 0, 0.04);
@@ -277,57 +283,56 @@
 @media screen and (max-width: 760px) {
 	/* ----------------------top-box container styling starts here------------------------------------- */
 	.top-box-container {
-		grid-template-columns: repeat(1, 1fr);
-		grid-gap: 0px;
+		grid-gap: 0;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.top-box-container .first-box {
-		grid-column: 1/3;
+		width: 100%;
+		height: 100%;
+		margin-bottom: 1.5rem;
 	}
 
-	.top-box-container .first-box img {
-		width: 100%;
-		height: 250px;
+	.first-box .first-box-content {
+		padding: .8rem;
 	}
 
 	.spent h4 {
-		font-size: 16px;
+		font-size: 1rem;
 	}
 
 	.spent h5 {
-		font-size: 16px;
+		font-size: .9rem;
 	}
 
 	.first-box-content h2 {
-		font-size: 28px;
-		margin-bottom: 20px;
-	}
-
-	.first-box-content .amt {
-		display: flex;
-		justify-content: space-between;
+		font-size: 1.2rem;
+		margin-top: 1.5rem;
+		margin-bottom: .3rem;
 	}
 
 	.first-box-content .amt .tday h5 {
-		font-size: 18px;
+		font-size: .8rem;
 	}
 
 	.first-box-content .amt .tday h6 {
-		font-size: 14px;
+		font-size: .7rem;
 	}
 
 	.first-box-content .amt .bdget h5 {
-		font-size: 18px;
+		font-size: .8rem;
 	}
 
 	.first-box-content .amt .bdget h6 {
-		font-size: 14px;
+		font-size: .7rem;
 	}
 
 	/* ------------------------progress-bar---------------------- */
 	.progress-bar {
 		width: 100%;
-		height: 8px;
+		height: .3rem;
+		margin-bottom: 2rem;
 	}
 
 	/* ----------------------------brown-box styling starts here---------------------------------- */
@@ -338,76 +343,35 @@
 
 	.top-box-container .brown-box {
 		width: 100%;
-		height: 150px;
-		margin: 15px 0 20px 0px;
-		padding: 0 10px;
-	}
-
-	.top-box-container .brown-box .grad1 {
-		width: 90px;
-		height: 90px;
-	}
-
-	.top-box-container .brown-box .grad2 {
-		width: 90px;
-		height: 90px;
-		top: 50px;
-		right: 90px;
+		height: auto;
+		margin-bottom: 1.5rem ;
+		padding: 1.5rem .2rem .9rem .2rem;
 	}
 
 	.brown-box div h3 {
-		font-size: 24px;
-		margin-top: 50px;
-		margin-bottom: 10px;
-	}
-
-	.brown-box p {
-		font-size: 18px;
+		padding-left: .5rem;
+		margin: 0;
 	}
 
 	.brown-box .view {
-		padding: 8px 10px 8px 12px;
-		width: 95px;
-		height: 40px;
-	}
-
-	.brown-box .view h6 {
-		font-size: 18px;
+		margin: 0 .5rem 0 auto;
 	}
 
 	/* ----------------------------green-box styling starts here---------------------------------- */
 	.top-box-container .green-box {
 		width: 100%;
-		height: 130px;
-		margin: 0 0 20px 0;
-	}
-
-	.top-box-container .green-box .grad11 {
-		width: 80px;
-		height: 80px;
-	}
-
-	.top-box-container .green-box .grad12 {
-		width: 80px;
-		height: 80px;
-		top: 38px;
-		right: 40px;
-	}
-
-	.green-box .green-flex #un {
-		padding: 0 1rem;
-	}
-
-	.green-box .green-flex #trois {
-		padding: 0 1rem;
-	}
-
-	.green-box .green-flex #harsh {
-		padding: 40px 3rem;
+		height: auto;
+		margin-bottom: 1.5rem;
 	}
 
 	.graph {
 		width: 100%;
-		padding: 20px;
+		margin: 3.5rem 0 0 0;
+		padding: 1rem .4rem;
+		/* grid-column: 1/3; */
+	}
+
+	.graph h1 {
+		font-size: .9rem;
 	}
 }

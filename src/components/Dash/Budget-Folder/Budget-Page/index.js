@@ -8,8 +8,9 @@ import './styles.css';
 import Axios from 'axios';
 import { AiOutlineClose } from 'react-icons/ai';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import {  BsArrowDown } from "react-icons/bs"
 
-export default (props) => {
+export default () => {
 	const [ track, setTrack ] = useState([]);
 	const [ open, setOpen ] = useState(false);
 	const [ openMobileModal, setOpenMobileModal ] = useState(false);
@@ -166,16 +167,18 @@ export default (props) => {
 								<thead>
 									<tr>
 										<td className="text-left">Category</td>
-										<td>Category</td>
-										<td>Category</td>
-										<td>Category</td>
-										<td>Category</td>
+										<td>Status</td>
+										<td>Spent</td>
+										<td>Budget</td>
+										<td>Date Created
+											<BsArrowDown />
+										</td>
 									</tr>
 								</thead>
 								{track.map((item) => (
 									<tr className="shelf" onClick={() => fetchBudgetById(item.id)} key={item.id}>
 										<td>
-											<input type="checkbox" id="inpt" />
+											<input type="checkbox" id="inpt" onClick={() => fetchBudgetById(item.id)} key={item.id} />
 											<img src={require('../../assets/food.png')} alt="img" />
 											<p>{item.category}</p>
 										</td>

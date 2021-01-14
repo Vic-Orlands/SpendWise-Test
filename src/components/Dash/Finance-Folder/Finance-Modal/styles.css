@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+/* ------------modal overlay and content---------- */
+.finance-modal {
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: 999999;
+	background-color: rgba(0, 0, 0, 0.212);
+}
+
+.finance-modal-content {
+	background-color: #ffffff;
+	width: 37.7%;
+	height: 100vh;
+	margin: 0 auto;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+	animation: dropdwn ease-in-out 700ms;
+	overflow: auto;
+}
+
+@keyframes dropdwn {
+	0% {
+		opacity: 0;
+		margin-top: -300px;
+	}
+	25% {
+		opacity: 0.25;
+		margin-top: -200px;
+	}
+	50% {
+		opacity: 0.5;
+		margin-top: -100px;
+	}
+	75% {
+		opacity: 0.75;
+		margin-top: -50px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.finance-modal-content::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.finance-modal-content {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.finance-modal-content #closeFnt {
+	float: right;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	color: rgba(0, 0, 0, 0.54);
+	cursor: pointer;
+}
+
+.finance-modal-content .top-content {
+	padding: 2rem 2.3rem .5rem 2.3rem;
+}
+
+/* --------------------bank account-------------------- */
+.finance-modal-content .brown-box {
+	clear: both;
+	width: 50%;
+	height: 19vh;
+	background: #cb8701;
+	border: 1px solid #cb8701;
+	border-radius: 9px;
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+.finance-modal-content .brown-box .grad1 {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background: #ffffff;
+	mix-blend-mode: normal;
+	opacity: 0.08;
+	border-radius: 50%;
+	top: 10px;
+	right: 70px;
+}
+
+.finance-modal-content .brown-box .grad2 {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background: #ffffff;
+	mix-blend-mode: normal;
+	opacity: 0.08;
+	border-radius: 50%;
+	top: 40px;
+	right: 90px;
+}
+
+.finance-modal-content .brown-box .brown-box-content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 0 6px;
+}
+
+.finance-modal-content .brown-box .top-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.finance-modal-content .brown-box .top-box > div h3 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: .8rem;
+	color: #ffffff;
+}
+
+.finance-modal-content .brown-box .top-box > div h5 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: .5rem;
+	color: #ffffff;
+}
+
+.finance-modal-content .brown-box .top-box h4 {
+	font-size: .6rem;
+	color: #000000;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+}
+
+.finance-modal-content .brown-box .middle-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.finance-modal-content .brown-box .middle-box h6 {
+	font-weight: bold;
+	font-size: .9rem;
+	color: #ffffff;
+}
+
+.finance-modal-content .brown-box .middle-box h6 small {
+	display: block;
+	font-weight: normal;
+	font-size: .6rem;
+	color: #ffffff;
+}
+
+.finance-modal-content .brown-box .middle-box #dots {
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.finance-modal-content .brown-box .bottom-box {
+	display: flex;
+	position: absolute;
+	right: 6px;
+	bottom: 0px;
+}
+
+.finance-modal-content .brown-box .bottom-box div:nth-child(1) {
+	margin-right: 10px;
+}
+
+.finance-modal-content .brown-box .bottom-box div h5 small {
+	display: block;
+	font-style: normal;
+	font-weight: normal;
+	font-size: .6rem;
+	color: #ffffff;
+	margin-bottom: 0px;
+}
+
+.finance-modal-content .brown-box .bottom-box div h5 small #arrw {
+	font-size: 18px;
+	color: #ffffff;
+	margin-left: -5px;
+	color: #20cb85;
+}
+
+.finance-modal-content .brown-box .bottom-box div h5 small #arrws {
+	font-size: 18px;
+	color: #ffffff;
+	margin-left: -5px;
+	color: #d80027;
+}
+
+.finance-modal-content .brown-box .bottom-box div h5 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: .8rem;
+	letter-spacing: .5px;
+	color: #ffffff;
+}
+
+/* --------------activites and table styling starts here------------------ */
+
+.finance-modal-content .activity-btn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.finance-modal-content .activity-btn h3 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1rem;
+	line-height: 20px;
+	color: #000000;
+}
+
+.finance-modal-content .activity-btn h5 {
+	background: #ffffff;
+	border: 1px solid #e0e3e8;
+	box-sizing: border-box;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	font-size: .9rem;
+	color: #404040;
+	padding: 10px 20px;
+}
+
+.finance-modal-content .activity-btn h5 #arrw {
+	font-size: .9rem;
+	margin-left: 50px;
+}
+
+.finance-modal-content .table-scroll thead {
+	width: 100%;
+	background: rgba(217, 218, 225, 0.42);
+	box-shadow: 0px 15px 35px rgba(73, 87, 94, 0.05);
+}
+
+.finance-modal-content .table-scroll thead td {
+	font-style: normal;
+	font-weight: normal;
+	font-size: .9rem;
+	text-transform: capitalize;
+	color: #888c97;
+	padding: .7rem 2rem;
+}
+
+.finance-modal-content .table-scroll tbody td {
+	font-style: normal;
+	font-weight: 500;
+	font-size: .9rem;
+	text-transform: capitalize;
+	color: #8f8f8f;
+	padding: 1.5rem 2rem;
+}
+
+.finance-modal-content .table-scroll tbody tr:hover {
+	background: rgba(217, 218, 225, 0.42);
+}
+
+.finance-modal-content .table-scroll tbody td:nth-child(1) {
+	font-size: .8rem;
+}
+
+.finance-modal-content .table-scroll tbody td:nth-child(2) {
+	padding-right: 3rem;
+}
+
+.finance-modal-content .table-scroll tbody td:nth-child(3) {
+	color: #009a5b;
+}
+
+/* ------------------mobile responsiveness styling starts here--------------------- */
+@media screen and (max-width: 760px) {
+	/* ------------modal overlay and content---------- */
+	.finance-modal-content {
+		width: 90%;
+		height: 95%;
+		margin-top: 5%;
+	}
+
+	.finance-modal-content #closeFnt {
+		font-size: 1.5rem;
+		margin-bottom: .5rem;
+	}
+
+	.finance-modal-content .top-content {
+		padding: 1rem 2em;
+	}
+
+	/* --------------------bank account-------------------- */
+	.finance-modal-content .brown-box {
+		width: 60%;
+		margin-bottom: 1rem;
+	}
+
+	.finance-modal-content .brown-box .grad1 {
+		top: 10px;
+		right: 40px;
+	}
+
+	.finance-modal-content .brown-box .grad2 {
+		top: 30px;
+		right: 60px;
+	}
+
+	.finance-modal-content .brown-box .top-box > div h3 {
+		margin-top: .6rem;
+		padding: 0;
+	}
+
+	.finance-modal-content .brown-box .middle-box {
+		margin-top: 7px;
+	}
+
+	.finance-modal-content .brown-box .middle-box h6 {
+		font-size: .8rem;
+	}
+
+	.finance-modal-content .brown-box .middle-box h6 small {
+		font-size: .7rem;
+	}
+
+	.finance-modal-content .brown-box .bottom-box div h5 {
+		font-size: .7rem;
+	}
+
+/* --------------activites and table styling starts here------------------ */
+
+.finance-modal-content .activity-btn h3 {
+	font-size: .9rem;
+	line-height: 0;
+}
+
+.finance-modal-content .activity-btn h5 {
+	font-size: .9rem;
+}
+
+.finance-modal-content .activity-btn h5 #arrw {
+	margin-left: 30px;
+}
+
+.finance-modal-content .table-scroll thead td {
+	font-size: .9rem;
+	font-weight: bold;
+	padding: 1rem 1.5rem;
+}
+
+.finance-modal-content .table-scroll tbody td {
+	font-size: .8rem;
+}
+
+.finance-modal-content .table-scroll tbody td:nth-child(1) {
+	padding: 1rem 0 1rem 1.5rem;
+}
+
+.finance-modal-content .table-scroll tbody td:nth-child(2) {
+	padding: 1rem 0 1rem 1rem;
+}
+
+.finance-modal-content .table-scroll tbody td:nth-child(3) {
+	padding: 1rem 0 1rem 2rem;
+}
+
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 *,
 *::before,
@@ -42,6 +42,7 @@
 	box-shadow: 0px 4px 10px rgba(0, 137, 180, 0.2);
 	border-radius: 2px;
 	display: flex;
+	align-items: center;
 	cursor: pointer;
 }
 
@@ -58,9 +59,8 @@
 .main-dash h3 {
 	font-style: normal;
 	font-weight: normal;
-	font-size: 12px;
-	line-height: 18px;
-	margin-left: 5px;
+	font-size: .75rem;
+	margin: auto 0 auto 5px;
 }
 
 .dash {
@@ -84,21 +84,21 @@
 	}
 
 	.main-dash header h1 {
-		font-size: 22px;
+		font-size: 1.2rem;
 	}
 
 	.main-dash .aside {
-		width: 180px;
-		padding: 10px 8px;
+		padding: .5rem .4rem;
 	}
 
 	.main-dash .aside #addFnt {
-		width: 18px;
-		height: 18px;
+		width: 4vw;
+		height: 2vh;
 	}
-
+	
 	.main-dash h3 {
-		font-size: 14px;
+		margin: 0;
+		font-size: .9rem;
 	}
 
 	.dash {

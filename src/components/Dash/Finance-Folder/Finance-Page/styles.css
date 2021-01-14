@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.finance {
+	width: 85%;
+	float: right;
+	background: #e5e5e5;
+	min-height: 100vh;
+	max-height: 100%;
+}
+
+.finance-container {
+	padding: 0 10px;
+}
+
+/* ---------------------------top-section styling starts here------------------------------- */
+.finance-top-section {
+	height: 140px;
+	width: 97%;
+	border-radius: 5px;
+	margin: 30px auto;
+	padding: 0 20px;
+	background-image: url("../../assets/finance-topBar.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.finance-top-section > div h2 {
+	font-weight: bold;
+	font-size: 1.4rem;
+	margin-bottom: 0;
+	color: #ffffff;
+}
+
+.finance-top-section > div h5 {
+	font-size: .9rem;
+	letter-spacing: .5px;
+	color: #ffffff;
+}
+
+.finance-top-section .aside {
+	background: #ffaa00;
+	border: 2px solid #da9100;
+	box-shadow: 0px 4px 10px rgba(0, 137, 180, 0.2);
+	border-radius: 5px;
+	padding: 10px 12px;
+}
+
+.finance-top-section .aside:hover {
+	background: #ffb31b;
+	border: 2px solid #da9100;
+	color: #000000;
+	cursor: pointer;
+}
+
+.finance-top-section .aside h3 {
+	display: inline-block;
+	font-size: .9rem;
+	color: #464242;
+	margin: auto 0;
+	padding-left: 6px;
+}
+
+/* --------------------bank accounts-------------------- */
+.bank-accts {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.bank-accts .brown-box {
+	width: 30%;
+	height: 27vh;
+	background: #cb8701;
+	border: 1px solid #cb8701;
+	box-shadow: 0px 4.49123px 11.2281px rgba(203, 135, 1, 0.2);
+	border-radius: 9px;
+	position: relative;
+	cursor: pointer;
+}
+
+.bank-accts .brown-box .grad1 {
+	position: absolute;
+	width: 101.89px;
+	height: 97.04px;
+	background: #ffffff;
+	mix-blend-mode: normal;
+	opacity: 0.08;
+	border-radius: 50%;
+	top: 10px;
+	right: 100px;
+}
+
+.bank-accts .brown-box .grad2 {
+	position: absolute;
+	width: 101.89px;
+	height: 97.04px;
+	background: #ffffff;
+	mix-blend-mode: normal;
+	opacity: 0.08;
+	border-radius: 50%;
+	top: 60px;
+	right: 130px;
+}
+
+.bank-accts .brown-box .brown-box-content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 15px;
+}
+
+.bank-accts .brown-box .top-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.bank-accts .brown-box .top-box > div h3 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.2rem;
+	margin: 0;
+	color: #ffffff;
+}
+
+.bank-accts .brown-box .top-box > div h5 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: .7rem;
+	color: #ffffff;
+}
+
+.bank-accts .brown-box .top-box h4 {
+	font-style: normal;
+	font-weight: normal;
+	font-size: .8rem;
+	color: #000000;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+}
+
+.bank-accts .brown-box .middle-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1.7rem;
+}
+
+.bank-accts .brown-box .middle-box h6 {
+	font-weight: bold;
+	font-size: 1.5rem;
+	color: #ffffff;
+}
+
+.bank-accts .brown-box .middle-box h6 small {
+	display: block;
+	font-weight: normal;
+	font-size: .9rem;
+	color: #ffffff;
+}
+
+.bank-accts .brown-box .middle-box #dots {
+	font-size: 2rem;
+	color: #ffffff;
+}
+
+.bank-accts .brown-box .bottom-box {
+	display: flex;
+	position: absolute;
+	right: 10px;
+	bottom: 0;
+}
+
+.bank-accts .brown-box .bottom-box div:nth-child(1) {
+	margin-right: .95rem;
+}
+
+.bank-accts .brown-box .bottom-box div h5 small {
+	display: block;
+	font-style: normal;
+	font-weight: normal;
+	font-size: .8rem;
+	color: #ffffff;
+	margin-bottom: 2px;
+}
+
+.bank-accts .brown-box .bottom-box div h5 small #arrw {
+	font-size: 20px;
+	color: #ffffff;
+	margin-left: -5px;
+}
+
+.bank-accts .brown-box .bottom-box div h5 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: .9rem;
+	letter-spacing: .5px;
+	color: #ffffff;
+}
+
+/* ---------------------blue-box-------------------- */
+
+.bank-accts .brown-box:nth-child(2) {
+	width: 30%;
+	height: 27vh;
+	background: linear-gradient(180deg, #001ac6 0%, #3b51e1 100%);
+	border: 1px solid #001ac6;
+	border-radius: 9px;
+	margin: 0 30px;
+	position: relative;
+}
+
+/* ------------------mobile responsiveness styling starts here--------------------- */
+@media screen and (max-width: 760px) {
+	.finance {
+		width: 100%;
+	}
+
+	.finance-container {
+		margin-top: 30px;
+		padding: 20px;
+	}
+
+	/* ---------------------------top-section styling starts here------------------------------- */
+	.finance-top-section {
+		height: 8rem;
+		width: 100%;
+		margin: 30px auto 20px auto;
+		padding: 0 10px;
+	}
+
+	.finance-top-section > div h2 {
+		font-size: 1.2rem;
+	}
+
+	.finance-top-section > div h5 {
+		font-size: .75rem;
+		letter-spacing: 0px;
+	}
+
+	.finance-top-section .aside {
+		width: auto;
+		padding: .5rem .4rem;
+		display: flex;
+		align-items: center;
+	}
+
+	.finance-top-section .aside img {
+		height: 2vh;
+	}
+
+	.finance-top-section .aside h3 {
+		font-size: .7rem;
+		padding-left: 4px;
+	}
+
+	/* --------------------bank accounts-------------------- */
+	.bank-accts {
+		flex-wrap: wrap;
+		padding: 0;
+	}
+
+	.bank-accts .brown-box {
+		width: 100%;
+		height: 27vh;
+	}
+
+	.bank-accts .brown-box:nth-child(2) {
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	.bank-accts .brown-box .top-box > div h3 {
+		font-size: 1.2rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	.bank-accts .brown-box .top-box > div h5 {
+		font-size: .7rem;
+	}
+
+	.bank-accts .brown-box .top-box h4 {
+		font-size: .8rem;
+		padding: 5px 10px;
+	}
+}

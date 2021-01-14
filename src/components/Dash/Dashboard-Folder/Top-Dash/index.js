@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './styles.css';
 
+import { NavLink } from 'react-router-dom';
+
 import Axios from 'axios';
 export default class index extends Component {
 	state = {
@@ -45,8 +47,6 @@ export default class index extends Component {
 		return (
 			<section className="top-box-container">
 				<div className="first-box">
-					<img src={require('../../assets/box.png')} alt="box-img" />
-
 					<div className="first-box-content">
 						<div className="spent">
 							<h4>Spent</h4>
@@ -72,40 +72,44 @@ export default class index extends Component {
 				</div>
 
 				<div className="brown-green">
-					<div className="brown-box">
-						<div className="grad1" />
-						<div className="grad2" />
-						<div>
-							<h3>My Finance</h3>
-							<p>Click to view account summary</p>
-							<div className="view">
-								<h6>View</h6>
-								<img src={require('../../assets/forward.png')} alt="img" />
+					<NavLink to="/page/finance" id="dashLink" >
+						<div className="brown-box">
+							<div className="grad1" />
+							<div className="grad2" />
+							<div>
+								<h3>My Finance</h3>
+								<p>Click to view account summary</p>
+								<div className="view">
+									<h6>View</h6>
+									<img src={require('../../assets/forward.png')} alt="img" />
+								</div>
 							</div>
 						</div>
-					</div>
+					</NavLink>
 
-					<div className="green-box">
-						<div className="grad11" />
-						<div className="grad12" />
+					<NavLink to="/page/budget" id="dashLink">
+						<div className="green-box">
+							<div className="grad11" />
+							<div className="grad12" />
 
-						<div className="green-flex">
-							<div id="un">
-								<h2>{budget_status.total}</h2>
-								<h3>Set Budgets</h3>
-							</div>
+							<div className="green-flex">
+								<div id="un">
+									<h2>{budget_status.total}</h2>
+									<h3>Set Budgets</h3>
+								</div>
 
-							<div id="harsh">
-								<h2>{budget_status.exceeded}</h2>
-								<h3>Exceeded</h3>
-							</div>
+								<div id="harsh">
+									<h2>{budget_status.exceeded}</h2>
+									<h3>Exceeded</h3>
+								</div>
 
-							<div id="trois">
-								<h2>{budget_status.on_track}</h2>
-								<h3>On track</h3>
+								<div id="trois">
+									<h2>{budget_status.on_track}</h2>
+									<h3>On track</h3>
+								</div>
 							</div>
 						</div>
-					</div>
+					</NavLink>
 				</div>
 
 				{/* --------------------------graph box--------------------------------- */}

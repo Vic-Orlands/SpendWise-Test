@@ -21,7 +21,7 @@ export default class index extends Component {
 						<li>Dashboard</li>
 					</NavLink>
 
-					<NavLink to="/gff" className="div" activeClassName="active">
+					<NavLink to="/page/expense" className="div" activeClassName="active">
 						<img src={require('../assets/money.png')} alt="logo" id="icon" />
 						<li>Expense</li>
 					</NavLink>
@@ -32,13 +32,11 @@ export default class index extends Component {
 					</NavLink>
 
 					<NavLink to="/gff" className="div" activeClassName="active">
-						{' '}
 						<img src={require('../assets/goal.png')} alt="logo" id="icon" />
 						<li>Goals</li>
 					</NavLink>
 
-					<NavLink to="/gff" className="div" activeClassName="active">
-						{' '}
+					<NavLink to="/page/finance" className="div" activeClassName="active">
 						<img src={require('../assets/wallet.png')} alt="logo" id="icon" />
 						<li>My finance</li>
 					</NavLink>
