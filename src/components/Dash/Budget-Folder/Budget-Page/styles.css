@@ -412,45 +412,8 @@
 	}
 
 	/* ------------------category bottom styling--------------------- */
-	.category table thead tr td {
-		padding: .5rem 0;
-		font-size: .7rem;
-	}
-
-	.category table thead tr td:nth-child(1) {
-		padding-left: 10px;
-	}
-
-	.category .table .shelf td {
-		padding: .9rem .5rem;
-	}
-
-	.category .table .shelf td:nth-child(1) {
-		padding-left: 10px;
-	}
-
-	.category .table td img {
-		height: 20px;
-		margin: 0 5px;
-	}
-
-	.category .table td p {
-		font-size: .7rem;
-	}
-	
-	.category .table #h3 {
-		font-size: .7rem;
-		line-height: 1.5rem;
-	}
-	
-	.category .table #h45 {
-		font-size: .7rem;
-		line-height: 1.5rem;
-	}
-	
-	.category .table #h4 {
-		font-size: .7rem;
-		line-height: 1.5rem;
+	.category {
+		display: none;
 	}
 
 	/* ------------------aside budget info------------------ */
@@ -505,7 +468,7 @@
 		margin-bottom: 1rem;
 		cursor: pointer;
 	}
-	
+
 	.budget-infos .budget-info-content p {
 		clear: both;
 		font-size: .9rem;
@@ -517,17 +480,17 @@
 		padding: 0 .3rem;
 		color: rgb(0, 161, 8);
 	}
-	
+
 	.budget-infos .budget-info-content .chkBox {
 		display: flex;
 		margin: .5rem 0 1rem 0;
 	}
-	
+
 	.budget-infos .budget-info-content .chkBox div {
 		display: flex;
 		align-items: center;
 	}
-	
+
 	.budget-infos .budget-info-content .chkBox div #h4 {
 		width: 9.6px;
 		height: 9.6px;
@@ -535,16 +498,16 @@
 		border-radius: 50%;
 		margin-right: .5rem;
 	}
-	
+
 	.budget-infos .budget-info-content .chkBox div:nth-child(2) #h4 {
 		background: #0089b4;
 	}
-	
+
 	.budget-infos .budget-info-content .chkBox div h6 {
 		font-size: .9rem;
 		margin: auto 1rem auto 0;
 	}
-	
+
 	.budget-infos .budget-info-content .sumSpent {
 		display: flex;
 		justify-content: space-between;
@@ -552,18 +515,18 @@
 		padding: 1rem 20px;
 		border-radius: 5px;
 	}
-	
+
 	.budget-infos .budget-info-content .sumSpent div h6 {
 		color: #19304d;
 		font-size: .8rem;
 	}
-	
+
 	.budget-infos .budget-info-content .sumSpent div h5 {
 		color: #147efb;
 		font-size: .9rem;
 		text-align: center;
 	}
-	
+
 	.budget-infos .budget-info-content .sumSpent div:nth-child(2) h5 {
 		font-size: .9rem;
 		color: #355691;

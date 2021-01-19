@@ -173,6 +173,10 @@
 	cursor: pointer;
 }
 
+.expenses hgroup #link {
+	text-decoration: none;
+}
+
 .expenses hgroup h4:hover {
 	background-color: #262628;
 	color: #ffffff;

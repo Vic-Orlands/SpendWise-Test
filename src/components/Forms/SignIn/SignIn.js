@@ -87,13 +87,13 @@ class SignIn extends Component {
 				.then((res) => {
 					if (res.status === 200) {
 						if (isChecked) {
-							localStorage.setItem('USER', JSON.stringify(res.data));
 							localStorage.setItem('authToken', JSON.stringify(res.data.token));
+							localStorage.setItem('USER', JSON.stringify(res.data));
 						} else {
-							sessionStorage.setItem('USER', JSON.stringify(res.data));
 							sessionStorage.setItem('authToken', JSON.stringify(res.data.token));
+							sessionStorage.setItem('USER', JSON.stringify(res.data));
 						}
-						window.location.reload();
+						this.props.history.push('/');
 					} else return null;
 				})
 				.catch((err) => {

@@ -8,15 +8,15 @@ import './styles.css';
 import { IoIosAddCircle } from 'react-icons/io';
 
 export default () => {
-	const [ user, setUser ] = useState('');
+	const [ user, setUser ] = useState(null);
 
 	useEffect(() => {
-		// ------------------------get username from saved storage--------------------------
 		let user = JSON.parse(localStorage.getItem('USER')) || JSON.parse(sessionStorage.getItem('USER'));
+
 		if (user) {
 			setUser(user.user);
 		} else {
-			setUser(null);
+			setUser('User');
 		}
 	}, []);
 

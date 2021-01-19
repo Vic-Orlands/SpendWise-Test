@@ -7,8 +7,8 @@ import CreateBudget from '../CreateBudget/index';
 import './styles.css';
 import Axios from 'axios';
 import { AiOutlineClose } from 'react-icons/ai';
+import { BsArrowDown } from 'react-icons/bs';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import {  BsArrowDown } from "react-icons/bs"
 
 export default () => {
 	const [ track, setTrack ] = useState([]);
@@ -170,15 +170,24 @@ export default () => {
 										<td>Status</td>
 										<td>Spent</td>
 										<td>Budget</td>
-										<td>Date Created
+										<td>
+											Date Created
 											<BsArrowDown />
 										</td>
 									</tr>
 								</thead>
+
+								<tbody>
+
 								{track.map((item) => (
 									<tr className="shelf" onClick={() => fetchBudgetById(item.id)} key={item.id}>
 										<td>
-											<input type="checkbox" id="inpt" onClick={() => fetchBudgetById(item.id)} key={item.id} />
+											<input
+												type="checkbox"
+												id="inpt"
+												onClick={() => fetchBudgetById(item.id)}
+												key={item.id}
+												/>
 											<img src={require('../../assets/food.png')} alt="img" />
 											<p>{item.category}</p>
 										</td>
@@ -189,45 +198,8 @@ export default () => {
 										<td id="h3">April 4, 2020</td>
 									</tr>
 								))}
+								</tbody>
 							</table>
-							{openMobileModal && (
-								<section className="budget-infos">
-									<div className="budget-info-content">
-									<AiOutlineClose id="font" onClick={onclose} /> 
-
-										<p>
-											You have <span>₦{oneTrack.balance}</span> left on this budget
-										</p>
-										<div className="chkBox">
-											<div>
-												<div id="h4" />
-												<h6>Amount Left</h6>
-											</div>
-											<div>
-												<div id="h4" />
-												<h6>Amount Spent</h6>
-											</div>
-										</div>
-
-										<div className="sumSpent">
-											<div>
-												<h6>Amount Left</h6>
-												<h5>₦{oneTrack.balance}</h5>
-											</div>
-
-											<div>
-												<h6>Amount Spent</h6>
-												<h5>₦{oneTrack.budget_amount}</h5>
-											</div>
-										</div>
-
-										<div className="edit-archive-bdgt">
-											<h3>Edit Budget</h3>
-											<h3>Archive Budget</h3>
-										</div>
-									</div>
-								</section>
-							)}
 						</section>
 
 						<section className="budget-info">
@@ -269,6 +241,68 @@ export default () => {
 									<img src={require('../../assets/info.png')} alt="img" />
 									<p>Select budget to display information</p>
 								</div>
+							)}
+						</section>
+
+						<section className="mobile-view">
+							<h2>View all Budgets</h2>
+
+							{track.map((item) => (
+								<div
+									className="mobile-view-content"
+									onClick={() => fetchBudgetById(item.id)}
+									key={item.id}
+								>
+									<img src={require('../../assets/food.png')} alt="img" />
+
+									<div>
+										<h3>
+											{item.category}
+											<small>{item.status}</small>
+										</h3>
+									</div>
+
+									<h4>&#8358;{item.budget_amount}</h4>
+								</div>
+							))}
+
+							{openMobileModal && (
+								<section className="budget-infos">
+									<div className="budget-info-content">
+										<AiOutlineClose id="font" onClick={onclose} />
+
+										<p>
+											You have <span>₦{oneTrack.balance}</span> left on this budget
+										</p>
+										<div className="chkBox">
+											<div>
+												<div id="h4" />
+												<h6>Amount Left</h6>
+											</div>
+											<div>
+												<div id="h4" />
+												<h6>Amount Spent</h6>
+											</div>
+										</div>
+
+										<div className="sumSpent">
+											<div>
+												<h6>Amount Left</h6>
+												<h5>₦{oneTrack.balance}</h5>
+											</div>
+
+											<div>
+												<h6>Amount Spent</h6>
+												<h5>₦{oneTrack.budget_amount}</h5>
+											</div>
+										</div>
+
+										<div className="edit-archive-bdgt">
+											<h3>Edit Budget</h3>
+											<h3>Archive Budget</h3>
+										</div>
+									</div>
+								</section>
 							)}
 						</section>
 					</section>

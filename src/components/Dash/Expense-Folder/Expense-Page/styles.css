@@ -183,8 +183,45 @@
 	margin-left: 10px;
 }
 
+.expense-info h1 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 2rem;
+}
+
+.expense-info h1 small {
+	display: block;
+	color: #666666;
+	font-size: .8rem;
+}
+
 .expense-info .expense-info-content {
-	padding: 40px 20px;
+	padding: 20px 0;
+}
+
+.expense-info .expense-info-content div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	border-top: 1px solid #d5d5d5;
+}
+
+.expense-info .expense-info-content div h5 {
+	font-size: .9rem;
+	margin-bottom: 0;
+}
+
+.expense-info .expense-info-content div h5 small {
+	display: block;
+	font-size: .7rem;
+	color: #666666;
+}
+
+.expense-info .expense-info-content div h6 {
+	font-size: 1rem;
+	color: #e10000;
+	margin: 0;
 }
 
 .expense-info .expense-error {
@@ -201,6 +238,11 @@
 	font-size: 14px;
 	color: #666666;
 	margin-top: 10px;
+}
+
+.mobile-view,
+.mobile-modal {
+	display: none;
 }
 
 /* ------------------mobile responsiveness styling starts here--------------------- */
@@ -242,85 +284,180 @@
 	}
 
 	.expense-category .expense-table {
-		flex-grow: 0;
+		display: none;
+	}
+
+	.expense-info {
+		display: none;
+	}
+
+	/* ------------------------mobile-view transaction styling-------------- */
+	.mobile-view {
 		width: 100%;
+		display: block;
+		background-color: #ffffff;
+	}
+
+	.mobile-view h2 {
+		font-size: 1.1rem;
+		font-weight: bold;
+		padding: 1rem;
+		background: rgba(217, 218, 225, 0.42);
+		border-bottom: 10px solid #e5e5e5;
+		margin-bottom: 0;
+	}
+
+	.mobile-view .mobile-view-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		border-bottom: 1px solid #d5d5d5;
+	}
+
+	.mobile-view-content:hover {
+		background: rgba(217, 218, 225, 0.42);
+		cursor: pointer;
+	}
+
+	.mobile-view-content > div {
+		flex-grow: 1;
+	}
+
+	.mobile-view-content img {
+		height: 2.5rem;
+		width: 2.5rem;
+		margin: auto .5rem auto 0;
+	}
+
+	.mobile-view-content h3 {
+		font-size: 1rem;
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+
+	.mobile-view-content h3 small {
+		display: block;
+		font-size: .8rem;
+		color: #666666;
+	}
+
+	.mobile-view-content h4 {
+		font-size: 1.2rem;
+		color: #e10000;
 		margin: 0;
 	}
 
-	/* ------------------category bottom styling--------------------- */
-
-	.expense-table table thead tr td {
-		font-size: .8rem;
-		padding: 1rem 0;
-		padding: .9rem .5rem;
-	}
-
-	.expense-table table thead tr td:nth-child(1) {
-		padding-left: 1rem;
-	}
-
-	.expense-table .table tbody tr td #inpt {
-		width: 3vw;
-	}
-
-	.expense-table .table tbody tr td img {
-		margin: 0 .2rem;
-		height: 1.2rem;
-	}
-
-	.expense-table .table tbody tr td p {
-		font-size: .8rem;
-	}
-
-	.expense-table .table tbody tr td {
-		font-size: .7rem;
-	}
-
-	.expense-table .table tbody tr td:nth-child(1) {
-		padding: 1.2rem 1rem;
-	}
-
-	.expense-table .table tbody tr td:nth-child(2) {
-		padding: 1.2rem 0;
-	}
-
-	.expense-table .table tbody tr td:nth-child(3) {
-		font-size: .7rem;
-		padding: 1.2rem 0;
-	}
-
-	.expense-table .table tbody tr td:nth-child(4) {
-		font-size: .7rem;
-		padding: 1.2rem 0;
-	}
-
-	.expense-table .table tbody tr td:nth-child(5) {
-		width: 20%;
+	.mobile-modal {
+		display: block;
+		position: fixed;
+		right: 0;
+		top: 0;
+		bottom: 0;
 		height: 100%;
-		padding-right: 1rem;
-		padding-left: 0;
-	}
-
-	.expense-table .progress-bar2 {
-		height: 3px;
-	}
-
-	/* ------------------aside expense info------------------ */
-	.expense-info {
 		width: 100%;
-		margin: .8rem 0;
+		overflow: hidden;
+		z-index: 999999;
+		background-color: rgba(0, 0, 0, 0.212);
 	}
 
-	.expense-info .expense-info-content {
-		padding: 2rem 1rem;
+	.mobile-modal .mobile-view-content {
+		width: 70%;
+		height: auto;
+		margin: 6.5rem auto;
+		padding: 2rem 0;
+		background-color: #ffffff;
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+		animation: slide-from-right ease-in-out 700ms;
 	}
 
-	.expense-info .expense-error {
-		height: 100%;
-		padding: 2rem 1rem;
+	.mobile-modal .mobile-view-content > div {
+		padding: 0 1rem;
 	}
 
-	.expense-info .expense-error p {
+	.mobile-view-content #closeFnt {
+		font-size: 2rem;
+		float: right;
+		margin-bottom: 1rem;
+		border: 1px solid #d5d5d5;
+	}
+
+	.mobile-modal .mobile-view-content div > div {
+		clear: both;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.mobile-modal .mobile-view-content div div > div {
+		flex-grow: 1;
+	}
+
+	.mobile-modal .mobile-view-content div > div img {
+		height: 2.5rem;
+		width: 2.5rem;
+		margin: auto .5rem auto 0;
+	}
+
+	.mobile-modal .mobile-view-content div > div h3 {
+		font-size: 1rem;
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+
+	.mobile-modal .mobile-view-content div > div h3 small {
+		display: block;
+		font-size: .8rem;
+		color: #666666;
+	}
+
+	.mobile-modal .mobile-view-content div > div h4 {
+		font-size: 1.2rem;
+		color: #e10000;
+		margin: 0;
+	}
+
+	/* ------------modal transactions----------------- */
+	.mobile-view-content .modal-transactions div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		border-top: 1px solid #d5d5d5;
+	}
+
+	.mobile-modal .mobile-view-content .modal-transactions div h5 {
 		font-size: .9rem;
+		margin-bottom: 0;
+	}
+
+	.mobile-modal .mobile-view-content .modal-transactions div h5 small {
+		display: block;
+		font-size: .7rem;
+		color: #666666;
+	}
+
+	.modal-transactions div h6 {
+		font-size: 1rem;
+		color: #e10000;
+		margin: 0;
+	}
+
+	/* ------------modal progress bar----------------- */
+	.mobile-modal .modal-progress-bar {
+		width: 100%;
+		height: 4px;
+		background: #d2d2d2;
+		opacity: 0.9;
+		border-radius: 10px;
+		margin-top: 1rem;
+		margin-bottom: .8rem;
+	}
+
+	.modal-progress-bar .modal-fill {
+		height: 100%;
+		transition: width .2s ease-in;
+		background: #ffaa00;
+		border-radius: 10px;
 	}
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './styles.css';
 import Axios from 'axios';
@@ -94,11 +95,13 @@ export default () => {
 			<div className="expenses">
 				<hgroup>
 					<h2>Recent Expenses</h2>
-					<h4>View all</h4>
+					<NavLink to="/page/expense" id="link">
+						<h4>View all</h4>
+					</NavLink>
 				</hgroup>
 
 				{expenses ? (
-					expenses.map((expense) => (
+					expenses.slice(0, 5).map((expense) => (
 						<div className="trans" key={expense.id}>
 							{expense.category === 'Food/Drinks' ? (
 								<img src={require('../../assets/food.png')} alt="car+img" />

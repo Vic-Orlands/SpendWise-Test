@@ -135,7 +135,7 @@ class Reset extends Component {
 								submitted: true
 							});
 							setTimeout(() => {
-								this.props.history.push('/');
+								this.props.history.push('/signin');
 							}, 3000);
 							return res.data;
 						}, 2000);

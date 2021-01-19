@@ -357,7 +357,7 @@ class SignUp extends Component {
 
 						<p id="par">
 							Already have an account?<span>
-								<NavLink to="/" id="link">
+								<NavLink to="/signin" id="link">
 									Log in
 								</NavLink>
 							</span>
