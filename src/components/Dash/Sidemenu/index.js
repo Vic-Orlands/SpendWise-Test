@@ -31,7 +31,7 @@ export default class index extends Component {
 						<li>Budget</li>
 					</NavLink>
 
-					<NavLink to="/gff" className="div" activeClassName="active">
+					<NavLink to="/page/goals" className="div" activeClassName="active">
 						<img src={require('../assets/goal.png')} alt="logo" id="icon" />
 						<li>Goals</li>
 					</NavLink>

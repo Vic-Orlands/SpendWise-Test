@@ -10,8 +10,9 @@ import ForgotUsername from './components/Forms/ForgotUsername/index';
 import Dashboard from './components/Dash/Dashboard-Folder/Dashboard/index';
 import ChangePassword from './components/Forms/ChangePassword/ChangePassword';
 import Budget from './components/Dash/Budget-Folder/Budget-Page/index';
-import Finance from './components/Dash/Finance-Folder/Finance-Page/index';
 import Expense from './components/Dash/Expense-Folder/Expense-Page/index';
+import Goals from './components/Dash/Goals-Folder/index';
+import Finance from './components/Dash/Finance-Folder/Finance-Page/index';
 
 let existingUser = JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
 
@@ -33,14 +34,15 @@ const App = () => {
 			<div>
 				<Switch>
 					{/* ----------------------public form routes--------------------- */}
-					<Route path="/signin" component={SignIn} />
-					<Route path="/signup" component={SignUp} />
 					<Route path="/reset" component={Reset} />
 					<Route path="/forgot" component={Forgot} />
+					<Route path="/signin" component={SignIn} />
+					<Route path="/signup" component={SignUp} />
 					<Route path="/forgotUsername" component={ForgotUsername} />
 
 					{/* ----------------------private pages routes--------------------- */}
 					<PrivateRoute exact path={'/'} component={Dashboard} />
+					<PrivateRoute path="/page/goals" component={Goals} />
 					<PrivateRoute path="/page/budget" component={Budget} />
 					<PrivateRoute path="/page/finance" component={Finance} />
 					<PrivateRoute path="/page/expense" component={Expense} />

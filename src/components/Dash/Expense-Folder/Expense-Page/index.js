@@ -8,6 +8,7 @@ import { BsArrowDown } from 'react-icons/bs';
 import { IoIosArrowDown, IoIosClose } from 'react-icons/io';
 
 import Axios from 'axios';
+import index from '../../../Dash/Sidemenu/index';
 
 let status = {
 	percentage: 60
@@ -53,10 +54,6 @@ export default () => {
 			.then((res) => {
 				if (res.status === 200) {
 					setExpense(res.data);
-					// console.log(res.data);
-					console.log(res.data[0].category);
-					console.log(res.data[1].totals);
-					console.log(res.data[2].budgets);
 				}
 			})
 			.catch((err) => {
@@ -67,6 +64,50 @@ export default () => {
 	useEffect(() => {
 		fetchExpenses();
 	}, []);
+
+if(expense) {
+	if (Array.isArray(expense)) {
+
+		// if expense is loaded, check for the key values and assign them, to a new avariable
+		let expenseCategory = expense.filter((item) => item.category);
+		let expenseBudget = expense.filter((item) => item.budgets);
+	let expenseTotal = expense.filter((item) => item.totals);
+
+	// create new array
+	let newArray = [];
+	
+	Object.keys(expenseCategory).map((key) => {
+		// console.log(expenseCategory[key])
+		const noOfTransactions = expenseCategory[key];
+		const currentCategory = key;
+
+		Object.keys(expenseTotal).map((key) => {
+			let currentBudget =
+			expenseBudget[
+					Object.keys(expenseBudget).filter((bdgt) => {
+						return bdgt === currentCategory;
+					})
+				];
+
+				if (key === currentCategory) {
+				newArray.push({
+					type: currentCategory,
+					noOfTransactions,
+					expenses: expenseTotal[key],
+					budget: currentBudget
+				});
+			}
+		})
+	})
+	
+	newArray.sort((a, b) => {
+		return ( b.expenses - a.expenses)
+	})
+	console.log(Object.values(newArray) );
+// setExpense(newArray)
+	// let expense = newArray
+}
+}
 
 	return (
 		<section>
@@ -83,8 +124,7 @@ export default () => {
 							<h4
 								onClick={(e) => {
 									openSide(e);
-								}}
-							>
+								}}>
 								Record Expense
 							</h4>
 						</div>
@@ -265,50 +305,25 @@ export default () => {
 						<section className="mobile-view">
 							<h2>View all Expenses</h2>
 
-							<div className="mobile-view-content" onClick={openMobileModal}>
-								<img src={require('../../assets/food.png')} alt="img" />
+							{expense.map((item) => (
+								<div className="mobile-view-content" onClick={openMobileModal} key={item.type}>
+									<img src={require('../../assets/food.png')} alt="img" />
 
-								<div>
-									<h3>
-										Housing
-										<small>
-											5 Transactions <IoIosArrowDown />
-										</small>{' '}
-									</h3>
+									<div>
+										<h3>
+											{/* {item.} */}
+											Feeding
+											<small>
+												{/* {Object.values(item)} */}
+												{/* 5 Transactions */}
+												 <IoIosArrowDown />
+											</small>
+										</h3>
+									</div>
+
+									<h4>&#8358;5,000</h4>
 								</div>
-
-								<h4>&#8358;5,000</h4>
-							</div>
-
-							<div className="mobile-view-content">
-								<img src={require('../../assets/food.png')} alt="img" />
-
-								<div>
-									<h3>
-										Feeding{' '}
-										<small>
-											5 Transactions <IoIosArrowDown />
-										</small>{' '}
-									</h3>
-								</div>
-
-								<h4>&#8358;5,000</h4>
-							</div>
-
-							<div className="mobile-view-content">
-								<img src={require('../../assets/food.png')} alt="img" />
-
-								<div>
-									<h3>
-										Feeding{' '}
-										<small>
-											5 Transactions <IoIosArrowDown />
-										</small>{' '}
-									</h3>
-								</div>
-
-								<h4>&#8358;5,000</h4>
-							</div>
+							 ))}
 						</section>
 
 						{/* ---------mobile-exense-modal------- */}

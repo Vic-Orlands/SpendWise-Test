@@ -221,6 +221,9 @@
 	background: #ffffff;
 	border-radius: 5px;
 	margin-left: 1.7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .budget-info .budget-info-content {

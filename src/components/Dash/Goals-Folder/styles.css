@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.goals-content {
+	width: 85%;
+	float: right;
+    background: #e5e5e5;
+    color: #000000;
+	min-height: 92vh;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.goals-content img {
+    width: 40vw;
+}
+
+.goals-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
