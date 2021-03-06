@@ -3,6 +3,8 @@ import './styles.css';
 import Nav from '../Nav';
 import Sidemenu from '../Sidemenu/index';
 
+import construction from '../assets/construction.png';
+
 export default () => {
 	return (
 		<main>
@@ -12,7 +14,7 @@ export default () => {
 
 				<section className="goals-content">
 					<div>
-						<img src={require('../assets/construction.png')} alt="img" />
+						<img src={construction} alt="img" />
 						<h3>Coming soon...</h3>
 					</div>
 				</section>

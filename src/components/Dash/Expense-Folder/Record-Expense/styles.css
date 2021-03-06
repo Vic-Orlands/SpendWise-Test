@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.expenseDate {
+	display: flex;
+	align-items: center;
+	margin-bottom: .8rem;
+	padding: .4rem .6rem;
+	border: 1px solid #bbbcca;
+	border-radius: .2rem;
+	width: 9rem;
+}
+
+.expenseDate h6 {
+	margin: auto 0 auto .9rem;
+}

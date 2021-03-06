@@ -23,7 +23,7 @@
 	height: 160px;
 	width: 97%;
 	border-radius: 5px;
-	margin: 30px auto;
+	margin: 2rem auto;
 	background-image: url("../../assets/budget-topBar.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -128,7 +128,7 @@
 /* -------------------bugdet-section styling starts here------------------ */
 
 .budget {
-	margin: 20px 40px;
+	margin: 1.3rem 2.5rem;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -185,6 +185,8 @@
 }
 
 .category .table td img {
+	height: 1rem;
+	width: 1.2rem;
 	margin: 0 10px;
 }
 
@@ -300,7 +302,7 @@
 .edit-archive-bdgt h3 {
 	font-size: .9rem;
 	background: #0089b4;
-	border: 2px solid #007ca3;
+	border: 2px solid hsl(194, 100%, 32%);
 	box-shadow: 0px 4px 10px rgba(0, 137, 180, 0.2);
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -338,6 +340,46 @@
 
 .budget-infos {
 	display: none;
+}
+
+.success-info #font {
+	font-size: 1.2rem;
+	float: right;
+	margin-bottom: .9rem;
+	cursor: pointer;
+}
+
+.success-info center {
+	clear: both;
+}
+
+.success-info #successFont {
+	font-size: 4rem;
+	margin-bottom: .4rem;
+	color: green;
+}
+
+.success-info h1 {
+	font-size: 1.2rem;
+}
+
+.noBudget {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-left: 45%;
+}
+
+.noBudget img {
+	margin-top: 4rem;
+}
+
+.noBudget h5 {
+	color: grey;
+	font-size: 1rem;
+	margin-top: .5rem;
+	margin-bottom: 4rem;
 }
 
 /* ------------------mobile responsiveness styling starts here--------------------- */
@@ -533,5 +575,10 @@
 	.budget-infos .budget-info-content .sumSpent div:nth-child(2) h5 {
 		font-size: .9rem;
 		color: #355691;
+	}
+
+	.mobile-view-content img {
+		height: 4vh;
+		margin-right: .2rem;
 	}
 }

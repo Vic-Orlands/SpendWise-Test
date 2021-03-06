@@ -4,93 +4,113 @@ import Axios from 'axios';
 
 import { AiOutlineClose } from 'react-icons/ai';
 import { IoIosArrowDown } from 'react-icons/io';
+import { GrStatusGood } from 'react-icons/gr';
 
-import editImg from '../../assets/Edit.png';
-import foodImg from '../../assets/dinner.png';
+import graduate from '../../assets/graduate.svg';
+import food from '../../assets/dinner.svg';
+import car from '../../assets/car.svg';
+import debt from '../../assets/debt.svg';
+import receipt from '../../assets/receipt.svg';
+import Insurance from '../../assets/family.svg';
+import family from '../../assets/group.svg';
+import cardiogram from '../../assets/cardiogram.svg';
+import celebration from '../../assets/celebration.svg';
+import home from '../../assets/home.svg';
+import shopping from '../../assets/shopping.svg';
+import museum from '../../assets/museum.svg';
+import suitcase from '../../assets/suitcase.svg';
+import gift from '../../assets/giftbox.svg';
+import business from '../../assets/hand-shake.svg';
+import statistics from '../../assets/statistics.svg';
+import levels from '../../assets/levels.svg';
+import searchImg from '../../assets/search.png';
+import date from '../../assets/date.png';
 
 let dropdownCategory = [
 	{
 		id: 1,
-		img: editImg,
+		img: graduate,
 		li: 'Education'
 	},
 	{
 		id: 2,
-		img: foodImg,
+		img: food,
 		li: 'Foods/Drinks'
 	},
 	{
 		id: 3,
-
-		img: foodImg,
+		img: debt,
 		li: 'Debt Payment'
 	},
 	{
 		id: 4,
-
-		img: foodImg,
+		img: gift,
 		li: 'Gifts/Donations'
 	},
 	{
 		id: 5,
-		img: foodImg,
+		img: cardiogram,
 		li: 'Medical/Healthcare'
 	},
 	{
 		id: 6,
-		img: foodImg,
+		img: receipt,
 		li: 'Bills/Utilities'
 	},
 	{
 		id: 7,
-		img: foodImg,
+		img: Insurance,
 		li: 'Insurance'
 	},
 	{
 		id: 8,
-		img: foodImg,
+		img: statistics,
 		li: 'Investment/Savings'
 	},
 	{
 		id: 9,
-		img: foodImg,
+		img: shopping,
 		li: 'Shopping'
 	},
 	{
 		id: 10,
-		img: foodImg,
+		img: car,
 		li: 'Transportation'
 	},
 	{
 		id: 11,
-		img: foodImg,
+		img: home,
 		li: 'Household'
 	},
 	{
 		id: 12,
-		img: foodImg,
+		img: family,
 		li: 'Family'
 	},
 	{
 		id: 13,
-		img: foodImg,
+		img: levels,
 		li: 'Miscellaneous'
 	},
 	{
 		id: 14,
-		img: foodImg,
+		img: museum,
 		li: 'Bank Charges'
 	},
 	{
 		id: 15,
-		img: foodImg,
+		img: business,
 		li: 'Business Expense'
 	},
-
 	{
 		id: 16,
-		img: foodImg,
+		img: suitcase,
 		li: 'Travel'
+	},
+	{
+		id: 17,
+		img: celebration,
+		li: 'Entertainment'
 	}
 ];
 
@@ -102,6 +122,10 @@ export default (props) => {
 	// setting props onclose to false to close the modal
 	const onclose = (e) => {
 		props.onClose && props.onClose(e);
+	};
+
+	const oncloseSuccessModal = (e) => {
+		window.location.reload();
 	};
 
 	// setting dropdown to true and displaying on true
@@ -158,6 +182,7 @@ export default (props) => {
 		});
 	};
 
+	// getting the reference of the start and end dates
 	const dateRef = useRef(null);
 	const dateRef2 = useRef(null);
 
@@ -194,8 +219,13 @@ export default (props) => {
 			.catch((err) => {
 				if (err.response.data) {
 					setSubmitting(false);
+					setState({
+						amount: ""
+					})
 					setError(err.response.data.message);
-					console.log(err.response.data.message);
+					setTimeout(() => {
+						setError("");
+					}, 6000);
 				}
 			});
 	};
@@ -208,7 +238,7 @@ export default (props) => {
 	// getting static date for now
 	let currentDate = new Date();
 	let startDate = currentDate.getUTCFullYear() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getUTCDate();
-	let endDate = currentDate.getUTCFullYear() + '-' + (currentDate.getMonth() + 1) + '-' + 31;
+	let endDate = currentDate.getUTCFullYear() + '-' + (currentDate.getMonth() + 2) + '-' + currentDate.getUTCDate();
 
 	return (
 		<section className="create-budget-container">
@@ -229,7 +259,7 @@ export default (props) => {
 							{dropDown && (
 								<ul className="dropdown-content">
 									<li>
-										<img src={require('../../assets/search.png')} alt="img" />
+										<img src={searchImg} alt="img" />
 										<input
 											type="text"
 											placeholder="Search Category"
@@ -247,8 +277,9 @@ export default (props) => {
 							)}
 						</div>
 
-						<label htmlFor="">Budget amount</label>
+						<label htmlFor="amount">Budget amount</label>
 						<input type="text" name="amount" value={state.amount} onChange={onHandleInputChange} />
+						{error ? <h6 id="errorMsg">{error}</h6> : ''}
 					</form>
 
 					<div>
@@ -265,7 +296,7 @@ export default (props) => {
 					{!toggle ? (
 						<div className="date">
 							<h6>
-								Starts: <span ref={dateRef}>{startDate}</span>{' '}
+								Starts: <span ref={dateRef}>{startDate}</span>
 							</h6>
 							<h6>
 								Ends: <span ref={dateRef2}>{endDate}</span>
@@ -276,13 +307,12 @@ export default (props) => {
 							<div className="startDate">
 								<h6>Select start date</h6>
 								<div>
-									<img src={require('../../assets/date.png')} alt="date_img" />
+									<img src={date} alt="date_img" />
 									<h6>January 05, 2021</h6>
 								</div>
 							</div>
 						)
 					)}
-					{error ? <p id="errorMsg">{error}</p> : ''}
 					<div className="create-cancel-btn">
 						<button onClick={createBudget} disabled={!state.amount}>
 							{!submitting ? 'Create' : 'Creating...'}
@@ -293,8 +323,11 @@ export default (props) => {
 			) : (
 				<section className="modal-success">
 					<div className="modal-status">
-						<AiOutlineClose id="font" onClick={onclose} />
-						<h1>{success}</h1>
+						<AiOutlineClose id="font" onClick={oncloseSuccessModal} />
+						<center>
+							<GrStatusGood id="successFont" />
+							<h1>{success}</h1>
+						</center>
 					</div>
 				</section>
 			)}

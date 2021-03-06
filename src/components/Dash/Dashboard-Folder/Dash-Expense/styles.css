@@ -12,15 +12,10 @@
 .graph-expenses {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
-	grid-row-gap: 30px;
-
-	/* -webkit-box-sizing: border-box;
+	grid-row-gap: 2rem;
+	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 10px;
-	width: 800px;
-	height: 800px;
-	background-color: #fff; */
 }
 
 /* -----------------------------graduate container---------------------------------- */
@@ -40,7 +35,7 @@
 }
 
 .graduate:nth-child(1) {
-	margin-right: 30px;
+	margin-right: 1.9rem;
 }
 
 .graduate > img {
@@ -90,7 +85,7 @@
 	text-align: right;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 16px;
+	font-size: 1rem;
 	color: #404040;
 	display: flex;
 	align-items: center;
@@ -142,7 +137,11 @@
 .graph-expenses .expenses {
 	border-radius: 6px;
 	background-color: #ffffff;
+	box-shadow: 0px 18.4132px 27.6197px rgba(0, 0, 0, 0.06), 0px 2.30164px 6.90493px rgba(0, 0, 0, 0.04),
+		0px 0px 1.15082px #0000000a;
 	padding: 31px 26px;
+	min-height: 52vh;
+	max-height: auto;
 }
 
 .expenses hgroup {
@@ -228,17 +227,17 @@
 	margin: auto;
 }
 
-.expenses .errorMessage {
+.noExpense {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.expenses .errorMessage img {
+.noExpense img {
 	margin-top: 20px;
 }
 
-.expenses .errorMessage h5 {
+.noExpense h5 {
 	color: grey;
 	font-size: 18px;
 	margin-top: 10px;

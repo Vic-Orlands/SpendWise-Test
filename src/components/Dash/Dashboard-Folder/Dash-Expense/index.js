@@ -4,10 +4,30 @@ import { NavLink } from 'react-router-dom';
 import './styles.css';
 import Axios from 'axios';
 
-// import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import graduate from '../../assets/graduate.svg';
+import food from '../../assets/dinner.svg';
+import car from '../../assets/car.svg';
+import info from '../../assets/info.png';
+import debt from '../../assets/debt.svg';
+import receipt from '../../assets/receipt.svg';
+import uncategorized from '../../assets/uncategorized.svg';
+import Insurance from '../../assets/family.svg';
+import family from '../../assets/group.svg';
+import cardiogram from '../../assets/cardiogram.svg';
+import celebration from '../../assets/celebration.svg';
+import home from '../../assets/home.svg';
+import shopping from '../../assets/shopping.svg';
+import museum from '../../assets/museum.svg';
+import suitcase from '../../assets/suitcase.svg';
+import gift from '../../assets/giftbox.svg';
+import business from '../../assets/hand-shake.svg';
+import statistics from '../../assets/statistics.svg';
+import levels from '../../assets/levels.svg';
+import brownAdd from "../../assets/brown-add.png"
+
 let status = {
-	percentage2: 20,
-	percentage3: 70
+	percentage2: 30,
+	percentage3: 60
 };
 
 export default () => {
@@ -40,28 +60,15 @@ export default () => {
 				}
 			})
 			.catch((err) => {
-				if (err.response.status === 404) {
-					setMessage(err.response.data.message);
-				}
+				setMessage('No recent expenses');
 			});
 	}, []);
-
-	// --------------------------------graph section------------------------------------
-	// const data = [
-	// 	{ name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
-	// 	{ name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
-	// 	{ name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
-	// 	{ name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
-	// 	{ name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
-	// 	{ name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
-	// 	{ name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
-	// ];
 
 	return (
 		<section className="graph-expenses">
 			<div className="goal-grad">
 				<div className="graduate">
-					<img src={require('../../assets/graduate.png')} alt="img" />
+					<img src={graduate} alt="img" />
 					<h2>Masters Program</h2>
 					<h4>Education</h4>
 					<div>
@@ -74,7 +81,7 @@ export default () => {
 				</div>
 
 				<div className="graduate">
-					<img src={require('../../assets/graduate.png')} alt="img" />
+					<img src={graduate} alt="img" />
 					<h2>Masters Program</h2>
 					<h4>Education</h4>
 					<div>
@@ -87,7 +94,7 @@ export default () => {
 				</div>
 				<h2 id="goals">
 					Goals
-					<img src={require('../../assets/brown-add.png')} alt="img" />
+					<img src={brownAdd} alt="img" />
 				</h2>
 			</div>
 
@@ -100,28 +107,62 @@ export default () => {
 					</NavLink>
 				</hgroup>
 
-				{expenses ? (
-					expenses.slice(0, 5).map((expense) => (
-						<div className="trans" key={expense.id}>
-							{expense.category === 'Food/Drinks' ? (
-								<img src={require('../../assets/food.png')} alt="car+img" />
-							) : (
-								<img src={require('../../assets/car.png')} alt="car+img" />
-							)}
+				{expenses.slice(0, 5).map((expense) => (
+					<div className="trans" key={expense.id}>
+						{expense.category === 'Food/Drinks' ? (
+							<img src={food} alt="img" />
+						) : expense.category === 'Bills/Utilities' ? (
+							<img src={receipt} alt="img" />
+						) : expense.category === 'Education' ? (
+							<img src={graduate} alt="img" />
+						) : expense.category === 'Entertainment' ? (
+							<img src={celebration} alt="img" />
+						) : expense.category === 'Gifts/Donations' ? (
+							<img src={gift} alt="img" />
+						) : expense.category === 'Medical/Healthcare' ? (
+							<img src={cardiogram} alt="img" />
+						) : expense.category === 'Insurance' ? (
+							<img src={Insurance} alt="img" />
+						) : expense.category === 'Investment/Savings' ? (
+							<img src={statistics} alt="img" />
+						) : expense.category === 'Shopping' ? (
+							<img src={shopping} alt="img" />
+						) : expense.category === 'Transportation' ? (
+							<img src={car} alt="img" />
+						) : expense.category === 'Household' ? (
+							<img src={home} alt="img" />
+						) : expense.category === 'Family' ? (
+							<img src={family} alt="img" />
+						) : expense.category === 'Miscellaneous' ? (
+							<img src={levels} alt="img" />
+						) : expense.category === 'Banking Charges' ? (
+							<img src={museum} alt="img" />
+						) : expense.category === 'Business Expense' ? (
+							<img src={business} alt="img" />
+						) : expense.category === 'Travel' ? (
+							<img src={suitcase} alt="img" />
+						) : expense.category === 'Debt Payment' ? (
+							<img src={debt} alt="img" />
+						) : (
+							<img src={uncategorized} alt="img" />
+						)}
 
-							<div>
-								<h5>{expense.category}</h5>
-								<p>20 sep, 4:30pm</p>
-							</div>
-
-							<h6>N{expense.tx_amount}</h6>
+						<div>
+							<h5>{expense.category}</h5>
+							<p>20 sep, 4:30pm</p>
 						</div>
-					))
-				) : (
-					<div className="errorMessage">
-						<img src={require('../../assets/info.png')} alt="img" />
+
+						<h6>N{expense.tx_amount}</h6>
+					</div>
+				))}
+
+				{message ? (
+					<div className="noExpense">
+						<img src={info} alt="img" />
 						<h5>{message}</h5>
 					</div>
+				) : (
+					''
 				)}
 			</div>
 		</section>

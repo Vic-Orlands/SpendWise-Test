@@ -133,6 +133,11 @@
 	justify-content: center;
 	align-items: center;
 	padding-top: 50px;
+	position: relative;
+}
+
+.signup-form > div {
+	width: 55%;
 }
 
 .signup-form h1 {
@@ -159,36 +164,39 @@
 .signup-form form .label {
 	display: block;
 	font-family: 'Poppins', sans-serif;
-	font-size: 17px;
+	font-size: 1.1rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 22px;
 	letter-spacing: -1px;
 	color: #0a2843;
 	margin-bottom: 14px;
+	position: relative;
 }
 
 .signup-form form .label input {
 	display: block;
-	height: 42px;
-	width: 352.32px;
+	height: 3rem;
+	width: 100%;
 	margin-top: 4px;
 	padding: 0 10px;
 }
 
 #errorMsg {
-	font-size: 9px;
-	float: right;
-	clear: both;
+	font-size: .3rem;
+	letter-spacing: .1px;
 	color: tomato;
+	position: absolute;
+	right: 0;
+	top: 2.1rem;
 }
 
 .signup-form form .label select {
 	font-family: 'Poppins', sans-serif;
 	font-size: 17px;
 	display: block;
-	height: 42px;
-	width: 352.32px;
+	height: 3rem;
+	width: 100%;
 	margin-top: 4px;
 	padding: 0 10px;
 }
@@ -202,8 +210,8 @@
 
 .signup-form form .pass .passInput {
 	display: flex;
-	height: 42px;
-	width: 352.32px;
+	height: 3rem;
+	width: 100%;
 	border: 1px solid #777777;
 	border-radius: 2px;
 	margin-top: 6px;
@@ -213,8 +221,8 @@
 .signup-form form .pass .passInput input {
 	border: none;
 	margin: auto 0;
-	height: 40px;
-}
+	height: 100%;
+	width: 90%;}
 
 .signup-form form .pass .passInput input:active,
 .signup-form form .pass .passInput input:focus {
@@ -233,11 +241,12 @@
 	background: #001ac6;
 	backdrop-filter: blur(6.38686px);
 	border-radius: 2.12895px;
+	border: none;
+	height: 3rem;
 	width: 100%;
-	height: 42px;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 17px;
+	font-size: 1.3rem;
 	line-height: 22px;
 	color: #ffffff;
 	margin-top: 25px;
@@ -257,7 +266,7 @@
 	text-align: center;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 17.03px;
+	font-size: 1rem;
 	line-height: 32.36px;
 	color: #000000;
 	margin-top: 10px;
@@ -271,7 +280,7 @@
 	text-decoration: none;
 }
 
-.sign-up-container .signup-form .foot-design {
+.sign-up-container .foot-design {
 	height: 100px;
 	width: 100px;
 	border: 4px solid #001ac6;
@@ -282,7 +291,7 @@
 	bottom: 0;
 }
 
-.sign-up-container .signup-form .foot-design-sm {
+.sign-up-container .foot-design-sm {
 	height: 55px;
 	width: 55px;
 	border: 4px solid #ffaa00;

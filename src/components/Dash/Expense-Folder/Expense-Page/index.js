@@ -1,14 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import Nav from '../../../Dash/Nav/index';
-import Sidemenu from '../../../Dash/Sidemenu/index';
-import RecordExpense from '../Record-Expense/index';
+import Nav from '../../Nav';
+import Sidemenu from '../../Sidemenu';
+import RecordExpense from '../Record-Expense';
+
+import Axios from 'axios';
 
 import { BsArrowDown } from 'react-icons/bs';
 import { IoIosArrowDown, IoIosClose } from 'react-icons/io';
 
-import Axios from 'axios';
-import index from '../../../Dash/Sidemenu/index';
+import graduate from '../../assets/graduate.svg';
+import food from '../../assets/dinner.svg';
+import car from '../../assets/car.svg';
+import info from '../../assets/info.png';
+import debt from '../../assets/debt.svg';
+import receipt from '../../assets/receipt.svg';
+import uncategorized from '../../assets/uncategorized.svg';
+import Insurance from '../../assets/family.svg';
+import family from '../../assets/group.svg';
+import cardiogram from '../../assets/cardiogram.svg';
+import celebration from '../../assets/celebration.svg';
+import home from '../../assets/home.svg';
+import shopping from '../../assets/shopping.svg';
+import museum from '../../assets/museum.svg';
+import suitcase from '../../assets/suitcase.svg';
+import gift from '../../assets/giftbox.svg';
+import business from '../../assets/hand-shake.svg';
+import statistics from '../../assets/statistics.svg';
+import levels from '../../assets/levels.svg';
 
 let status = {
 	percentage: 60
@@ -21,6 +40,7 @@ export default () => {
 	const [ openModal, setOpenModal ] = useState(false);
 	const [ oneTrack, setOneTrack ] = useState('');
 	const [ expense, setExpense ] = useState([]);
+	const [ errorMessage, setErrorMessage ] = useState('');
 
 	const openSide = (e) => {
 		setOpen(!open);
@@ -53,7 +73,9 @@ export default () => {
 		)
 			.then((res) => {
 				if (res.status === 200) {
+					console.log(res.data)
 					setExpense(res.data);
+					setErrorMessage(res.data.message);
 				}
 			})
 			.catch((err) => {
@@ -65,49 +87,16 @@ export default () => {
 		fetchExpenses();
 	}, []);
 
-if(expense) {
-	if (Array.isArray(expense)) {
-
-		// if expense is loaded, check for the key values and assign them, to a new avariable
-		let expenseCategory = expense.filter((item) => item.category);
-		let expenseBudget = expense.filter((item) => item.budgets);
-	let expenseTotal = expense.filter((item) => item.totals);
-
-	// create new array
-	let newArray = [];
 	
-	Object.keys(expenseCategory).map((key) => {
-		// console.log(expenseCategory[key])
-		const noOfTransactions = expenseCategory[key];
-		const currentCategory = key;
-
-		Object.keys(expenseTotal).map((key) => {
-			let currentBudget =
-			expenseBudget[
-					Object.keys(expenseBudget).filter((bdgt) => {
-						return bdgt === currentCategory;
-					})
-				];
-
-				if (key === currentCategory) {
-				newArray.push({
-					type: currentCategory,
-					noOfTransactions,
-					expenses: expenseTotal[key],
-					budget: currentBudget
-				});
-			}
-		})
-	})
+	// let newArray = Object.entries(expense)
+	// let category = expense.map((item) => item.category);
+	// let totals = expense.map((item) => item.totals);
 	
-	newArray.sort((a, b) => {
-		return ( b.expenses - a.expenses)
-	})
-	console.log(Object.values(newArray) );
-// setExpense(newArray)
-	// let expense = newArray
-}
-}
+	// const checkExpenseArray = Array.isArray(category) && category.length ? category[0] : {};
+	
+	// const checkExpenseAmount = Array.isArray(totals) && totals.length ? totals[1] : {};
+
+	// console.log(checkExpenseAmount);
 
 	return (
 		<section>
@@ -124,7 +113,8 @@ if(expense) {
 							<h4
 								onClick={(e) => {
 									openSide(e);
-								}}>
+								}}
+							>
 								Record Expense
 							</h4>
 						</div>
@@ -143,99 +133,76 @@ if(expense) {
 									</tr>
 								</thead>
 
-								<tbody>
-									<tr>
-										<td>
-											<input type="checkbox" id="inpt" />
-											<img src={require('../../assets/food.png')} alt="img" />
-											<p>Feeding</p>
-										</td>
+								{errorMessage ? (
+									<div className="noExpense">
+										<img src={require('../../assets/info.png')} alt="img"/>
+										<h3>{errorMessage}</h3>
+									</div>
+								) : (
+									<tbody>
+										{/* {Object.entries(checkExpenseArray).map((item, index) => (
+											<tr onClick={openMobileModal} key={index}>
+												<td>
+													<input type="checkbox" id="inpt" />
+													{item[0] === 'Food/Drinks' ? (
+														<img src={food} alt="img" />
+													) : item[0] === 'Bills/Utilities' ? (
+														<img src={receipt} alt="img" />
+													) : item[0] === 'Education' ? (
+														<img src={graduate} alt="img" />
+													) : item[0] === 'Entertainment' ? (
+														<img src={celebration} alt="img" />
+													) : item[0] === 'Gifts/Donations' ? (
+														<img src={gift} alt="img" />
+													) : item[0] === 'Medical/Healthcare' ? (
+														<img src={cardiogram} alt="img" />
+													) : item[0] === 'Insurance' ? (
+														<img src={Insurance} alt="img" />
+													) : item[0] === 'Investment/Savings' ? (
+														<img src={statistics} alt="img" />
+													) : item[0] === 'Shopping' ? (
+														<img src={shopping} alt="img" />
+													) : item[0] === 'Transportation' ? (
+														<img src={car} alt="img" />
+													) : item[0] === 'Household' ? (
+														<img src={home} alt="img" />
+													) : item[0] === 'Family' ? (
+														<img src={family} alt="img" />
+													) : item[0] === 'Miscellaneous' ? (
+														<img src={levels} alt="img" />
+													) : item[0] === 'Banking Charges' ? (
+														<img src={museum} alt="img" />
+													) : item[0] === 'Business Expense' ? (
+														<img src={business} alt="img" />
+													) : item[0] === 'Travel' ? (
+														<img src={suitcase} alt="img" />
+													) : item[0] === 'Debt Payment' ? (
+														<img src={debt} alt="img" />
+													) : (
+														<img src={uncategorized} alt="img" />
+													)}
 
-										<td>
-											5 Transactions
-											<BsArrowDown />
-										</td>
-										<td>&#8358;5,000</td>
-										<td>&#8358;3,000</td>
-										<td>
-											<div className="progress-bar2">
-												<div
-													className="filler2"
-													style={{ width: `${percentage.percentage}%` }}
-												/>
-											</div>
-										</td>
-									</tr>
+													<p>{item[0]}</p>
+												</td>
 
-									<tr>
-										<td>
-											<input type="checkbox" id="inpt" />
-											<img src={require('../../assets/food.png')} alt="img" />
-											<p>Feeding</p>
-										</td>
-
-										<td>
-											5 Transactions
-											<BsArrowDown />
-										</td>
-										<td>&#8358;5,000</td>
-										<td>&#8358;3,000</td>
-										<td>
-											<div className="progress-bar2">
-												<div
-													className="filler2"
-													style={{ width: `${percentage.percentage}%` }}
-												/>
-											</div>
-										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<input type="checkbox" id="inpt" />
-											<img src={require('../../assets/food.png')} alt="img" />
-											<p>Feeding</p>
-										</td>
-
-										<td>
-											5 Transactions
-											<BsArrowDown />
-										</td>
-										<td>&#8358;5,000</td>
-										<td>&#8358;3,000</td>
-										<td>
-											<div className="progress-bar2">
-												<div
-													className="filler2"
-													style={{ width: `${percentage.percentage}%` }}
-												/>
-											</div>
-										</td>
-									</tr>
-
-									<tr>
-										<td>
-											<input type="checkbox" id="inpt" />
-											<img src={require('../../assets/food.png')} alt="img" />
-											<p>Feeding</p>
-										</td>
-
-										<td>
-											5 Transactions
-											<BsArrowDown id="fnt" />
-										</td>
-										<td>&#8358;5,000</td>
-										<td>&#8358;3,000</td>
-										<td>
-											<div className="progress-bar2">
-												<div
-													className="filler2"
-													style={{ width: `${percentage.percentage}%` }}
-												/>
-											</div>
-										</td>
-									</tr>
-								</tbody>
+												<td>
+													{item[1]} Transactions
+													<BsArrowDown />
+												</td>
+												<td>&#8358;5,000</td>
+												<td>&#8358;3,000</td>
+												<td>
+													<div className="progress-bar2">
+														<div
+															className="filler2"
+															style={{ width: `${percentage.percentage}%` }}
+														/>
+													</div>
+												</td>
+											</tr>
+										))} */}
+									</tbody>
+								)}
 							</table>
 						</section>
 
@@ -295,35 +262,80 @@ if(expense) {
 								</div>
 							) : (
 								<div className="expense-error">
-									<img src={require('../../assets/info.png')} alt="img" />
+									<img src={info} alt="img" />
 									<p>Select budget to display information</p>
 								</div>
 							)}
 						</section>
 
-						{/* --------------------------------expense transaction for mobile view(--this is conform with the design of the m0bile application--)---------------------- */}
+						{/* expense transaction for mobile view(--this is conform with the design of the m0bile application */}
 						<section className="mobile-view">
 							<h2>View all Expenses</h2>
 
-							{expense.map((item) => (
-								<div className="mobile-view-content" onClick={openMobileModal} key={item.type}>
-									<img src={require('../../assets/food.png')} alt="img" />
-
-									<div>
-										<h3>
-											{/* {item.} */}
-											Feeding
-											<small>
-												{/* {Object.values(item)} */}
-												{/* 5 Transactions */}
-												 <IoIosArrowDown />
-											</small>
-										</h3>
-									</div>
-
-									<h4>&#8358;5,000</h4>
+							{errorMessage ? (
+								<div className="noExpense">
+									<img src={require('../../assets/info.png')} alt="img" />
+									<h3>{errorMessage}</h3>
 								</div>
-							 ))}
+							) : (
+								<div>
+									{/* {Object.entries(checkExpenseArray).map((item, index) => (
+										<div className="mobile-view-content" onClick={openMobileModal} key={index}>
+											{item[0] === 'Food/Drinks' ? (
+												<img src={food} alt="img" />
+											) : item[0] === 'Bills/Utilities' ? (
+												<img src={receipt} alt="img" />
+											) : item[0] === 'Education' ? (
+												<img src={graduate} alt="img" />
+											) : item[0] === 'Entertainment' ? (
+												<img src={celebration} alt="img" />
+											) : item[0] === 'Gifts/Donations' ? (
+												<img src={gift} alt="img" />
+											) : item[0] === 'Medical/Healthcare' ? (
+												<img src={cardiogram} alt="img" />
+											) : item[0] === 'Insurance' ? (
+												<img src={Insurance} alt="img" />
+											) : item[0] === 'Investment/Savings' ? (
+												<img src={statistics} alt="img" />
+											) : item[0] === 'Shopping' ? (
+												<img src={shopping} alt="img" />
+											) : item[0] === 'Transportation' ? (
+												<img src={car} alt="img" />
+											) : item[0] === 'Household' ? (
+												<img src={home} alt="img" />
+											) : item[0] === 'Family' ? (
+												<img src={family} alt="img" />
+											) : item[0] === 'Miscellaneous' ? (
+												<img src={levels} alt="img" />
+											) : item[0] === 'Banking Charges' ? (
+												<img src={museum} alt="img" />
+											) : item[0] === 'Business Expense' ? (
+												<img src={business} alt="img" />
+											) : item[0] === 'Travel' ? (
+												<img src={suitcase} alt="img" />
+											) : item[0] === 'Debt Payment' ? (
+												<img src={debt} alt="img" />
+											) : (
+												<img src={uncategorized} alt="img" />
+											)}
+
+											<div>
+												<h3>
+													{item[0]}
+													<small>
+														{item[1]} Transactions
+														<IoIosArrowDown />
+													</small>
+												</h3>
+											</div>
+
+											{Object.values(checkExpenseAmount).map((item, index) => (
+												<h4 key={index}>&#8358;{item}</h4>
+											))}
+										</div>
+									))} */}
+								</div>
+							)}
 						</section>
 
 						{/* ---------mobile-exense-modal------- */}
@@ -334,7 +346,7 @@ if(expense) {
 										<IoIosClose id="closeFnt" onClick={openMobileModal} />
 
 										<div>
-											<img src={require('../../assets/food.png')} alt="img" />
+											<img src={debt} alt="img" />
 
 											<div>
 												<h3>

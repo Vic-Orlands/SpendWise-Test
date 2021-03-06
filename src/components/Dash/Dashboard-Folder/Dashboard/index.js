@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import Sidemenu from '../../Sidemenu/index';
 import Nav from '../../Nav/index';
 import TopDash from '../Top-Dash/index';
@@ -13,11 +14,7 @@ export default () => {
 	useEffect(() => {
 		let user = JSON.parse(localStorage.getItem('USER')) || JSON.parse(sessionStorage.getItem('USER'));
 
-		if (user) {
-			setUser(user.user);
-		} else {
-			setUser('User');
-		}
+		setUser(user.user);
 	}, []);
 
 	return (

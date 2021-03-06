@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './Reset.css';
 
 import Axios from 'axios';
+import logo from '../../../assets/logo.png';
+import goal from '../../../assets/goal.png';
+import coin from '../../../assets/coin.png';
+import man from '../../../assets/man.png';
+import wallet from '../../../assets/wallet.png';
 
 class Reset extends Component {
 	state = {
@@ -165,19 +170,19 @@ class Reset extends Component {
 		return (
 			<main className="chngePass-container">
 				<section className="left">
-					<img src={require('../../../assets/logo.png')} alt="img" className="logo" />
+					<img src={logo} alt="img" className="logo" />
 
 					<div className="flex-icons">
 						<div className="wallet-bg">
-							<img src={require('../../../assets/wallet.png')} alt="img" className="wallet" />
+							<img src={wallet} alt="img" className="wallet" />
 						</div>
 						<div className="goal-bg">
-							<img src={require('../../../assets/goal.png')} alt="img" className="goal" />
+							<img src={goal} alt="img" className="goal" />
 						</div>
 						<div className="coin-bg">
-							<img src={require('../../../assets/coin.png')} alt="img" className="coin" />
+							<img src={coin} alt="img" className="coin" />
 						</div>
-						<img src={require('../../../assets/man.png')} alt="img_man" className="man" />
+						<img src={man} alt="img_man" className="man" />
 					</div>
 				</section>
 

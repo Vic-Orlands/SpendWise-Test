@@ -115,6 +115,7 @@
 .expense-table .table tbody tr td img {
 	margin: 0 15px;
 	height: 20px;
+	width: .8rem;
 }
 
 .expense-table .table tbody tr td p {
@@ -177,7 +178,7 @@
 
 /* ------------------aside expense info------------------ */
 .expense-info {
-	width: 344.38px;
+	width: 21.5rem !important;
 	background: #ffffff;
 	border-radius: 5px;
 	margin-left: 10px;
@@ -243,6 +244,26 @@
 .mobile-view,
 .mobile-modal {
 	display: none;
+}
+
+.noExpense {
+	/* display: flex; */
+	/* flex-direction: center; */
+	/* align-items: center; */
+	width: 100%;
+	/* margin-left: 50%; */
+	/* margin-right: -20%; */
+}
+
+.noExpense img {
+	margin-top: 5rem;
+}
+
+.noExpense h3 {
+	color: grey;
+	font-size: 1rem;
+	margin-top: .5rem;
+	margin-bottom: 5rem;
 }
 
 /* ------------------mobile responsiveness styling starts here--------------------- */

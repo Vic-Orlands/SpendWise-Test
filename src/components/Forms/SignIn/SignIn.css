@@ -139,7 +139,7 @@
 
 .signin-form h1 {
 	font-family: 'Noto Sans', sans-serif;
-	font-size:2.65rem;
+	font-size: 2.65rem;
 	font-style: normal;
 	font-weight: 700;
 	letter-spacing: -0.04em;
@@ -155,7 +155,6 @@
 	letter-spacing: -0.04em;
 	color: #0a2843;
 	opacity: 70%;
-
 	margin-bottom: 2.6rem;
 }
 
@@ -173,8 +172,8 @@
 
 .signin-form form .label input {
 	display: block;
-	height: 46px;
-	width: 352.32px;
+	height: 3rem;
+	width: 100%;
 	margin-top: 11.4px;
 	padding-left: 10px;
 }
@@ -186,10 +185,14 @@
 	box-shadow: 0px 4.2579px 10.6448px #d2dafc;
 }
 
+.signin-form form .pass {
+	position: relative;
+}
+
 .signin-form form .pass .passInput {
 	display: flex;
-	height: 48px;
-	width: 352.32px;
+	height: 3rem;
+	width: 100%;
 	border: 1px solid #777777;
 	border-radius: 2px;
 	margin-top: 11.4px;
@@ -199,7 +202,8 @@
 .signin-form form .pass .passInput input {
 	border: none;
 	margin: auto 0;
-	height: 44px;
+	height: 100%;
+	width: 90%;
 }
 
 .signin-form form .pass .passInput input:active,
@@ -209,16 +213,17 @@
 }
 
 #errorMsg {
-	font-size: 9px;
+	font-size: .3rem;
 	letter-spacing: .1px;
-	float: right;
-	clear: both;
 	color: tomato;
+	position: absolute;
+	right: 0;
+	top: 2.1rem;
 }
 
 .signin-form form .pass .passInput p {
-	font-size: 14px;
-	margin: auto 0 auto 6px;
+	font-size: .9rem;
+	margin: auto 0 auto .2rem;
 	cursor: pointer;
 }
 
@@ -231,7 +236,7 @@
 	font-family: 'Noto Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 12.7737px;
+	font-size: .9rem;
 	line-height: 16px;
 	color: #565656;
 	flex-grow: 1;
@@ -239,8 +244,8 @@
 }
 
 .signin-form form .forgot input {
-	width: 17.03px;
-	height: 17.03px;
+	width: 1vw;
+	height: 1vh;
 	border: 1.06448px solid #0a2843;
 	box-sizing: border-box;
 	border-radius: 2.12895px;
@@ -251,7 +256,7 @@
 	font-family: 'Poppins', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 12px;
+	font-size: .9rem;
 	line-height: 18px;
 	color: #000000;
 	border-radius: 2.12895px;
@@ -262,7 +267,7 @@
 	font-family: 'Poppins', sans-serif;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 12px;
+	font-size: .9rem;
 	line-height: 18px;
 	color: #000000;
 	border-radius: 2.12895px;
@@ -279,11 +284,12 @@
 	background: #001ac6;
 	backdrop-filter: blur(6.38686px);
 	border-radius: 2.12895px;
+	border: none;
+	height: 3rem;
 	width: 100%;
-	height: 48px;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 17.0316px;
+	font-size: 1.3rem;
 	line-height: 22px;
 	color: #ffffff;
 	margin-top: 30px;
@@ -303,7 +309,7 @@
 	text-align: center;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 17.03px;
+	font-size: 1rem;
 	line-height: 32.36px;
 	color: #000000;
 	margin-top: 31.93px;
@@ -337,6 +343,16 @@
 	position: absolute;
 	right: 0;
 	bottom: 0;
+}
+
+.signin-form center {
+	position: absolute;
+	bottom: 0;
+	cursor: pointer;
+}
+
+.signin-form center #link {
+	color: rgb(110, 110, 115);
 }
 
 /* ---------------mobile responsiveness------------ */

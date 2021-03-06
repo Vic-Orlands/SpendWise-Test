@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import './styles.css';
 
 import { FaBars } from 'react-icons/fa';
+import goal from '../assets/goal.png';
+import coin from '../assets/coins.png';
+import wallet from '../assets/wallet.png';
+import vector from '../assets/Vector.png';
+import money from '../assets/money.png';
+import dash from '../../../assets/dash.png';
+import logout from '../../../assets/logout.png';
+import settings from '../../../assets/settings.png';
+import nav from '../../../assets/logo-bg-white.png';
 
 const Nav = () => {
 	const [ user, setUser ] = useState(null);
@@ -19,15 +28,17 @@ const Nav = () => {
 			setUser(user.user);
 			setUsername(abbrevName);
 		} else {
-			setUser('User');
+			setUser('Not verified');
+			setUsername('');
 		}
 	}, []);
 
-	const onLogOut = (e) => {
-		e.preventDefault();
+	const history = useHistory();
+
+	const onLogOut = () => {
 		localStorage.clear();
 		sessionStorage.clear();
-		window.location.reload();
+		history.push('/signin');
 	};
 
 	return (
@@ -35,33 +46,33 @@ const Nav = () => {
 			<FaBars id="icon-bar" onClick={() => setOpen((open) => !open)} />
 			{open && (
 				<div className="nav-sidemenu">
-					<img src={require('../../../assets/logo-bg-white.png')} alt="logo" id="side-logo" />
+					<img src={nav} alt="logo" id="side-logo" />
 
 					<ul className="nav-side-list">
 						<NavLink to="/" className="div" activeClassName="active" id="link">
-							<img src={require('../../../assets/dash.png')} alt="logo" id="icon" />
+							<img src={dash} alt="logo" id="icon" />
 							<li>Dashboard</li>
 						</NavLink>
 
 						<NavLink to="/page/expense" className="div" activeClassName="active">
-							<img src={require('../assets/money.png')} alt="logo" id="icon" />
+							<img src={money} alt="logo" id="icon" />
 							<li>Expense</li>
 						</NavLink>
 
 						<NavLink to="/page/budget" className="div" activeClassName="active">
-							<img src={require('../assets/coins.png')} alt="logo" id="icon" />
+							<img src={coin} alt="logo" id="icon" />
 							<li>Budget</li>
 						</NavLink>
 
 						<NavLink to="/gff" className="div" activeClassName="active">
 							{' '}
-							<img src={require('../assets/goal.png')} alt="logo" id="icon" />
+							<img src={goal} alt="logo" id="icon" />
 							<li>Goals</li>
 						</NavLink>
 
 						<NavLink to="/page/finance" className="div" activeClassName="active">
 							{' '}
-							<img src={require('../assets/wallet.png')} alt="logo" id="icon" />
+							<img src={wallet} alt="logo" id="icon" />
 							<li>My finance</li>
 						</NavLink>
 					</ul>
@@ -69,12 +80,12 @@ const Nav = () => {
 					<footer>
 						<ul className="footer-list">
 							<div>
-								<img src={require('../../../assets/settings.png')} alt="logo" id="icon" />
+								<img src={settings} alt="logo" id="icon" />
 								<li>Settings</li>
 							</div>
 
 							<div onClick={onLogOut}>
-								<img src={require('../../../assets/logout.png')} alt="logo" id="icon" />
+								<img src={logout} alt="logo" id="icon" />
 								<li>Sign out</li>
 							</div>
 						</ul>
@@ -84,7 +95,7 @@ const Nav = () => {
 				</div>
 			)}
 
-			<img src={require('../assets/Vector.png')} alt="notifications_img" id="nav-icon" />
+			<img src={vector} alt="notifications_img" id="nav-icon" />
 
 			<div>
 				<h1>{username}</h1>

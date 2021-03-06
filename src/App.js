@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
 import SignIn from './components/Forms/SignIn/SignIn';
 import SignUp from './components/Forms/SignUp/SignUp';
 
@@ -14,21 +15,21 @@ import Expense from './components/Dash/Expense-Folder/Expense-Page/index';
 import Goals from './components/Dash/Goals-Folder/index';
 import Finance from './components/Dash/Finance-Folder/Finance-Page/index';
 
-let existingUser = JSON.parse(localStorage.getItem('authToken')) || JSON.parse(sessionStorage.getItem('authToken'));
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-	<Route
-		{...rest}
-		render={(props) =>
-			existingUser ? (
-				<Component {...props} />
-			) : (
-				<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
-			)}
-	/>
-);
-
 const App = () => {
+	// let existingUser = JSON.parse(localStorage.getItem('authToken')) && JSON.parse(sessionStorage.getItem('authToken'));
+
+	// const PrivateRoute = ({ component: Component, ...rest }) => (
+	// 	<Route
+	// 		{...rest}
+	// 		render={(props) =>
+	// 			existingUser ? (
+	// 				<Component {...props} />
+	// 			) : (
+	// 				<Redirect to={{ pathname: '/signin', state: { from: props.location } }} />
+	// 			)}
+	// 	/>
+	// );
+
 	return (
 		<BrowserRouter>
 			<div>
@@ -41,12 +42,12 @@ const App = () => {
 					<Route path="/forgotUsername" component={ForgotUsername} />
 
 					{/* ----------------------private pages routes--------------------- */}
-					<PrivateRoute exact path={'/'} component={Dashboard} />
-					<PrivateRoute path="/page/goals" component={Goals} />
-					<PrivateRoute path="/page/budget" component={Budget} />
-					<PrivateRoute path="/page/finance" component={Finance} />
-					<PrivateRoute path="/page/expense" component={Expense} />
-					<PrivateRoute path="/page/chngePass" component={ChangePassword} />
+					<Route exact={true} path={'/'} component={Dashboard} />
+					<Route path="/page/goals" component={Goals} />
+					<Route path="/page/budget" component={Budget} />
+					<Route path="/page/finance" component={Finance} />
+					<Route path="/page/expense" component={Expense} />
+					<Route path="/page/chngePass" component={ChangePassword} />
 				</Switch>
 			</div>
 		</BrowserRouter>

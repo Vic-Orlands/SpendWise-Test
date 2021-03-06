@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.archive-budget-container {
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: 999999;
+	background-color: rgba(0, 0, 0, 0.212);
+}
+
+.archive-content {
+	background-color: #ffffff;
+	width: 40%;
+	height: 90%;
+	margin: auto;
+	margin-top: 2%;
+	padding: 2rem 1rem;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+	animation: dropdwn ease-in-out 700ms;
+}
+
+.archive-content #closeFont {
+	float: right;
+	margin-bottom: 1.3rem;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+
+.archive-content #closeFont:hover {
+	background-color: black;
+	border-radius: .9rem;
+	color: #ffffff;
+	padding-bottom: .2rem;
+}
+
+.archive-content > div {
+	overflow-y: scroll;
+	height: 90%;
+	padding: 1rem 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.archive-content > div::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.archive-content > div {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+.archive-content h1 {
+	clear: both;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: .9rem;
+}
+
+.archive-content .archiveLists {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: .7rem;
+	padding: 1rem;
+	border-radius: .4rem;
+}
+
+.archive-content .archiveLists > div h3 {
+	font-size: .9rem;
+	margin-bottom: .2rem;
+}
+
+.archive-content .archiveLists > div h2 {
+	font-size: 1.3rem;
+	letter-spacing: .05rem;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+
+.archive-content .archiveLists div:nth-child(2) {
+	text-align: right;
+}
+
+.archive-content .archiveLists div h5 {
+	font-size: .9rem;
+	margin-bottom: .5rem;
+}
+
+.archive-content .archiveLists div h6 {
+	font-size: .7rem;
+	color: rgb(21, 243, 21);
+}
+
+.archive-content .archiveLists div h6 span {
+	font-size: .7rem;
+	margin-bottom: 0;
+	margin-left: .2rem;
+	background-color: #ffffff;
+	border-radius: .5rem;
+	padding: .1rem .4rem;
+	color: black;
+}
+
+.noArchivedBudget {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.noArchivedBudget img {
+	margin-top: 7rem;
+}
+
+.noArchivedBudget h3 {
+	color: grey;
+	font-size: 1rem;
+	margin-top: .5rem;
+	margin-bottom: 4rem;
+}
+
+/* mobile responsiveness styling starts here */
+@media screen and (max-width: 760px) {
+	.archive-content {
+		width: 90%;
+		margin-top: 7%;
+	}
+}

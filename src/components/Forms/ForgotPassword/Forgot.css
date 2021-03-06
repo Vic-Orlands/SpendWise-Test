@@ -137,6 +137,10 @@
 	align-items: center;
 }
 
+.forgot-form > div {
+	width: 50%;
+}
+
 .forgot-form h1 {
 	font-family: 'Noto Sans', sans-serif;
 	font-size: 32px;
@@ -169,16 +173,13 @@
 	line-height: 19px;
 	letter-spacing: 0.03em;
 	color: #777777;
-}
-
-.forgot-form form .label:nth-child(2) {
-	margin-bottom: 13.8px;
+	position: relative;
 }
 
 .forgot-form form .label input {
 	display: block;
-	height: 48px;
-	width: 352.32px;
+	height: 3rem;
+	width: 100%;
 	margin-top: 11.4px;
 	padding-left: 10px;
 }
@@ -190,13 +191,18 @@
 	box-shadow: 0px 4.2579px 10.6448px #d2dafc;
 }
 
+.forgot-form #erroMsg {
+	position: absolute;
+}
+
 .forgot-form form button {
 	font-family: 'Poppins', sans-serif;
 	background: #001ac6;
 	backdrop-filter: blur(6.38686px);
 	border-radius: 2.12895px;
+	border: none;
 	width: 100%;
-	height: 48px;
+	height: 3rem;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 17.0316px;

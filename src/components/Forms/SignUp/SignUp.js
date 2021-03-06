@@ -3,6 +3,11 @@ import { NavLink } from 'react-router-dom';
 import './SignUp.css';
 
 import axios from 'axios';
+import logo from '../../../assets/logo.png';
+import goal from '../../../assets/goal.png';
+import coin from '../../../assets/coin.png';
+import man from '../../../assets/man.png';
+import wallet from '../../../assets/wallet.png';
 
 class SignUp extends Component {
 	state = {
@@ -95,9 +100,7 @@ class SignUp extends Component {
 			}
 			if (isPassword) {
 				validity[name] = passwrdTest.test(value);
-				fieldValidationErrors[name] = validity[name]
-					? ''
-					: `must be min of 7 characters and contain number`;
+				fieldValidationErrors[name] = validity[name] ? '' : `must be min of 7 characters and contain number`;
 			}
 			if (isSamePassword) {
 				validity[name] = value === this.state.formValues.password;
@@ -140,7 +143,10 @@ class SignUp extends Component {
 				})
 				.then((res) => {
 					if (res.status === 201) {
-						this.setState({ isSubmitting: false, submitted: 'Registered successfully!, please proceed to login' });
+						this.setState({
+							isSubmitting: false,
+							submitted: 'Registered successfully!, please proceed to login'
+						});
 					} else return null;
 				})
 				.catch((err) => {
@@ -155,7 +161,7 @@ class SignUp extends Component {
 					} else if (err.response.data.username) {
 						this.setState({
 							formErrors: {
-								username: 'A user with that username already exists'
+								username: 'A user with this username already exists'
 							},
 							isSubmitting: false
 						});
@@ -175,23 +181,28 @@ class SignUp extends Component {
 
 	render() {
 		const { formErrors, formValues, isSubmitting, submitted } = this.state;
-		const isEnabled = !formValues.username || !formValues.email || !formValues.phone || !formValues.password || !formValues.password2
+		const isEnabled =
+			!formValues.username ||
+			!formValues.email ||
+			!formValues.phone ||
+			!formValues.password ||
+			!formValues.password2;
 		return (
 			<main className="sign-up-container">
 				<section className="left">
-					<img src={require('../../../assets/logo.png')} alt="img" className="logo" />
+					<img src={logo} alt="img" className="logo" />
 
 					<div className="flex-icons">
 						<div className="wallet-bg">
-							<img src={require('../../../assets/wallet.png')} alt="img" className="wallet" />
+							<img src={wallet} alt="img" className="wallet" />
 						</div>
 						<div className="goal-bg">
-							<img src={require('../../../assets/goal.png')} alt="img" className="goal" />
+							<img src={goal} alt="img" className="goal" />
 						</div>
 						<div className="coin-bg">
-							<img src={require('../../../assets/coin.png')} alt="img" className="coin" />
+							<img src={coin} alt="img" className="coin" />
 						</div>
-						<img src={require('../../../assets/man.png')} alt="img_man" className="man" />
+						<img src={man} alt="img_man" className="man" />
 					</div>
 				</section>
 

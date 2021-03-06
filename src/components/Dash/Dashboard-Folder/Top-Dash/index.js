@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 
-import { NavLink } from 'react-router-dom';
+import forward from "../../assets/forward.png"
 
 import Axios from 'axios';
+import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+
+const data = [
+	{ name: '1', uv: 4000, pv: 2400, amt: 2400 },
+	{ name: '5', uv: 3000, pv: 1398, amt: 2210 },
+	{ name: '10', uv: 2000, pv: 8900, amt: 2290 },
+	{ name: '15', uv: 2780, pv: 3908, amt: 2000 },
+	{ name: '20', uv: 1890, pv: 4800, amt: 2181 },
+	{ name: '25', uv: 2390, pv: 3800, amt: 2500 },
+	{ name: '30', uv: 3490, pv: 4300, amt: 2100 }
+];
+
 export default class index extends Component {
 	state = {
 		percentage1: 50,
@@ -38,7 +51,6 @@ export default class index extends Component {
 			})
 			.catch((err) => {
 				console.log(err);
-				// console.log(err.response.data);
 			});
 	};
 
@@ -72,7 +84,7 @@ export default class index extends Component {
 				</div>
 
 				<div className="brown-green">
-					<NavLink to="/page/finance" id="dashLink" >
+					<NavLink to="/page/finance" id="dashLink">
 						<div className="brown-box">
 							<div className="grad1" />
 							<div className="grad2" />
@@ -81,7 +93,7 @@ export default class index extends Component {
 								<p>Click to view account summary</p>
 								<div className="view">
 									<h6>View</h6>
-									<img src={require('../../assets/forward.png')} alt="img" />
+									<img src={forward} alt="img" />
 								</div>
 							</div>
 						</div>
@@ -114,22 +126,29 @@ export default class index extends Component {
 
 				{/* --------------------------graph box--------------------------------- */}
 				<div className="graph">
-					{/* <LineChart
+					<div className="graph-bar">
+						<h2>Recent</h2>
+
+						<h2>March, 2021</h2>
+					</div>
+
+					<ResponsiveContainer width="95%" height={300}>
+						<LineChart
 							data={data}
 							height={300}
-							width={600}
-							margin={{ top: 3, right: 30, left: 20, bottom: 25 }}
+							width={800}
+							margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
 						>
-							<XAxis dataKey="name" />
-							<YAxis />
-							<CartesianGrid strokeDasharray="1 3" />
-							<Tooltip />
-							<Line type="monotone" dataKey="pv" stroke="blue" activeDot={{ r: 8 }} dot={{ r: 0 }} />
-							<Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-						</LineChart> */}
-					<center>
-						<h1>Graph is coming soon...</h1>
-					</center>
+							<XAxis dataKey="name" tick={{fontSize:12}} />
+							<YAxis tick={{fontSize: 12}} />
+
+							<Tooltip wrapperStyle={{ background: '#2e41c0', borderRadius: 3 }} />
+							<CartesianGrid stroke="#dad5d5" strokeDasharray="1" vertical={false} />
+
+							<Line type="monotone" dataKey="pv" stroke="#2e41c0" dot={false} activeDot={{ r: 9 }} strokeWidth={3} />
+							<Line type="monotone" dataKey="uv" stroke="lightgrey" dot={false} strokeWidth={3} />
+						</LineChart>
+					</ResponsiveContainer>
 				</div>
 			</section>
 		);
