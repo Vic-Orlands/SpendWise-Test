@@ -12,22 +12,40 @@
 .goals-content {
 	width: 85%;
 	float: right;
-    background: #e5e5e5;
-    color: #837f7f;
+	background: #e5e5e5;
+	color: #837f7f;
 	min-height: 92vh;
-    max-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+	max-height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .goals-content img {
-    width: 40vw;
+	width: 40vw;
 }
 
 .goals-content h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 0;
+	font-size: 2rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+/* ------------------mobile responsiveness styling starts here--------------------- */
+@media screen and (max-width: 760px) {
+	.goals-content {
+		width: 100%;
+		float: none;
+		min-height: 100vh;
+		max-height: 100%;
+	}
+
+	.goals-content img {
+		width: 60vw;
+	}
+
+	.goals-content h3 {
+		font-size: 1.5rem;
+	}
 }

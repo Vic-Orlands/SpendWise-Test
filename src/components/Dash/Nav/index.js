@@ -64,7 +64,7 @@ const Nav = () => {
 							<li>Budget</li>
 						</NavLink>
 
-						<NavLink to="/gff" className="div" activeClassName="active">
+						<NavLink to="/page/goals" className="div" activeClassName="active">
 							{' '}
 							<img src={goal} alt="logo" id="icon" />
 							<li>Goals</li>

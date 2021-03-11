@@ -135,7 +135,7 @@ export default () => {
 
 								{errorMessage ? (
 									<div className="noExpense">
-										<img src={require('../../assets/info.png')} alt="img"/>
+										<img src={info} alt="img"/>
 										<h3>{errorMessage}</h3>
 									</div>
 								) : (

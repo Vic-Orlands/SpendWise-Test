@@ -101,7 +101,6 @@ export default () => {
 					})
 					.catch((err) => {
 						setNoBudget("You don't have a current budget");
-						console.log(err);
 					});
 			};
 
@@ -302,7 +301,7 @@ export default () => {
 														onClick={() => fetchBudgetById(item.id)}
 														key={item.id}
 													/>
-													{item.category === 'Food/Drinks' ? (
+													{item.category === 'Foods/Drinks' ? (
 														<img src={food} alt="img" />
 													) : item.category === 'Bills/Utilities' ? (
 														<img src={receipt} alt="img" />
@@ -451,7 +450,7 @@ export default () => {
 									onClick={() => fetchBudgetById(item.id)}
 									key={item.id}
 								>
-									{item.category === 'Food/Drinks' ? (
+									{item.category === 'Foods/Drinks' ? (
 										<img src={food} alt="img" />
 									) : item.category === 'Bills/Utilities' ? (
 										<img src={receipt} alt="img" />

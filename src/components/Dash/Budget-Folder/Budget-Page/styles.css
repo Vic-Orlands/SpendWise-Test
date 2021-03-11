@@ -581,4 +581,12 @@
 		height: 4vh;
 		margin-right: .2rem;
 	}
+	
+	.edit-archive-bdgt h3 {
+		font-size: .85rem;
+		width: 45%;
+		padding: .7rem .9rem;
+		text-align: center;
+	}
+
 }
